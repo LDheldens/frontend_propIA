@@ -5,11 +5,9 @@ import { FaTiktok } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { IoMdLogIn } from "react-icons/io";
 import { ImMail } from "react-icons/im";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { MdLogin } from "react-icons/md";
-//import Chatbot from './pages/Chatbot';
 
 
 const links = [
@@ -18,11 +16,11 @@ const links = [
         text: "INICIO",
         id: 1,
     },
-    // {
-    //     link: "/buscar",
-    //     text: "BUSCAR PROPIEDADES",
-    //     id: 2,
-    // },
+    {
+        link: "/buscar",
+        text: "BUSCAR PROPIEDADES",
+        id: 2,
+    },
     // {
     //     link: "/asesores",
     //     text: "ASESORES",

@@ -6,7 +6,11 @@ export default {
 
     ],
     theme: {
-        extend: {},
+        extend: {
+            spacing: {
+                '160': '40rem', // Ajusta este valor según sea necesario
+            },
+        },
     },
     plugins: [],
 }

@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react'
 //import { Menu, Transition } from '@headlessui/react'
 //import { ChevronDownIcon } from '@heroicons/react/20/solid'
-//import ReactPlayer from 'react-player';
 import { FaLocationDot } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 // import { FaWhatsappSquare } from "react-icons/fa";
@@ -15,7 +14,7 @@ import { FaHandshake } from "react-icons/fa";
 import { BsFillAlarmFill } from "react-icons/bs";
 import { HiHome } from "react-icons/hi2";
 import { FaRegHeart } from "react-icons/fa";
-//import Map from './Map';
+import ItemSell from '../components/ItemSell';
 
 const options = [
     { value: 'all', label: 'Todos los inmuebles' },
@@ -127,7 +126,7 @@ const Home = () => {
     return (
 
         <main className='bg-gray-100'>
-            <div className="bg-cover bg-center" style={{ backgroundImage: "url('./src/assets/house.gif')" }}>
+            <div className="bg-cover bg-center " style={{ backgroundImage: "url('./src/assets/init.gif')" }}>
                 {/* <video
                     className="absolute top-0 left-0 w-full h-full object-cover z-0"
                     autoPlay loop muted
@@ -253,7 +252,7 @@ const Home = () => {
                             <div className="flex items-center gap-x-6 border border-gray-500 bg-white shadow-md rounded-md">
                                 <FaHouseUser className='bg-gray-300 h-16 w-20 rounded-full m-3' />
                                 <div className=''>
-                                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900"> Acerca de nosotros</h3>
+                                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">Conoce CasaPaz</h3>
                                     <p className="text-sm font-semibold leading-6 text-gray-700">Accede a la información de los planes que pensamos para ti.</p>
                                     <div className="">
 
@@ -264,40 +263,7 @@ const Home = () => {
                     </ul>
                 </div>
                 <br className='m-4' />
-                <div className='m-4'>
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4">Más inmuebles similares a los que viste</h2>
-                    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                        {products.map((product) => (
-                            <div key={product.id} className="group relative">
-                                <div className=''>
-                                    <div className="w-full overflow-hidden rounded-t-lg bg-gray-200 lg:h-80">
-                                        <img
-                                            src={product.imageSrc}
-                                            alt={product.imageAlt}
-                                            className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                                        />
-                                        <FaRegHeart className="bg-white absolute top-5 right-2 py-1 px-3 rounded-full text-black text-[40px]" />
-                                        {/* <span className="bg-[#DC3545] absolute top-5 right-2 py-1 px-3 rounded-full text-white text-[10px]" >ID: {product.id}</span>
-                                            <span className="bg-blue-800 absolute text-end bottom-36 right-2 py-1 px-3 rounded-full text-white text-[10px]" >{product.type}</span> */}
-                                    </div>
-                                </div>
-                                <div className='bg-white p-2'>
-                                    <div className="mt-4 flex justify-between">
-                                        <div className='ml-3'>
-                                            <p className="text-xs font-medium text-gray-700 mb-4">{product.price}</p>
-                                            <h3 className="text-xs text-gray-600 mb-5 flex">
-                                                <span aria-hidden="true" className="absolute inset-0 flex-initial" />
-                                                <FaLocationDot className="mr-1 mt-1" />{product.locate}
-                                            </h3>
-                                            <p className="text-[10px] text-gray-400">{product.ruc}</p>
-                                            <p className="text-[11px] text-gray-400">{product.society}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <ItemSell />
                 <div className='m-4'>
                     <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3 m-3">
                         <div className="max-w-2xl pt-8">

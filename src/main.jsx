@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Home from './pages/Home'
 import Layout from './components/Layout'
+import SearchProp from './pages/SearchProp'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -18,10 +19,10 @@ const router = createBrowserRouter(
           element: <Home />,
           path: '/'
         },
-        // {
-        //   element: <Search />,
-        //   path: '/buscar'
-        // },
+        {
+          element: <SearchProp />,
+          path: '/buscar'
+        },
         // {
         //   element: <Advisors />,
         //   path: '/asesores'
