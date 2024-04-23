@@ -78,8 +78,10 @@ function ItemSell() {
                                     <div className='ml-3'>
                                         <p className="text-xs font-medium text-gray-700 mb-4">{product.price}</p>
                                         <h3 className="text-xs text-gray-600 mb-5 flex">
-                                            <span aria-hidden="true" className="absolute inset-0 flex-initial" />
-                                            <FaLocationDot className="mr-1 mt-1" />{product.locate}
+                                            <a href={product.href}>
+                                                <span aria-hidden="true" className="absolute inset-0 flex-initial" />
+                                                <FaLocationDot className="mr-1 mt-1" />{product.locate}
+                                            </a>
                                         </h3>
                                         <p className="text-[10px] text-gray-400">{product.ruc}</p>
                                         <p className="text-[11px] text-gray-400">{product.society}</p>

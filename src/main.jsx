@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client'
 import Home from './pages/Home'
 import Layout from './components/Layout'
 import SearchProp from './pages/SearchProp'
+import Advisors from './pages/Advisors'
+import Contact from './pages/Contact'
+import Item from './components/Item'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -23,30 +26,23 @@ const router = createBrowserRouter(
           element: <SearchProp />,
           path: '/buscar'
         },
-        // {
-        //   element: <Advisors />,
-        //   path: '/asesores'
-        // },
-        // {
-        //   element: <Item />,
-        //   path: '/item'
-        // },
-        // {
-        //   element: <ImageModal />,
-        //   path: '/item'
-        // },
+        {
+          element: <Advisors />,
+          path: '/asesores'
+        },
+        {
+          element: <Contact />,
+          path: '/contacto'
+        },
+        {
+          element: <Item />,
+          path: '/item'
+        },
         // {
         //   element: <LogIn />,
         //   path: '/login'
         // },
-        // {
-        //   element: <Chatbot />,
-        //   path: '/chat'
-        // },
-        // {
-        //   element: <Contact />,
-        //   path: '/contacto'
-        // },
+
         // {
         //   element: <Oficces />,
         //   path: '/oficinas'

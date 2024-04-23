@@ -21,16 +21,16 @@ const links = [
         text: "BUSCAR PROPIEDADES",
         id: 2,
     },
-    // {
-    //     link: "/asesores",
-    //     text: "ASESORES",
-    //     id: 3,
-    // },
-    // {
-    //     link: "/contacto",
-    //     text: "CONTACTOS",
-    //     id: 5,
-    // },
+    {
+        link: "/asesores",
+        text: "ASESORES",
+        id: 3,
+    },
+    {
+        link: "/contacto",
+        text: "CONTACTOS",
+        id: 5,
+    },
     // {
     //     link: "/oficinas",
     //     text: "OFICINAS",
@@ -135,7 +135,7 @@ const Layout = () => {
                 <Outlet />
             </main>
 
-            <footer class="bg-green-800 relative">
+            <footer class="bg-green-700 relative">
                 <div className='text-center inset-x-0 mx-auto bg-white p-4  '>
                     <ul className='justify-center flex text-green-600 text-3xl bg-white p-4 shadow-md absolute top-[-40px] right-[35%] pl-10 pr-10 rounded-lg'>
                         <li>
@@ -195,7 +195,7 @@ const Layout = () => {
                         </div>
                     </div>
                 </div>
-                <div className="container text-xs mx-auto flex justify-center text-white bg-green-800 p-5">
+                <div className="container text-xs mx-auto flex justify-center text-white bg-green-700 p-5">
                     <nav>
                         <span>© Copyright 2024 Polariss Technology - Términos y Condiciones de Uso Términos y Condiciones de Contratación Política de privacidad.</span>
                     </nav>

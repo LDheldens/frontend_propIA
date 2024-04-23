@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react'
 //import { Menu, Transition } from '@headlessui/react'
-//import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { FaLocationDot } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 // import { FaWhatsappSquare } from "react-icons/fa";
@@ -31,27 +30,6 @@ const options = [
     { value: 'rental', label: 'Edificios' }
 ];
 
-const people = [
-    {
-        name: 'Sección exclusiva de proyectos',
-        role: 'RE/MAX IMPERIAL',
-        imageUrl:
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-    {
-        name: 'Publica hoy',
-        role: 'RE/MAX ACCION / CEO',
-        imageUrl:
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-    {
-        name: 'Acerca de nosotros',
-        role: 'RE/MAX EXPO',
-        imageUrl:
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-
-]
 const Home = () => {
 
     const [isOpen, setIsOpen] = useState(false);
