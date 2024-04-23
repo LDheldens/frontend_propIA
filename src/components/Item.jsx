@@ -13,6 +13,10 @@ import { LuBath } from "react-icons/lu"
 import { GiHomeGarage } from "react-icons/gi"
 import { FaKitchenSet } from "react-icons/fa6"
 import { FaWhatsapp } from "react-icons/fa"
+import { GiTap } from "react-icons/gi"
+import { FaRegLightbulb } from "react-icons/fa"
+import { GiKitchenScale } from "react-icons/gi"
+import SendMsg from './SendMsg';
 
 function Item() {
     //const [modalOpen, setModalOpen] = useState(false);
@@ -161,64 +165,16 @@ function Item() {
                         </div>
                     </div>
                 </div>
-                <div>
-
-                    {/* <section class="bg-white">
-                        <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
-                                <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col">
-                                    <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-                                        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
-                                        <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                                        <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Wines</h3>
-                                    </a>
-                                </div>
-                                <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50">
-                                    <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4">
-                                        <img src="https://images.unsplash.com/photo-1504675099198-7023dd85f5a3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
-                                        <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                                        <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Gin</h3>
-                                    </a>
-                                    <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2">
-                                        <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
-                                            <img src="https://images.unsplash.com/photo-1571104508999-893933ded431?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
-                                            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                                            <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Whiskey</h3>
-                                        </a>
-                                        <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
-                                            <img src="https://images.unsplash.com/photo-1626897505254-e0f811aa9bf7?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
-                                            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                                            <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Vodka</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-span-2 sm:col-span-1 md:col-span-1 bg-sky-50 h-auto md:h-full flex flex-col">
-                                    <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-                                        <img src="https://images.unsplash.com/photo-1693680501357-a342180f1946?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
-                                        <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                                        <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Brandy</h3>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section> */}
-                </div>
                 <div className='flex mt-4'>
                     <div className='m-4 w-full '>
                         <div>
                             <h5>Detalles</h5>
                         </div>
                         <div>
-                            <div className=''>
-                                <FaLocationDot />
-                                <p>Joaquin Bernal 708 esquina con Francisco de Zela, Risso, Lince</p>
-                            </div>
-                        </div>
-                        <div>
                             <div>
-                                <div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3 h-full">
                                     {properties.map((props) => (
-                                        <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg rounded-b-lg">
+                                        <div class=" col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg rounded-b-lg">
                                             <div class="group relative flex flex-col overflow-hidden rounded-t-lg px-4 pb-4 pt-4 mb-4">
                                                 <div className='flex'>
                                                     <span className=''>{props.price}</span>
@@ -231,7 +187,7 @@ function Item() {
                                                 </div>
                                                 <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
                                             </div>
-                                            <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 ">
+                                            <div class="grid gap-4 grid-cols-3 sm:grid-cols-3 lg:grid-cols-3 ">
                                                 <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4">
                                                     <div className='flex m-2'>
                                                         <div className='rounded-full bg-green-500 p-2 text-xl text-white' >
@@ -252,10 +208,8 @@ function Item() {
                                                         </div>
                                                         <span className='m-1'>Habitaciones: {props.debs}</span>
                                                     </div>
-                                                    {/* <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
                                                 </div>
                                                 <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4">
-                                                    {/* <img src="./src/assets/dep4.webp" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" /> */}
                                                     <div className='flex m-2'>
                                                         <div className='rounded-full bg-green-500 p-2 text-xl text-white'>
                                                             <LuBath />
@@ -274,11 +228,30 @@ function Item() {
                                                         </div>
                                                         <span className='m-1'>Cocinas: {props.kitchen}</span>
                                                     </div>
-                                                    {/* <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
+                                                </div>
+                                                <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4">
+                                                    <div className='flex m-2'>
+                                                        <div className='rounded-full bg-green-500 p-2 text-xl text-white' >
+                                                            <GiTap />
+                                                        </div>
+                                                        <span className='m-1'>Servicio de Agua: </span>
+                                                    </div>
+                                                    <div className='flex m-2'>
+                                                        <div className='rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                            <FaRegLightbulb />
+                                                        </div>
+                                                        <span className='m-1'>Energía: Privado</span>
+                                                    </div>
+                                                    <div className='flex m-2'>
+                                                        <div className='rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                            <GiKitchenScale />
+                                                        </div>
+                                                        <span className='m-1'>Gas: {props.debs}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <h3 class="bg-green-500 z-10 rounded-full text-2xl font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg">{props.type}</h3>
-                                            <FaWhatsapp class="bg-green-500 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" />
+                                            {/* <FaWhatsapp class="bg-green-500 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" /> */}
                                         </div>
                                     ))}
                                 </div>
@@ -340,192 +313,7 @@ function Item() {
                         </div>
                     </div>
                     <div className="flex w-90">
-                        <div className=" border border-spacing-3 p-4 rounded-lg mr-6 pb-12 ">
-                            <h2 className="text-base font-semibold leading-7 text-gray-900">Contáctate con EFRON ARQUITECTOS por el proyecto en Risso, Lince</h2>
-                            <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 ">
-                                <div className="sm:col-span-4">
-                                    <label
-                                        htmlFor="Username"
-                                        className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 block text-sm font-medium leading-6 text-gray-900"
-                                    >
-                                        <input
-                                            type="text"
-                                            id="Username"
-                                            class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                            placeholder="Username"
-                                        />
-
-                                        <span
-                                            className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                        >
-                                            G-mail
-                                        </span>
-                                    </label>
-                                    {/* <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Email
-                                    </label>
-                                    <div className="mt-1">
-                                        <input id="email" placeholder='Email' name="email" type="email" autoComplete="email"
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div> */}
-                                </div>
-                                <div className="sm:col-span-3">
-                                    <label
-                                        htmlFor="Username"
-                                        className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 block text-sm font-medium leading-6 text-gray-900"
-                                    >
-                                        <input
-                                            type="text"
-                                            id="Username"
-                                            class="peer p-1 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                            placeholder="Username"
-                                        />
-
-                                        <span
-                                            className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                        >
-                                            Nombres
-                                        </span>
-                                    </label>
-                                    {/* <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Nombres
-                                    </label>
-                                    <div className="mt-1">
-                                        <input
-                                            type="text"
-                                            name="first-name"
-                                            id="first-name"
-                                            autoComplete="given-name"
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div> */}
-                                </div>
-
-                                <div className="sm:col-span-3">
-                                    <label
-                                        htmlFor="Username"
-                                        className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 block text-sm font-medium leading-6 text-gray-900"
-                                    >
-                                        <input
-                                            type="text"
-                                            id="Username"
-                                            class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                            placeholder="Username"
-                                        />
-
-                                        <span
-                                            className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                        >
-                                            Apellidos
-                                        </span>
-                                    </label>
-                                    {/* <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Apellidos
-                                    </label>
-                                    <div className="mt-1">
-                                        <input
-                                            type="text"
-                                            name="last-name"
-                                            id="last-name"
-                                            autoComplete="family-name"
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div> */}
-                                </div>
-                                <div className="sm:col-span-4">
-                                    <label
-                                        htmlFor="Username"
-                                        className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 block text-sm font-medium leading-6 text-gray-900"
-                                    >
-                                        <input
-                                            type="text"
-                                            id="Username"
-                                            class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                            placeholder="Username"
-                                        />
-
-                                        <span
-                                            className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                        >
-                                            DNI
-                                        </span>
-                                    </label>
-                                    {/* <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                                        DNI
-                                    </label>
-                                    <div className="mt-1">
-                                        <input type="number"
-                                            name="first-name"
-                                            id="first-name"
-                                            autoComplete="given-name"
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div> */}
-                                </div>
-                                <div className="sm:col-span-3">
-                                    <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Unidad de interés
-                                    </label>
-                                    <div className="mt-2">
-                                        <select
-                                            id="country"
-                                            name="country"
-                                            autoComplete="country-name"
-                                            aria-placeholder=''
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                                        >
-                                            <option>1 Dormitorio</option>
-                                            <option>2 Dormitorios</option>
-                                            <option>3 Dormitorios</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div className="col-span-full">
-                                    <label
-                                        htmlFor="Username"
-                                        className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600 block text-sm font-medium leading-6 text-gray-900"
-                                    >
-                                        <input
-                                            type="text"
-                                            id="Username"
-                                            class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                            placeholder="Username"
-                                        />
-
-                                        <span
-                                            className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                        >
-                                            Mensage
-                                        </span>
-                                    </label>
-                                    {/* <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Mensage
-                                    </label>
-                                    <div className="mt-2">
-                                        <input type="text" name="street-address"
-                                            id="street-address"
-                                            autoComplete="street-address"
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div> */}
-                                </div>
-                            </div>
-                            <div className='flex mt-4'>
-                                <input type="checkbox" className='m-1 p-3' />
-                                <span className='text-[12px]'>Acepto los Términos y Condiciones de Uso. y las politicas de privacidad.</span>
-                            </div>
-                            <div className='flex'>
-                                <input type="checkbox" className='m-1 p-3' />
-                                <span className='text-[12px]'>Autorizo el uso de mi información para fines adicionales.</span>
-                            </div>
-                            <div className='mt-4'>
-                                <button className='bg-green-600 w-full p-3 rounded-lg'>
-                                    Contactar
-                                </button>
-                            </div>
-                        </div>
+                        <SendMsg /> {/*Formulario para enviar mesaje*/}
                     </div>
                 </div>
                 <div>

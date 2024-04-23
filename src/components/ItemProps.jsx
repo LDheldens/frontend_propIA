@@ -15,7 +15,7 @@ function ItemProps() {
             id: 1,
             locate: 'Miraflores, Lima, Lima',
             href: '/item',
-            imageSrc: './src/assets/dep3.jpeg',
+            imageSrc: './src/assets/dep1.jpeg',
             imageAlt: "properties in sell.",
             price: 'S/. 360,000.00 ',
             area: '5,642.00 m²',
@@ -30,7 +30,7 @@ function ItemProps() {
             id: 2,
             locate: 'Lince, Lima, Lima',
             href: '/item',
-            imageSrc: './src/assets/dep3.jpeg',
+            imageSrc: './src/assets/dep2.jpeg',
             imageAlt: "properties in sell.",
             price: 'S/. 360,000.00 ',
             area: '5,642.00 m²',
@@ -39,7 +39,7 @@ function ItemProps() {
             bath: '2',
             garage: '2',
             kitchen: '2',
-            type: 'DEPARTAMENTO EN VENTA'
+            type: 'CASA EN VENTA'
         },
         {
             id: 3,
