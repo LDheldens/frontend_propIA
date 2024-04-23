@@ -96,20 +96,20 @@ function ItemProps() {
                                             <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 ">
                                                 <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4">
                                                     <div className='flex m-2'>
-                                                        <div className='rounded-full bg-green-500 p-2 text-xl text-white' >
+                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white' >
                                                             <BiArea />
                                                         </div>
                                                         <span className='m-1'> {props.area}</span>
 
                                                     </div>
                                                     <div className='flex m-2'>
-                                                        <div className='rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
                                                             <FaRegBuilding />
                                                         </div>
                                                         <span className='m-1'>Pisos: {props.duildings}</span>
                                                     </div>
                                                     <div className='flex m-2'>
-                                                        <div className='rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
                                                             <IoBedOutline />
                                                         </div>
                                                         <span className='m-1'>Habitaciones: {props.debs}</span>
@@ -119,19 +119,19 @@ function ItemProps() {
                                                 <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4">
                                                     {/* <img src="./src/assets/dep4.webp" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" /> */}
                                                     <div className='flex m-2'>
-                                                        <div className='rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
                                                             <LuBath />
                                                         </div>
                                                         <span className='m-1'>Baños: {props.bath}</span>
                                                     </div>
                                                     <div className='flex m-2'>
-                                                        <div className='rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
                                                             <GiHomeGarage />
                                                         </div>
                                                         <span className='m-1'>Cocheras: {props.garage}</span>
                                                     </div>
                                                     <div className='flex m-2'>
-                                                        <div className='rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
                                                             <FaKitchenSet />
                                                         </div>
                                                         <span className='m-1'>Cocinas: {props.kitchen}</span>

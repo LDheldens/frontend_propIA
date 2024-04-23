@@ -6,6 +6,7 @@ import SearchProp from './pages/SearchProp'
 import Advisors from './pages/Advisors'
 import Contact from './pages/Contact'
 import Item from './components/Item'
+import LogIn from './components/LogIn'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -38,10 +39,10 @@ const router = createBrowserRouter(
           element: <Item />,
           path: '/item'
         },
-        // {
-        //   element: <LogIn />,
-        //   path: '/login'
-        // },
+        {
+          element: <LogIn />,
+          path: '/login'
+        },
 
         // {
         //   element: <Oficces />,
