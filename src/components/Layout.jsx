@@ -7,7 +7,9 @@ import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { ImMail } from "react-icons/im";
 import { BiSolidPhoneCall } from "react-icons/bi";
-import { MdLogin } from "react-icons/md";
+import { MdLogin } from "react-icons/md"
+import { BiSolidChat } from "react-icons/bi"
+import ChatBot from './ChatBot'
 
 
 const links = [
@@ -59,10 +61,9 @@ const Layout = () => {
         };
     }, [windowDimension.innerWidth]);
 
-    const [isChatbotOpen, setIsChatbotOpen] = useState(false);
-
+    const [chatBot, setChatBot] = useState(false);
     const toggleChatbot = () => {
-        setIsChatbotOpen(!isChatbotOpen);
+        setChatBot(!chatBot);
     };
 
     return (
@@ -153,9 +154,6 @@ const Layout = () => {
                     </ul>
                 </div>
                 <div className=' bg-white'>
-                    {/* <div className='absolute bottom-14 right-2' width="77" height="96">
-                        <img src="./src/assets/globo.svg" alt="Animated Image" width="116" height="145" className='animate-float' />
-                    </div> */}
                     <div className='flex bg-white'>
                         <div className='bg-white p-14 text-gray-400 text-sm flex-1'>
                             <nav>
@@ -201,6 +199,16 @@ const Layout = () => {
                     </nav>
                 </div>
             </footer>
+            <div className='fixed bottom-3 right-3 z-50' >
+                <button className='bg-green-600 p-5 rounded-full text-white text-4xl' onClick={toggleChatbot}>
+                    <BiSolidChat />
+                </button>
+                <div className={`bg-gray-200 right-3 translate-x-[500px] transition-transform duration-300 absolute top-[-330px] p-0 text-gray-600 rounded-lg shadow-lg ${chatBot ? 'translate-x-0' : ''}`}>
+                    <div >
+                        <ChatBot />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
