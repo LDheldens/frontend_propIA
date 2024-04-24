@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react'
-//import { Menu, Transition } from '@headlessui/react'
 import { FaLocationDot } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 // import { FaWhatsappSquare } from "react-icons/fa";
@@ -14,6 +13,24 @@ import { BsFillAlarmFill } from "react-icons/bs";
 import { HiHome } from "react-icons/hi2";
 import { FaRegHeart } from "react-icons/fa";
 import ItemSell from '../components/ItemSell';
+import ItemSellOk from '../components/ItemSellOk';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
+function Arrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className}
+            style={{ ...style, display: "block", background: "gray" }}
+            onClick={onClick}
+        />
+
+
+    )
+}
 
 const options = [
     { value: 'all', label: 'Todos los inmuebles' },
@@ -101,6 +118,44 @@ const Home = () => {
 
     ]
 
+
+    var settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        nextArrow: <Arrow />,
+        prevArrow: <Arrow />,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+
     return (
 
         <main className='bg-gray-100'>
@@ -117,26 +172,26 @@ const Home = () => {
                     <div className="m-14">
                         <div className=" inset-0 flex items-center  text-white ">
                             <form action="" className="flex">
-                                <div className="font-normal flex items-center justify-center rounded-t-lg p-2 bg-white">
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 rounded">
+                                <div className="font-normal flex flex-col md:flex-row items-center justify-center rounded-t-lg p-2 bg-white">
+                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 rounded w-full md:w-auto">
                                         Alquilar
                                     </button>
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 rounded">
+                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 rounded w-full md:w-auto">
                                         Comprar
                                     </button>
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 py-2 px-4 border border-gray-200 p-2 m-2 rounded">
+                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 py-2 px-4 border border-gray-200 p-2 m-2 rounded w-full md:w-auto">
                                         Proyectos
                                     </button>
                                 </div>
                             </form>
                         </div>
-                        <div className='flex rounded-b-lg rounded-r-lg bg-white'>
-                            <div className='p-4'>
+                        <div className='flex flex-col md:flex-row rounded-b-lg rounded-r-lg bg-white '>
+                            <div className='p-4 w-full sm:w-1/2 md:w-1/3'>
                                 <select
                                     id="country"
                                     name="country"
                                     autoComplete="country-name"
-                                    className="inline-flex justify-center rounded border border-gray-300 shadow-sm px-4 py-2 bg-white text-[16px] font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100"
+                                    className="inline-flex w-full justify-center rounded border border-gray-300 shadow-sm px-4 py-2 bg-white text-[16px] font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100"
                                 >
                                     <option>Departamento</option>
                                     <option>Casa</option>
@@ -158,7 +213,7 @@ const Home = () => {
                             <div className="flex justify-center items-center p-4 space-x-4">
                                 <button
                                     type="button"
-                                    className="px-16 py-3 bg-green-600 text-white hover:bg-gray-500 focus:outline-none rounded-lg ml-4 items-center flex text-sm"
+                                    className="px-5 py-3 bg-green-600 text-white hover:bg-gray-500 focus:outline-none rounded-lg items-center flex text-sm"
                                 >
                                     <FaSearch className='flex mr-1' /> BUSCAR
                                 </button>
@@ -241,6 +296,25 @@ const Home = () => {
                     </ul>
                 </div>
                 <br className='m-4' />
+                <div className='p-8 slider-container '>
+                    <Slider {...settings}>
+                        <div>
+                            <h1> <ItemSellOk /></h1>
+                        </div>
+                        <div>
+                            <h2><ItemSellOk /></h2>
+                        </div>
+                        <div>
+                            <h2><ItemSellOk /></h2>
+                        </div>
+                        <div>
+                            <h4><ItemSellOk /></h4>
+                        </div>
+                        <div>
+                            <h5><ItemSellOk /></h5>
+                        </div>
+                    </Slider>
+                </div>
                 <ItemSell />
                 <div className='m-4'>
                     <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3 m-3">

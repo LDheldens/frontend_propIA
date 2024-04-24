@@ -68,31 +68,6 @@ const Layout = () => {
 
     return (
         <div>
-            {/* <div className="bg-blue-900 p-2">
-                <div className="flex items-center justify-end text-white ml-4 text-sm">
-                    <div className="ml-4 text-xs">
-                        <span>
-                            Sé un asesor
-                        </span>
-                    </div>
-                    <div className="ml-4 text-xs">
-                        <span>
-                            Franquicias
-                        </span>
-                    </div>
-                    <FaFacebookF className="ml-4 " />
-                    <FaTiktok className="ml-4" />
-                    <FaYoutube className="ml-4" />
-                    <FaInstagram className="ml-4" />
-                    <IoMdLogIn className='ml-4 mr-1' />
-                    <div className="ml-1 mr-8 text-xs">
-                        <span>
-                            Mi RE/MAX
-                        </span>
-                    </div>
-
-                </div>
-            </div> */}
             <div className="flex">
                 <div className=" ml-4 items-center p-2">
                     <Link to={"/"} className="text-white justify-start font-semibold text-xl " >
@@ -136,9 +111,9 @@ const Layout = () => {
                 <Outlet />
             </main>
 
-            <footer class="bg-green-700 relative">
-                <div className='text-center inset-x-0 mx-auto bg-white p-4  '>
-                    <ul className='justify-center flex text-green-600 text-3xl bg-white p-4 shadow-md absolute top-[-40px] right-[35%] pl-10 pr-10 rounded-lg'>
+            <footer class="bg-green-700 ">
+                <div className='text-center inset-x-0 flex justify-center bg-white p-4'>
+                    <ul className='justify-center flex text-green-600 text-3xl bg-white p-4 shadow-md shadow-green-400  pl-10 pr-10 rounded-lg'>
                         <li>
                             <FaFacebookF className="ml-1 " />
                         </li>
@@ -205,7 +180,7 @@ const Layout = () => {
                 </button>
                 <div className={`bg-gray-200 right-3 translate-x-[500px] transition-transform duration-300 absolute top-[-330px] p-0 text-gray-600 rounded-lg shadow-lg ${chatBot ? 'translate-x-0' : ''}`}>
                     <div >
-                        <ChatBot />
+                        {/* <ChatBot /> */}
                     </div>
                 </div>
             </div>

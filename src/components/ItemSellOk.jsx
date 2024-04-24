@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaRegHeart } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
-function ItemSell() {
+function ItemSellOk() {
     const products = [
         {
             id: 1,
@@ -16,49 +16,48 @@ function ItemSell() {
             type: 'HOTEL EN VENTA',
             area: '5,642.00 m²',
         },
-        {
-            id: 2,
-            locate: 'Lima, Lima, Miraflores',
-            href: '/item',
-            imageSrc: './src/assets/dep4.jpeg',
-            imageAlt: "Front of men's Basic Tee in black.",
-            price: 'S/. 360,000.00 ',
-            ruc: 'En construcción',
-            society: 'Junio 2025',
-            type: 'HOTEL EN VENTA',
-            area: '5,642.00 m²',
-        },
-        {
-            id: 3,
-            locate: 'Lima, Lima, Miraflores',
-            href: '/item',
-            imageSrc: './src/assets/dep1.jpeg',
-            imageAlt: "Front of men's Basic Tee in black.",
-            price: 'S/. 360,000.00 ',
-            ruc: 'En construcción',
-            society: 'Junio 2025',
-            type: 'HOTEL EN VENTA',
-            area: '5,642.00 m²',
-        },
-        {
-            id: 4,
-            locate: 'Lima, Lima, Miraflores',
-            href: '/item',
-            imageSrc: './src/assets/dep5.jpeg',
-            imageAlt: "Front of men's Basic Tee in black.",
-            price: 'S/. 360,000.00 ',
-            ruc: 'En construcción',
-            society: 'Junio 2025',
-            type: 'HOTEL EN VENTA',
-            area: '5,642.00 m²',
-        },
+        // {
+        //     id: 2,
+        //     locate: 'Lima, Lima, Miraflores',
+        //     href: '/item',
+        //     imageSrc: './src/assets/dep4.webp',
+        //     imageAlt: "Front of men's Basic Tee in black.",
+        //     price: 'S/. 360,000.00 ',
+        //     ruc: 'En construcción',
+        //     society: 'Junio 2025',
+        //     type: 'HOTEL EN VENTA',
+        //     area: '5,642.00 m²',
+        // },
+        // {
+        //     id: 3,
+        //     locate: 'Lima, Lima, Miraflores',
+        //     href: '/item',
+        //     imageSrc: './src/assets/dep1.jpg',
+        //     imageAlt: "Front of men's Basic Tee in black.",
+        //     price: 'S/. 360,000.00 ',
+        //     ruc: 'En construcción',
+        //     society: 'Junio 2025',
+        //     type: 'HOTEL EN VENTA',
+        //     area: '5,642.00 m²',
+        // },
+        // {
+        //     id: 4,
+        //     locate: 'Lima, Lima, Miraflores',
+        //     href: '/item',
+        //     imageSrc: './src/assets/img6.webp',
+        //     imageAlt: "Front of men's Basic Tee in black.",
+        //     price: 'S/. 360,000.00 ',
+        //     ruc: 'En construcción',
+        //     society: 'Junio 2025',
+        //     type: 'HOTEL EN VENTA',
+        //     area: '5,642.00 m²',
+        // },
 
     ]
     return (
         <div>
             <div className='m-4'>
-                <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4">Más inmuebles similares a los que viste</h2>
-                <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-1 xl:gap-x-8">
                     {products.map((product) => (
                         <div key={product.id} className="group relative">
                             <div className=''>
@@ -96,4 +95,4 @@ function ItemSell() {
     )
 }
 
-export default ItemSell
+export default ItemSellOk
