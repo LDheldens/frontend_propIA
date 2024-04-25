@@ -56,7 +56,51 @@ function ItemProps() {
             kitchen: '2',
             type: 'DEPARTAMENTO EN VENTA'
         },
-
+        {
+            id: 4,
+            locate: 'Lince, Lima, Lima',
+            href: '/item',
+            imageSrc: './src/assets/dep2.jpeg',
+            imageAlt: "properties in sell.",
+            price: 'S/. 360,000.00 ',
+            area: '5,642.00 m²',
+            debs: '4',
+            duildings: '4',
+            bath: '2',
+            garage: '2',
+            kitchen: '2',
+            type: 'CASA EN VENTA'
+        },
+        {
+            id: 5,
+            locate: 'Lince, Lima, Lima',
+            href: '/item',
+            imageSrc: './src/assets/dep5.jpeg',
+            imageAlt: "properties in sell.",
+            price: 'S/. 360,000.00 ',
+            area: '5,642.00 m²',
+            debs: '4',
+            duildings: '4',
+            bath: '2',
+            garage: '2',
+            kitchen: '2',
+            type: 'CASA EN VENTA'
+        },
+        {
+            id: 6,
+            locate: 'Lince, Lima, Lima',
+            href: '/item',
+            imageSrc: './src/assets/dep6.webp',
+            imageAlt: "properties in sell.",
+            price: 'S/. 360,000.00 ',
+            area: '5,642.00 m²',
+            debs: '4',
+            duildings: '4',
+            bath: '2',
+            garage: '2',
+            kitchen: '2',
+            type: 'CASA EN VENTA'
+        },
     ]
     return (
         <div>

@@ -83,7 +83,7 @@ const Home = () => {
             id: 2,
             locate: 'Lima, Lima, Miraflores',
             href: '/item',
-            imageSrc: './src/assets/dep4.webp',
+            imageSrc: './src/assets/dep6.webp',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
@@ -95,19 +95,7 @@ const Home = () => {
             id: 3,
             locate: 'Lima, Lima, Miraflores',
             href: '/item',
-            imageSrc: './src/assets/dep1.jpg',
-            imageAlt: "Front of men's Basic Tee in black.",
-            price: 'S/. 360,000.00 ',
-            ruc: 'En construcción',
-            society: 'Junio 2025',
-            type: 'HOTEL EN VENTA',
-            area: '5,642.00 m²',
-        },
-        {
-            id: 4,
-            locate: 'Lima, Lima, Miraflores',
-            href: '/item',
-            imageSrc: './src/assets/img6.webp',
+            imageSrc: './src/assets/dep1.jpeg',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
@@ -123,8 +111,8 @@ const Home = () => {
         dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 3,
+        slidesToScroll: 3,
         nextArrow: <Arrow />,
         prevArrow: <Arrow />,
         initialSlide: 0,
@@ -297,6 +285,7 @@ const Home = () => {
                 </div>
                 <br className='m-4' />
                 <div className='p-8 slider-container '>
+                    <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4">Inmuebles similares a los que viste</h2>
                     <Slider {...settings}>
                         <div>
                             <h1> <ItemSellOk /></h1>
@@ -315,7 +304,7 @@ const Home = () => {
                         </div>
                     </Slider>
                 </div>
-                <ItemSell />
+
                 <div className='m-4'>
                     <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3 m-3">
                         <div className="max-w-2xl pt-8">
@@ -351,6 +340,8 @@ const Home = () => {
                 </div>
             </div>
             <br className='' />
+            <ItemSell />
+            <br />
             <div>
                 <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3 m-3">
                     <div className="max-w-2xl">
@@ -471,8 +462,8 @@ const Home = () => {
             </div>
             <div className='flex justify-center items-center p-4'>
                 <h5 className='mr-1 text-xl text-gray-600'>Busca entre más de 17,976 Propiedades</h5>
-                <button className='bg-green-600 p-3 text-white text-sm'>
-                    VER MÁS
+                <button className='bg-green-600 p-3 text-white text-sm rounded-lg'>
+                    <a href="/buscar">VER MÁS</a>
                 </button>
             </div>
 

@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa"
 
 function SearchProp() {
     return (
-        <div>SearchProp
+        <div className='p-6'>
             <div>
                 <div>
                     <div className='flex rounded-b-lg rounded-r-lg bg-white'>

@@ -6,25 +6,25 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 const people = [
     {
         name: 'Leslie Alexander',
-        role: 'RE/MAX IMPERIAL',
+        role: 'Coordinadora',
         imageUrl:
             'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
     {
         name: 'Glenda Yael Davila Arrieta',
-        role: 'RE/MAX ACCION / CEO',
+        role: 'Encargada',
         imageUrl:
             'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
     {
         name: 'Mirta Chinchay Benites',
-        role: 'RE/MAX EXPO',
+        role: 'Guía',
         imageUrl:
             'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
     {
         name: 'Mirta Chinchay Benites',
-        role: 'RE/MAX EXPO',
+        role: 'Asesora',
         imageUrl:
             'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
@@ -32,7 +32,7 @@ const people = [
 
 function Advisors() {
     return (
-        <div className="bg-white py-24 sm:py-32">
+        <div className="bg-gray-100 py-24 sm:py-32">
             <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
                 <div className="max-w-2xl">
                     <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">NUESTROS ASESORES</h2>

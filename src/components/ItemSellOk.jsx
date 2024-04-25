@@ -8,7 +8,7 @@ function ItemSellOk() {
             id: 1,
             locate: 'Lima, Lima, Miraflores',
             href: '/item',
-            imageSrc: './src/assets/dep3.jpeg',
+            imageSrc: './src/assets/dep6.webp',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',

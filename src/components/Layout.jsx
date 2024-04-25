@@ -79,12 +79,12 @@ const Layout = () => {
                     <Link to={"/"} className="text-white justify-start font-semibold text-xl">
                         <img src="./src/assets/logo.png" alt="" width="170" height="100" />
                     </Link>
-                    <div 
-                        className={`absolute ${isMenuOpen ? 'flex':'hidden'} h-screen z-30 bg-black bg-opacity-75 top-0 bottom-0 left-0 flex lg:flex right-0 justify-center items-center gap-5  font-bold p-3 lg:p-0 lg:static lg:bg-transparent lg:h-auto`}
+                    <div
+                        className={`absolute ${isMenuOpen ? 'flex' : 'hidden'} h-screen z-30 bg-black bg-opacity-75 top-0 bottom-0 left-0 flex lg:flex right-0 justify-center items-center gap-5  font-bold p-3 lg:p-0 lg:static lg:bg-transparent lg:h-auto`}
                     >
                         {
                             isMenuOpen ? (
-                                <button 
+                                <button
                                     onClick={() => setIsMenuOpen(false)} className='bg-red-600 absolute top-5 right-5 rounded-full transition-colors duration-300 hover:bg-red-800  p-3'
                                 >
                                     <AiOutlineClose className='text-white text-2xl font-bold' />
@@ -93,10 +93,10 @@ const Layout = () => {
                         }
                         <div className='flex flex-col gap-10 lg:gap-5 lg:flex-row'>
                             {links.map(link => (
-                                <Link 
-                                    to={link.link} 
-                                    onClick={() => setIsMenuOpen(false)} 
-                                    className="text-white text-xl lg:text-gray-500 font-bold lg:text-[16px] transition-opacity duration-300 hover:text-green-400 hover:opacity-75" 
+                                <Link
+                                    to={link.link}
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="text-white text-xl lg:text-gray-500 font-bold lg:text-[16px] transition-opacity duration-300 hover:text-green-400 hover:opacity-75"
                                     key={link.id}
                                 >
                                     {link.text}
@@ -109,10 +109,12 @@ const Layout = () => {
                     </button>
                 </div>
                 <div>
-                    <button className="bg-green-600 hover:bg-gray-500 m-3 p-2 items-center flex text-white rounded-lg justify-center">
-                        <MdLogin className="text-2xl" />
-                        <p className="pl-1 text-sm">Iniciar sesión</p>
-                    </button>
+                    <a href="/login">
+                        <button className="bg-green-600 hover:bg-gray-500 m-3 p-2 items-center flex text-white rounded-lg justify-center z-60">
+                            <MdLogin className="text-2xl" />
+                            <p className="pl-1 text-sm">Iniciar sesión</p>
+                        </button>
+                    </a>
                 </div>
             </div>
 
@@ -189,7 +191,7 @@ const Layout = () => {
                 </button>
 
                 <div className={`bg-gray-200 right-3  transition-transform duration-300 absolute top-[-330px] p-0 text-gray-600 rounded-lg shadow-lg ${chatBot ? 'translate-x-0' : 'translate-x-[500px]'}`}>
-                    <ChatBot/>
+                    <ChatBot />
                 </div>
             </div>
         </div>
