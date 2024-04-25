@@ -167,7 +167,7 @@ const Home = () => {
                     <source src="./src/assets/font.jpeg" type="video/mp4" />
                 </video> */}
 
-                <div className="relative z-10 items-center justify-center p-8">
+                <div className="relative z-10 items-center justify-center p-2 md:p-8">
                     <h3 className="text-2xl font-bold  text-white  text-center p-8 pb-3">La llave al espacio que buscas</h3>
                     <div className="m-14">
                         <div className=" inset-0 flex items-center  text-white ">
