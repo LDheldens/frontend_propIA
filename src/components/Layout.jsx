@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
+import { BiMenuAltLeft } from "react-icons/bi";
 import { FaTiktok } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
@@ -33,15 +34,18 @@ const links = [
         text: "CONTACTOS",
         id: 5,
     },
-    // {
-    //     link: "/oficinas",
-    //     text: "OFICINAS",
-    //     id: 4,
-    // },
 ];
 
 const Layout = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLgScreen, setIsLgScreen] = useState(window.innerWidth >= 1024);
+
+    const handleResize = () => {
+        setIsLgScreen(window.innerWidth >= 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+
     const [windowDimension, setWindowDimension] = useState({
         innerHeight: window.innerHeight,
         innerWidth: window.innerWidth,
@@ -54,12 +58,14 @@ const Layout = () => {
         });
     };
 
-    useEffect(() => {
-        window.addEventListener("resize", detectZise);
-        return () => {
-            window.addEventListener("resize", detectZise);
-        };
-    }, [windowDimension.innerWidth]);
+
+
+    // useEffect(() => {
+    //     window.addEventListener("resize", detectZise);
+    //     return () => {
+    //         window.addEventListener("resize", detectZise);
+    //     };
+    // }, [windowDimension.innerWidth]);
 
     const [chatBot, setChatBot] = useState(false);
     const toggleChatbot = () => {
@@ -68,42 +74,45 @@ const Layout = () => {
 
     return (
         <div>
-            <div className="flex">
-                <div className=" ml-4 items-center p-2">
-                    <Link to={"/"} className="text-white justify-start font-semibold text-xl " >
+            <div className="flex justify-between items-center px-5 md:px-8">
+                <div className="flex items-center">
+                    <Link to={"/"} className="text-white justify-start font-semibold text-xl">
                         <img src="./src/assets/logo.png" alt="" width="170" height="100" />
                     </Link>
-                </div>
-                <div className={
-                    !isMenuOpen
-                        ? " mr-5 flex  items-center w-full px-4 justify-start bg-white"
-                        : "flex flex-col w-full px-4 justify-around bg-green-700"
-                } >
-                    {
-                        windowDimension.innerWidth > 768 ?
-                            links.map((l) => (
-                                <Link className="text-sm font-normal justify-end text-gray-500 hover:text-green-600 hover:underline ml-2 mr-2 pl-2 pr-2" to={l.link} key={l.id}>{l.text}</Link>
-                            )) :
-                            isMenuOpen &&
-                            links.map((l) => (
-                                <Link className="text-m text-gray-400 font-semibold" to={l.link} key={l.id}>{l.text}</Link>
-                            ))
-                    }
-                    {!isMenuOpen && windowDimension.innerWidth < 768 ? (
-                        <AiOutlineMenu cursor={"pointer"} size={24} color="blue-900" onClick={() => setIsMenuOpen(true)} />
-                    ) : (
-                        windowDimension.innerWidth < 768 && (
-                            <AiOutlineClose cursor={"pointer"} size={24} color="blue-900" onClick={() => setIsMenuOpen(false)} />))}
-                </div>
-                <div className='justify-center'>
-                    <div className='w-40 h-5 text-center items-center justify-center mt-8' >
-                        <a href="/login">
-                            <button className='bg-green-600 hover:bg-gray-500 m-3 p-2 items-center flex text-white rounded-lg justify-center' width="250" height="250" >
-                                <MdLogin className='text-2xl' />
-                                <p className='pl-1 text-sm'>Iniciar sesión</p>
-                            </button>
-                        </a>
+                    <div 
+                        className={`absolute ${isMenuOpen ? 'flex':'hidden'} h-screen z-30 bg-black bg-opacity-75 top-0 bottom-0 left-0 flex lg:flex right-0 justify-center items-center gap-5  font-bold p-3 lg:p-0 lg:static lg:bg-transparent lg:h-auto`}
+                    >
+                        {
+                            isMenuOpen ? (
+                                <button 
+                                    onClick={() => setIsMenuOpen(false)} className='bg-red-600 absolute top-5 right-5 rounded-full transition-colors duration-300 hover:bg-red-800  p-3'
+                                >
+                                    <AiOutlineClose className='text-white text-2xl font-bold' />
+                                </button>
+                            ) : null
+                        }
+                        <div className='flex flex-col gap-10 lg:gap-5 lg:flex-row'>
+                            {links.map(link => (
+                                <Link 
+                                    to={link.link} 
+                                    onClick={() => setIsMenuOpen(false)} 
+                                    className="text-white text-xl lg:text-gray-500 font-bold lg:text-[16px] transition-opacity duration-300 hover:text-green-400 hover:opacity-75" 
+                                    key={link.id}
+                                >
+                                    {link.text}
+                                </Link>
+                            ))}
+                        </div>
                     </div>
+                    <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                        {isMenuOpen ? <AiOutlineClose className="text-[35px] text-gray-500" /> : <AiOutlineMenu className="text-[35px] text-gray-500" />}
+                    </button>
+                </div>
+                <div>
+                    <button className="bg-green-600 hover:bg-gray-500 m-3 p-2 items-center flex text-white rounded-lg justify-center">
+                        <MdLogin className="text-2xl" />
+                        <p className="pl-1 text-sm">Iniciar sesión</p>
+                    </button>
                 </div>
             </div>
 
@@ -175,13 +184,12 @@ const Layout = () => {
                 </div>
             </footer>
             <div className='fixed bottom-3 right-3 z-50' >
-                <button className='bg-green-600 p-5 rounded-full text-white text-4xl' onClick={toggleChatbot}>
+                <button className='bg-green-600 p-5 rounded-full text-white text-4xl animate-pulse' onClick={toggleChatbot}>
                     <BiSolidChat />
                 </button>
-                <div className={`bg-gray-200 right-3 translate-x-[500px] transition-transform duration-300 absolute top-[-330px] p-0 text-gray-600 rounded-lg shadow-lg ${chatBot ? 'translate-x-0' : ''}`}>
-                    <div >
-                        {/* <ChatBot /> */}
-                    </div>
+
+                <div className={`bg-gray-200 right-3  transition-transform duration-300 absolute top-[-330px] p-0 text-gray-600 rounded-lg shadow-lg ${chatBot ? 'translate-x-0' : 'translate-x-[500px]'}`}>
+                    <ChatBot/>
                 </div>
             </div>
         </div>
