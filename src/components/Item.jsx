@@ -17,11 +17,12 @@ import { GiTap } from "react-icons/gi"
 import { FaRegLightbulb } from "react-icons/fa"
 import { GiKitchenScale } from "react-icons/gi"
 import SendMsg from './SendMsg';
+import Map from './Map';
 
 function Item() {
     //const [modalOpen, setModalOpen] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-    const images = ["./src/assets/edf1.jpeg", "./src/assets/dep1.jpg", "./src/assets/dep3.jpeg", "./src/assets/dep4.webp", "./src/assets/dep1.jpg"]; // Rutas de tus imágenes
+    const images = ["./src/assets/edf1.jpeg", "./src/assets/dep1.jpeg", "./src/assets/dep3.jpeg", "./src/assets/dep4.jpeg", "./src/assets/dep5.jpeg"]; // Rutas de tus imágenes
 
     const [modalOpen, setModalOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -75,7 +76,7 @@ function Item() {
             id: 1,
             locate: 'Lima, Lima, Miraflores',
             href: '/item',
-            imageSrc: './src/assets/plan1.webp',
+            imageSrc: './src/assets/dep8.jpeg',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
@@ -87,7 +88,7 @@ function Item() {
             id: 2,
             locate: 'Lima, Lima, Miraflores',
             href: '#',
-            imageSrc: './src/assets/dep4.webp',
+            imageSrc: './src/assets/dep6.webp',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
@@ -96,10 +97,22 @@ function Item() {
             area: '5,642.00 m²',
         },
         {
-            id: 2,
+            id: 3,
             locate: 'Lima, Lima, Miraflores',
             href: '#',
-            imageSrc: './src/assets/dep4.webp',
+            imageSrc: './src/assets/dep7.jpeg',
+            imageAlt: "Front of men's Basic Tee in black.",
+            price: 'S/. 360,000.00 ',
+            ruc: 'En construcción',
+            society: 'Junio 2025',
+            type: 'HOTEL EN VENTA',
+            area: '5,642.00 m²',
+        },
+        {
+            id: 4,
+            locate: 'Lima, Lima, Miraflores',
+            href: '#',
+            imageSrc: './src/assets/dep4.jpeg',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
@@ -168,7 +181,7 @@ function Item() {
                 <div className='flex mt-4'>
                     <div className='m-4 w-full '>
                         <div>
-                            <h5>Detalles</h5>
+                            <h5 className='font-bold text-xl'>Detalles</h5>
                         </div>
                         <div>
                             <div>
@@ -256,69 +269,89 @@ function Item() {
                                     ))}
                                 </div>
                             </div>
-                            <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3'>
-                                {products.map((product) => (
-                                    <div key={product.id} className=" group m-2 ">
-                                        <div className=''>
-                                            <a href="">
-                                                <div className="w-full overflow-hidden rounded-t-lg bg-gray-200 lg:h-80">
-                                                    <img
-                                                        src={product.imageSrc}
-                                                        alt={product.imageAlt}
-                                                        className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                                                    />
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div className='bg-white p-2 '>
-                                            <div className="mt-4  ">
-                                                <div className='ml-3'>
-                                                    <p className="text-xs font-medium text-gray-700 mb-4">{product.price}</p>
-                                                    <h3 className="text-xs text-gray-600 mb-5 flex">
-                                                        <a href={product.href}>
-                                                        </a>
-                                                    </h3>
-                                                </div>
-                                                <div className='rounded-lg border border-green-400 bg-white m-2 p-2 w-full'>
-                                                    <button className='w-full'>
-                                                        Contactar
-                                                    </button>
-                                                </div>
-                                                <div className='rounded-lg bg-green-600 m-2 p-2 w-full'>
-                                                    <button className='w-full'>
-                                                        Cotizar
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <div>
                             <div>
-                                <h4>Descripción</h4>
-                                <p>
-                                    El proyecto “Schell” está ubicado estratégicamente en la esquina de las calles Schell y Grimaldo del Solar, en la zona más céntrica y “vibrante” del distrito de Miraflores, cercano a restaurantes y tiendas, de muy fácil acceso a través de las principales vías del distrito.
-                                    Características del proyecto
+                                <div className='mt-4'>
+                                    <h4 className='text-xl font-bold'>Descripción: </h4>
+                                    <p>
+                                        Vendo Casa en Zona Comercial de Santa Anita
+                                        80M2 de terreno
+                                        208.15 M2. ( área construida).
 
-                                </p>
+                                        Cerca  a  las Avenidas
+                                        Av. 28 de Julio, Av. Metropolitana y Av. De la Cultura
+
+                                        Excelente ubicación, cerca a Mercado Productores y Gran Mercado Mayorista de Santa Anita 🍊🍐🍓🥬🥦🫑
+
+                                        Cuenta con 3 pisos construidos :
+                                        *Primer y segundo piso son un dúplex,
+                                        1º     🛋️ Sala, 🪑comedor, 🍳cocina,🚽  baño ,🚰  lavandería
+                                        2º     🛏️🛏️🛏️ 3  Habitaciones, 🚽  baño ,🚰  lavandería
+                                        *El tercer piso es  un departamento con entrada independiente, ( perfecto para alquilar )
+                                        🛋️ Sala🪑comedor, 🍳cocina abierta,🚽  baño ,   🛏️🛏️🛏️  3 Habitaciones
+                                        *Cuarto piso ideal para terraza o área de parrilla.⚗️🎍
+                                        Cuenta con sistema de Gas Natural
+
+                                        Toda la documentación en regla y lista para transferir.
+
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <div className='mt-6 border border-spacing-3'>
-                                <h3>Ubicación</h3>
-                                {/* <Map /> */}
+                            <div>
+                                <div className='mt-6 border border-gray-300 rounded-lg'>
+                                    <h2 className='m-4 font-bold text-2xl'>Ubicación:</h2>
+                                    <Map />
+                                </div>
                             </div>
+
                         </div>
+
                     </div>
                     <div className="flex w-90">
                         <SendMsg /> {/*Formulario para enviar mesaje*/}
                     </div>
                 </div>
-                <div>
-                    <h5>Parque Castilla</h5>
+                <div className='mt-4 m-4'>
+                    <h2 className='font-bold text-2xl'>Otras propiedades</h2>
                 </div>
+                <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+                    {products.map((product) => (
+                        <div key={product.id} className=" group m-2 ">
+                            <div className=''>
+                                <a href="">
+                                    <div className="w-full overflow-hidden rounded-t-lg bg-gray-200 lg:h-80">
+                                        <img
+                                            src={product.imageSrc}
+                                            alt={product.imageAlt}
+                                            className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                                        />
+                                    </div>
+                                </a>
+                            </div>
+                            <div className='bg-white p-2 '>
+                                <div className="mt-4  ">
+                                    <div className='ml-3'>
+                                        <p className="text-xs font-medium text-gray-700 mb-4">{product.price}</p>
+                                        <h3 className="text-xs text-gray-600 mb-5 flex">
+                                            <a href={product.href}>
+                                            </a>
+                                        </h3>
+                                    </div>
+                                    <div className='rounded-lg border border-green-400 bg-white m-2 p-2 w-full'>
+                                        <button className='w-full'>
+                                            Contactar
+                                        </button>
+                                    </div>
+                                    <div className='rounded-lg bg-green-600 m-2 p-2 w-full'>
+                                        <button className='w-full'>
+                                            Cotizar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <br />
             </div>
         </div>
     )

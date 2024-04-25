@@ -476,17 +476,6 @@ const Home = () => {
                 </button>
             </div>
 
-            <div className="justify-center items-center container mx-auto p-2 bg-cover">
-                <section className='justify-center'>
-                    <h2>ENCUENTRA TU LUGAR IDEAL</h2>
-                    <p>Más de 2,729 Asesores calificados para tu búsqueda.</p>
-                    <button className='bg-green-600 p-3 text-white text-sm'>
-                        CONTACTANOS
-                    </button>
-                </section>
-
-            </div>
-
             <div className="">
                 <div className="" >
                 </div>
