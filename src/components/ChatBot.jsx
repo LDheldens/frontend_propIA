@@ -21,12 +21,12 @@ const ChatBot = () => {
     }, [messages]);
 
     return (
-        <div className="flex flex-col h-80">
-            <div className='bg-gray-400 flex rounded-lg'>
+        <div className="flex flex-col h-80 w-120">
+            <div className='bg-gray-400 flex rounded-t-lg'>
                 <div className='rounded-full p-2 bg-white'>
                     <img src="./src/assets/logo.png" alt="" width="50" height="10" />
                 </div>
-                <h3 className='p-4'>Chat CasaPaz</h3>
+                <h3 className='p-4'>ChatWeb</h3>
             </div>
             <div className="flex-1 p-4 overflow-y-auto h-80 bg-white">
                 {messages.map((message, index) => (

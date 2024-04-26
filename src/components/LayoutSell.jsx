@@ -16,27 +16,36 @@ import ChatBot from './ChatBot'
 const links = [
     {
         link: "/",
-        text: "INICIO",
         id: 1,
     },
     {
-        link: "/buscar",
-        text: "BUSCAR PROPIEDADES",
+        link: "publicar",
+        text: "Mis avisos",
         id: 2,
     },
     {
-        link: "/asesores",
-        text: "ASESORES",
+        link: "actividad",
+        text: "Anuncios",
         id: 3,
     },
-    {
-        link: "/contacto",
-        text: "CONTACTOS",
-        id: 5,
-    },
+    // {
+    //     link: "/interesados",
+    //     text: "Interesados",
+    //     id: 3,
+    // },
+    // {
+    //     link: "/actividad",
+    //     text: "Mi actividad",
+    //     id: 3,
+    // },
+    // {
+    //     link: "/contratacion",
+    //     text: "Contrataciones",
+    //     id: 5,
+    // },
 ];
 
-const Layout = () => {
+const LayoutSell = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isLgScreen, setIsLgScreen] = useState(window.innerWidth >= 1024);
 
@@ -57,15 +66,6 @@ const Layout = () => {
             innerWidth: window.innerWidth,
         });
     };
-
-
-
-    // useEffect(() => {
-    //     window.addEventListener("resize", detectZise);
-    //     return () => {
-    //         window.addEventListener("resize", detectZise);
-    //     };
-    // }, [windowDimension.innerWidth]);
 
     const [chatBot, setChatBot] = useState(false);
     const toggleChatbot = () => {
@@ -107,19 +107,6 @@ const Layout = () => {
                     <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         {isMenuOpen ? <AiOutlineClose className="text-[35px] text-gray-500" /> : <AiOutlineMenu className="text-[35px] text-gray-500" />}
                     </button>
-                </div>
-                <div className='flex flex-col md:flex-row'>
-                    <a href="/publicar">
-                        <button className="bg-white hover:bg-green-600 hover:text-white m-2 p-2 items-center flex text-gray-700 rounded-lg border border-green-500 justify-center z-60">
-                            <p className="pl-1 text-sm">Publicar</p>
-                        </button>
-                    </a>
-                    <a href="/login">
-                        <button className="bg-green-600 hover:bg-gray-500 m-2 p-2 items-center flex text-white rounded-lg justify-center z-60">
-                            <MdLogin className="text-2xl" />
-                            <p className="pl-1 text-sm">Iniciar sesión</p>
-                        </button>
-                    </a>
                 </div>
             </div>
 
@@ -196,12 +183,12 @@ const Layout = () => {
                 </button>
 
                 <div className={`bg-gray-200 right-3  transition-transform duration-300 absolute top-[-330px] p-0 text-gray-600 rounded-lg shadow-lg ${chatBot ? 'translate-x-0' : 'translate-x-[500px]'}`}>
-                    <ChatBot />
+                    {/* <ChatBot /> */}
                 </div>
             </div>
         </div>
     )
 }
-export default Layout
+export default LayoutSell
 
 

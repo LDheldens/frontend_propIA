@@ -1,15 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Home from './pages/Home'
+import Home from './pages/pagesWeb/Home'
 import Layout from './components/Layout'
-import SearchProp from './pages/SearchProp'
-import Advisors from './pages/Advisors'
-import Contact from './pages/Contact'
+import SearchProp from './pages/pagesWeb/SearchProp'
+import Advisors from './pages/pagesWeb/Advisors'
+import Contact from './pages/pagesWeb/Contact'
 import Item from './components/Item'
 import LogIn from './components/LogIn'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+import LayoutSell from './components/LayoutSell'
+import SellProp from './components/sellProps/SellProp'
+import Post from './pages/pagesPost/Post'
+import MyActivity from './pages/pagesPost/MyActivity'
 
 
 const router = createBrowserRouter(
@@ -43,13 +47,24 @@ const router = createBrowserRouter(
           element: <LogIn />,
           path: '/login'
         },
-
-        // {
-        //   element: <Oficces />,
-        //   path: '/oficinas'
-        // },
       ]
     },
+    {
+      path: '/publicar',
+      element: <LayoutSell />,
+      children: [
+        {
+          index: true,
+          element: <Post />,
+          path: 'publicar'
+        },
+        {
+          element: <MyActivity />,
+          path: 'actividad'
+        },
+      ]
+    },
+
 
   ]
 )

@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemProps from '../components/ItemProps'
+import ItemProps from '../../components/ItemProps'
 import { FaSearch } from "react-icons/fa"
 
 function SearchProp() {

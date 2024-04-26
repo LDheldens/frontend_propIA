@@ -8,7 +8,8 @@ export default {
     theme: {
         extend: {
             spacing: {
-                '160': '40rem', // Ajusta este valor según sea necesario
+                '160': '40rem',
+                '120': '30rem',
             },
         },
     },
