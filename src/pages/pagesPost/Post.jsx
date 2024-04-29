@@ -1,226 +1,69 @@
-import React from 'react'
+import React, { useState } from "react"
+import FormPg1 from '../../components/formProps/FormPg1'
+import FormPg2 from '../../components/formProps/FormPg2'
+import FormPg3 from '../../components/formProps/FormPg3'
+import FormPg4 from "../../components/formProps/FormPg4"
 
 function Post() {
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const goToNextPage = () => {
+        setCurrentPage((prevPage) => prevPage + 1);
+    };
+
+    const goToPreviousPage = () => {
+        setCurrentPage((prevPage) => prevPage - 1);
+    };
+
+    const isLastPage = currentPage === 4;
     return (
         <div>
-            <div>
-                <div className="flex w-90">
-                    <div className=" border border-green-400 p-4 rounded-lg mr-6 pb-12 ">
-                        <h2 className="text-base font-semibold leading-7 text-gray-900">Contáctate con EFRON ARQUITECTOS por el proyecto en Risso, Lince</h2>
-                        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 ">
-                            <div className="col-span-full">
-                                <label
-                                    htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                                >
-                                    <input
-                                        type="text"
-                                        id="Username"
-                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
-                                        placeholder="Username"
-                                    />
-                                    <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                    >
-                                        G-mail
-                                    </span>
-                                </label>
-                                {/* <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Email
-                                    </label>
-                                    <div className="mt-1">
-                                        <input id="email" placeholder='Email' name="email" type="email" autoComplete="email"
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div> */}
+            <div className='p-4 flex justify-center items-center'>
+                <div>
+                    <div className="flex justify-center items-center">
+                        <h2 className="text-base font-semibold leading-7 text-gray-900">Formulario de publicación</h2>
+                    </div>
+                    <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+                        <div className="bg-white rounded-lg shadow-lg p-8">
+                            <div className="bg-green-500 text-white text-center py-2 rounded-lg mb-4">
+                                Página {currentPage} de 4
                             </div>
-                            <div className="col-span-full">
-                                <label
-                                    htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                                >
-                                    <input
-                                        type="text"
-                                        id="Username"
-                                        class="peer p-1 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
-                                        placeholder="Username"
-                                    />
-
-                                    <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                    >
-                                        Nombres
-                                    </span>
-                                </label>
-                                {/* <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Nombres
-                                    </label>
-                                    <div className="mt-1">
-                                        <input
-                                            type="text"
-                                            name="first-name"
-                                            id="first-name"
-                                            autoComplete="given-name"
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div> */}
-                            </div>
-
-                            <div className="col-span-full">
-                                <label
-                                    htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                                >
-                                    <input
-                                        type="text"
-                                        id="Username"
-                                        class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
-                                        placeholder="Username"
-                                    />
-
-                                    <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                    >
-                                        Apellidos
-                                    </span>
-                                </label>
-                                {/* <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Apellidos
-                                    </label>
-                                    <div className="mt-1">
-                                        <input
-                                            type="text"
-                                            name="last-name"
-                                            id="last-name"
-                                            autoComplete="family-name"
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div> */}
-                            </div>
-                            <div className="sm:col-span-4">
-                                <label
-                                    htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                                >
-                                    <input
-                                        type="text"
-                                        id="Username"
-                                        class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        placeholder="Username"
-                                    />
-
-                                    <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                    >
-                                        DNI
-                                    </span>
-                                </label>
-                                {/* <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                                        DNI
-                                    </label>
-                                    <div className="mt-1">
-                                        <input type="number"
-                                            name="first-name"
-                                            id="first-name"
-                                            autoComplete="given-name"
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div> */}
-                            </div>
-                            <div className="sm:col-span-4">
-                                <label
-                                    htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                                >
-                                    <input
-                                        type="number"
-                                        id="Username"
-                                        class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        placeholder="Username"
-                                    />
-
-                                    <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                    >
-                                        Celular
-                                    </span>
-                                </label>
-                                {/* <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                                        DNI
-                                    </label>
-                                    <div className="mt-1">
-                                        <input type="number"
-                                            name="first-name"
-                                            id="first-name"
-                                            autoComplete="given-name"
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div> */}
-                            </div>
-                            <div className="sm:col-span-3">
-                                <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
-                                    Unidad de interés
-                                </label>
-                                <div className="mt-2">
-                                    <select
-                                        id="country"
-                                        name="country"
-                                        autoComplete="country-name"
-                                        aria-placeholder=''
-                                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                                    >
-                                        <option>1 Dormitorio</option>
-                                        <option>2 Dormitorios</option>
-                                        <option>3 Dormitorios</option>
-                                    </select>
+                            <div className="p-4">
+                                {currentPage === 1 && <FormPg1 />}
+                                {currentPage === 2 && <FormPg2 />}
+                                {currentPage === 3 && <FormPg3 />}
+                                {currentPage === 4 && <FormPg4 />}
+                                <div className="mt-8 flex justify-between">
+                                    {currentPage !== 1 && (
+                                        <button
+                                            onClick={goToPreviousPage}
+                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
+                                        >
+                                            Anterior
+                                        </button>
+                                    )}
+                                    {!isLastPage && (
+                                        <button
+                                            onClick={goToNextPage}
+                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
+                                        >
+                                            Siguiente
+                                        </button>
+                                    )}
+                                    {isLastPage && (
+                                        <button
+                                            onClick={() => alert("¡Formulario guardado/enviado!")}
+                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
+                                        >
+                                            Publicar
+                                        </button>
+                                    )}
                                 </div>
                             </div>
-
-                            <div className="col-span-full">
-                                <label
-                                    htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                                >
-                                    <input
-                                        type="text"
-                                        id="Username"
-                                        class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
-                                        placeholder="Username"
-                                    />
-
-                                    <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                    >
-                                        Mensage
-                                    </span>
-                                </label>
-                                {/* <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Mensage
-                                    </label>
-                                    <div className="mt-2">
-                                        <input type="text" name="street-address"
-                                            id="street-address"
-                                            autoComplete="street-address"
-                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div> */}
-                            </div>
-                        </div>
-                        <div className='flex mt-4'>
-                            <input type="checkbox" className='m-1 p-3 form-checkbox h-8 w-8 text-green-500' />
-                            <span className='text-[12px]'>Acepto los Términos y Condiciones de Uso. y las politicas de privacidad.</span>
-                        </div>
-                        {/* <div className='flex mt-3'>
-                            <input type="checkbox" id="miCheckbox" checked={isChecked} onChange={() => setIsChecked(!isChecked)} className='m-1 p-3 form-checkbox h-6 w-6 text-green-500' />
-                            <span className='text-[12px]'>Autorizo el uso de mi información para fines adicionales.</span>
-                        </div> */}
-                        <div className='mt-4'>
-                            <button className='bg-green-600 w-full p-3 rounded-lg'>
-                                Contactar
-                            </button>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     )

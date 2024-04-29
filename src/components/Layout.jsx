@@ -109,7 +109,7 @@ const Layout = () => {
                     </button>
                 </div>
                 <div className='flex flex-col md:flex-row'>
-                    <a href="/publicar">
+                    <a href="/publicar/publicar">
                         <button className="bg-white hover:bg-green-600 hover:text-white m-2 p-2 items-center flex text-gray-700 rounded-lg border border-green-500 justify-center z-60">
                             <p className="pl-1 text-sm">Publicar</p>
                         </button>

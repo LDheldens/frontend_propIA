@@ -62,6 +62,10 @@ const router = createBrowserRouter(
           element: <MyActivity />,
           path: 'actividad'
         },
+        {
+          element: <SellProp />,
+          path: 'interesados'
+        },
       ]
     },
 

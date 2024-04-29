@@ -10,6 +10,7 @@ import { ImMail } from "react-icons/im";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { MdLogin } from "react-icons/md"
 import { BiSolidChat } from "react-icons/bi"
+import { FaRegUser } from "react-icons/fa"
 import ChatBot from './ChatBot'
 
 
@@ -28,11 +29,11 @@ const links = [
         text: "Anuncios",
         id: 3,
     },
-    // {
-    //     link: "/interesados",
-    //     text: "Interesados",
-    //     id: 3,
-    // },
+    {
+        link: "interesados",
+        text: "Interesados",
+        id: 4,
+    },
     // {
     //     link: "/actividad",
     //     text: "Mi actividad",
@@ -77,7 +78,7 @@ const LayoutSell = () => {
             <div className="flex justify-between items-center px-5 md:px-8">
                 <div className="flex items-center">
                     <Link to={"/"} className="text-white justify-start font-semibold text-xl">
-                        <img src="./src/assets/logo.png" alt="" width="170" height="100" />
+                        <img src="./src/assets/logo2.png" alt="" width="170" height="100" />
                     </Link>
                     <div
                         className={`absolute ${isMenuOpen ? 'flex' : 'hidden'} h-screen z-30 bg-black bg-opacity-75 top-0 bottom-0 left-0 flex lg:flex right-0 justify-center items-center gap-5  font-bold p-3 lg:p-0 lg:static lg:bg-transparent lg:h-auto`}
@@ -107,6 +108,19 @@ const LayoutSell = () => {
                     <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         {isMenuOpen ? <AiOutlineClose className="text-[35px] text-gray-500" /> : <AiOutlineMenu className="text-[35px] text-gray-500" />}
                     </button>
+                </div>
+                <div className='flex flex-col md:flex-row'>
+                    {/* <a href="/publicar/publicar">
+                        <button className="bg-white hover:bg-green-600 hover:text-white m-2 p-2 items-center flex text-gray-700 rounded-lg border border-green-500 justify-center z-60">
+                            <p className="pl-1 text-sm">Publicar</p>
+                        </button>
+                    </a> */}
+                    <a href="/config">
+                        <button className="bg-green-600 hover:bg-gray-500 m-2 p-2 items-center flex text-white rounded-lg justify-center z-60">
+                            <FaRegUser className="text-2xl" />
+                            <p className="pl-1 text-sm">Usuario</p>
+                        </button>
+                    </a>
                 </div>
             </div>
 
@@ -183,7 +197,7 @@ const LayoutSell = () => {
                 </button>
 
                 <div className={`bg-gray-200 right-3  transition-transform duration-300 absolute top-[-330px] p-0 text-gray-600 rounded-lg shadow-lg ${chatBot ? 'translate-x-0' : 'translate-x-[500px]'}`}>
-                    {/* <ChatBot /> */}
+                    <ChatBot />
                 </div>
             </div>
         </div>
