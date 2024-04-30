@@ -12,6 +12,12 @@ export default {
                 '160': '40rem',
                 '120': '30rem',
             },
+            fontFamily: {
+                josefin: ['Josefin Sans'],
+                cambay: ['Cambay'],
+                merriweather: ['Merriweather'],
+                montserrat: ['Montserrat'],
+            }
         },
     },
     plugins: [],

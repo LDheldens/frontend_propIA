@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function FormPg3() {
+function FormPg3({ currentPage }) {
     const [images, setImages] = useState(new Array(6).fill(null));
 
     const handleSelect = (e, index) => {
@@ -26,7 +26,7 @@ function FormPg3() {
         setImages(updatedImages);
     };
     return (
-        <div>
+        <div className={`${currentPage != 3 ? "hidden" : ""}`}>
             <div className='w-200'>
                 <div>
                     <label htmlFor="cover-photo" className="block text-xl font-medium leading-6 text-gray-900">

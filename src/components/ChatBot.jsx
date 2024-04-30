@@ -1,4 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react'
+import { FaTiktok } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa"
+import { FiSend } from "react-icons/fi"
 
 const ChatBot = () => {
     const [messages, setMessages] = useState([]);
@@ -22,11 +27,11 @@ const ChatBot = () => {
 
     return (
         <div className="flex flex-col h-80 w-120">
-            <div className='bg-gray-400 flex rounded-t-lg'>
-                <div className='rounded-full p-2 bg-white'>
-                    <img src="./src/assets/logo.png" alt="" width="50" height="10" />
+            <div className='bg-gray-400 flex rounded-t-lg p-2'>
+                <div className='rounded-full px-4 py-[10px] bg-white'>
+                    <img src="/src/assets/logo4.png" alt="" className='w-8' />
                 </div>
-                <h3 className='p-4'>ChatWeb</h3>
+                <h3 className='p-4 text-white'>ChatWeb</h3>
             </div>
             <div className="flex-1 p-4 overflow-y-auto h-80 bg-white">
                 {messages.map((message, index) => (
@@ -40,18 +45,34 @@ const ChatBot = () => {
                 ))}
                 <div ref={messagesEndRef} />
             </div>
-            <form onSubmit={handleSubmit} className="flex p-4">
+            <form onSubmit={handleSubmit} className="flex p-1">
                 <input
                     type="text"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     className="flex-1 border border-gray-300 rounded-l-lg p-2 mr-2"
-                    placeholder="Escribe tu mensaje..."
+                    placeholder="Escriba su mensaje..."
                 />
-                <button type="submit" className="bg-green-500 text-white rounded-r-lg p-2">
-                    Enviar
+                <button type="submit" className="bg-green-500 text-white pl-3 pr-3 rounded-r-lg p-1">
+                    <FiSend />
                 </button>
             </form>
+            <div className='text-center inset-x-0 flex justify-center p-1'>
+                <ul className='justify-center flex text-green-600 text-xl  p-1 pl-5 pr-5 rounded-lg'>
+                    <li>
+                        <FaFacebookF className="ml-1 " />
+                    </li>
+                    <li>
+                        <FaYoutube className="ml-8" />
+                    </li>
+                    <li>
+                        <FaTiktok className="ml-8" />
+                    </li>
+                    <li>
+                        <FaInstagram className="ml-8" />
+                    </li>
+                </ul>
+            </div>
         </div>
     );
 };

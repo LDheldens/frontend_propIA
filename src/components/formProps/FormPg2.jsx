@@ -1,9 +1,9 @@
 import React from 'react'
 import Map from '../Map'
 
-function FormPg2() {
+function FormPg2({ currentPage }) {
     return (
-        <div>
+        <div className={`${currentPage != 2 ? "hidden" : ""}`}>
             <div className='w-160'>
                 <h2 className="text-base font-semibold leading-7 text-gray-900">¿Dónde está ubicado tu inmueble?</h2>
 

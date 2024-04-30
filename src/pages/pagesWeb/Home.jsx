@@ -156,7 +156,7 @@ const Home = () => {
                 </video> */}
 
                 <div className="relative z-10 items-center justify-center p-2 md:p-8">
-                    <h3 className="text-2xl font-bold  text-white  text-center p-8 pb-3">La llave al espacio que buscas</h3>
+                    <h3 className="text-2xl font-bold  text-white  text-center p-8 pb-3 font-josefin">La llave al espacio que buscas</h3>
                     <div className="m-14">
                         <div className=" inset-0 flex items-center  text-white ">
                             <form action="" className="flex">
@@ -249,7 +249,7 @@ const Home = () => {
                             <div className="flex items-center gap-x-6 border border-gray-500 bg-white shadow-md rounded-md">
                                 <TbDeviceIpadSearch className='bg-gray-300 h-16 w-20 rounded-full m-3 p-2' />
                                 <div className=''>
-                                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900"> Sección exclusiva de proyectos</h3>
+                                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900 "> Sección exclusiva de proyectos</h3>
                                     <p className="text-sm font-semibold leading-6 text-gray-700">Una búsqueda ágil y sencilla por los proyectos disponibles en nuesto portal.</p>
                                     <div className="">
 
@@ -285,7 +285,7 @@ const Home = () => {
                 </div>
                 <br className='m-4' />
                 <div className='p-8 slider-container '>
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4">Inmuebles similares a los que viste</h2>
+                    <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4 font-josefin">Inmuebles similares a los que viste</h2>
                     <Slider {...settings}>
                         <div>
                             <h1> <ItemSellOk /></h1>
@@ -308,7 +308,7 @@ const Home = () => {
                 <div className='m-4'>
                     <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3 m-3">
                         <div className="max-w-2xl pt-8">
-                            <h4 className="text-sm font-bold tracking-tight text-gray-900 sm:text-2xl text-center">Listados de inmuebles que te pueden interesar.</h4>
+                            <h4 className="text-sm font-bold tracking-tight text-gray-900 sm:text-2xl text-center font-josefin">Listados de inmuebles que te pueden interesar.</h4>
                         </div>
                         <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-3 sm:gap-y-16 xl:col-span-3 border-gray-300">
                             <li >
@@ -345,7 +345,7 @@ const Home = () => {
             <div>
                 <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3 m-3">
                     <div className="max-w-2xl">
-                        <h4 className="text-sm font-bold tracking-tight text-gray-900 sm:text-2xl text-center">Te acompañamos en cada paso.</h4>
+                        <h4 className="text-sm font-bold tracking-tight text-gray-900 sm:text-2xl text-center font-josefin">Te acompañamos en cada paso.</h4>
                     </div>
                     <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-4 sm:gap-y-16 xl:col-span-4 border-gray-300">
                         <li >
@@ -400,7 +400,7 @@ const Home = () => {
             <div>
                 <div className="">
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4">MÁS PROPIEDADES</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4 font-josefin">MÁS PROPIEDADES</h2>
                         <div className='justify-end border-gray-500'>
                             <div className=" inset-0 flex items-center justify-end text-white ">
                                 <form action="" className="flex">

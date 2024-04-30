@@ -6,7 +6,7 @@ import { FaTiktok } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { ImMail } from "react-icons/im";
+import { IoIosMail } from "react-icons/io"
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { MdLogin } from "react-icons/md"
 import { BiSolidChat } from "react-icons/bi"
@@ -77,7 +77,7 @@ const Layout = () => {
             <div className="flex justify-between items-center px-5 md:px-8">
                 <div className="flex items-center">
                     <Link to={"/"} className="text-white justify-start font-semibold text-xl">
-                        <img src="./src/assets/logo.png" alt="" width="170" height="100" />
+                        <img src="/src/assets/logo.png" alt="" width="170" height="100" />
                     </Link>
                     <div
                         className={`absolute ${isMenuOpen ? 'flex' : 'hidden'} h-screen z-30 bg-black bg-opacity-75 top-0 bottom-0 left-0 flex lg:flex right-0 justify-center items-center gap-5  font-bold p-3 lg:p-0 lg:static lg:bg-transparent lg:h-auto`}
@@ -96,7 +96,7 @@ const Layout = () => {
                                 <Link
                                     to={link.link}
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="text-white text-xl lg:text-gray-500 font-bold lg:text-[16px] transition-opacity duration-300 hover:text-green-400 hover:opacity-75"
+                                    className="text-white text-xl lg:text-gray-500 font-bold lg:text-[16px] transition-opacity duration-300 hover:text-green-400 hover:opacity-75 font-josefin"
                                     key={link.id}
                                 >
                                     {link.text}
@@ -109,7 +109,7 @@ const Layout = () => {
                     </button>
                 </div>
                 <div className='flex flex-col md:flex-row'>
-                    <a href="/publicar/publicar">
+                    <a href="/publicar/formulario">
                         <button className="bg-white hover:bg-green-600 hover:text-white m-2 p-2 items-center flex text-gray-700 rounded-lg border border-green-500 justify-center z-60">
                             <p className="pl-1 text-sm">Publicar</p>
                         </button>
@@ -127,7 +127,7 @@ const Layout = () => {
                 <Outlet />
             </main>
 
-            <footer class="bg-green-700 ">
+            <footer class="">
                 <div className='text-center inset-x-0 flex justify-center bg-white p-4'>
                     <ul className='justify-center flex text-green-600 text-3xl bg-white p-4 shadow-md shadow-green-400  pl-10 pr-10 rounded-lg'>
                         <li>
@@ -145,21 +145,26 @@ const Layout = () => {
                     </ul>
                 </div>
                 <div className=' bg-white'>
-                    <div className='flex bg-white'>
-                        <div className='bg-white p-14 text-gray-400 text-sm flex-1'>
+                    <div className='bg-white mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-3 xl:gap-x-8 p-14'>
+                        <div className='flex bg-white'>
+                            <div className='flex-1 font-merriweather '>
+                                <p className='text-gray-700 font-merriweather font-bold mb-2'>CasaPaz Inmobiliaria</p>
+                                <span className='text-gray-400'>La Inmobiliaria es un nuevo e innovador Portal Inmobiliario donde podrá encontrar el inmueble que necesita.</span>
+                            </div>
+                        </div>
+                        <div className='bg-white text-gray-400 text-sm flex-1 font-merriweather'>
+                            <p className='text-gray-700 font-merriweather font-bold text-base'>Accesos directos</p>
                             <nav>
-                                <p className='p-2 hover:text-green-600'>ADQUIERE UNA FRANQUICIA</p>
-                                <p className='p-2 hover:text-green-600 '>NOSOTROS</p>
-                                <p className='p-2 hover:text-green-600'>NOTICIAS</p>
-                                <p className='p-2 hover:text-green-600'>OFICINAS</p>
-                                <p className='p-2 hover:text-green-600'>CONTACTANOS</p>
-                                <p className='p-2 hover:text-green-600'>SÉ UN ASESOR</p>
-                                <p className='p-2 hover:text-green-600'>BUSCA UN ASESOR</p>
-                                <p className='p-2 hover:text-green-600'>POLITICA DE PRIVACIDAD</p>
+                                <p className='p-2 hover:text-green-600'>Inicio</p>
+                                <p className='p-2 hover:text-green-600'>Buscar propiedades</p>
+                                <p className='p-2 hover:text-green-600'>Asesores</p>
+                                <p className='p-2 hover:text-green-600'>Contactos</p>
+                                <p className='p-2 hover:text-green-600'>Nosotros</p>
+                                <p className='p-2 hover:text-green-600'>Politica de privacidad</p>
                             </nav>
                         </div>
-                        <div className='p-14 flex-1'>
-                            <p className='text-gray-700'>INFORMES</p>
+                        <div className='flex-1 bg-white'>
+                            <p className='text-gray-700 font-merriweather font-bold'>Contáctanos</p>
                             <ul>
                                 <li className='flex items-center mb-2'>
                                     <div className='m-3'>
@@ -172,7 +177,7 @@ const Layout = () => {
                                 </li>
                                 <li className='flex items-center'>
                                     <div className='bg-white m-3'>
-                                        <ImMail className='text-white bg-green-500 text-2xl' />
+                                        <IoIosMail className='text-green-500 text-2xl' />
                                     </div>
                                     <div className='flex flex-col text-xs'>
                                         <h5 className='text-gray-500 whitespace-normal'>EMAILS</h5>
@@ -184,7 +189,7 @@ const Layout = () => {
                         </div>
                     </div>
                 </div>
-                <div className="container text-xs mx-auto flex justify-center text-white bg-green-700 p-5">
+                <div className="text-xs mx-auto flex justify-center text-white bg-green-700 p-5">
                     <nav>
                         <span>© Copyright 2024 Polariss Technology - Términos y Condiciones de Uso Términos y Condiciones de Contratación Política de privacidad.</span>
                     </nav>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-function FormPg4() {
+function FormPg4({ currentPage }) {
     const [number, setNumber] = useState(0);
 
     const incrementNumber = () => {
@@ -10,7 +10,7 @@ function FormPg4() {
         setNumber(prevNumber => prevNumber - 1);
     };
     return (
-        <div>
+        <div className={`${currentPage != 4 ? "hidden" : ""}`}>
             <div className='w-160'>
                 <h2 className="text-base font-semibold leading-7 text-gray-900">Características principales</h2>
 

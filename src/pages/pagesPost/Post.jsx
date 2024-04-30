@@ -29,10 +29,20 @@ function Post() {
                                 Página {currentPage} de 4
                             </div>
                             <div className="p-4">
-                                {currentPage === 1 && <FormPg1 />}
-                                {currentPage === 2 && <FormPg2 />}
-                                {currentPage === 3 && <FormPg3 />}
-                                {currentPage === 4 && <FormPg4 />}
+                                <form action="">
+
+                                    {/* {currentPage === 1 && <FormPg1 />}
+                                    {currentPage === 2 && <FormPg2 />}
+                                    {currentPage === 3 && <FormPg3 />}
+                                    {currentPage === 4 && <FormPg4 />} */}
+                                    <FormPg1 currentPage={currentPage} />
+                                    <FormPg2 currentPage={currentPage} />
+                                    <FormPg3 currentPage={currentPage} />
+                                    <FormPg4 currentPage={currentPage} />
+                                    <button type="submit" >
+                                        registrar
+                                    </button>
+                                </form>
                                 <div className="mt-8 flex justify-between">
                                     {currentPage !== 1 && (
                                         <button

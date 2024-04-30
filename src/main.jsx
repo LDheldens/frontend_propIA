@@ -56,7 +56,7 @@ const router = createBrowserRouter(
         {
           index: true,
           element: <Post />,
-          path: 'publicar'
+          path: 'formulario'
         },
         {
           element: <MyActivity />,

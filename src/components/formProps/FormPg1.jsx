@@ -1,8 +1,8 @@
 import React from 'react'
 
-function FormPg1() {
+function FormPg1({ currentPage }) {
     return (
-        <div>
+        <div className={`${currentPage != 1 ? "hidden" : ""}`}>
             <div>
                 <div className="flex w-160">
                     <div className=" border border-green-400 p-4 rounded-lg mr-6 ">
