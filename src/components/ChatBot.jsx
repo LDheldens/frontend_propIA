@@ -26,14 +26,14 @@ const ChatBot = () => {
     }, [messages]);
 
     return (
-        <div className="flex flex-col h-80 w-120">
+        <div className="flex flex-col h-100 w-120">
             <div className='bg-gray-400 flex rounded-t-lg p-2'>
                 <div className='rounded-full px-4 py-[10px] bg-white'>
                     <img src="/src/assets/logo4.png" alt="" className='w-8' />
                 </div>
                 <h3 className='p-4 text-white'>ChatWeb</h3>
             </div>
-            <div className="flex-1 p-4 overflow-y-auto h-80 bg-white">
+            <div className="flex-1 p-4 overflow-y-auto h-120 bg-white">
                 {messages.map((message, index) => (
                     <div
                         key={index}
@@ -45,7 +45,7 @@ const ChatBot = () => {
                 ))}
                 <div ref={messagesEndRef} />
             </div>
-            <form onSubmit={handleSubmit} className="flex p-1">
+            <form onSubmit={handleSubmit} className="flex p-1 mx-2">
                 <input
                     type="text"
                     value={inputValue}
@@ -58,18 +58,18 @@ const ChatBot = () => {
                 </button>
             </form>
             <div className='text-center inset-x-0 flex justify-center p-1'>
-                <ul className='justify-center flex text-green-600 text-xl  p-1 pl-5 pr-5 rounded-lg'>
+                <ul className='justify-center flex text-xl  p-1 pl-5 pr-5 rounded-lg'>
                     <li>
-                        <FaFacebookF className="ml-1 " />
+                        <FaFacebookF className="ml-1 text-blue-500" />
                     </li>
                     <li>
-                        <FaYoutube className="ml-8" />
+                        <FaYoutube className="ml-8 text-red-500" />
                     </li>
                     <li>
                         <FaTiktok className="ml-8" />
                     </li>
                     <li>
-                        <FaInstagram className="ml-8" />
+                        <FaInstagram className="ml-8 text-pink-500" />
                     </li>
                 </ul>
             </div>

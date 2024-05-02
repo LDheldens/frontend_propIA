@@ -11,6 +11,7 @@ export default {
                 '200': '50rem',
                 '160': '40rem',
                 '120': '30rem',
+                '100': '25rem',
             },
             fontFamily: {
                 josefin: ['Josefin Sans'],

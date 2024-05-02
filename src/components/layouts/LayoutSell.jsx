@@ -11,7 +11,7 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 import { MdLogin } from "react-icons/md"
 import { BiSolidChat } from "react-icons/bi"
 import { FaRegUser } from "react-icons/fa"
-import ChatBot from './ChatBot'
+import ChatBot from '../ChatBot'
 
 
 const links = [

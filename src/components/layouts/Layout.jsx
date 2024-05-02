@@ -10,7 +10,7 @@ import { IoIosMail } from "react-icons/io"
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { MdLogin } from "react-icons/md"
 import { BiSolidChat } from "react-icons/bi"
-import ChatBot from './ChatBot'
+import ChatBot from '../ChatBot'
 
 
 const links = [
@@ -96,7 +96,7 @@ const Layout = () => {
                                 <Link
                                     to={link.link}
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="text-white text-xl lg:text-gray-500 font-bold lg:text-[16px] transition-opacity duration-300 hover:text-green-400 hover:opacity-75 font-josefin"
+                                    className="text-white text-xl lg:text-gray-500 font-bold lg:text-[16px] transition-opacity duration-300 hover:text-green-400 hover:opacity-75 font-montserrat"
                                     key={link.id}
                                 >
                                     {link.text}
@@ -111,13 +111,13 @@ const Layout = () => {
                 <div className='flex flex-col md:flex-row'>
                     <a href="/publicar/formulario">
                         <button className="bg-white hover:bg-green-600 hover:text-white m-2 p-2 items-center flex text-gray-700 rounded-lg border border-green-500 justify-center z-60">
-                            <p className="pl-1 text-sm">Publicar</p>
+                            <p className="pl-1 text-sm  font-bold">Publicar</p>
                         </button>
                     </a>
                     <a href="/login">
                         <button className="bg-green-600 hover:bg-gray-500 m-2 p-2 items-center flex text-white rounded-lg justify-center z-60">
                             <MdLogin className="text-2xl" />
-                            <p className="pl-1 text-sm">Iniciar sesión</p>
+                            <p className="pl-1 text-sm font-bold">Iniciar sesión</p>
                         </button>
                     </a>
                 </div>
@@ -147,13 +147,13 @@ const Layout = () => {
                 <div className=' bg-white'>
                     <div className='bg-white mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-3 xl:gap-x-8 p-14'>
                         <div className='flex bg-white'>
-                            <div className='flex-1 font-merriweather '>
-                                <p className='text-gray-700 font-merriweather font-bold mb-2'>CasaPaz Inmobiliaria</p>
+                            <div className='flex-1 font-josefin '>
+                                <p className='text-gray-700 font-montserrat font-bold mb-2'>CasaPaz Inmobiliaria</p>
                                 <span className='text-gray-400'>La Inmobiliaria es un nuevo e innovador Portal Inmobiliario donde podrá encontrar el inmueble que necesita.</span>
                             </div>
                         </div>
-                        <div className='bg-white text-gray-400 text-sm flex-1 font-merriweather'>
-                            <p className='text-gray-700 font-merriweather font-bold text-base'>Accesos directos</p>
+                        <div className='bg-white text-gray-400 text-sm flex-1 font-cambay'>
+                            <p className='text-gray-700 font-montserrat font-bold text-base'>Accesos directos</p>
                             <nav>
                                 <p className='p-2 hover:text-green-600'>Inicio</p>
                                 <p className='p-2 hover:text-green-600'>Buscar propiedades</p>
@@ -164,13 +164,13 @@ const Layout = () => {
                             </nav>
                         </div>
                         <div className='flex-1 bg-white'>
-                            <p className='text-gray-700 font-merriweather font-bold'>Contáctanos</p>
+                            <p className='text-gray-700 font-montserrat font-bold'>Contáctanos</p>
                             <ul>
                                 <li className='flex items-center mb-2'>
                                     <div className='m-3'>
                                         <BiSolidPhoneCall className='text-green-500 text-2xl' />
                                     </div>
-                                    <div className='text-gray-500 text-sm'>
+                                    <div className='text-gray-500 text-sm font-cambay'>
                                         <h5>TELEFONO</h5>
                                         (511) 4444 555
                                     </div>
@@ -179,7 +179,7 @@ const Layout = () => {
                                     <div className='bg-white m-3'>
                                         <IoIosMail className='text-green-500 text-2xl' />
                                     </div>
-                                    <div className='flex flex-col text-xs'>
+                                    <div className='flex flex-col text-xs font-cambay'>
                                         <h5 className='text-gray-500 whitespace-normal'>EMAILS</h5>
                                         <a className='text-blue-500' href="info@remax.net.pe">info@remax.net.pe</a>
                                         <a className='text-blue-500' href="">ventas@remax.net.pe</a>
@@ -200,7 +200,7 @@ const Layout = () => {
                     <BiSolidChat />
                 </button>
 
-                <div className={`bg-gray-200 right-3  transition-transform duration-300 absolute top-[-330px] p-0 text-gray-600 rounded-lg shadow-lg ${chatBot ? 'translate-x-0' : 'translate-x-[500px]'}`}>
+                <div className={`bg-gray-200 right-3  transition-transform duration-300 absolute top-[-410px] p-0 text-gray-600 rounded-lg shadow-lg ${chatBot ? 'translate-x-0' : 'translate-x-[500px]'}`}>
                     <ChatBot />
                 </div>
             </div>

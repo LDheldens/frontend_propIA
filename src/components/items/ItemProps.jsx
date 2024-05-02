@@ -106,7 +106,6 @@ function ItemProps() {
         <div>
             <div>
                 <div className='m-4'>
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4">Resultados : 18,522 Inmuebles en la Zona.</h2>
                     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-1 xl:gap-x-8">
                     </div>
 
@@ -125,7 +124,7 @@ function ItemProps() {
                                             </div>
                                         </div>
                                         <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg rounded-b-lg">
-                                            <div class="group relative flex flex-col overflow-hidden rounded-t-lg px-4 pb-4 pt-4 mb-4">
+                                            <div class="group relative flex flex-col overflow-hidden rounded-t-lg px-4 pb-4 pt-4 mb-4 font-josefin">
                                                 <div className='flex'>
                                                     <span className=''>{props.price}</span>
                                                 </div>
@@ -138,7 +137,7 @@ function ItemProps() {
                                                 <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
                                             </div>
                                             <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 ">
-                                                <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4">
+                                                <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4 font-josefin">
                                                     <div className='flex m-2'>
                                                         <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white' >
                                                             <BiArea />
@@ -160,7 +159,7 @@ function ItemProps() {
                                                     </div>
                                                     {/* <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
                                                 </div>
-                                                <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4">
+                                                <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4 font-josefin">
                                                     {/* <img src="./src/assets/dep4.webp" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" /> */}
                                                     <div className='flex m-2'>
                                                         <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
@@ -183,7 +182,7 @@ function ItemProps() {
                                                     {/* <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
                                                 </div>
                                             </div>
-                                            <h3 class="bg-green-500 z-10 rounded-full text-2xl font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg">{props.type}</h3>
+                                            <h3 class="bg-green-500 z-10 rounded-full text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-montserrat">{props.type}</h3>
                                             <FaWhatsapp class="bg-green-500 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" />
                                         </div>
                                     </div>
