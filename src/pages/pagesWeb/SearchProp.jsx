@@ -60,7 +60,7 @@ function SearchProp() {
                 </div>
             </div>
             <div>
-                <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4">Resultados : 18,522 Inmuebles en la Zona.</h2>
+                <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Resultados : 18,522 Inmuebles en la Zona.</h2>
                 <ItemProps />
             </div>
         </div>

@@ -27,12 +27,12 @@ function FormPg3({ currentPage }) {
     };
     return (
         <div className={`${currentPage != 3 ? "hidden" : ""}`}>
-            <div className='w-200'>
+            <div className='w-200 '>
                 <div>
                     <label htmlFor="cover-photo" className="block text-xl font-medium leading-6 text-gray-900">
                         Subir fotos
                     </label>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center font-urbanist">
                         <div className="grid grid-cols-3 gap-4">
                             {images.map((imageUrl, index) => (
                                 <div key={index} className="relative">
@@ -71,7 +71,7 @@ function FormPg3({ currentPage }) {
                     <label htmlFor="cover-photo" className="block text-xl font-medium leading-6 text-gray-900">
                         Subir fotos
                     </label>
-                    <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                    <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10 font-urbanist">
                         <div className="text-center">
                             {/* <PhotoIcon className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" /> */}
                             <div className="mt-4 flex text-sm leading-6 text-gray-600">

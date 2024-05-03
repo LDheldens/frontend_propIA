@@ -15,8 +15,8 @@ function Cards1() {
                                     <TbDeviceIpadSearch className='text-3xl w-15' />
                                 </div>
                                 <div className=''>
-                                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900 font-montserrat my-2"> Sección exclusiva de proyectos</h3>
-                                    <p className="text-sm font-semibold leading-6 text-gray-700 font-montserrat my-2">Una búsqueda ágil y sencilla por los proyectos disponibles en nuesto portal.</p>
+                                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900 font-bebas my-2"> Sección exclusiva de proyectos</h3>
+                                    <p className="text-sm font-medium font-urbanist leading-6 text-gray-700 my-2">Una búsqueda ágil y sencilla por los proyectos disponibles con inteligencia articial.</p>
                                     <div className="">
 
                                     </div>
@@ -29,8 +29,8 @@ function Cards1() {
                                     <SlRocket className='text-3xl w-15' />
                                 </div>
                                 <div className=''>
-                                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900 font-montserrat my-2"> Publica hoy</h3>
-                                    <p className="text-sm font-semibold leading-6 text-gray-700 font-montserrat my-2">Accede a la información de los planes que pensamos para ti.</p>
+                                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900 font-bebas my-2"> Publica hoy</h3>
+                                    <p className="text-sm ffont-medium font-urbanist leading-6 text-gray-700 my-2">Accede a la información de los planes que pensamos para ti.</p>
                                     <div className="">
 
                                     </div>
@@ -43,8 +43,8 @@ function Cards1() {
                                     <FaHouseUser className='text-4xl w-15' />
                                 </div>
                                 <div className=''>
-                                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900 font-montserrat my-2">Conoce CasaPaz</h3>
-                                    <p className="text-sm font-semibold leading-6 text-gray-700 font-montserrat my-2">Accede a la información de los planes que pensamos para ti.</p>
+                                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900 font-bebas my-2">Conoce CasaPaz</h3>
+                                    <p className="text-sm font-medium font-urbanist leading-6 text-gray-700 my-2">Accede a la información de los planes que pensamos para ti.</p>
                                     <div className="">
 
                                     </div>

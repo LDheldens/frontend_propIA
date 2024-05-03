@@ -181,7 +181,7 @@ function Item() {
                 <div className='flex mt-4'>
                     <div className='m-4 w-full '>
                         <div>
-                            <h5 className='font-bold text-xl font-montserrat'>Detalles</h5>
+                            <h5 className='font-bold text-xl font-bebas'>Detalles</h5>
                         </div>
                         <div>
                             <div>
@@ -263,7 +263,7 @@ function Item() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <h3 class="bg-green-500 z-10 rounded-full text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-montserrat">{props.type}</h3>
+                                            <h3 class="bg-green-500 z-10 rounded-full text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-bebas">{props.type}</h3>
                                             {/* <FaWhatsapp class="bg-green-500 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" /> */}
                                         </div>
                                     ))}

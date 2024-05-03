@@ -149,11 +149,11 @@ const Home = () => {
                 </video> */}
 
                 <div className="relative z-10 items-center justify-center p-2 md:p-8">
-                    <h3 className="text-2xl font-bold  text-white  text-center p-8 pb-3 font-montserrat">La llave al espacio que buscas</h3>
+                    <h3 className="text-[40px] font-bold  text-white  text-center p-8 pb-3 font-bebas">La llave al espacio que buscas</h3>
                     <div className="m-14">
                         <div className=" inset-0 flex items-center  text-white ">
                             <form action="" className="flex">
-                                <div className="font-normal flex flex-col md:flex-row items-center justify-center rounded-t-lg p-2 bg-white">
+                                <div className="font-normal flex flex-col md:flex-row items-center justify-center rounded-t-lg p-2 bg-white font-bebas">
                                     <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 rounded w-full md:w-auto">
                                         Alquilar
                                     </button>
@@ -172,7 +172,7 @@ const Home = () => {
                                     id="country"
                                     name="country"
                                     autoComplete="country-name"
-                                    className="inline-flex w-full justify-center rounded border border-gray-300 shadow-sm px-4 py-2 bg-white text-[16px] font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100"
+                                    className="inline-flex w-full justify-center rounded border border-gray-300 shadow-sm px-4 py-2 bg-white text-[16px] font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100 font-urbanist"
                                 >
                                     <option>Departamento</option>
                                     <option>Casa</option>
@@ -186,17 +186,17 @@ const Home = () => {
                                     <option>Todos</option>
                                 </select>
                             </div>
-                            <div className='container mx-auto p-4'>
+                            <div className='container mx-auto p-4 font-urbanist'>
                                 <input aria-haspopup="true"
                                     aria-expanded="true"
                                     type="text" placeholder="Ingresa ubicaciones o características" className="inline-flex justify-center w-full border border-gray-200 shadow-sm px-2 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100 rounded" />
                             </div>
-                            <div className="flex justify-center items-center p-4 space-x-4">
+                            <div className="flex justify-center items-center p-4 space-x-4 font-urbanist">
                                 <button
                                     type="button"
                                     className="px-5 py-3 bg-green-600 text-white hover:bg-gray-500 focus:outline-none rounded-lg items-center flex text-mx font-bold"
                                 >
-                                    <FaSearch className='flex mr-1 selection: ' /> Buscar
+                                    <FaSearch className='flex mr-1  selection: ' /> Buscar
                                 </button>
                             </div>
                         </div>
@@ -216,7 +216,7 @@ const Home = () => {
                 <Cards1 />
                 <br className='m-4' />
                 <div className='p-8 slider-container '>
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4 font-montserrat">Inmuebles similares a los que viste</h2>
+                    <h2 className="text-[45px] font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Inmuebles similares a los que viste</h2>
                     <Slider {...settings}>
                         <div>
                             <h1> <ItemSellOk /></h1>
@@ -237,35 +237,39 @@ const Home = () => {
                 </div>
 
                 <div className='m-4'>
+                    <div className="max-w-2xl pt-8">
+                        <h4 className="text-[45px] font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Integrado con inteligencia artificial</h4>
+                    </div>
                     <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3 m-3">
-                        <div className="max-w-2xl pt-8">
-                            <h4 className="text-sm font-bold tracking-tight text-gray-900 sm:text-2xl text-center font-montserrat">Listados de inmuebles que te pueden interesar.</h4>
-                        </div>
                         <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-3 sm:gap-y-16 xl:col-span-3 border-gray-300">
                             <li >
                                 <div className="flex items-center gap-x-6 border border-gray-500 bg-white shadow-md rounded-lg">
                                     <div className='m-5'>
-                                        <p className="text-xl font-semibold leading-6 text-gray-700 font-montserrat">Departamentos en alquiler más vistos.</p>
+                                        <p className="text-sm font-semibold leading-6 text-gray-700 font-bebas">Navega por nuestra página web inteligente, donde la IA anticipa tus necesidades.</p>
                                     </div>
-                                    <a href="/ia/inicioia">
-                                        <FaArrowRight className='bg-green-200 h-10 w-12 rounded-full m-3' />
+                                    <a href="/ia/inicioia" className='rounded-full ml-2 px-3 py-[13px] bg-gray-300'>
+                                        <FaArrowRight className='h-10 w-12 rounded-full m-3' />
                                     </a>
                                 </div>
                             </li>
                             <li >
                                 <div className="flex items-center gap-x-6 border border-gray-500 bg-white shadow-md rounded-lg">
                                     <div className='m-5'>
-                                        <p className="text-xl font-semibold leading-6 text-gray-700 font-montserrat">Los inmuebles recién publicados.</p>
+                                        <p className="text-sm font-semibold leading-6 text-gray-700 font-bebas">Experimenta la diferencia con nuestra página web, potenciada por inteligencia artificial.</p>
                                     </div>
-                                    <FaArrowRight className='bg-green-200 h-10 w-10 rounded-full m-3' />
+                                    <a href="/ia/inicioia" className='rounded-full ml-2 px-3 py-[13px] bg-gray-300'>
+                                        <FaArrowRight className=' h-10 w-10 rounded-full m-3' />
+                                    </a>
                                 </div>
                             </li>
                             <li >
                                 <div className="flex items-center gap-x-6 border border-gray-500 bg-white shadow-md rounded-lg">
                                     <div className='m-5'>
-                                        <p className="text-xl font-semibold leading-6 text-gray-700 font-montserrat">Inmuebles que bajaron de precio.</p>
+                                        <p className="text-sm font-semibold leading-6 text-gray-700 font-bebas">Explora un nuevo nivel de interactividad con nuestra página web impulsada por IA.</p>
                                     </div>
-                                    <FaArrowRight className='bg-green-200 h-10 w-10 rounded-full m-3' />
+                                    <a href="/ia/inicioia" className='rounded-full ml-2 px-3 py-[13px] bg-gray-300'>
+                                        <FaArrowRight className='h-10 w-10 rounded-full m-3' />
+                                    </a>
                                 </div>
                             </li>
                         </ul>
@@ -273,10 +277,13 @@ const Home = () => {
                 </div>
             </div>
             <br className='' />
-            <ItemSell />
             <div>
-                <div className="max-w-2xl my-5">
-                    <h4 className="text-sm font-bold tracking-tight text-gray-900 sm:text-2xl text-center font-montserrat">Te acompañamos en cada paso.</h4>
+                <h2 className="text-[45px] font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Más inmuebles similares a los que viste</h2>
+                <ItemSell />
+            </div>
+            <div>
+                <div className="my-5">
+                    <h4 className="text-[45px] font-bold tracking-tight text-gray-900 text-center font-bebas">Te acompañamos en cada paso.</h4>
                 </div>
                 <br />
                 <Cards2 className='my-' />
@@ -284,7 +291,7 @@ const Home = () => {
             <div>
                 <div className="">
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4 font-montserrat">Más propiedades</h2>
+                        <h2 className="text-[45px] font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Más propiedades</h2>
                         <div className='justify-end border-gray-500'>
                             <div className=" inset-0 flex items-center justify-end text-white ">
                                 <form action="" className="flex">
@@ -304,8 +311,8 @@ const Home = () => {
                         </div>
                         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                             <div className="max-w-2xl ">
-                                <h4 className="text-sm font-bold tracking-tight text-gray-900 sm:text-2xl text-center font-montserrat">¿Conoces nuestras opciones de desarrollos?</h4>
-                                <p className='font-josefin'>Puedes verlos según la etapa de construcción que más se ajusta a tu búsqueda.</p>
+                                <h4 className="text-sm font-bold tracking-tight text-gray-900 sm:text-2xl text-center font-bebas">¿Conoces nuestras opciones de desarrollos?</h4>
+                                <p className='font-urbanist'>Puedes verlos según la etapa de construcción que más se ajusta a tu búsqueda.</p>
                             </div>
                             {products.map((product) => (
                                 <div key={product.id} className="group relative">
@@ -345,7 +352,7 @@ const Home = () => {
                 </div>
             </div>
             <div className='flex justify-center items-center p-4'>
-                <h5 className='mr-1 text-xl text-gray-600 font-montserrat'>Busca entre más de 17,976 Propiedades</h5>
+                <h5 className='mr-1 text-xl text-gray-600 font-bebas'>Busca entre más de 17,976 Propiedades</h5>
                 <button className='bg-green-600 p-3 text-white text-sm rounded-lg'>
                     <a href="/buscar">VER MÁS</a>
                 </button>

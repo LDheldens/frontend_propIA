@@ -5,7 +5,7 @@ function FormPg1({ currentPage }) {
         <div className={`${currentPage != 1 ? "hidden" : ""}`}>
             <div>
                 <div className="flex w-160">
-                    <div className=" border border-green-400 p-4 rounded-lg mr-6 ">
+                    <div className=" border border-green-400 p-4 rounded-lg mr-6 font-urbanist">
                         <h2 className="text-base font-semibold leading-7 text-gray-900">Cuéntanos, ¿qué deseas publicar?</h2>
 
                         <div>

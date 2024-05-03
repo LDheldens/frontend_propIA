@@ -18,7 +18,7 @@ function Post() {
     const isLastPage = currentPage === 4;
     return (
         <div>
-            <div className='p-4 flex justify-center items-center'>
+            <div className='p-4 flex justify-center items-center font-bebas'>
                 <div>
                     <div className="flex justify-center items-center">
                         <h2 className="text-base font-semibold leading-7 text-gray-900">Formulario de publicación</h2>
@@ -39,11 +39,9 @@ function Post() {
                                     <FormPg2 currentPage={currentPage} />
                                     <FormPg3 currentPage={currentPage} />
                                     <FormPg4 currentPage={currentPage} />
-                                    <button type="submit" >
-                                        registrar
-                                    </button>
+
                                 </form>
-                                <div className="mt-8 flex justify-between">
+                                <div className="mt-8 flex justify-between font-bebas">
                                     {currentPage !== 1 && (
                                         <button
                                             onClick={goToPreviousPage}

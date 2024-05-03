@@ -18,8 +18,20 @@ export default {
                 cambay: ['Cambay'],
                 merriweather: ['Merriweather'],
                 montserrat: ['Montserrat'],
-            }
+                bebas: ['Bebas Neue', 'sans-serif'],
+                urbanist: ['Urbanist'],
+                futura: ['Furuta Std', 'sans-serif'],
+            },
+            gradientColorStops: theme => ({
+                'black': '#000',
+                'gray-900': '#1a202c',
+            })
         },
     },
-    plugins: [],
+    plugins: [
+        // require('@tailwindcss/aspect-ratio'),
+        // require('@tailwindcss/forms'),
+        // require('@tailwindcss/typography'),
+        // require('@tailwindcss/line-clamp'),
+    ],
 }

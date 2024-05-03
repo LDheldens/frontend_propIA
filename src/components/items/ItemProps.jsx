@@ -182,7 +182,7 @@ function ItemProps() {
                                                     {/* <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
                                                 </div>
                                             </div>
-                                            <h3 class="bg-green-500 z-10 rounded-full text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-montserrat">{props.type}</h3>
+                                            <h3 class="bg-green-500 z-10 rounded-full text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-bebas">{props.type}</h3>
                                             <FaWhatsapp class="bg-green-500 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" />
                                         </div>
                                     </div>

@@ -16,7 +16,7 @@ import Post from './pages/pagesPost/Post'
 import MyActivity from './pages/pagesPost/MyActivity'
 
 import LayoutAI from './components/layouts/LayoutAI'
-import HomeAI from './components/iaIntegrated/HomeAI'
+import HomeAI from './pages/pagesAI/HomeAI'
 
 const router = createBrowserRouter(
   [
