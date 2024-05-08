@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa"
 
 function SearchProp() {
     return (
-        <div className='p-6'>
+        <div className='p-3'>
             <div>
                 <div>
                     <div className='flex rounded-b-lg rounded-r-lg bg-white'>
@@ -13,7 +13,7 @@ function SearchProp() {
                                 id="country"
                                 name="country"
                                 autoComplete="country-name"
-                                className="inline-flex w-full justify-center rounded border border-gray-300 shadow-sm px-4 py-2 bg-white text-[16px] font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100"
+                                className="inline-flex w-full justify-center border border-gray-300 shadow-sm px-4 py-2 bg-white text-[16px] font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100 font-urbanist"
                             >
                                 <option>Departamento</option>
                                 <option>Casa</option>
@@ -29,31 +29,31 @@ function SearchProp() {
                         </div>
                         <div className=" inset-0 flex items-center  text-white ">
                             <form action="" className="flex">
-                                <div className="font-normal flex flex-col md:flex-row items-center justify-center rounded-t-lg p-2 bg-white">
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 rounded w-full md:w-auto">
+                                <div className="font-normal flex flex-col md:flex-row items-center justify-center rounded-t-lg p-2 bg-white font-bebas">
+                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 md:w-auto">
                                         Alquilar
                                     </button>
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 rounded w-full md:w-auto">
+                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 md:w-auto">
                                         Comprar
                                     </button>
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 py-2 px-4 border border-gray-200 p-2 m-2 rounded w-full md:w-auto">
+                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 py-2 px-4 border border-gray-200 p-2 m-2 md:w-auto">
                                         Proyectos
                                     </button>
                                 </div>
                             </form>
                         </div>
 
-                        <div className='container mx-auto p-4'>
+                        <div className='container mx-auto p-4 font-urbanist'>
                             <input aria-haspopup="true"
                                 aria-expanded="true"
-                                type="text" placeholder="Ingresa ubicaciones o características" className="inline-flex justify-center w-full border border-gray-200 shadow-sm px-2 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100 rounded" />
+                                type="text" placeholder="Ingresa ubicaciones o características" className="inline-flex justify-center w-full border border-gray-200 shadow-sm px-2 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100" />
                         </div>
-                        <div className="flex justify-center items-center p-4 space-x-4">
+                        <div className="flex justify-center items-center p-4 space-x-4 font-urbanist">
                             <button
                                 type="button"
-                                className="px-5 py-3 bg-green-600 text-white hover:bg-gray-500 focus:outline-none rounded-lg items-center flex text-mx font-bold"
+                                className="px-5 py-3 bg-green-600 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx font-bold"
                             >
-                                <FaSearch className='flex mr-1 selection: ' /> Buscar
+                                <FaSearch className='flex mr-1  selection: ' /> Buscar
                             </button>
                         </div>
                     </div>

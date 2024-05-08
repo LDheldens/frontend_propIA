@@ -27,7 +27,7 @@ function FormPg3({ currentPage }) {
     };
     return (
         <div className={`${currentPage != 3 ? "hidden" : ""}`}>
-            <div className='w-200 '>
+            <div className=''>
                 <div>
                     <label htmlFor="cover-photo" className="block text-xl font-medium leading-6 text-gray-900">
                         Subir fotos

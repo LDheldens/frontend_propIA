@@ -4,26 +4,25 @@ function FormPg1({ currentPage }) {
     return (
         <div className={`${currentPage != 1 ? "hidden" : ""}`}>
             <div>
-                <div className="flex w-160">
-                    <div className=" border border-green-400 p-4 rounded-lg mr-6 font-urbanist">
+                <div className="flex">
+                    <div className=" p-4 m-4 font-urbanist">
                         <h2 className="text-base font-semibold leading-7 text-gray-900">Cuéntanos, ¿qué deseas publicar?</h2>
-
                         <div>
                             <div className=" inset-0 flex items-center text-white ">
-                                <div className="font-normal flex flex-col md:flex-row items-center justify-center rounded-t-lg p-2 bg-white">
+                                <div className="font-normal flex flex-col md:flex-row items-center justify-center p-2 bg-white">
                                     <h2 className="text-base font-semibold leading-7 text-gray-900">Tipo de operación:</h2>
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 rounded w-full md:w-auto">
+                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2  rounded w-full md:w-auto">
                                         Venta
                                     </button>
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 rounded w-full md:w-auto">
+                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 rounded w-full md:w-auto">
                                         Alquiler
                                     </button>
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 py-2 px-4 border border-gray-200 p-2 m-2 rounded w-full md:w-auto">
+                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 rounded w-full md:w-auto">
                                         Temporada
                                     </button>
                                 </div>
                             </div>
-                            <div className="sm:col-span-3">
+                            <div className="sm:col-span-3 ">
                                 <label htmlFor="country" className="block text-lg font-medium leading-6 text-gray-900 ">
                                     Tipo de inmueble
                                 </label>
@@ -72,20 +71,19 @@ function FormPg1({ currentPage }) {
                             </div>
                         </div>
                         <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-4 ">
-
                             <div className="col-span-full">
                                 <label
                                     htmlFor="Username"
                                     className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
                                 >
                                     <input
-                                        type="text"
+                                        type="email"
                                         id="Username"
                                         class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
                                         placeholder="Username"
                                     />
                                     <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
                                     >
                                         G-mail
                                     </span>
@@ -104,7 +102,7 @@ function FormPg1({ currentPage }) {
                                     />
 
                                     <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
                                     >
                                         Nombres
                                     </span>
@@ -124,7 +122,7 @@ function FormPg1({ currentPage }) {
                                     />
 
                                     <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
                                     >
                                         Apellidos
                                     </span>
@@ -144,7 +142,7 @@ function FormPg1({ currentPage }) {
                                     />
 
                                     <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
                                     >
                                         DNI
                                     </span>
@@ -163,7 +161,7 @@ function FormPg1({ currentPage }) {
                                     />
 
                                     <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
                                     >
                                         Celular
                                     </span>

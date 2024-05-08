@@ -111,15 +111,15 @@ const Layout = () => {
                 </div>
                 <div className='flex flex-col md:flex-row'>
                     <a href="/publicar/formulario">
-                        <button className="bg-white hover:bg-green-600 hover:text-white m-2 p-2 items-center flex text-gray-700 rounded-lg border border-green-500 justify-center z-60">
+                        <button className="bg-white hover:bg-green-600 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center z-60">
                             <FaPlus />
-                            <p className="pl-1 text-sm font-urbanist font-bold">Publicar</p>
+                            <p className="pl-1 text-sm font-urbanist">Publicar</p>
                         </button>
                     </a>
                     <a href="/login">
-                        <button className="bg-green-600 hover:bg-gray-500 m-2 p-2 items-center flex text-white rounded-lg justify-center z-60">
+                        <button className="bg-green-600 hover:bg-gray-500 m-2 p-2 items-center flex text-white justify-center z-60">
                             <MdLogin className="text-2xl" />
-                            <p className="pl-1 text-sm font-bold font-urbanist">Iniciar sesión</p>
+                            <p className="pl-1 text-sm font-urbanist">Iniciar sesión</p>
                         </button>
                     </a>
                 </div>
@@ -131,7 +131,7 @@ const Layout = () => {
 
             <footer class="">
                 <div className='text-center inset-x-0 flex justify-center bg-white p-4'>
-                    <ul className='justify-center flex text-green-600 text-3xl bg-white p-4 shadow-md shadow-green-400  pl-10 pr-10 rounded-lg'>
+                    <ul className='justify-center flex text-green-600 text-3xl bg-white p-4 shadow-md shadow-green-400  pl-10 pr-10 '>
                         <li>
                             <FaFacebookF className="ml-1 " />
                         </li>

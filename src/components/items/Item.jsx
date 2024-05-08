@@ -16,6 +16,7 @@ import { FaWhatsapp } from "react-icons/fa"
 import { GiTap } from "react-icons/gi"
 import { FaRegLightbulb } from "react-icons/fa"
 import { GiKitchenScale } from "react-icons/gi"
+import { MdOutlineLocalOffer } from "react-icons/md"
 import SendMsg from '../SendMsg';
 import Map from '../Map';
 
@@ -67,7 +68,9 @@ function Item() {
             bath: '2',
             garage: '2',
             kitchen: '2',
-            type: 'DEPARTAMENTO EN VENTA'
+            type: 'Departamento en venta',
+            propts: '24',
+            published: 'Publicado hace una semana en Tacna, TA',
         },
     ]
 
@@ -127,19 +130,19 @@ function Item() {
             <div className='m-3'>
                 <div className='justify-end border-gray-500'>
                     <div className=" inset-0 flex items-center justify-end text-white ">
-                        <form action="" className="flex">
-                            <div className="font-normal flex items-center justify-center rounded-t bg-white m-2">
-                                <button className="flex border border-gray-600 hover:bg-green-700 hover:text-white text-gray-600  py-2 px-4 rounded-lg">
+                        <form action="" className="flex w-full">
+                            <div className="font-normal flex gap-2 w-full flex-col items-center justify-center sm:flex-row sm:justify-center sm:gap-3 rounded-t m-2 font-urbanist">
+                                <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-700 hover:text-white text-gray-600  py-2 px-4 ">
                                     Favorito
-                                    <FaRegHeart className='m-1 justify-center' />
+                                    <FaRegHeart />
                                 </button>
-                                <button className="flex border border-gray-600 hover:bg-green-700 hover:text-white text-gray-600  py-2 px-4 rounded-lg ml-2">
+                                <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-700 hover:text-white text-gray-600  py-2 px-4 ml-2">
                                     Compartir
-                                    <IoShareSocialOutline className='m-1 justify-center' />
+                                    <IoShareSocialOutline />
                                 </button>
-                                <button className="flex border border-gray-600 hover:bg-green-700 hover:text-white text-gray-600 py-2 px-4 rounded-lg ml-2">
+                                <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-700 hover:text-white text-gray-600 py-2 px-4 ml-2">
                                     Notas personales
-                                    <MdOutlineNoteAlt className='m-1 justify-center' />
+                                    <MdOutlineNoteAlt />
                                 </button>
                             </div>
                         </form>
@@ -178,92 +181,101 @@ function Item() {
                         </div>
                     </div>
                 </div>
-                <div className='flex mt-4'>
-                    <div className='m-4 w-full '>
+                <div className=' mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 w-full'>
+                    <div className=' md:m-4 w-full '>
                         <div>
                             <h5 className='font-bold text-xl font-bebas'>Detalles</h5>
                         </div>
                         <div>
                             <div>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3 h-full">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 h-full font-urbanist">
                                     {properties.map((props) => (
-                                        <div class=" col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg rounded-b-lg">
-                                            <div class="group relative flex flex-col overflow-hidden rounded-t-lg px-4 pb-4 pt-4 mb-4">
-                                                <div className='flex'>
+                                        <div class=" col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg">
+                                            <div class="group relative flex flex-col overflow-hidden px-4 mb-4">
+                                                <div className=''>
                                                     <span className=''>{props.price}</span>
                                                 </div>
+                                                <div className=''>
+                                                    <span className=''>{props.published}</span>
+                                                </div>
                                                 <div className='flex m-2'>
-                                                    <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                                         <MdOutlineLocationOn />
                                                     </div>
                                                     <span className='m-1'>{props.locate}</span>
                                                 </div>
+                                                <div className='flex m-2'>
+                                                    <div className=' h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                                        <MdOutlineLocalOffer />
+                                                    </div>
+                                                    <span className='m-1'>Propuestas: {props.propts}</span>
+                                                </div>
                                                 <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
                                             </div>
-                                            <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 ">
-                                                <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4">
+                                            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
+                                                <div class="group relative flex flex-col overflow-hidden px-2">
                                                     <div className='flex m-2'>
-                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white' >
+                                                        <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white' >
                                                             <BiArea />
                                                         </div>
                                                         <span className='m-1'> {props.area}</span>
 
                                                     </div>
                                                     <div className='flex m-2'>
-                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className=' h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                                             <FaRegBuilding />
                                                         </div>
                                                         <span className='m-1'>Pisos: {props.duildings}</span>
                                                     </div>
                                                     <div className='flex m-2'>
-                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                                             <IoBedOutline />
                                                         </div>
                                                         <span className='m-1'>Habitaciones: {props.debs}</span>
                                                     </div>
                                                 </div>
-                                                <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4">
+                                                <div class="group relative flex flex-col overflow-hidden px-2">
                                                     <div className='flex m-2'>
-                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                                             <LuBath />
                                                         </div>
                                                         <span className='m-1'>Baños: {props.bath}</span>
                                                     </div>
                                                     <div className='flex m-2'>
-                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                                             <GiHomeGarage />
                                                         </div>
                                                         <span className='m-1'>Cocheras: {props.garage}</span>
                                                     </div>
                                                     <div className='flex m-2'>
-                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                                             <FaKitchenSet />
                                                         </div>
                                                         <span className='m-1'>Cocinas: {props.kitchen}</span>
                                                     </div>
                                                 </div>
-                                                <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-4">
+                                                <div class="group relative flex flex-col overflow-hidden px-2">
                                                     <div className='flex m-2'>
-                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white' >
+                                                        <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white' >
                                                             <GiTap />
                                                         </div>
                                                         <span className='m-1'>Servicio de Agua: </span>
                                                     </div>
                                                     <div className='flex m-2'>
-                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                                             <FaRegLightbulb />
                                                         </div>
                                                         <span className='m-1'>Energía: Privado</span>
                                                     </div>
                                                     <div className='flex m-2'>
-                                                        <div className='h-9 w-9 rounded-full bg-green-500 p-2 text-xl text-white'>
+                                                        <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                                             <GiKitchenScale />
                                                         </div>
                                                         <span className='m-1'>Gas: {props.debs}</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <h3 class="bg-green-500 z-10 rounded-full text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-bebas">{props.type}</h3>
+                                            <h3 class="bg-gray-500 z-10 text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-bebas">{props.type}</h3>
                                             {/* <FaWhatsapp class="bg-green-500 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" /> */}
                                         </div>
                                     ))}
@@ -271,8 +283,8 @@ function Item() {
                             </div>
                             <div>
                                 <div className='mt-4'>
-                                    <h4 className='text-xl font-bold'>Descripción: </h4>
-                                    <p>
+                                    <h4 className='text-xl font-bold font-bebas'>Descripción: </h4>
+                                    <p className='font-urbanist'>
                                         Vendo Casa en Zona Comercial de Santa Anita
                                         80M2 de terreno
                                         208.15 M2. ( área construida).
@@ -296,18 +308,20 @@ function Item() {
                                     </p>
                                 </div>
                             </div>
-                            <div>
-                                <div className='mt-6 border border-gray-300 rounded-lg'>
-                                    <h2 className='m-4 font-bold text-2xl'>Ubicación:</h2>
-                                    <Map />
-                                </div>
-                            </div>
+
 
                         </div>
 
                     </div>
-                    <div className="flex w-90">
+                    <div className="flex mx-auto w-auto">
                         <SendMsg /> {/*Formulario para enviar mesaje*/}
+                    </div>
+
+                </div>
+                <div>
+                    <div className='mt-6 lg:mx-20 border border-gray-300 rounded-lg'>
+                        <h2 className='m-4 font-bold text-2xl font-bebas'>Ubicación:</h2>
+                        <Map />
                     </div>
                 </div>
                 <div className='mt-4 m-4'>

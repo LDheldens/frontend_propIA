@@ -18,17 +18,17 @@ function Post() {
     const isLastPage = currentPage === 4;
     return (
         <div>
-            <div className='p-4 flex justify-center items-center font-bebas'>
+            <div className='p-2 md:p-4 flex justify-center items-center font-bebas max-w-5xl mx-auto'>
                 <div>
                     <div className="flex justify-center items-center">
                         <h2 className="text-base font-semibold leading-7 text-gray-900">Formulario de publicación</h2>
                     </div>
-                    <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
-                        <div className="bg-white rounded-lg shadow-lg p-8">
-                            <div className="bg-green-500 text-white text-center py-2 rounded-lg mb-4">
+                    <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center ">
+                        <div className="bg-white shadow-lg p-2 max-w-5xl">
+                            <div className="bg-gray-400 text-white text-center py-2  mb-4">
                                 Página {currentPage} de 4
                             </div>
-                            <div className="p-4">
+                            <div >
                                 <form action="">
 
                                     {/* {currentPage === 1 && <FormPg1 />}
@@ -45,7 +45,7 @@ function Post() {
                                     {currentPage !== 1 && (
                                         <button
                                             onClick={goToPreviousPage}
-                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
+                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline transition duration-300"
                                         >
                                             Anterior
                                         </button>
@@ -53,7 +53,7 @@ function Post() {
                                     {!isLastPage && (
                                         <button
                                             onClick={goToNextPage}
-                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
+                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline transition duration-300"
                                         >
                                             Siguiente
                                         </button>
@@ -61,7 +61,7 @@ function Post() {
                                     {isLastPage && (
                                         <button
                                             onClick={() => alert("¡Formulario guardado/enviado!")}
-                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
+                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
                                         >
                                             Publicar
                                         </button>

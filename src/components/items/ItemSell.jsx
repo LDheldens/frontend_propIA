@@ -61,13 +61,13 @@ function ItemSell() {
                     {products.map((product) => (
                         <div key={product.id} className="group relative">
                             <div className=''>
-                                <div className="w-full overflow-hidden rounded-t-lg bg-gray-200 lg:h-80">
+                                <div className="w-full overflow-hidden rounded-t-lg bg-gray-200 lg:h-80 sm:h-60">
                                     <img
                                         src={product.imageSrc}
                                         alt={product.imageAlt}
-                                        className="h-full w-full object-cover object-center lg:h-full lg:w-full  inset-0 group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                                        className="h-full w-full object-cover object-center md:h-auto md:w-full lg:h-full lg:w-full  inset-0 group-hover:scale-105 transition-transform duration-500 ease-in-out"
                                     />
-                                    <FaRegHeart className="bg-white absolute top-5 right-2 py-1 px-3 rounded-full text-black text-[40px]" />
+                                    {/* <FaRegHeart className="bg-white absolute top-5 right-2 py-1 px-3 rounded-full text-black text-[40px]" /> */}
                                     {/* <span className="bg-[#DC3545] absolute top-5 right-2 py-1 px-3 rounded-full text-white text-[10px]" >ID: {product.id}</span>
                                             <span className="bg-blue-800 absolute text-end bottom-36 right-2 py-1 px-3 rounded-full text-white text-[10px]" >{product.type}</span> */}
                                 </div>
@@ -78,7 +78,7 @@ function ItemSell() {
                                         <p className="text-xs font-medium text-gray-700 mb-4">{product.price}</p>
                                         <h3 className="text-xs text-gray-600 mb-5 flex">
                                             <a href={product.href}>
-                                                <span aria-hidden="true" className="absolute inset-0 flex-initial" />
+                                                {/* <span aria-hidden="true" className="absolute inset-0 flex-initial" /> */}
                                                 <FaLocationDot className="mr-1 mt-1" />{product.locate}
                                             </a>
                                         </h3>

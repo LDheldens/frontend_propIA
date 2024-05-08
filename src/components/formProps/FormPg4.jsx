@@ -11,10 +11,9 @@ function FormPg4({ currentPage }) {
     };
     return (
         <div className={`${currentPage != 4 ? "hidden" : ""}`}>
-            <div className='w-160'>
+            <div className=''>
                 <h2 className="text-base font-semibold leading-7 text-gray-900">Características principales</h2>
-
-                <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 font-urbanist">
+                <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-6  xs:grid-cols-1 font-urbanist">
 
                     <div className="col-span-2">
                         <label
@@ -145,22 +144,24 @@ function FormPg4({ currentPage }) {
                             </span>
                         </label>
                     </div>
-                    <div className="sm:col-span-5">
-                        <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
-                            Precio en
-                        </label>
-                        <div className="mt-2">
-                            <select
-                                id="country"
-                                name="country"
-                                autoComplete="country-name"
-                                aria-placeholder=''
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                            >
-                                <option>Selecciona opción</option>
-                                <option>Soles</option>
-                                <option>Dólares</option>
-                            </select>
+                    <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-6  sm:grid-cols-3 font-urbanist">
+                        <div className="sm:col-span-5">
+                            <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
+                                Precio en
+                            </label>
+                            <div className="mt-2">
+                                <select
+                                    id="country"
+                                    name="country"
+                                    autoComplete="country-name"
+                                    aria-placeholder=''
+                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                >
+                                    <option>Selecciona opción</option>
+                                    <option>Soles</option>
+                                    <option>Dólares</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div className="col-span-3">

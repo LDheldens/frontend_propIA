@@ -4,10 +4,10 @@ import Map from '../Map'
 function FormPg2({ currentPage }) {
     return (
         <div className={`${currentPage != 2 ? "hidden" : ""}`}>
-            <div className='w-160 font-urbanist'>
+            <div className='font-urbanist'>
                 <h2 className="text-base font-semibold leading-7 text-gray-900">¿Dónde está ubicado tu inmueble?</h2>
 
-                <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-8">
                     <div className="col-span-full">
                         <label
                             htmlFor="Username"
