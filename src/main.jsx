@@ -17,6 +17,7 @@ import MyActivity from './pages/pagesPost/MyActivity'
 
 import LayoutAI from './components/layouts/LayoutAI'
 import HomeAI from './pages/pagesAI/HomeAI'
+import SignIn from './components/SignIn'
 
 const router = createBrowserRouter(
   [
@@ -48,6 +49,10 @@ const router = createBrowserRouter(
         {
           element: <LogIn />,
           path: '/login'
+        },
+        {
+          element: <SignIn />,
+          path: '/signin'
         },
       ]
     },

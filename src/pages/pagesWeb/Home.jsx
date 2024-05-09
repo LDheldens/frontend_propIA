@@ -13,6 +13,7 @@ import ItemSellOk from '../../components/items/ItemSellOk';
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import bg from '/src/assets/video1.mp4'
 
 
 function Arrow(props) {
@@ -141,13 +142,14 @@ const Home = () => {
     return (
 
         <main className='bg-gray-100'>
-            <div className="bg-cover bg-center h-160" style={{ backgroundImage: "url('./src/assets/init.gif')" }}>
-                {/* <video
-                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
-                    autoPlay loop muted
-                >
-                    <source src="./src/assets/font.jpeg" type="video/mp4" />
-                </video> */}
+            <div className="relative w-full h-160 overflow-hidden bg-cover bg-center">
+                <video
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    src={bg}
+                    autoPlay
+                    loop
+                    muted
+                />
 
                 <div className="relative z-10 items-center justify-center p-2 md:p-8">
                     <h3 className="text-[40px] font-bold  text-white  text-center p-8 pb-3 font-bebas mt-10">La llave al espacio que buscas</h3>

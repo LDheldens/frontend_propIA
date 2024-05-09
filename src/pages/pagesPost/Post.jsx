@@ -18,60 +18,50 @@ function Post() {
     const isLastPage = currentPage === 4;
     return (
         <div>
-            <div className='p-2 md:p-4 flex justify-center items-center font-bebas max-w-5xl mx-auto'>
-                <div>
-                    <div className="flex justify-center items-center">
-                        <h2 className="text-base font-semibold leading-7 text-gray-900">Formulario de publicación</h2>
+            <div className='p-2 flex-row justify-center items-center font-bebas max-w-3xl mx-auto'>
+                <div className="text-center">
+                    <h2 className="text-base font-semibold leading-7 text-gray-900">Formulario de publicación</h2>
+                </div>
+                <div className="bg-white min-h-screen flex flex-col justify-center items-center max-w-3xl py-2">
+                    <div className="bg-gray-400 text-white text-center py-2 w-full">
+                        Página {currentPage} de 4
                     </div>
-                    <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center ">
-                        <div className="bg-white shadow-lg p-2 max-w-5xl">
-                            <div className="bg-gray-400 text-white text-center py-2  mb-4">
-                                Página {currentPage} de 4
-                            </div>
-                            <div >
-                                <form action="">
+                    <form action="" className="">
+                        <FormPg1 currentPage={currentPage} />
+                        <FormPg2 currentPage={currentPage} />
+                        <FormPg3 currentPage={currentPage} />
+                        <FormPg4 currentPage={currentPage} />
 
-                                    {/* {currentPage === 1 && <FormPg1 />}
-                                    {currentPage === 2 && <FormPg2 />}
-                                    {currentPage === 3 && <FormPg3 />}
-                                    {currentPage === 4 && <FormPg4 />} */}
-                                    <FormPg1 currentPage={currentPage} />
-                                    <FormPg2 currentPage={currentPage} />
-                                    <FormPg3 currentPage={currentPage} />
-                                    <FormPg4 currentPage={currentPage} />
-
-                                </form>
-                                <div className="mt-8 flex justify-between font-bebas">
-                                    {currentPage !== 1 && (
-                                        <button
-                                            onClick={goToPreviousPage}
-                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline transition duration-300"
-                                        >
-                                            Anterior
-                                        </button>
-                                    )}
-                                    {!isLastPage && (
-                                        <button
-                                            onClick={goToNextPage}
-                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline transition duration-300"
-                                        >
-                                            Siguiente
-                                        </button>
-                                    )}
-                                    {isLastPage && (
-                                        <button
-                                            onClick={() => alert("¡Formulario guardado/enviado!")}
-                                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
-                                        >
-                                            Publicar
-                                        </button>
-                                    )}
-                                </div>
+                    </form>
+                    <div className="mt-8 flex justify-between font-bebas gap-40">
+                        {currentPage !== 1 && (
+                            <div className="flex justify-end">
+                                <button
+                                    onClick={goToPreviousPage}
+                                    className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
+                                >
+                                    Anterior
+                                </button>
                             </div>
-                        </div>
+                        )}
+                        {!isLastPage && (
+                            <button
+                                onClick={goToNextPage}
+                                className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline transition duration-300 text-right"
+                            >
+                                Siguiente
+                            </button>
+                        )}
+                        {isLastPage && (
+                            <button
+                                onClick={() => alert("¡Formulario guardado/enviado!")}
+                                className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
+                            >
+                                Publicar
+                            </button>
+                        )}
                     </div>
                 </div>
-
             </div>
         </div>
     )

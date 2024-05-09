@@ -3,7 +3,7 @@ import React from 'react'
 function LogIn() {
     return (
         <div >
-            <div className="min-h-full flex justify-center items-center mx-auto px-6 py-12 lg:px-8" style={{ backgroundImage: "url('./src/assets/dep5.jpeg')" }}>
+            <div className="min-h-full flex justify-center items-center mx-auto px-6 py-12 lg:px-8" style={{ backgroundImage: "url('./src/assets/dep2.jpeg')" }}>
                 <div className='bg-black bg-opacity-40 ml-4 mr-4 mb-10 rounded-lg p-6 w-160 '>
                     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-sm">
                         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -72,8 +72,8 @@ function LogIn() {
 
                         <p className="mt-10 text-center text-sm text-white">
                             ¿No es un miembro? {' '}
-                            <a href="#" className="font-semibold leading-6 text-green-600 hover:text-gray-500">
-                                Comience prueba gratuita de 14 días
+                            <a href="/signin" className="font-semibold leading-6 text-green-600 hover:text-white">
+                                Registrarse
                             </a>
                         </p>
                     </div>

@@ -28,7 +28,7 @@ function FormPg3({ currentPage }) {
     return (
         <div className={`${currentPage != 3 ? "hidden" : ""}`}>
             <div className=''>
-                <div>
+                {/* <div>
                     <label htmlFor="cover-photo" className="block text-xl font-medium leading-6 text-gray-900">
                         Subir fotos
                     </label>
@@ -36,7 +36,7 @@ function FormPg3({ currentPage }) {
                         <div className="grid grid-cols-3 gap-4">
                             {images.map((imageUrl, index) => (
                                 <div key={index} className="relative">
-                                    <label htmlFor={`file-upload-${index}`} className="w-60 h-60 border border-dashed border-gray-400 flex items-center justify-center cursor-pointer rounded-lg">
+                                    <label htmlFor={`file-upload-${index}`} className="md:w-60 h-60 border border-dashed border-gray-400 flex items-center justify-center cursor-pointer rounded-lg">
                                         {imageUrl ? (
                                             <>
                                                 <img
@@ -66,7 +66,7 @@ function FormPg3({ currentPage }) {
                             ))}
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="col-span-full">
                     <label htmlFor="cover-photo" className="block text-xl font-medium leading-6 text-gray-900">
                         Subir fotos
@@ -77,7 +77,7 @@ function FormPg3({ currentPage }) {
                             <div className="mt-4 flex text-sm leading-6 text-gray-600">
                                 <label
                                     htmlFor="file-upload"
-                                    className="relative cursor-pointer rounded-md bg-white font-semibold text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
+                                    className="relative cursor-pointer rounded-md bg-white font-semibold text-green-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-green-400 focus-within:ring-offset-2 hover:text-gray-500"
                                 >
                                     <span>Cargar un archivo</span>
                                     <input id="file-upload" name="file-upload" type="file" className="sr-only" />

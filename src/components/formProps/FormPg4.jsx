@@ -13,8 +13,7 @@ function FormPg4({ currentPage }) {
         <div className={`${currentPage != 4 ? "hidden" : ""}`}>
             <div className=''>
                 <h2 className="text-base font-semibold leading-7 text-gray-900">Características principales</h2>
-                <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-6  xs:grid-cols-1 font-urbanist">
-
+                <div className="mt-2 grid sm:grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-4 font-urbanist">
                     <div className="col-span-2">
                         <label
                             htmlFor="Username"
@@ -164,7 +163,7 @@ function FormPg4({ currentPage }) {
                             </div>
                         </div>
                     </div>
-                    <div className="col-span-3">
+                    <div className="col-span-full">
                         <label
                             htmlFor="Username"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
@@ -182,7 +181,7 @@ function FormPg4({ currentPage }) {
                             </span>
                         </label>
                     </div>
-                    <div className="col-span-5">
+                    <div className="col-span-full">
                         <label
                             htmlFor="Username"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
@@ -200,7 +199,7 @@ function FormPg4({ currentPage }) {
                             </span>
                         </label>
                     </div>
-                    <div className="col-span-5">
+                    <div className="col-span-full">
                         <label
                             htmlFor="Username"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
