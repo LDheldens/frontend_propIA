@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FaRegHeart } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { MdOutlineLocalOffer } from "react-icons/md";
 
 function ItemSell() {
     const products = [
@@ -12,7 +13,7 @@ function ItemSell() {
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
-            society: '2 trimestre 2024',
+            postedAgo: 'Publicado hace 3 semanas en Tacna, TA',
             type: 'HOTEL EN VENTA',
             area: '5,642.00 m²',
         },
@@ -24,7 +25,7 @@ function ItemSell() {
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
-            society: 'Junio 2025',
+            postedAgo: 'Publicado hace 3 semanas en Tacna, TA',
             type: 'HOTEL EN VENTA',
             area: '5,642.00 m²',
         },
@@ -36,7 +37,7 @@ function ItemSell() {
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
-            society: 'Junio 2025',
+            postedAgo: 'Publicado hace 3 semanas en Tacna, TA',
             type: 'HOTEL EN VENTA',
             area: '5,642.00 m²',
         },
@@ -48,7 +49,7 @@ function ItemSell() {
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
-            society: 'Junio 2025',
+            postedAgo: 'Publicado hace 3 semanas en Tacna, TA',
             type: 'HOTEL EN VENTA',
             area: '5,642.00 m²',
         },
@@ -61,29 +62,35 @@ function ItemSell() {
                     {products.map((product) => (
                         <div key={product.id} className="group relative">
                             <div className=''>
-                                <div className="w-full overflow-hidden rounded-t-lg bg-gray-200 lg:h-80 sm:h-60">
-                                    <img
-                                        src={product.imageSrc}
-                                        alt={product.imageAlt}
-                                        className="h-full w-full object-cover object-center md:h-auto md:w-full lg:h-full lg:w-full  inset-0 group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                                    />
+                                <div className="w-full overflow-hidden  bg-gray-200 lg:h-80 sm:h-60">
+                                    <a href={product.href}>
+                                        <img
+                                            src={product.imageSrc}
+                                            alt={product.imageAlt}
+                                            className="h-full w-full object-cover object-center md:h-auto md:w-full lg:h-full lg:w-full  inset-0 group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                                        />
+                                    </a>
                                     {/* <FaRegHeart className="bg-white absolute top-5 right-2 py-1 px-3 rounded-full text-black text-[40px]" /> */}
                                     {/* <span className="bg-[#DC3545] absolute top-5 right-2 py-1 px-3 rounded-full text-white text-[10px]" >ID: {product.id}</span>
                                             <span className="bg-blue-800 absolute text-end bottom-36 right-2 py-1 px-3 rounded-full text-white text-[10px]" >{product.type}</span> */}
                                 </div>
                             </div>
                             <div className='bg-white p-2 font-urbanist'>
-                                <div className="mt-4 flex justify-between">
+                                <div className="mt-3 flex justify-between">
                                     <div className='ml-3'>
-                                        <p className="text-xs font-medium text-gray-700 mb-4">{product.price}</p>
-                                        <h3 className="text-xs text-gray-600 mb-5 flex">
-                                            <a href={product.href}>
-                                                {/* <span aria-hidden="true" className="absolute inset-0 flex-initial" /> */}
-                                                <FaLocationDot className="mr-1 mt-1" />{product.locate}
-                                            </a>
+                                        <div>
+                                            <p className="text-xs font-medium text-gray-700 mb-2">{product.price}</p>
+                                        </div>
+                                        <div className=' flex'>
+                                            <MdOutlineLocalOffer />
+                                            <p className='text-[10px]'>Propuestas: {product.offer}</p>
+                                        </div>
+                                        <h3 className="text-xs text-gray-600 mb-3 flex">
+
+                                            {/* <span aria-hidden="true" className="absolute inset-0 flex-initial" /> */}
+                                            <FaLocationDot className="mr-1 mt-1" />{product.locate}
                                         </h3>
-                                        <p className="text-[10px] text-gray-400">{product.ruc}</p>
-                                        <p className="text-[11px] text-gray-400">{product.society}</p>
+                                        <p className="text-[11px] text-gray-400">{product.postedAgo}</p>
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +98,7 @@ function ItemSell() {
                     ))}
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

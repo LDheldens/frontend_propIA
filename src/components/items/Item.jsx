@@ -192,10 +192,10 @@ function Item() {
                                     {properties.map((props) => (
                                         <div class=" col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg">
                                             <div class="group relative flex flex-col overflow-hidden px-4 mb-4">
-                                                <div className=''>
+                                                <div className='ml-2'>
                                                     <span className=''>{props.price}</span>
                                                 </div>
-                                                <div className=''>
+                                                <div className='ml-2'>
                                                     <span className=''>{props.published}</span>
                                                 </div>
                                                 <div className='flex m-2'>

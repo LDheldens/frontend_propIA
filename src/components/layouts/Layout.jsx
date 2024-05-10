@@ -125,7 +125,7 @@ const Layout = () => {
                 </div>
             </div>
 
-            <main className='bg-gray-200'>
+            <main className='bg-gray-200 '>
                 <Outlet />
             </main>
 
@@ -202,7 +202,7 @@ const Layout = () => {
                     <BiSolidChat />
                 </button>
 
-                <div className={`bg-gray-200 right-3  transition-transform duration-300 absolute top-[-410px] p-0 text-gray-600 rounded-lg shadow-lg ${chatBot ? 'translate-x-0' : 'translate-x-[500px]'}`}>
+                <div className={`bg-gray-200 right-3  transition-transform duration-300 absolute top-[-410px] p-0 text-gray-600 shadow-lg ${chatBot ? 'translate-x-0' : 'translate-x-[500px]'}`}>
                     <ChatBot />
                 </div>
             </div>

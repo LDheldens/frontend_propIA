@@ -14,6 +14,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bg from '/src/assets/video1.mp4'
+import Flyer from '../../components/Flyer';
 
 
 function Arrow(props) {
@@ -151,7 +152,7 @@ const Home = () => {
                     muted
                 />
 
-                <div className="relative z-10 items-center justify-center p-2 md:p-8">
+                <div className="relative z-10 items-center justify-center p-2 md:p-8 h-160 w-full  bg-black bg-opacity-35">
                     <h3 className="text-[40px] font-bold  text-white  text-center p-8 pb-3 font-bebas mt-10">La llave al espacio que buscas</h3>
                     <div className="m-14">
                         <div className=" inset-0 flex items-center  text-white ">
@@ -222,10 +223,15 @@ const Home = () => {
             </div>
             <div>
                 <div className='flex justify-center mt-10'>
-                    <button className='inset-0 flex justify-center items-center border border-gray-400 p-2 font-urbanist hover:bg-gray-400 hover:text-white'>
-                        Nosotros
-                    </button>
+                    <a href="/ia/inicioia">
+                        <button className='inset-0 flex justify-center items-center border border-gray-400 p-2 font-urbanist hover:bg-gray-400 hover:text-white'>
+                            Nosotros
+                        </button>
+                    </a>
                 </div>
+            </div>
+            <div className='mt-10'>
+                <Flyer />
             </div>
             <div className='my-20'>
                 <Cards1 />
@@ -256,34 +262,34 @@ const Home = () => {
                         <h4 className="text-[45px] font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Integrado con inteligencia artificial</h4>
                     </div>
                     <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3 m-3">
-                        <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-3 sm:gap-y-16 xl:col-span-3 border-gray-300">
-                            <li >
-                                <div className="flex items-center gap-x-1 border border-gray-400 bg-white shadow-md">
-                                    <div className='m-5'>
+                        <ul role="list" className="grid gap-8 md:gap-6  md:grid-cols-3 lg:gap-8 border-gray-300">
+                            <li className='max-w-[450px] mx-auto md:w-auto'>
+                                <div className="flex p-5 md:p-4 md:pr-1 lg:p-5 items-center gap-x-1 border border-gray-400 bg-white shadow-md">
+                                    <div >
                                         <p className="text-sm leading-6 text-gray-700 font-bebas">Navega por nuestra página web inteligente, donde la IA anticipa tus necesidades.</p>
                                     </div>
                                     <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-gray-300'>
-                                        <FaArrowRight className='h-10 w-12 rounded-full m-3' />
+                                        <FaArrowRight className='h-10 w-10 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full m-3' />
                                     </a>
                                 </div>
                             </li>
-                            <li >
-                                <div className="flex items-center gap-x-1 border border-gray-400 bg-white shadow-md">
-                                    <div className='m-5'>
+                            <li className='max-w-[450px] mx-auto md:w-auto'>
+                                <div className="flex p-5 md:p-4 md:pr-1 lg:p-5 items-center gap-x-1 border border-gray-400 bg-white shadow-md">
+                                    <div >
                                         <p className="text-sm font-semibold leading-6 text-gray-700 font-bebas">Experimenta la diferencia con nuestra página web, potenciada por inteligencia artificial.</p>
                                     </div>
                                     <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-gray-300'>
-                                        <FaArrowRight className=' h-10 w-10 rounded-full m-3' />
+                                        <FaArrowRight className=' h-10 w-10 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full m-3' />
                                     </a>
                                 </div>
                             </li>
-                            <li >
-                                <div className="flex items-center gap-x-1 border border-gray-400 bg-white shadow-md">
-                                    <div className='m-5'>
+                            <li className='max-w-[450px] mx-auto md:w-auto'>
+                                <div className="flex p-5 md:p-4 md:pr-1 lg:p-5 items-center gap-x-1 border border-gray-400 bg-white shadow-md">
+                                    <div >
                                         <p className="text-sm font-semibold leading-6 text-gray-700 font-bebas">Explora un nuevo nivel de interactividad con nuestra página web impulsada por IA.</p>
                                     </div>
                                     <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-gray-300'>
-                                        <FaArrowRight className='h-10 w-10 rounded-full m-3' />
+                                        <FaArrowRight className='h-10 w-10 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full m-3' />
                                     </a>
                                 </div>
                             </li>

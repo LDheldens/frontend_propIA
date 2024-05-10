@@ -122,7 +122,7 @@ function SendMsg() {
                                         />
                                     </div> */}
                         </div>
-                        <div className="sm:col-span-4">
+                        {/* <div className="sm:col-span-4">
                             <label
                                 htmlFor="Username"
                                 className="relative border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
@@ -140,7 +140,7 @@ function SendMsg() {
                                     DNI
                                 </span>
                             </label>
-                            {/* <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
+                            <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
                                         DNI
                                     </label>
                                     <div className="mt-1">
@@ -150,8 +150,8 @@ function SendMsg() {
                                             autoComplete="given-name"
                                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
-                                    </div> */}
-                        </div>
+                                    </div>
+                        </div> */}
                         <div className="sm:col-span-4">
                             <label
                                 htmlFor="Username"
@@ -231,8 +231,8 @@ function SendMsg() {
                                     </div> */}
                         </div>
                     </div>
-                    <div className='flex mt-4'>
-                        <input type="checkbox" className='m-1 p-3 form-checkbox h-8 w-8 text-green-500' />
+                    <div className='flex mt-3'>
+                        <input type="checkbox" className='m-1 p-3 form-checkbox h-6 w-6 text-green-500' />
                         <span className='text-[12px]'>Acepto los Términos y Condiciones de Uso. y las politicas de privacidad.</span>
                     </div>
                     <div className='flex mt-3'>
@@ -240,7 +240,7 @@ function SendMsg() {
                         <span className='text-[12px]'>Autorizo el uso de mi información para fines adicionales.</span>
                     </div>
                     <div className='mt-4'>
-                        <button className='bg-green-600 w-full p-3 rounded-lg'>
+                        <button className='bg-green-600 w-full p-3 rounded-lg text-white hover:bg-gray-300 hover:text-black'>
                             Contactar
                         </button>
                     </div>

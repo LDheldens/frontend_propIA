@@ -13,42 +13,45 @@ function FormPg4({ currentPage }) {
         <div className={`${currentPage != 4 ? "hidden" : ""}`}>
             <div className=''>
                 <h2 className="text-base font-semibold leading-7 text-gray-900">Características principales</h2>
-                <div className="mt-2 grid sm:grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-4 font-urbanist">
-                    <div className="col-span-2">
-                        <label
-                            htmlFor="Username"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                        >
-                            <input
-                                type="number"
-                                id="Username"
-                                class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
-                                placeholder="Username"
-                            />
-                            <span
-                                className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                <div className="mt-2 font-urbanist">
+
+                    <div className='flex flex-col sm:flex-row gap-2 my-3'>
+                        <div className="w-full">
+                            <label
+                                htmlFor="Username"
+                                className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
                             >
-                                Area del propiedad
-                            </span>
-                        </label>
-                    </div>
-                    <div className="col-span-2">
-                        <label
-                            htmlFor="Username"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                        >
-                            <input
-                                type="number"
-                                id="Username"
-                                class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
-                                placeholder="Username"
-                            />
-                            <span
-                                className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                <input
+                                    type="number"
+                                    id="Username"
+                                    class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                    placeholder="Username"
+                                />
+                                <span
+                                    className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                >
+                                    Area del propiedad
+                                </span>
+                            </label>
+                        </div>
+                        <div className="w-full">
+                            <label
+                                htmlFor="Username"
+                                className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
                             >
-                                Dormitorios
-                            </span>
-                        </label>
+                                <input
+                                    type="number"
+                                    id="Username"
+                                    class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                    placeholder="Username"
+                                />
+                                <span
+                                    className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                >
+                                    Dormitorios
+                                </span>
+                            </label>
+                        </div>
                     </div>
                     {/* <div className='flex'>
                         <button
@@ -70,116 +73,123 @@ function FormPg4({ currentPage }) {
                             +
                         </button>
                     </div> */}
-                    <div className="col-span-2">
-                        <label
-                            htmlFor="Username"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                        >
-                            <input
-                                type="number"
-                                id="Username"
-                                class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
-                                placeholder="Username"
-                            />
-                            <span
-                                className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                            >
-                                Cocheras
-                            </span>
-                        </label>
-                    </div>
-                    <div className="col-span-2">
-                        <label
-                            htmlFor="Username"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                        >
-                            <input
-                                type="number"
-                                id="Username"
-                                class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
-                                placeholder="Username"
-                            />
-                            <span
-                                className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                            >
-                                Baños
-                            </span>
-                        </label>
-                    </div>
-                    <div className="col-span-2">
-                        <label
-                            htmlFor="Username"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                        >
-                            <input
-                                type="number"
-                                id="Username"
-                                class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
-                                placeholder="Username"
-                            />
-                            <span
-                                className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                            >
-                                Cocinas
-                            </span>
-                        </label>
-                    </div>
 
-                    <div className="col-span-2">
-                        <label
-                            htmlFor="Username"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                        >
-                            <input
-                                type="number"
-                                id="Username"
-                                class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
-                                placeholder="Username"
-                            />
-                            <span
-                                className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                    <div className='flex flex-col sm:flex-row gap-2 my-3'>
+                        <div className="w-full">
+                            <label
+                                htmlFor="Username"
+                                className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
                             >
-                                Pisos
-                            </span>
-                        </label>
-                    </div>
-                    <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-6  sm:grid-cols-3 font-urbanist">
-                        <div className="sm:col-span-5">
-                            <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
-                                Precio en
-                            </label>
-                            <div className="mt-2">
-                                <select
-                                    id="country"
-                                    name="country"
-                                    autoComplete="country-name"
-                                    aria-placeholder=''
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                <input
+                                    type="number"
+                                    id="Username"
+                                    class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                    placeholder="Username"
+                                />
+                                <span
+                                    className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
                                 >
-                                    <option>Selecciona opción</option>
-                                    <option>Soles</option>
-                                    <option>Dólares</option>
-                                </select>
-                            </div>
+                                    Cocheras
+                                </span>
+                            </label>
+                        </div>
+                        <div className="w-full">
+                            <label
+                                htmlFor="Username"
+                                className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
+                            >
+                                <input
+                                    type="number"
+                                    id="Username"
+                                    class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                    placeholder="Username"
+                                />
+                                <span
+                                    className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                >
+                                    Baños
+                                </span>
+                            </label>
                         </div>
                     </div>
-                    <div className="col-span-full">
-                        <label
-                            htmlFor="Username"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
-                        >
-                            <input
-                                type="number"
-                                id="Username"
-                                class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
-                                placeholder="Username"
-                            />
-                            <span
-                                className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                    <div className='flex flex-col sm:flex-row gap-2 my-3'>
+                        <div className="w-full">
+                            <label
+                                htmlFor="Username"
+                                className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
                             >
-                                Precio
-                            </span>
-                        </label>
+                                <input
+                                    type="number"
+                                    id="Username"
+                                    class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                    placeholder="Username"
+                                />
+                                <span
+                                    className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                >
+                                    Cocinas
+                                </span>
+                            </label>
+                        </div>
+
+                        <div className="w-full">
+                            <label
+                                htmlFor="Username"
+                                className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
+                            >
+                                <input
+                                    type="number"
+                                    id="Username"
+                                    class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                    placeholder="Username"
+                                />
+                                <span
+                                    className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                >
+                                    Pisos
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div className='flex flex-col sm:flex-row gap-2 my-3'>
+                        <div className="w-full font-urbanist">
+                            <div className="w-full">
+                                <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Precio en
+                                </label>
+                                <div className="mt-2">
+                                    <select
+                                        id="country"
+                                        name="country"
+                                        autoComplete="country-name"
+                                        aria-placeholder=''
+                                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                    >
+                                        <option>Selecciona opción</option>
+                                        <option>Soles</option>
+                                        <option>Dólares</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="w-full mt-7">
+                            <label
+                                htmlFor="Username"
+                                className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
+                            >
+                                <input
+                                    type="number"
+                                    id="Username"
+                                    class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                    placeholder="Username"
+                                />
+                                <span
+                                    className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-100 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+                                >
+                                    Precio
+                                </span>
+                            </label>
+                        </div>
                     </div>
                     <div className="col-span-full">
                         <label

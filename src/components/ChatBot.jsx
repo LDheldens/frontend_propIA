@@ -26,12 +26,12 @@ const ChatBot = () => {
     }, [messages]);
 
     return (
-        <div className="flex flex-col h-100 w-120">
-            <div className='bg-gray-400 flex rounded-t-lg p-2'>
+        <div className="flex flex-col h-100 lg:w-120 sm:w-auto font-urbanist">
+            <div className='bg-gray-400 flex  p-2'>
                 <div className='rounded-full px-4 py-[10px] bg-white'>
-                    <img src="/src/assets/logo4.png" alt="" className='w-8' />
+                    <img src="/src/assets/logo4.png" alt="" className='w-7' />
                 </div>
-                <h3 className='p-4 text-white'>ChatWeb</h3>
+                <h3 className='p-4 text-white font-urbanist'>ChatWeb</h3>
             </div>
             <div className="flex-1 p-4 overflow-y-auto h-120 bg-white">
                 {messages.map((message, index) => (

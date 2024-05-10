@@ -9,13 +9,14 @@ function ItemSellOk() {
             id: 1,
             locate: 'Lima, Lima, Miraflores',
             href: '/item',
-            imageSrc: './src/assets/dep6.webp',
+            imageSrc: './src/assets/dep9.jpeg',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'Culminado',
-            society: 'Publicado hace 3 semanas en Tacna, TA',
+            postedAgo: 'Publicado hace 3 semanas en Tacna, TA',
             type: 'HOTEL EN VENTA',
             area: '5,642.00 m²',
+            offer: '15',
         },
         // {
         //     id: 2,
@@ -62,12 +63,14 @@ function ItemSellOk() {
                     {products.map((product) => (
                         <div key={product.id} className="group relative">
                             <div className=''>
-                                <div className="w-full overflow-hidden rounded-t-lg bg-gray-200 lg:h-80">
-                                    <img
-                                        src={product.imageSrc}
-                                        alt={product.imageAlt}
-                                        className="h-full w-full object-cover object-center lg:h-full lg:w-full  inset-0 group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                                    />
+                                <div className="w-full overflow-hidden bg-gray-200 lg:h-80">
+                                    <a href={product.href}>
+                                        <img
+                                            src={product.imageSrc}
+                                            alt={product.imageAlt}
+                                            className="h-full w-full object-cover object-center lg:h-full lg:w-full  inset-0 group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                                        />
+                                    </a>
                                     {/* <FaRegHeart className="bg-white absolute top-5 right-2 py-1 px-3 rounded-full text-black text-[40px]" /> */}
                                     {/* <span className="bg-[#DC3545] absolute top-5 right-2 py-1 px-3 rounded-full text-white text-[10px]" >ID: {product.id}</span>
                                             <span className="bg-blue-800 absolute text-end bottom-36 right-2 py-1 px-3 rounded-full text-white text-[10px]" >{product.type}</span> */}
@@ -78,19 +81,19 @@ function ItemSellOk() {
                                     <div className='ml-3'>
                                         <div className='flex justify-between items-center'>
                                             <div className='flex'>
-                                                <p className="text-xs font-medium text-gray-700 mb-3">{product.price}</p>
+                                                <p className="text-xs font-medium text-gray-700 mb-2">{product.price}</p>
                                             </div>
                                         </div>
                                         <div className=' flex'>
                                             <MdOutlineLocalOffer />
-                                            <p className='text-[10px]'>Propuestas: 3</p>
+                                            <p className='text-[10px]'>Propuestas: {product.offer}</p>
                                         </div>
-                                        <h3 className="text-xs text-gray-600 mb-5 flex">
+                                        <h3 className="text-xs text-gray-600 mb-3 flex">
                                             <span aria-hidden="true" className=" inset-0 flex-initial" />
                                             <FaLocationDot className="mr-1 mt-1" />{product.locate}
                                         </h3>
                                         {/* <p className="text-[10px] text-gray-400">{product.ruc}</p> */}
-                                        <p className="text-[11px] text-gray-400">{product.society}</p>
+                                        <p className="text-[11px] text-gray-400">{product.postedAgo}</p>
                                     </div>
                                 </div>
                             </div>

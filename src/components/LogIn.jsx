@@ -4,7 +4,7 @@ function LogIn() {
     return (
         <div >
             <div className="min-h-full flex justify-center items-center mx-auto px-6 py-12 lg:px-8" style={{ backgroundImage: "url('./src/assets/dep2.jpeg')" }}>
-                <div className='bg-black bg-opacity-40 ml-4 mr-4 mb-10 rounded-lg p-6 w-160 '>
+                <div className='bg-black bg-opacity-40 ml-4 mr-4 mb-10 p-6 w-160 font-urbanist'>
                     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-sm">
                         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                             <img
@@ -12,7 +12,7 @@ function LogIn() {
                                 src="./src/assets/logo.png"
                                 alt="my Company"
                             />
-                            <h2 className="mt-10 mb-5 text-center text-2xl font-bold leading-9 tracking-tight text-white">
+                            <h2 className="mt-10 mb-5 text-center text-2xl font-bold leading-9 tracking-tight text-white font-bebas">
                                 Inciar sesión
                             </h2>
                         </div>
@@ -20,7 +20,7 @@ function LogIn() {
                             <div className="col-span-full">
                                 <label
                                     htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                                    className="relative  border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                                 >
                                     <input
                                         id="email"
@@ -28,7 +28,7 @@ function LogIn() {
                                         name="email"
                                         autoComplete="email"
                                         required
-                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
                                         placeholder="Username"
                                     />
                                     <span
@@ -41,7 +41,7 @@ function LogIn() {
                             <div className="col-span-full">
                                 <label
                                     htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                                    className="relative  border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                                 >
                                     <input
                                         id="password"
@@ -49,7 +49,7 @@ function LogIn() {
                                         type="password"
                                         autoComplete="current-password"
                                         required
-                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
                                         placeholder="Username"
                                     />
                                     <span
@@ -63,7 +63,7 @@ function LogIn() {
                             <div>
                                 <button
                                     type="submit"
-                                    className=" w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                    className=" w-full justify-center  bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 >
                                     Ingresar
                                 </button>

@@ -22,11 +22,11 @@ function Post() {
                 <div className="text-center">
                     <h2 className="text-base font-semibold leading-7 text-gray-900">Formulario de publicación</h2>
                 </div>
-                <div className="bg-white min-h-screen flex flex-col justify-center items-center max-w-3xl py-2">
-                    <div className="bg-gray-400 text-white text-center py-2 w-full">
+                <div className="bg-white p-4 w-full ">
+                    <div className="bg-gray-400 text-white text-center w-full">
                         Página {currentPage} de 4
                     </div>
-                    <form action="" className="">
+                    <form action="" className="w-full">
                         <FormPg1 currentPage={currentPage} />
                         <FormPg2 currentPage={currentPage} />
                         <FormPg3 currentPage={currentPage} />

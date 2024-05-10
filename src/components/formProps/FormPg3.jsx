@@ -28,45 +28,6 @@ function FormPg3({ currentPage }) {
     return (
         <div className={`${currentPage != 3 ? "hidden" : ""}`}>
             <div className=''>
-                {/* <div>
-                    <label htmlFor="cover-photo" className="block text-xl font-medium leading-6 text-gray-900">
-                        Subir fotos
-                    </label>
-                    <div className="flex flex-col items-center font-urbanist">
-                        <div className="grid grid-cols-3 gap-4">
-                            {images.map((imageUrl, index) => (
-                                <div key={index} className="relative">
-                                    <label htmlFor={`file-upload-${index}`} className="md:w-60 h-60 border border-dashed border-gray-400 flex items-center justify-center cursor-pointer rounded-lg">
-                                        {imageUrl ? (
-                                            <>
-                                                <img
-                                                    src={imageUrl}
-                                                    alt={`Image ${index + 1}`}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                                <button
-                                                    onClick={() => handleRemove(index)}
-                                                    className="absolute top-0 right-0 p-1 bg-red-500 text-white rounded-full"
-                                                >
-                                                    X
-                                                </button>
-                                            </>
-                                        ) : (
-                                            <span className='text-blue-500'>Subir imagen</span>
-                                        )}
-                                    </label>
-                                    <input
-                                        id={`file-upload-${index}`}
-                                        type="file"
-                                        accept="image/*"
-                                        className="hidden"
-                                        onChange={(e) => handleSelect(e, index)}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div> */}
                 <div className="col-span-full">
                     <label htmlFor="cover-photo" className="block text-xl font-medium leading-6 text-gray-900">
                         Subir fotos
