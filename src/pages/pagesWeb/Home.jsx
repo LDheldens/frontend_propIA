@@ -261,7 +261,7 @@ const Home = () => {
                     <div className=" pt-8">
                         <h4 className="text-[45px] font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Integrado con inteligencia artificial</h4>
                     </div>
-                    <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3 m-3">
+                    <div className="mx-auto max-w-7xl  px-6 lg:px-8 m-3">
                         <ul role="list" className="grid gap-8 md:gap-6  md:grid-cols-3 lg:gap-8 border-gray-300">
                             <li className='max-w-[450px] mx-auto md:w-auto'>
                                 <div className="flex p-5 md:p-4 md:pr-1 lg:p-5 items-center gap-x-1 border border-gray-400 bg-white shadow-md">
