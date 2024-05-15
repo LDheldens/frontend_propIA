@@ -10,13 +10,13 @@ function FormPg1({ currentPage }) {
                         <div className="font-normal flex flex-col sm:flex-row items-center justify-center p-2 bg-white">
                             <h2 className="text-base font-semibold leading-7 text-gray-900">Tipo de operación:</h2>
                             <div className='flex'>
-                                <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 rounded w-full md:w-auto">
+                                <button className=" hover:bg-blue1 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 rounded w-full md:w-auto">
                                     Venta
                                 </button>
-                                <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 rounded w-full md:w-auto">
+                                <button className=" hover:bg-blue1 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 rounded w-full md:w-auto">
                                     Alquiler
                                 </button>
-                                <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 rounded w-full md:w-auto">
+                                <button className=" hover:bg-blue1 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 rounded w-full md:w-auto">
                                     Temporada
                                 </button>
                             </div>
@@ -32,7 +32,7 @@ function FormPg1({ currentPage }) {
                                 name="country"
                                 autoComplete="country-name"
                                 aria-placeholder=''
-                                className=" w-full rounded-md border-0 p-1 text-gray-900 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                className=" w-full rounded-md border-0 p-1 text-gray-900 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue1 sm:max-w-xs sm:text-sm sm:leading-6"
                             >
                                 <option>Selecciona subtipo de inmueble</option>
                                 <option>Departamento</option>
@@ -56,7 +56,7 @@ function FormPg1({ currentPage }) {
                                 name="country"
                                 autoComplete="country-name"
                                 aria-placeholder=''
-                                className="block w-full rounded-md border-0 p-1 text-gray-900 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                className="block w-full rounded-md border-0 p-1 text-gray-900 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue1 sm:max-w-xs sm:text-sm sm:leading-6"
                             >
                                 <option>Selecciona subtipo de inmueble</option>
                                 <option>Casa de ciudad</option>
@@ -72,12 +72,12 @@ function FormPg1({ currentPage }) {
                             <div className=" w-full">
                                 <label
                                     htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
+                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900"
                                 >
                                     <input
                                         type="email"
                                         id="Username"
-                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-blue1 sm:text-sm sm:leading-6"
                                         placeholder="Username"
                                     />
                                     <span
@@ -90,12 +90,12 @@ function FormPg1({ currentPage }) {
                             <div className="w-full">
                                 <label
                                     htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
+                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900"
                                 >
                                     <input
                                         type="text"
                                         id="Username"
-                                        class="peer p-1 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                        class="peer p-1 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-blue1 sm:text-sm sm:leading-6"
                                         placeholder="Username"
                                     />
 
@@ -111,12 +111,12 @@ function FormPg1({ currentPage }) {
                         <div className="my-3">
                             <label
                                 htmlFor="Username"
-                                className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
+                                className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="text"
                                     id="Username"
-                                    class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                                    class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-blue1 sm:text-sm sm:leading-6"
                                     placeholder="Username"
                                 />
 
@@ -132,7 +132,7 @@ function FormPg1({ currentPage }) {
                             <div className="w-full">
                                 <label
                                     htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
+                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900"
                                 >
                                     <input
                                         type="text"
@@ -151,7 +151,7 @@ function FormPg1({ currentPage }) {
                             <div className="w-full">
                                 <label
                                     htmlFor="Username"
-                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600 block text-sm font-medium leading-6 text-gray-900"
+                                    className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900"
                                 >
                                     <input
                                         type="number"
@@ -170,15 +170,15 @@ function FormPg1({ currentPage }) {
                         </div>
                     </div>
                     <div className='flex mt-4'>
-                        <input type="checkbox" className='m-1 p-3 form-checkbox h-6 w-6 text-green-500' />
+                        <input type="checkbox" className='m-1 p-3 form-checkbox h-6 w-6 text-blue1' />
                         <span className='text-[13px] p-2'>Acepto los Términos y Condiciones de uso y las politicas de privacidad.</span>
                     </div>
                     {/* <div className='flex mt-3'>
-                            <input type="checkbox" id="miCheckbox" checked={isChecked} onChange={() => setIsChecked(!isChecked)} className='m-1 p-3 form-checkbox h-6 w-6 text-green-500' />
+                            <input type="checkbox" id="miCheckbox" checked={isChecked} onChange={() => setIsChecked(!isChecked)} className='m-1 p-3 form-checkbox h-6 w-6 text-blue1' />
                             <span className='text-[12px]'>Autorizo el uso de mi información para fines adicionales.</span>
                         </div> */}
                     {/* <div className='mt-4'>
-                            <button className='bg-green-600 w-full p-3 rounded-lg'>
+                            <button className='bg-blue1 w-full p-3 rounded-lg'>
                                 Contactar
                             </button>
                         </div> */}

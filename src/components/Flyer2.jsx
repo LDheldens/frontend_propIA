@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Flyer() {
+function Flyer2() {
     const post = [
         {
             id: 1,
@@ -12,9 +12,9 @@ function Flyer() {
         },
         {
             id: 2,
-            title: 'Análisis de tu propiedad',
-            descript: '¿Quieres vender tu propiedad?',
-            button: 'Solicita ACM',
+            title: 'Inteligencia Artificial',
+            descript: '¿Cómo usar la IA en este rubro?',
+            button: 'Con Chat-GPT',
             imageSrc: '/src/assets/dep4.jpeg',
             imageAlt: '',
         },
@@ -36,4 +36,4 @@ function Flyer() {
     )
 }
 
-export default Flyer
+export default Flyer2

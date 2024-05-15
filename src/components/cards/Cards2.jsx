@@ -13,7 +13,7 @@ function Cards2() {
                         <li >
                             <div className="relative flex items-center gap-x-6 border border-gray-500 bg-white shadow-md ">
                                 <div className='m-4 mt-6 p-2 font-bebas'>
-                                    <FaHandshake className='bg-white absolute h-16 w-16 rounded-full m-3 justify-center flex text-green-600 text-3xl p-4 shadow-md right-[35%] top-[-40px] pl-2 pr-2 ' />
+                                    <FaHandshake className='bg-white absolute h-16 w-16 rounded-full m-3 justify-center flex text-blue1 text-3xl p-4 shadow-md right-[35%] top-[-40px] pl-2 pr-2 ' />
                                     <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900 "> Búsqueda clara y rápida</h3>
                                     <p className="text-sm font-urbanist leading-6 text-gray-700">Pensamos nuestros filtros y mapas para simplificar tu experiencia en nuestro portal.</p>
 
@@ -23,7 +23,7 @@ function Cards2() {
                         <li >
                             <div className="relative flex items-center gap-x-6 border border-gray-500 bg-white shadow-md">
                                 <div className='m-4 mt-6 p-2 font-bebas'>
-                                    <BsFillAlarmFill className='bg-white absolute h-16 w-16 rounded-full m-3 justify-center flex text-green-600 text-3xl p-4 shadow-md right-[35%] top-[-40px] pl-2 pr-2 ' />
+                                    <BsFillAlarmFill className='bg-white absolute h-16 w-16 rounded-full m-3 justify-center flex text-blue1 text-3xl p-4 shadow-md right-[35%] top-[-40px] pl-2 pr-2 ' />
                                     <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">Tienes tu propia sección</h3>
                                     <p className="text-sm font-urbanist leading-6 text-gray-700">Accede de forma fácil y segura a los avisos contactados, favoritos, las notas que creaste y más.</p>
                                     <div className="">
@@ -35,7 +35,7 @@ function Cards2() {
                         <li >
                             <div className="relative flex items-center gap-x-6 border border-gray-500 bg-white shadow-md">
                                 <div className='m-4 mt-6 p-2 font-bebas'>
-                                    <HiHome className='bg-white absolute h-16 w-16 rounded-full m-3 justify-center flex text-green-600 text-3xl p-4 shadow-md right-[35%] top-[-40px] pl-2 pr-2 ' />
+                                    <HiHome className='bg-white absolute h-16 w-16 rounded-full m-3 justify-center flex text-blue1 text-3xl p-4 shadow-md right-[35%] top-[-40px] pl-2 pr-2 ' />
                                     <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">Variedad de anunciantes</h3>
                                     <p className="text-sm font-urbanist leading-6 text-gray-700">Inmobiliarias y dueños directos de todo el país ofrecen las mejores opciones de inmuebles para ti.</p>
                                     <div className="">
@@ -47,7 +47,7 @@ function Cards2() {
                         <li >
                             <div className="relative flex items-center gap-x-6 border border-gray-500 bg-white shadow-md">
                                 <div className='m-4 mt-6 p-2 font-bebas'>
-                                    <FaHouseUser className='bg-white absolute h-16 w-16 rounded-full m-3 justify-center flex text-green-600 text-3xl p-4 shadow-md right-[35%] top-[-40px] pl-2 pr-2 ' />
+                                    <FaHouseUser className='bg-white absolute h-16 w-16 rounded-full m-3 justify-center flex text-blue1 text-3xl p-4 shadow-md right-[35%] top-[-40px] pl-2 pr-2 ' />
                                     <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">¡CasaPaz!</h3>
                                     <p className="text-sm font-urbanist leading-6 text-gray-700">14 años en el mercado y 1.3 millones de avisos publicados nos respaldan en la búsqueda de tu hogar.</p>
                                     <div className="">

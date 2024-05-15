@@ -132,15 +132,15 @@ function Item() {
                     <div className=" inset-0 flex items-center justify-end text-white ">
                         <form action="" className="flex w-full">
                             <div className="font-normal flex gap-2 w-full flex-col items-center justify-center sm:flex-row sm:justify-center sm:gap-3 rounded-t m-2 font-urbanist">
-                                <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-700 hover:text-white text-gray-600  py-2 px-4 ">
+                                <button className="flex items-center gap-1 border border-gray-400 hover:bg-blue1 hover:text-white text-gray-600  py-2 px-4 ">
                                     Favorito
                                     <FaRegHeart />
                                 </button>
-                                <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-700 hover:text-white text-gray-600  py-2 px-4 ml-2">
+                                <button className="flex items-center gap-1 border border-gray-400 hover:bg-blue1 hover:text-white text-gray-600  py-2 px-4 ml-2">
                                     Compartir
                                     <IoShareSocialOutline />
                                 </button>
-                                <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-700 hover:text-white text-gray-600 py-2 px-4 ml-2">
+                                <button className="flex items-center gap-1 border border-gray-400 hover:bg-blue1 hover:text-white text-gray-600 py-2 px-4 ml-2">
                                     Notas personales
                                     <MdOutlineNoteAlt />
                                 </button>
@@ -276,7 +276,7 @@ function Item() {
                                                 </div>
                                             </div>
                                             <h3 class="bg-gray-500 z-10 text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-bebas">{props.type}</h3>
-                                            {/* <FaWhatsapp class="bg-green-500 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" /> */}
+                                            {/* <FaWhatsapp class="bg-blue1 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" /> */}
                                         </div>
                                     ))}
                                 </div>
@@ -350,12 +350,12 @@ function Item() {
                                             </a>
                                         </h3>
                                     </div>
-                                    <div className='rounded-lg border border-green-400 bg-white m-2 p-2 w-full'>
+                                    <div className='rounded-lg border border-blue1 bg-white m-2 p-2 w-full'>
                                         <button className='w-full'>
                                             Contactar
                                         </button>
                                     </div>
-                                    <div className='rounded-lg bg-green-600 m-2 p-2 w-full'>
+                                    <div className='rounded-lg bg-blue1 m-2 p-2 w-full'>
                                         <button className='w-full'>
                                             Cotizar
                                         </button>

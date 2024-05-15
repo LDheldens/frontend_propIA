@@ -49,7 +49,7 @@ function Advisors() {
                                     <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
                                     <p className="text-sm font-semibold leading-6 text-indigo-600">{person.role}</p>
                                     <div className="">
-                                        <button className=" text-green-500 py-1 px-2">
+                                        <button className=" text-blue1 py-1 px-2">
                                             <FaWhatsappSquare />
                                         </button>
                                         <button className=" text-blue-500 py-1 px-2">

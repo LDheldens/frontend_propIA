@@ -28,8 +28,8 @@ const ChatBot = () => {
     return (
         <div className="flex flex-col h-100 lg:w-120 sm:w-auto font-urbanist">
             <div className='bg-gray-400 flex  p-2'>
-                <div className='rounded-full px-4 py-[10px] bg-white'>
-                    <img src="/src/assets/logo4.png" alt="" className='w-7' />
+                <div className='rounded-full px-2 py-[10px] bg-white'>
+                    <img src="/src/assets/logo3.png" alt="" className='w-11' />
                 </div>
                 <h3 className='p-4 text-white font-urbanist'>ChatWeb</h3>
             </div>
@@ -37,7 +37,7 @@ const ChatBot = () => {
                 {messages.map((message, index) => (
                     <div
                         key={index}
-                        className={`my-2 rounded-lg p-2 max-w-xs ${message.sender === 'user' ? 'bg-green-500 text-white self-end' : 'bg-gray-300 self-start'
+                        className={`my-2 rounded-lg p-2 max-w-xs ${message.sender === 'user' ? 'bg-blue1 text-white self-end' : 'bg-gray-300 self-start'
                             }`}
                     >
                         {message.text}
@@ -53,7 +53,7 @@ const ChatBot = () => {
                     className="flex-1 border border-gray-300 rounded-l-lg p-2 mr-2"
                     placeholder="Escriba su mensaje..."
                 />
-                <button type="submit" className="bg-green-500 text-white pl-3 pr-3 rounded-r-lg p-1">
+                <button type="submit" className="bg-blue1 text-white pl-3 pr-3 rounded-r-lg p-1">
                     <FiSend />
                 </button>
             </form>

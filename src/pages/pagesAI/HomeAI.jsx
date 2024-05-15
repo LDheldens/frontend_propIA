@@ -4,6 +4,7 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import PrestenText from '../../components/iaIntegrated/PrestenText';
 import bg from '/src/assets/intro.mp4'
+import Flyer2 from '../../components/Flyer2';
 
 const images = [
     {
@@ -87,6 +88,22 @@ function HomeAI() {
                     {textContent[textIndex]}
                 </div> */}
             </div>
+            <div className='mt-4'>
+                <Flyer2 />
+            </div>
+            <div className=''>
+                <h4 className="text-[45px] font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Galería de imágenes</h4>
+            </div>
+            <div className='overflow-hidden bg-cover bg-center w-full h-120 mt-6'>
+                <ImageGallery items={images}
+                    showThumbnails={false}
+                    showNav={false}
+                    showPlayButton={false}
+                    showFullscreenButton={false}
+                    autoPlay={true}
+                />
+            </div>
+
             <div className=''>
                 <ItemSell />
             </div>

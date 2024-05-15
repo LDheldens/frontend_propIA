@@ -78,7 +78,7 @@ const Layout = () => {
             <div className="flex justify-between items-center px-5 md:px-8">
                 <div className="flex items-center">
                     <Link to={"/"} className="text-white justify-start font-semibold text-xl">
-                        <img src="/src/assets/logo.png" alt="" width="170" height="100" />
+                        <img src="/src/assets/logo3.png" alt="" width="170" height="100" />
                     </Link>
                     <div
                         className={`absolute ${isMenuOpen ? 'flex' : 'hidden'} h-screen z-30 bg-black bg-opacity-75 top-0 bottom-0 left-0 flex lg:flex right-0 justify-center items-center gap-5  font-bold p-3 lg:p-0 lg:static lg:bg-transparent lg:h-auto`}
@@ -97,7 +97,7 @@ const Layout = () => {
                                 <Link
                                     to={link.link}
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="text-white text-3xl lg:text-gray-500 font-bold lg:text-[20px] transition-opacity duration-300 hover:text-green-400 hover:opacity-75 font-bebas"
+                                    className="text-white text-3xl lg:text-gray-500 font-bold lg:text-[20px] transition-opacity duration-300 hover:text-blue1 hover:opacity-75 font-bebas"
                                     key={link.id}
                                 >
                                     {link.text}
@@ -111,13 +111,13 @@ const Layout = () => {
                 </div>
                 <div className='flex flex-col md:flex-row'>
                     <a href="/publicar/formulario">
-                        <button className="bg-white hover:bg-green-600 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center z-60">
+                        <button className="bg-white hover:bg-blue1 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-blue1 justify-center z-60">
                             <FaPlus />
                             <p className="pl-1 text-sm font-urbanist">Publicar</p>
                         </button>
                     </a>
                     <a href="/login">
-                        <button className="bg-green-600 hover:bg-gray-500 m-2 p-2 items-center flex text-white justify-center z-60">
+                        <button className="bg-blue1 hover:bg-gray-500 m-2 p-2 items-center flex text-white justify-center z-60">
                             <MdLogin className="text-2xl" />
                             <p className="pl-1 text-sm font-urbanist">Iniciar sesión</p>
                         </button>
@@ -131,7 +131,7 @@ const Layout = () => {
 
             <footer class="">
                 <div className='text-center inset-x-0 flex justify-center bg-white p-4'>
-                    <ul className='justify-center flex text-green-600 text-3xl bg-white p-4 shadow-md shadow-green-400  pl-10 pr-10 '>
+                    <ul className='justify-center flex text-blue1 text-3xl bg-white p-4 shadow-md shadow-blue1  pl-10 pr-10 '>
                         <li>
                             <FaFacebookF className="ml-1 " />
                         </li>
@@ -157,12 +157,12 @@ const Layout = () => {
                         <div className='bg-white text-gray-400 text-sm flex-1 font-urbanist'>
                             <p className='text-gray-700 font-bebas font-bold text-base'>Accesos directos</p>
                             <nav>
-                                <p className='p-2 hover:text-green-600'>Inicio</p>
-                                <p className='p-2 hover:text-green-600'>Buscar propiedades</p>
-                                <p className='p-2 hover:text-green-600'>Asesores</p>
-                                <p className='p-2 hover:text-green-600'>Contactos</p>
-                                <p className='p-2 hover:text-green-600'>Nosotros</p>
-                                <p className='p-2 hover:text-green-600'>Politica de privacidad</p>
+                                <p className='p-2 hover:text-blue1'>Inicio</p>
+                                <p className='p-2 hover:text-blue1'>Buscar propiedades</p>
+                                <p className='p-2 hover:text-blue1'>Asesores</p>
+                                <p className='p-2 hover:text-blue1'>Contactos</p>
+                                <p className='p-2 hover:text-blue1'>Nosotros</p>
+                                <p className='p-2 hover:text-blue1'>Politica de privacidad</p>
                             </nav>
                         </div>
                         <div className='flex-1 bg-white font-urbanist'>
@@ -170,7 +170,7 @@ const Layout = () => {
                             <ul>
                                 <li className='flex items-center mb-2'>
                                     <div className='m-3'>
-                                        <BiSolidPhoneCall className='text-green-500 text-2xl' />
+                                        <BiSolidPhoneCall className='text-blue1 text-2xl' />
                                     </div>
                                     <div className='text-gray-500 text-sm'>
                                         <h5>TELEFONO</h5>
@@ -179,7 +179,7 @@ const Layout = () => {
                                 </li>
                                 <li className='flex items-center'>
                                     <div className='bg-white m-3'>
-                                        <IoIosMail className='text-green-500 text-2xl' />
+                                        <IoIosMail className='text-blue1 text-2xl' />
                                     </div>
                                     <div className='flex flex-col text-xs'>
                                         <h5 className='text-gray-500 whitespace-normal'>EMAILS</h5>
@@ -191,14 +191,14 @@ const Layout = () => {
                         </div>
                     </div>
                 </div>
-                <div className="text-xs mx-auto flex justify-center text-white bg-green-700 p-5">
+                <div className="text-xs mx-auto flex justify-center text-white bg-blue1 p-5">
                     <nav>
                         <span>© Copyright 2024 Polariss Technology - Términos y Condiciones de Uso Términos y Condiciones de Contratación Política de privacidad.</span>
                     </nav>
                 </div>
             </footer>
             <div className='fixed bottom-3 right-3 z-50' >
-                <button className='bg-green-600 p-5 rounded-full text-white text-4xl animate-pulse' onClick={toggleChatbot}>
+                <button className='bg-blue1 p-5 rounded-full text-white text-4xl animate-pulse' onClick={toggleChatbot}>
                     <BiSolidChat />
                 </button>
 

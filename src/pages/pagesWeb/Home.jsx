@@ -15,6 +15,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bg from '/src/assets/video1.mp4'
 import Flyer from '../../components/Flyer';
+import PrestenText1 from '../../components/iaIntegrated/PrestenText1';
 
 
 function Arrow(props) {
@@ -152,26 +153,26 @@ const Home = () => {
                     muted
                 />
 
-                <div className="relative z-10 items-center justify-center p-2 md:p-8 h-160 w-full  bg-black bg-opacity-35">
-                    <h3 className="text-[40px] font-bold  text-white  text-center p-8 pb-3 font-bebas mt-10">La llave al espacio que buscas</h3>
+                <div className="relative z-10 items-center justify-center p-2 md:p-4 h-160 w-full  bg-black bg-opacity-35">
+                    <h3 className="text-[40px] font-bold  text-white  text-center p-4 pb-3 font-bebas "><PrestenText1 /></h3>
                     <div className="m-14">
-                        <div className=" inset-0 flex items-center  text-white ">
+                        <div className="flex items-center justify-center text-white sm:w-full">
                             <form action="" className="flex">
-                                <div className="font-normal flex flex-col md:flex-row items-center justify-center p-2 bg-white font-bebas">
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 md:w-auto">
+                                <div className="font-normal flex items-center justify-center gap-x-2 bg-white font-bebas">
+                                    <button className=" hover:bg-blue1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                         Alquilar
                                     </button>
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 py-2 px-4 md:w-auto">
+                                    <button className=" hover:bg-blue1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                         Comprar
                                     </button>
-                                    <button className=" hover:bg-green-700 hover:text-white text-gray-600 py-2 px-4 border border-gray-200 p-2 m-2 md:w-auto">
+                                    <button className=" hover:bg-blue1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                         Proyectos
                                     </button>
                                 </div>
                             </form>
                         </div>
                         <div className='flex flex-col md:flex-row bg-white '>
-                            <div className='p-4 w-full sm:w-1/2 md:w-1/3'>
+                            <div className='p-4 w-full sm:w-full md:w-1/3'>
                                 <select
                                     id="country"
                                     name="country"
@@ -198,7 +199,7 @@ const Home = () => {
                             <div className="flex justify-center items-center p-4 space-x-4 font-urbanist">
                                 <button
                                     type="button"
-                                    className="px-5 py-3 bg-green-600 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx "
+                                    className="px-5 py-3 bg-blue3 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx "
                                 >
                                     <FaSearch className='flex mr-1  selection: ' /> Buscar
                                 </button>
@@ -206,10 +207,12 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className='m-8'>
-                        <h6 className="text-xs text-white text-center">Ver más</h6>
-                        <div className="text-center inset-x-0 flex justify-center w-8 h-8 animate-ping absolute left-[48%] ">
-                            <MdExpandCircleDown className=" justify-center flex w-full h-full text-white" />
+                    <div className='m-8 flex-1'>
+                        <div className='flex justify-center'>
+                            <h6 className="text-sm text-white font-urbanist font-bold">Ver más</h6>
+                        </div>
+                        <div className="flex justify-center items-center animate-ping m-4">
+                            <MdExpandCircleDown className="text-white w-full h-8" />
                         </div>
                     </div>
                     <br />
@@ -268,7 +271,7 @@ const Home = () => {
                                     <div >
                                         <p className="text-sm leading-6 text-gray-700 font-bebas">Navega por nuestra página web inteligente, donde la IA anticipa tus necesidades.</p>
                                     </div>
-                                    <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-gray-300'>
+                                    <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-blue3'>
                                         <FaArrowRight className='h-10 w-10 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full m-3' />
                                     </a>
                                 </div>
@@ -278,7 +281,7 @@ const Home = () => {
                                     <div >
                                         <p className="text-sm font-semibold leading-6 text-gray-700 font-bebas">Experimenta la diferencia con nuestra página web, potenciada por inteligencia artificial.</p>
                                     </div>
-                                    <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-gray-300'>
+                                    <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-blue3'>
                                         <FaArrowRight className=' h-10 w-10 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full m-3' />
                                     </a>
                                 </div>
@@ -288,7 +291,7 @@ const Home = () => {
                                     <div >
                                         <p className="text-sm font-semibold leading-6 text-gray-700 font-bebas">Explora un nuevo nivel de interactividad con nuestra página web impulsada por IA.</p>
                                     </div>
-                                    <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-gray-300'>
+                                    <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-blue3'>
                                         <FaArrowRight className='h-10 w-10 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full m-3' />
                                     </a>
                                 </div>
@@ -317,13 +320,13 @@ const Home = () => {
                             <div className=" inset-0 flex items-center justify-end text-white ">
                                 <form action="" className="flex">
                                     <div className="font-urbanist flex items-center justify-center rounded-t bg-white m-2">
-                                        <button className=" border border-gray-600 hover:bg-green-700 hover:text-white text-gray-600  py-2 px-4 ">
+                                        <button className=" border border-gray-600 hover:bg-blue1 hover:text-white text-gray-600  py-2 px-4 ">
                                             En construcción
                                         </button>
-                                        <button className="border border-gray-600 hover:bg-green-700 hover:text-white text-gray-600  py-2 px-4  ml-2">
+                                        <button className="border border-gray-600 hover:bg-blue1 hover:text-white text-gray-600  py-2 px-4  ml-2">
                                             En planos
                                         </button>
-                                        <button className="border border-gray-600 hover:bg-green-700 hover:text-white text-gray-600 py-2 px-4 ml-2">
+                                        <button className="border border-gray-600 hover:bg-blue1 hover:text-white text-gray-600 py-2 px-4 ml-2">
                                             Entrega inmediata
                                         </button>
                                     </div>
@@ -374,7 +377,7 @@ const Home = () => {
             </div>
             <div className='flex justify-center items-center p-4'>
                 <h5 className='mr-1 text-xl text-gray-600 font-bebas'>Busca entre más de 17,976 Propiedades</h5>
-                <button className='bg-green-600 p-3 text-white text-sm'>
+                <button className='bg-blue1 p-3 text-white text-sm'>
                     <a href="/buscar">VER MÁS</a>
                 </button>
             </div>

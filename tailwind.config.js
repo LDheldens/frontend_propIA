@@ -7,6 +7,11 @@ export default {
     ],
     theme: {
         extend: {
+            colors: {
+                blue1: '#1B7895',
+                blue2: '#174966',
+                blue3: '#24BFCF',
+            },
             spacing: {
                 '200': '50rem',
                 '160': '40rem',
@@ -28,10 +33,5 @@ export default {
             })
         },
     },
-    plugins: [
-        // require('@tailwindcss/aspect-ratio'),
-        // require('@tailwindcss/forms'),
-        // require('@tailwindcss/typography'),
-        // require('@tailwindcss/line-clamp'),
-    ],
+    plugins: [],
 }
