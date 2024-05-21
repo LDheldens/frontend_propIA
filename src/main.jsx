@@ -18,6 +18,7 @@ import MyActivity from './pages/pagesPost/MyActivity'
 import LayoutAI from './components/layouts/LayoutAI'
 import HomeAI from './pages/pagesAI/HomeAI'
 import SignIn from './components/SignIn'
+import IA from './pages/pagesWeb/IA'
 
 const router = createBrowserRouter(
   [
@@ -37,6 +38,10 @@ const router = createBrowserRouter(
         {
           element: <Advisors />,
           path: '/asesores'
+        },
+        {
+          element: <IA />,
+          path: '/ia'
         },
         {
           element: <Contact />,

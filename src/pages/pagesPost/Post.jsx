@@ -38,7 +38,7 @@ function Post() {
                             <div className="flex justify-end">
                                 <button
                                     onClick={goToPreviousPage}
-                                    className="bg-blue1 hover:bg-blue1 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
+                                    className="bg-green1 hover:bg-green1 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
                                 >
                                     Anterior
                                 </button>
@@ -47,7 +47,7 @@ function Post() {
                         {!isLastPage && (
                             <button
                                 onClick={goToNextPage}
-                                className="bg-blue1 hover:bg-blue1 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline transition duration-300 text-right"
+                                className="bg-green1 hover:bg-green1 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline transition duration-300 text-right"
                             >
                                 Siguiente
                             </button>
@@ -55,7 +55,7 @@ function Post() {
                         {isLastPage && (
                             <button
                                 onClick={() => alert("¡Formulario guardado/enviado!")}
-                                className="bg-blue1 hover:bg-blue1 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
+                                className="bg-green1 hover:bg-green1 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
                             >
                                 Publicar
                             </button>

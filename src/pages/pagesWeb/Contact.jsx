@@ -158,7 +158,7 @@ function Contact() {
                     <div className="border-b border-gray-900/10 pb-12">
                         <h2 className="text-base font-semibold leading-7 text-gray-900">Notificaciones</h2>
                         <div className='flex'>
-                            <input type="checkbox" className='m-1 p-2 form-checkbox h-6 w-6 text-blue1' />
+                            <input type="checkbox" className='m-1 p-2 form-checkbox h-6 w-6 text-green1' />
 
                             <p className="mt-1 text-sm leading-6 text-gray-600">
                                 Siempre te informaremos sobre cambios importantes, pero tú eliges qué más quieres escuchar.
@@ -173,7 +173,7 @@ function Contact() {
                     </button>
                     <button
                         type="submit"
-                        className="rounded-md bg-blue1 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue1"
+                        className="rounded-md bg-green1 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green1"
                     >
                         Enviar
                     </button>

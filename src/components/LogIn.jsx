@@ -20,7 +20,7 @@ function LogIn() {
                             <div className="col-span-full">
                                 <label
                                     htmlFor="Username"
-                                    className="relative  border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                                    className="relative  border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                                 >
                                     <input
                                         id="email"
@@ -28,7 +28,7 @@ function LogIn() {
                                         name="email"
                                         autoComplete="email"
                                         required
-                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-blue1 sm:text-sm sm:leading-6"
+                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                         placeholder="Username"
                                     />
                                     <span
@@ -41,7 +41,7 @@ function LogIn() {
                             <div className="col-span-full">
                                 <label
                                     htmlFor="Username"
-                                    className="relative  border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                                    className="relative  border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                                 >
                                     <input
                                         id="password"
@@ -49,7 +49,7 @@ function LogIn() {
                                         type="password"
                                         autoComplete="current-password"
                                         required
-                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-blue1 sm:text-sm sm:leading-6"
+                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                         placeholder="Username"
                                     />
                                     <span
@@ -63,7 +63,7 @@ function LogIn() {
                             <div>
                                 <button
                                     type="submit"
-                                    className=" w-full justify-center  bg-blue1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                    className=" w-full justify-center  bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 >
                                     Ingresar
                                 </button>
@@ -72,7 +72,7 @@ function LogIn() {
 
                         <p className="mt-10 text-center text-sm text-white">
                             ¿No es un miembro? {' '}
-                            <a href="/signin" className="font-semibold leading-6 text-blue1 hover:text-white">
+                            <a href="/signin" className="font-semibold leading-6 text-green1 hover:text-white">
                                 Registrarse
                             </a>
                         </p>

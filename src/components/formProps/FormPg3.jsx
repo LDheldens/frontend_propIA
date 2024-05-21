@@ -38,7 +38,7 @@ function FormPg3({ currentPage }) {
                             <div className="mt-4 flex text-sm leading-6 text-gray-600">
                                 <label
                                     htmlFor="file-upload"
-                                    className="relative cursor-pointer rounded-md bg-white font-semibold text-blue1 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue1 focus-within:ring-offset-2 hover:text-gray-500"
+                                    className="relative cursor-pointer rounded-md bg-white font-semibold text-green1 focus-within:outline-none focus-within:ring-2 focus-within:ring-green1 focus-within:ring-offset-2 hover:text-gray-500"
                                 >
                                     <span>Cargar un archivo</span>
                                     <input id="file-upload" name="file-upload" type="file" className="sr-only" />

@@ -4,7 +4,7 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import PrestenText from '../../components/iaIntegrated/PrestenText';
 import bg from '/src/assets/intro.mp4'
-import Flyer2 from '../../components/Flyer2';
+import Flyer2 from '../../components/flyers/Flyer2';
 
 const images = [
     {

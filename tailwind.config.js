@@ -8,9 +8,10 @@ export default {
     theme: {
         extend: {
             colors: {
-                blue1: '#1B7895',
+                green1: '#1B7895',
                 blue2: '#174966',
                 blue3: '#24BFCF',
+                green1: '#5FB776',
             },
             spacing: {
                 '200': '50rem',

@@ -36,12 +36,12 @@ function SendMsg() {
                         <div className="col-span-full">
                             <label
                                 htmlFor="Username"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="text"
                                     id="Username"
-                                    class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-blue1 sm:text-sm sm:leading-6"
+                                    class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                     placeholder="Username"
                                 />
                                 <span
@@ -62,12 +62,12 @@ function SendMsg() {
                         <div className="col-span-full">
                             <label
                                 htmlFor="Username"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="text"
                                     id="Username"
-                                    class="peer p-1 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-blue1 sm:text-sm sm:leading-6"
+                                    class="peer p-1 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                     placeholder="Username"
                                 />
 
@@ -94,12 +94,12 @@ function SendMsg() {
                         <div className="col-span-full">
                             <label
                                 htmlFor="Username"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="text"
                                     id="Username"
-                                    class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-blue1 sm:text-sm sm:leading-6"
+                                    class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                     placeholder="Username"
                                 />
 
@@ -125,7 +125,7 @@ function SendMsg() {
                         {/* <div className="sm:col-span-4">
                             <label
                                 htmlFor="Username"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="text"
@@ -155,7 +155,7 @@ function SendMsg() {
                         <div className="sm:col-span-4">
                             <label
                                 htmlFor="Username"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="number"
@@ -192,7 +192,7 @@ function SendMsg() {
                                     name="country"
                                     autoComplete="country-name"
                                     aria-placeholder=''
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue1 sm:max-w-xs sm:text-sm sm:leading-6"
+                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:max-w-xs sm:text-sm sm:leading-6"
                                 >
                                     <option>1 Dormitorio</option>
                                     <option>2 Dormitorios</option>
@@ -204,12 +204,12 @@ function SendMsg() {
                         <div className="col-span-full">
                             <label
                                 htmlFor="Username"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-blue1 focus-within:ring-1 focus-within:ring-blue1 block text-sm font-medium leading-6 text-gray-900"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="text"
                                     id="Username"
-                                    class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-blue1 sm:text-sm sm:leading-6"
+                                    class="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                     placeholder="Username"
                                 />
 
@@ -232,15 +232,15 @@ function SendMsg() {
                         </div>
                     </div>
                     <div className='flex mt-3'>
-                        <input type="checkbox" className='m-1 p-3 form-checkbox h-6 w-6 text-blue1' />
+                        <input type="checkbox" className='m-1 p-3 form-checkbox h-6 w-6 text-green1' />
                         <span className='text-[12px]'>Acepto los Términos y Condiciones de Uso. y las politicas de privacidad.</span>
                     </div>
                     <div className='flex mt-3'>
-                        <input type="checkbox" id="miCheckbox" checked={isChecked} onChange={() => setIsChecked(!isChecked)} className='m-1 p-3 form-checkbox h-6 w-6 text-blue1' />
+                        <input type="checkbox" id="miCheckbox" checked={isChecked} onChange={() => setIsChecked(!isChecked)} className='m-1 p-3 form-checkbox h-6 w-6 text-green1' />
                         <span className='text-[12px]'>Autorizo el uso de mi información para fines adicionales.</span>
                     </div>
                     <div className='mt-4'>
-                        <button className='bg-blue1 w-full p-3 rounded-lg text-white hover:bg-gray-300 hover:text-black'>
+                        <button className='bg-green1 w-full p-3 rounded-lg text-white hover:bg-gray-300 hover:text-black'>
                             Contactar
                         </button>
                     </div>

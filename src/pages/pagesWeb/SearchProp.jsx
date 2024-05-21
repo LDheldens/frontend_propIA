@@ -29,13 +29,13 @@ function SearchProp() {
                     <div className=" inset-0 flex items-center justify-center text-white sm:w-full">
                         <form action="" className="flex">
                             <div className="font-normal flex items-center justify-center gap-x-2 rounded-t-lg bg-white font-bebas">
-                                <button className=" hover:bg-blue1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
+                                <button className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                     Alquilar
                                 </button>
-                                <button className=" hover:bg-blue1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
+                                <button className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                     Comprar
                                 </button>
-                                <button className=" hover:bg-blue1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
+                                <button className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                     Proyectos
                                 </button>
                             </div>
@@ -50,7 +50,7 @@ function SearchProp() {
                     <div className="flex justify-center items-center font-urbanist">
                         <button
                             type="button"
-                            className="px-5 py-3 bg-blue1 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx font-bold"
+                            className="px-5 py-3 bg-green1 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx font-bold"
                         >
                             <FaSearch className='flex mr-1  selection: ' /> Buscar
                         </button>
