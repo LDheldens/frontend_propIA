@@ -1,5 +1,8 @@
 import React from 'react'
 
+function changeLogin() {
+
+}
 function LogIn() {
     return (
         <div >
@@ -16,7 +19,7 @@ function LogIn() {
                                 Inciar sesión
                             </h2>
                         </div>
-                        <form className="space-y-6" action="#" method="POST">
+                        <form className="space-y-6" action="#" onSubmit={changeLogin} method="POST">
                             <div className="col-span-full">
                                 <label
                                     htmlFor="Username"

@@ -18,14 +18,15 @@ function FormPg4({ currentPage }) {
                     <div className='flex flex-col sm:flex-row gap-2 my-3'>
                         <div className="w-full">
                             <label
-                                htmlFor="Username"
+                                htmlFor="area"
                                 className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="number"
-                                    id="Username"
+                                    id="area"
+                                    name='area'
                                     class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                    placeholder="Username"
+                                    placeholder="area"
                                 />
                                 <span
                                     className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -36,14 +37,15 @@ function FormPg4({ currentPage }) {
                         </div>
                         <div className="w-full">
                             <label
-                                htmlFor="Username"
+                                htmlFor="bedroom"
                                 className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="number"
-                                    id="Username"
+                                    id="bedroom"
+                                    name='bedroom'
                                     class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                    placeholder="Username"
+                                    placeholder="bedroom"
                                 />
                                 <span
                                     className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -77,14 +79,15 @@ function FormPg4({ currentPage }) {
                     <div className='flex flex-col sm:flex-row gap-2 my-3'>
                         <div className="w-full">
                             <label
-                                htmlFor="Username"
+                                htmlFor="garage"
                                 className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="number"
-                                    id="Username"
+                                    id="garage"
+                                    name='garage'
                                     class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                    placeholder="Username"
+                                    placeholder="garage"
                                 />
                                 <span
                                     className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -95,14 +98,15 @@ function FormPg4({ currentPage }) {
                         </div>
                         <div className="w-full">
                             <label
-                                htmlFor="Username"
+                                htmlFor="bathroom"
                                 className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="number"
-                                    id="Username"
+                                    id="bathroom"
+                                    name='bathroom'
                                     class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                    placeholder="Username"
+                                    placeholder="bathroom"
                                 />
                                 <span
                                     className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -115,14 +119,15 @@ function FormPg4({ currentPage }) {
                     <div className='flex flex-col sm:flex-row gap-2 my-3'>
                         <div className="w-full">
                             <label
-                                htmlFor="Username"
+                                htmlFor="kitchen"
                                 className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="number"
-                                    id="Username"
+                                    id="kitchen"
+                                    name='kitchen'
                                     class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                    placeholder="Username"
+                                    placeholder="kitchen"
                                 />
                                 <span
                                     className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -134,14 +139,15 @@ function FormPg4({ currentPage }) {
 
                         <div className="w-full">
                             <label
-                                htmlFor="Username"
+                                htmlFor="floor"
                                 className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="number"
-                                    id="Username"
+                                    id="floor"
+                                    name='floor'
                                     class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                    placeholder="Username"
+                                    placeholder="floor"
                                 />
                                 <span
                                     className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -154,14 +160,14 @@ function FormPg4({ currentPage }) {
                     <div className='flex flex-col sm:flex-row gap-2 my-3'>
                         <div className="w-full font-urbanist">
                             <div className="w-full">
-                                <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
+                                <label htmlFor="priceIn" className="block text-sm font-medium leading-6 text-gray-900">
                                     Precio en
                                 </label>
                                 <div className="mt-2">
                                     <select
-                                        id="country"
-                                        name="country"
-                                        autoComplete="country-name"
+                                        id="priceIn"
+                                        name="priceIn"
+                                        autoComplete="priceIn-name"
                                         aria-placeholder=''
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:max-w-xs sm:text-sm sm:leading-6"
                                     >
@@ -174,14 +180,15 @@ function FormPg4({ currentPage }) {
                         </div>
                         <div className="w-full mt-7">
                             <label
-                                htmlFor="Username"
+                                htmlFor="price"
                                 className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="number"
-                                    id="Username"
+                                    id="price"
+                                    name='price'
                                     class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                    placeholder="Username"
+                                    placeholder="price"
                                 />
                                 <span
                                     className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -193,14 +200,15 @@ function FormPg4({ currentPage }) {
                     </div>
                     <div className="col-span-full my-3">
                         <label
-                            htmlFor="Username"
+                            htmlFor="title"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="text"
-                                id="Username"
+                                id="title"
+                                name='title'
                                 class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                placeholder="Username"
+                                placeholder="title"
                             />
                             <span
                                 className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -211,14 +219,15 @@ function FormPg4({ currentPage }) {
                     </div>
                     <div className="col-span-full">
                         <label
-                            htmlFor="Username"
+                            htmlFor="description"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="text"
-                                id="Username"
+                                id="description"
+                                name='description'
                                 class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                placeholder="Username"
+                                placeholder="description"
                             />
                             <span
                                 className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"

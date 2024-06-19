@@ -9,14 +9,14 @@ function FormPg2({ currentPage }) {
                 <div className="mt-10 gap-x-6 gap-y-8">
                     <div className="col-span-2">
                         <label
-                            htmlFor="Username"
+                            htmlFor="address"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="text"
-                                id="Username"
+                                id="address"
                                 class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                placeholder="Username"
+                                placeholder="address"
                             />
                             <span
                                 className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -31,14 +31,14 @@ function FormPg2({ currentPage }) {
                 <div className=' flex-1 gap-x-6 gap-y-8'>
                     <div className='flex flex-col sm:flex-row gap-2 my-3'>
                         <div className="w-full ">
-                            <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
+                            <label htmlFor="department" className="block text-sm font-medium leading-6 text-gray-900">
                                 Departamento
                             </label>
                             <div className="mt-2">
                                 <select
-                                    id="country"
-                                    name="country"
-                                    autoComplete="country-name"
+                                    id="department"
+                                    name="department"
+                                    autoComplete="departament-name"
                                     aria-placeholder=''
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:max-w-xs sm:text-sm sm:leading-6"
                                 >
@@ -50,14 +50,14 @@ function FormPg2({ currentPage }) {
                             </div>
                         </div>
                         <div className="w-full">
-                            <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
+                            <label htmlFor="province" className="block text-sm font-medium leading-6 text-gray-900">
                                 Provicia
                             </label>
                             <div className="mt-2">
                                 <select
-                                    id="country"
-                                    name="country"
-                                    autoComplete="country-name"
+                                    id="province"
+                                    name="countprovincery"
+                                    autoComplete="province-name"
                                     aria-placeholder=''
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:max-w-xs sm:text-sm sm:leading-6"
                                 >
@@ -71,14 +71,14 @@ function FormPg2({ currentPage }) {
                     </div>
                     <div className='flex flex-col sm:flex-row gap-2 my-3'>
                         <div className="w-full">
-                            <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
+                            <label htmlFor="district" className="block text-sm font-medium leading-6 text-gray-900">
                                 Distrito
                             </label>
                             <div className="mt-2">
                                 <select
-                                    id="country"
-                                    name="country"
-                                    autoComplete="country-name"
+                                    id="district"
+                                    name="district"
+                                    autoComplete="district-name"
                                     aria-placeholder=''
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:max-w-xs sm:text-sm sm:leading-6"
                                 >
@@ -90,14 +90,14 @@ function FormPg2({ currentPage }) {
                             </div>
                         </div>
                         <div className="w-full ">
-                            <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
+                            <label htmlFor="urbanization" className="block text-sm font-medium leading-6 text-gray-900">
                                 Urbanización
                             </label>
                             <div className="mt-2">
                                 <select
-                                    id="country"
-                                    name="country"
-                                    autoComplete="country-name"
+                                    id="urbanization"
+                                    name="urbanization"
+                                    autoComplete="urbanization-name"
                                     aria-placeholder=''
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:max-w-xs sm:text-sm sm:leading-6"
                                 >

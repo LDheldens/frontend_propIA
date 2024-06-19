@@ -1,8 +1,117 @@
 import React from 'react'
-import ItemProps from '../../components/items/ItemProps'
 import { FaSearch } from "react-icons/fa"
+import Propertie from '../../components/properties/Propertie'
+import api from '../../settings/api'
 
 function SearchProp() {
+    const properties = [
+        {
+            id: 1,
+            locate: 'Miraflores, Lima, Lima',
+            href: '/item',
+            imageSrc: './src/assets/dep1.jpeg',
+            imageAlt: "properties in sell.",
+            price: 'S/. 360,000.00 ',
+            area: '5,642.00 m²',
+            debs: '4',
+            duildings: '4',
+            bath: '2',
+            garage: '2',
+            kitchen: '2',
+            type: 'Departamento en venta',
+            propts: '24',
+            published: 'Publicado hace una semana en Tacna, TA',
+        },
+        {
+            id: 2,
+            locate: 'Lince, Lima, Lima',
+            href: '/item',
+            imageSrc: './src/assets/dep2.jpeg',
+            imageAlt: "properties in sell.",
+            price: 'S/. 360,000.00 ',
+            area: '5,642.00 m²',
+            debs: '4',
+            duildings: '4',
+            bath: '2',
+            garage: '2',
+            kitchen: '2',
+            type: 'Casa en venta',
+            propts: '24',
+            published: 'Publicado hace una semana en Tacna, TA',
+        },
+        {
+            id: 3,
+            locate: 'San Borja, Lima, Lima',
+            href: '/item',
+            imageSrc: './src/assets/dep3.jpeg',
+            imageAlt: "properties in sell.",
+            price: 'S/. 360,000.00 ',
+            area: '5,642.00 m²',
+            debs: '4',
+            duildings: '4',
+            bath: '2',
+            garage: '2',
+            kitchen: '2',
+            type: 'Departamento en venta',
+            propts: '24',
+            published: 'Publicado hace una semana en Tacna, TA',
+        },
+        {
+            id: 4,
+            locate: 'Lince, Lima, Lima',
+            href: '/item',
+            imageSrc: './src/assets/dep2.jpeg',
+            imageAlt: "properties in sell.",
+            price: 'S/. 360,000.00 ',
+            area: '5,642.00 m²',
+            debs: '4',
+            duildings: '4',
+            bath: '2',
+            garage: '2',
+            kitchen: '2',
+            type: 'Casa en venta',
+            propts: '24',
+            published: 'Publicado hace una semana en Tacna, TA',
+        },
+        {
+            id: 5,
+            locate: 'Lince, Lima, Lima',
+            href: '/item',
+            imageSrc: './src/assets/dep5.jpeg',
+            imageAlt: "properties in sell.",
+            price: 'S/. 360,000.00 ',
+            area: '5,642.00 m²',
+            debs: '4',
+            duildings: '4',
+            bath: '2',
+            garage: '2',
+            kitchen: '2',
+            type: 'Casa en venta',
+            propts: '24',
+            published: 'Publicado hace una semana en Tacna, TA',
+        },
+        {
+            id: 6,
+            locate: 'Lince, Lima, Lima',
+            href: '/item',
+            imageSrc: './src/assets/dep6.webp',
+            imageAlt: "properties in sell.",
+            price: 'S/. 360,000.00 ',
+            area: '5,642.00 m²',
+            debs: '4',
+            duildings: '4',
+            bath: '2',
+            garage: '2',
+            kitchen: '2',
+            type: 'Casa en venta',
+            propts: '24',
+            published: 'Publicado hace una semana en Lima, LI',
+        },
+    ]
+
+
+
+
     return (
         <div className='p-3'>
             <div>
@@ -59,7 +168,11 @@ function SearchProp() {
             </div>
             <div>
                 <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Resultados : 18,522 Inmuebles en la Zona.</h2>
-                <ItemProps />
+                <div className='m-4'>
+                    {properties.map((propertie) => (
+                        <Propertie propertie={propertie} key={propertie.id} />
+                    ))}
+                </div>
             </div>
         </div>
     )

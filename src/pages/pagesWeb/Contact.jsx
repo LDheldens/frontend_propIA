@@ -1,9 +1,28 @@
 import React from 'react'
+import api from '../../settings/api'
 
 function Contact() {
+    const handleSubmitContact = async (e) => {
+        e.preventDefault();
+        const messageContact = {
+            nombres: "testREact",
+            apellidos: "okay",
+            email: "gmail@gmail.com",
+            celular: "12343445",
+            tipo_solicitud: "reclamo",
+            mensaje: "Tengo reclamo por la venta",
+            ciudad: "tacna",
+            provincia: "tacna",
+            codigo_postal: "123"
+        }
+
+        const response = await api.post('/contact/create/', messageContact)
+        const data = response.data;
+        console.log('dataaa', data);
+    }
     return (
         <div className="p-14">
-            <form className=''>
+            <form className='' onSubmit={handleSubmitContact}>
                 <div className="space-y-12 font-urbanist">
                     <div className="border-b border-gray-900/10 pb-8 font-urbanist">
                         <h2 className="text-base font-semibold leading-7 text-gray-900">Contactanos</h2>
