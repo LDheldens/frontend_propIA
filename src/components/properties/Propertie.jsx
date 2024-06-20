@@ -22,7 +22,7 @@ function Propertie({ propertie }) {
                                 <img src={propertie.imageSrc} alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                                 <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
                             </a>
-                            <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-lg md:text-xl font-urbanist">{propertie.type}</h3>
+                            <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-lg md:text-xl font-urbanist">{propertie.type_property}</h3>
                         </div>
                     </div>
                     <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg">
@@ -37,7 +37,7 @@ function Propertie({ propertie }) {
                                 <div className='rounded-full bg-gray-400 p-2 text-xl text-white'>
                                     <MdOutlineLocationOn />
                                 </div>
-                                <span className='m-1'>{propertie.locate}</span>
+                                <span className='m-1'>{propertie.adress}</span>
                             </div>
                             <div className='flex m-2'>
                                 <div className='rounded-full bg-gray-400 p-2 text-xl text-white'>
@@ -53,14 +53,14 @@ function Propertie({ propertie }) {
                                     <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white' >
                                         <BiArea />
                                     </div>
-                                    <span className='m-1'> {propertie.area}</span>
+                                    <span className='m-1'> {propertie.area_property}</span>
 
                                 </div>
                                 <div className='flex m-2'>
                                     <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                         <FaRegBuilding />
                                     </div>
-                                    <span className='m-1'>Pisos: {propertie.duildings}</span>
+                                    <span className='m-1'>Pisos: {propertie.floors_number}</span>
                                 </div>
                                 <div className='flex m-2'>
                                     <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
@@ -76,19 +76,19 @@ function Propertie({ propertie }) {
                                     <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                         <LuBath />
                                     </div>
-                                    <span className='m-1'>Baños: {propertie.bath}</span>
+                                    <span className='m-1'>Baños: {propertie.bathrooms_number}</span>
                                 </div>
                                 <div className='flex m-2'>
                                     <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                         <GiHomeGarage />
                                     </div>
-                                    <span className='m-1'>Cocheras: {propertie.garage}</span>
+                                    <span className='m-1'>Cocheras: {propertie.garages_number}</span>
                                 </div>
                                 <div className='flex m-2'>
                                     <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                         <FaKitchenSet />
                                     </div>
-                                    <span className='m-1'>Cocinas: {propertie.kitchen}</span>
+                                    <span className='m-1'>Cocinas: {propertie.kitchens_number}</span>
                                 </div>
                                 {/* <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
                             </div>
