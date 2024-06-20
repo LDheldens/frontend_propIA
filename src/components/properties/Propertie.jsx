@@ -28,7 +28,7 @@ function Propertie({ propertie }) {
                     <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg">
                         <div class="group relative flex flex-col overflow-hidden  px-1 font-urbanist">
                             <div className='flex'>
-                                <span className='font-bebas'>{propertie.price}</span>
+                                <span className='font-bebas'>{propertie.type_currency == "USD" ? "$" : "S/."}{propertie.price}</span>
                             </div>
                             <div className='flex'>
                                 <span className=''>{propertie.published}</span>
@@ -53,7 +53,7 @@ function Propertie({ propertie }) {
                                     <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white' >
                                         <BiArea />
                                     </div>
-                                    <span className='m-1'> {propertie.area_property}</span>
+                                    <span className='m-1'> {propertie.area_property} m²</span>
 
                                 </div>
                                 <div className='flex m-2'>

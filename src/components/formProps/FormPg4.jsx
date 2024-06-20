@@ -172,8 +172,8 @@ function FormPg4({ currentPage }) {
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:max-w-xs sm:text-sm sm:leading-6"
                                     >
                                         <option>Selecciona opción</option>
-                                        <option>Soles</option>
-                                        <option>Dólares</option>
+                                        <option value="PEN">Soles</option>
+                                        <option value="USD">Dólares</option>
                                     </select>
                                 </div>
                             </div>
