@@ -15,6 +15,9 @@ import SellProp from './components/sellProps/SellProp'
 import Post from './pages/pagesPost/Post'
 import MyActivity from './pages/pagesPost/MyActivity'
 
+import LayoutAdmin from './components/layouts/LayoutAdmin'
+import ListMessages from './components/adminOnly/messageContact/ListMessages'
+
 import LayoutAI from './components/layouts/LayoutAI'
 import HomeAI from './pages/pagesAI/HomeAI'
 import SignIn from './components/SignIn'
@@ -58,6 +61,33 @@ const router = createBrowserRouter(
         {
           element: <SignIn />,
           path: '/signin'
+        },
+      ]
+    },
+    {
+      path: '/admin',
+      element: <LayoutAdmin />,
+      children: [
+        {
+          index: true,
+          element: <ListMessages />,
+          path: 'listsms'
+        },
+        {
+          element: <SearchProp />,
+          path: 'buscar'
+        },
+        {
+          element: <Advisors />,
+          path: 'asesores'
+        },
+        {
+          element: <IA />,
+          path: 'ia'
+        },
+        {
+          element: <Contact />,
+          path: 'contacto'
         },
       ]
     },
