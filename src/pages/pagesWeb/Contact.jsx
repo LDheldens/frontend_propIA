@@ -4,25 +4,22 @@ import api from '../../settings/api'
 function Contact() {
     const handleSubmitContact = async (e) => {
         e.preventDefault();
-        const messageContact = {
-            nombres: "testREact",
-            apellidos: "okay",
-            email: "gmail@gmail.com",
-            celular: "12343445",
-            tipo_solicitud: "reclamo",
-            mensaje: "Tengo reclamo por la venta",
-            ciudad: "tacna",
-            provincia: "tacna",
-            codigo_postal: "123"
-        }
+        const form = new FormData(e.target);
+        const formData = Object.fromEntries(form.entries());
 
-        const response = await api.post('/contact/create/', messageContact)
+        //return console.log('dataaa', formData);
+        // if (Object.values(formData).includes("")) {
+        //     return alert('ingrese los campos')
+        // }
+
+
+        const response = await api.post('/contact/create/', formData)
         const data = response.data;
         console.log('dataaa', data);
     }
     return (
         <div className="p-14">
-            <form className='' onSubmit={handleSubmitContact}>
+            <form className='' noValidate onSubmit={handleSubmitContact}>
                 <div className="space-y-12 font-urbanist">
                     <div className="border-b border-gray-900/10 pb-8 font-urbanist">
                         <h2 className="text-base font-semibold leading-7 text-gray-900">Contactanos</h2>
@@ -35,30 +32,30 @@ function Contact() {
                         <p className="mt-1 text-sm leading-6 text-gray-600">Puede llenar el siguiente formulario.</p>
                         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                             <div className="sm:col-span-3">
-                                <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
+                                <label htmlFor="nombres" className="block text-sm font-medium leading-6 text-gray-900">
                                     Nombres
                                 </label>
                                 <div className="mt-2">
                                     <input
                                         type="text"
-                                        name="first-name"
-                                        id="first-name"
-                                        autoComplete="given-name"
+                                        name="nombres"
+                                        id="nombres"
+                                        autoComplete="nombres"
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
                             </div>
 
                             <div className="sm:col-span-3">
-                                <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
+                                <label htmlFor="apellidos" className="block text-sm font-medium leading-6 text-gray-900">
                                     Apellidos
                                 </label>
                                 <div className="mt-2">
                                     <input
                                         type="text"
-                                        name="last-name"
-                                        id="last-name"
-                                        autoComplete="family-name"
+                                        name="apellidos"
+                                        id="apellidos"
+                                        autoComplete="apellidos"
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
@@ -79,29 +76,29 @@ function Contact() {
                                 </div>
                             </div>
                             <div className="sm:col-span-3">
-                                <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                <label htmlFor="celular" className="block text-sm font-medium leading-6 text-gray-900">
                                     Teléfono
                                 </label>
                                 <div className="mt-2">
                                     <input
-                                        id="email"
-                                        name="email"
-                                        type="email"
-                                        autoComplete="email"
+                                        id="celular"
+                                        name="celular"
+                                        type="number"
+                                        autoComplete="celular"
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
                             </div>
 
                             <div className="sm:col-span-3">
-                                <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
+                                <label htmlFor="tipo_solicitud" className="block text-sm font-medium leading-6 text-gray-900">
                                     Tipo de solicitud
                                 </label>
                                 <div className="mt-2">
                                     <select
-                                        id="country"
-                                        name="country"
-                                        autoComplete="country-name"
+                                        id="tipo_solicitud"
+                                        name="tipo_solicitud"
+                                        autoComplete="tipo_solicitud"
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                                     >
                                         <option>Seleccione una opción</option>
@@ -113,60 +110,60 @@ function Contact() {
                             </div>
 
                             <div className="col-span-full">
-                                <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
+                                <label htmlFor="mensaje" className="block text-sm font-medium leading-6 text-gray-900">
                                     Mensage
                                 </label>
                                 <div className="mt-2">
                                     <input
                                         type="text"
-                                        name="street-address"
-                                        id="street-address"
-                                        autoComplete="street-address"
+                                        name="mensaje"
+                                        id="mensaje"
+                                        autoComplete="mensaje"
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
                             </div>
 
                             <div className="sm:col-span-2 sm:col-start-1">
-                                <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
+                                <label htmlFor="ciudad" className="block text-sm font-medium leading-6 text-gray-900">
                                     Ciudad
                                 </label>
                                 <div className="mt-2">
                                     <input
                                         type="text"
-                                        name="city"
-                                        id="city"
-                                        autoComplete="address-level2"
+                                        name="ciudad"
+                                        id="ciudad"
+                                        autoComplete="ciudad"
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
                             </div>
 
                             <div className="sm:col-span-2">
-                                <label htmlFor="region" className="block text-sm font-medium leading-6 text-gray-900">
+                                <label htmlFor="provincia" className="block text-sm font-medium leading-6 text-gray-900">
                                     Provincia
                                 </label>
                                 <div className="mt-2">
                                     <input
                                         type="text"
-                                        name="region"
-                                        id="region"
-                                        autoComplete="address-level1"
+                                        name="provincia"
+                                        id="provincia"
+                                        autoComplete="provincia"
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
                             </div>
 
                             <div className="sm:col-span-2">
-                                <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
+                                <label htmlFor="codigo_postal" className="block text-sm font-medium leading-6 text-gray-900">
                                     Codigo Postal
                                 </label>
                                 <div className="mt-2">
                                     <input
-                                        type="text"
-                                        name="postal-code"
-                                        id="postal-code"
-                                        autoComplete="postal-code"
+                                        type="number"
+                                        name="codigo_postal"
+                                        id="codigo_postal"
+                                        autoComplete="codigo_postal"
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
