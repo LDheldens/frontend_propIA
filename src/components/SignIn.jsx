@@ -1,153 +1,199 @@
-import React from 'react'
+import { useEffect, useState } from 'react';
+import { useForm, Controller } from 'react-hook-form';
 
+// daniel
 function SignIn() {
+    
+    const { control, handleSubmit, formState: { errors }, watch } = useForm();
+    const password = watch('password');
+    const [terminos,setTerminos] = useState(false)
+
+    const onSubmit = data => {
+        console.log(data);
+
+    };
+
+    useEffect(()=>{
+        console.log(terminos)
+    },[terminos])
+
+    const passwordMatchValidator = (value) => {
+        return value === password || 'Las contraseñas no coinciden';
+    };
+
     return (
-        <div>
-            <div className=" flex justify-center items-center mx-auto px-6 py-12 lg:px-8" style={{ backgroundImage: "url('./src/assets/dep1.jpeg')" }}>
-                <div className='bg-black bg-opacity-40 ml-4 mr-4 mb-8  p-6 w-160 font-urbanist'>
-                    <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
-                        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                            <img
-                                className="mx-auto h-10 w-auto"
-                                src="./src/assets/logo3.png"
-                                alt="my Company"
-                            />
-                            <h2 className="mt-6 mb-5 text-center text-2xl font-bold leading-9 tracking-tight text-white font-bebas">
-                                Nuevo registro
-                            </h2>
+        <div className="flex justify-center items-center mx-auto px-6 py-12 lg:px-8" style={{ backgroundImage: "url('./src/assets/dep1.jpeg')" }}>
+            <div className='bg-black bg-opacity-40 ml-4 mr-4 mb-8 p-6 w-160 font-urbanist'>
+                <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
+                    <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                        <img
+                            className="mx-auto h-10 w-auto"
+                            src="./src/assets/logo3.png"
+                            alt="my Company"
+                        />
+                        <h2 className="mt-6 mb-5 text-center text-2xl font-bold leading-9 tracking-tight text-white font-bebas">
+                            Nuevo registro
+                        </h2>
+                    </div>
+                    <form className="space-y-6" noValidate onSubmit={handleSubmit(onSubmit)}>
+                        <div className="col-span-full">
+                            <label
+                                htmlFor="email"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                            >
+                                <Controller
+                                    name="email"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ 
+                                        required: 'El correo electrónico es obligatorio',
+                                        pattern: {
+                                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                            message: 'Ingrese un correo electrónico válido'
+                                        } 
+                                    }}
+                                    render={({ field }) => (
+                                        <input
+                                            {...field}
+                                            type="email"
+                                            id="email"
+                                            autoComplete="email"
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.email ? 'ring-red-500' : ''}`}
+                                            placeholder="Correo electrónico"
+                                        />
+                                    )}
+                                />
+                                <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm">
+                                    Ingrese su email
+                                </span>
+                                {errors.email && <span className="text-red-500 text-xs">{errors.email.message}</span>}
+                            </label>
                         </div>
-                        <form className="space-y-6" action="#" method="POST">
-                            <div className="col-span-full">
-                                <label
-                                    htmlFor="Username"
-                                    className="relative  border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
-                                >
-                                    <input
-                                        id="email"
-                                        type="email"
-                                        name="email"
-                                        autoComplete="email"
-                                        required
-                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                        placeholder="Username"
-                                    />
-                                    <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm"
-                                    >
-                                        Ingrese su email
-                                    </span>
-                                </label>
-                            </div>
-                            <div className="col-span-full">
-                                <label
-                                    htmlFor="Username"
-                                    className="relative  border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
-                                >
-                                    <input
-                                        id="name"
-                                        type="name"
-                                        name="name"
-                                        autoComplete="name"
-                                        required
-                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                        placeholder="Username"
-                                    />
-                                    <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm"
-                                    >
-                                        Nombres
-                                    </span>
-                                </label>
-                            </div>
-                            <div className="col-span-full">
-                                <label
-                                    htmlFor="Username"
-                                    className="relative  border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
-                                >
-                                    <input
-                                        id="name"
-                                        type="name"
-                                        name="name"
-                                        autoComplete="name"
-                                        required
-                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                        placeholder="Username"
-                                    />
-                                    <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm"
-                                    >
-                                        Apellidos
-                                    </span>
-                                </label>
-                            </div>
-                            <div className="col-span-full">
-                                <label
-                                    htmlFor="Username"
-                                    className="relative  border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
-                                >
-                                    <input
-                                        id="password"
-                                        name="password"
-                                        type="password"
-                                        autoComplete="current-password"
-                                        required
-                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                        placeholder="Username"
-                                    />
-                                    <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm"
-                                    >
-                                        Contraseña
-                                    </span>
-                                </label>
-                            </div>
-                            <div className="col-span-full">
-                                <label
-                                    htmlFor="Username"
-                                    className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
-                                >
-                                    <input
-                                        id="password"
-                                        name="password"
-                                        type="password"
-                                        autoComplete="current-password"
-                                        required
-                                        class=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full  border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                        placeholder="Username"
-                                    />
-                                    <span
-                                        className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm"
-                                    >
-                                        Confirmar Contraseña
-                                    </span>
-                                </label>
-                            </div>
-
-                            <div>
-                                <button
-                                    type="submit"
-                                    className=" w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                >
-                                    Registrarse
-                                </button>
-                            </div>
-                        </form>
-                        <div className='flex mt-4'>
-                            <input type="checkbox" className='m-1 p-3 form-checkbox h-8 w-8 text-green1' />
-                            <span className='text-[12px] text-white'>Acepto los Términos y Condiciones de Uso. y las politicas de privacidad.</span>
+                        <div className="col-span-full">
+                            <label
+                                htmlFor="first_name"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                            >
+                                <Controller
+                                    name="first_name"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: 'El nombre es obligatorio' }}
+                                    render={({ field }) => (
+                                        <input
+                                            {...field}
+                                            type="text"
+                                            id="first_name"
+                                            autoComplete="given-name"
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.first_name ? 'ring-red-500' : ''}`}
+                                            placeholder="Nombres"
+                                        />
+                                    )}
+                                />
+                                <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm">
+                                    Nombres
+                                </span>
+                                {errors.first_name && <span className="text-red-500 text-xs">{errors.first_name.message}</span>}
+                            </label>
                         </div>
-
-                        {/* <p className="mt-10 text-center text-sm text-white">
-                            ¿No es un miembro? {' '}
-                            <a href="#" className="font-semibold leading-6 text-green1 hover:text-gray-500">
-                                Terminos y condiciones
-                            </a>
-                        </p> */}
+                        <div className="col-span-full">
+                            <label
+                                htmlFor="last_name"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                            >
+                                <Controller
+                                    name="last_name"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: 'Los apellidos son obligatorios' }}
+                                    render={({ field }) => (
+                                        <input
+                                            {...field}
+                                            type="text"
+                                            id="last_name"
+                                            autoComplete="family-name"
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.last_name ? 'ring-red-500' : ''}`}
+                                            placeholder="Apellidos"
+                                        />
+                                    )}
+                                />
+                                <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm">
+                                    Apellidos
+                                </span>
+                                {errors.last_name && <span className="text-red-500 text-xs">{errors.last_name.message}</span>}
+                            </label>
+                        </div>
+                        <div className="col-span-full">
+                            <label
+                                htmlFor="password"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                            >
+                                <Controller
+                                    name="password"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: 'La contraseña es obligatoria' }}
+                                    render={({ field }) => (
+                                        <input
+                                            {...field}
+                                            type="password"
+                                            id="password"
+                                            autoComplete="current-password"
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.password ? 'ring-red-500' : ''}`}
+                                            placeholder="Contraseña"
+                                        />
+                                    )}
+                                />
+                                <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm">
+                                    Contraseña
+                                </span>
+                                {errors.password && <span className="text-red-500 text-xs">{errors.password.message}</span>}
+                            </label>
+                        </div>
+                        <div className="col-span-full">
+                            <label
+                                htmlFor="confirm_password"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                            >
+                                <Controller
+                                    name="confirm_password"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: 'Por favor confirme su contraseña',validate: passwordMatchValidator }}
+                                    render={({ field }) => (
+                                        <input
+                                            {...field}
+                                            type="password"
+                                            id="confirm_password"
+                                            autoComplete="current-password"
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.confirm_password ? 'ring-red-500' : ''}`}
+                                            placeholder="Confirmar contraseña"
+                                        />
+                                    )}
+                                />
+                                <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm">
+                                    Confirmar Contraseña
+                                </span>
+                                {errors.confirm_password && <span className="text-red-500 text-xs">{errors.confirm_password.message}</span>}
+                            </label>
+                        </div>
+                        <div>
+                            <button
+                                type="submit"
+                                className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            >
+                                Registrarse
+                            </button>
+                        </div>
+                    </form>
+                    <div className='flex mt-4'>
+                        <input onChange={(e)=>setTerminos(e.target.checked)} type="checkbox" name='terminos' className='m-1 p-3 form-checkbox h-8 w-8 text-green1' />
+                        <span className='text-[12px] text-white'>Acepto los Términos y Condiciones de Uso. y las políticas de privacidad.</span>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default SignIn
+export default SignIn;
