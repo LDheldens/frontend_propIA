@@ -22,29 +22,19 @@ const links = [
         id: 1,
     },
     {
-        link: "buscar",
-        text: "BUSCAR PROPIEDADES",
+        link: "propiedades",
+        text: "PROPIEDADES",
         id: 2,
     },
     {
-        link: "ia",
-        text: "IA",
+        link: "usuarios",
+        text: "USUARIOS",
         id: 3,
     },
     {
-        link: "asesores",
-        text: "ASESORES",
-        id: 4,
-    },
-    {
-        link: "contacto",
-        text: "CONTACTOS",
-        id: 5,
-    },
-    {
-        link: "listsms",
+        link: "mensajes",
         text: "MENSAJES",
-        id: 5,
+        id: 4,
     },
 ];
 

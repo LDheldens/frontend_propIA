@@ -16,7 +16,9 @@ import Post from './pages/pagesPost/Post'
 import MyActivity from './pages/pagesPost/MyActivity'
 
 import LayoutAdmin from './components/layouts/LayoutAdmin'
-import ListMessages from './components/adminOnly/messageContact/ListMessages'
+import Properties from './pages/pagesAdmin/Properties'
+import ListMessages from './pages/pagesAdmin/ListMessages'
+import Users from './pages/pagesAdmin/Users'
 
 import LayoutAI from './components/layouts/LayoutAI'
 import HomeAI from './pages/pagesAI/HomeAI'
@@ -70,25 +72,27 @@ const router = createBrowserRouter(
       children: [
         {
           index: true,
+          element: <Properties />,
+          path: 'propiedades'
+        },
+        {
+          index: true,
+          element: <Users />,
+          path: 'usuarios'
+        },
+        {
+          index: true,
           element: <ListMessages />,
-          path: 'listsms'
+          path: 'mensajes'
         },
-        {
-          element: <SearchProp />,
-          path: 'buscar'
-        },
-        {
-          element: <Advisors />,
-          path: 'asesores'
-        },
-        {
-          element: <IA />,
-          path: 'ia'
-        },
-        {
-          element: <Contact />,
-          path: 'contacto'
-        },
+        // {
+        //   element: <Users />,
+        //   path: 'buscar'
+        // },
+        // {
+        //   element: <Contact />,
+        //   path: 'contacto'
+        // },
       ]
     },
     {

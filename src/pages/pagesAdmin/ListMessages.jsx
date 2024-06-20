@@ -1,5 +1,5 @@
 import React from 'react'
-import api from '../../../settings/api'
+import api from '../../settings/api'
 import useSWR from 'swr';
 
 
