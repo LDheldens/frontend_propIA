@@ -55,7 +55,6 @@ const ImageGallery = ({ imageUrls }) => {
 
             <div className=" gap-4">
                 <div>
-
                     <section class="bg-white w-full">
                         <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6 font-bebas">
                             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
@@ -86,11 +85,11 @@ const ImageGallery = ({ imageUrls }) => {
                                     </div>
                                 </div>
                                 <div class="col-span-2 sm:col-span-1 md:col-span-1 bg-sky-50 h-auto md:h-full flex flex-col">
-                                    <a href="" onClick={() => openModal(4)} class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
+                                    <button type='button' onClick={() => openModal(4)} class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
                                         <img src="./src/assets/dep8.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                                         <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
                                         <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Salón</h3>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

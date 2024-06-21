@@ -25,6 +25,9 @@ import HomeAI from './pages/pagesAI/HomeAI'
 import SignIn from './components/SignIn'
 import IA from './pages/pagesWeb/IA'
 
+// contexts
+import { UserProvider } from './context/UserProvider'
+
 const router = createBrowserRouter(
   [
     {
@@ -135,7 +138,9 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
   </React.StrictMode>,
 )
 

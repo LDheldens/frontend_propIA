@@ -1,21 +1,42 @@
 import { useEffect, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-
+import Swal from 'sweetalert2';
+import useUser from '../hooks/useUser';
+import { useNavigate } from 'react-router-dom';
 // daniel
 function SignIn() {
     
+    const navigate= useNavigate()
+
+    const { register } = useUser()
+
     const { control, handleSubmit, formState: { errors }, watch } = useForm();
     const password = watch('password');
     const [terminos,setTerminos] = useState(false)
+    const [errores,setErrores] = useState([])
 
-    const onSubmit = data => {
-        console.log(data);
+    const onSubmit = async (user) => {
+        if(!terminos){
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Necesitas aceptar nuestros terminos y condiciones",
+              });
+            return
+        }
+        const {confirm_password, ...data} = user
+        data.username = ''
 
+        const response = await register(data,setErrores)
+
+        setTimeout(()=>{
+            setErrores([])
+        },5000)
+
+        if(response) navigate('/')
+    
     };
 
-    useEffect(()=>{
-        console.log(terminos)
-    },[terminos])
 
     const passwordMatchValidator = (value) => {
         return value === password || 'Las contraseñas no coinciden';
@@ -35,6 +56,13 @@ function SignIn() {
                             Nuevo registro
                         </h2>
                     </div>
+                    {
+                        errores.length > 0 ? (
+                            errores.map(error =>(
+                                <p className='bg-red-500 border border-red-900 rounded p-1 text-white text-center font-black my-3'>{error}</p>
+                            ))
+                        ) : null
+                    }
                     <form className="space-y-6" noValidate onSubmit={handleSubmit(onSubmit)}>
                         <div className="col-span-full">
                             <label
