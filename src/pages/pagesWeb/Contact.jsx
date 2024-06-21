@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import {useForm} from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import api from '../../settings/api'
 
 function Contact() {
 
-    const { register, handleSubmit, formState: { errors },reset } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const handleSubmitContact = async (formData) => {
         try {
@@ -41,7 +41,7 @@ function Contact() {
                                         id="nombres"
                                         autoComplete="nombres"
                                         className={`block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2 ${errors.nombres ? 'ring-red-500' : ''}`}
-                                        {...register("nombres", { required: "El nombre es obligatorio",minLength:{value:2,message:"El nombre debe tener al menos 2 caractéres"} })}
+                                        {...register("nombres", { required: "El nombre es obligatorio", minLength: { value: 2, message: "El nombre debe tener al menos 2 caractéres" } })}
                                     />
                                     {errors.nombres && <p className="text-red-500 text-sm">{errors.nombres.message}</p>}
                                 </div>
@@ -129,14 +129,14 @@ function Contact() {
                                     Mensaje
                                 </label>
                                 <div className="mt-2">
-                                    <input
-                                        type="text"
+                                    <textarea
+                                        cols="30" rows="3"
                                         name="mensaje"
                                         id="mensaje"
                                         autoComplete="mensaje"
                                         className={`block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2 ${errors.mensaje ? 'ring-red-500' : ''}`}
                                         {...register("mensaje", { required: "El mensaje es obligatorio" })}
-                                    />
+                                    ></textarea>
                                     {errors.mensaje && <p className="text-red-500 text-sm">{errors.mensaje.message}</p>}
                                 </div>
                             </div>
