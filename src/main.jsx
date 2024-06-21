@@ -17,6 +17,7 @@ import MyActivity from './pages/pagesPost/MyActivity'
 
 import LayoutAdmin from './components/layouts/LayoutAdmin'
 import Properties from './pages/pagesAdmin/Properties'
+import { DetailProperties } from './pages/pagesAdmin/DetailProperties'
 import ListMessages from './pages/pagesAdmin/ListMessages'
 import Users from './pages/pagesAdmin/Users'
 
@@ -76,12 +77,14 @@ const router = createBrowserRouter(
           path: 'propiedades'
         },
         {
-          index: true,
+          element: <DetailProperties />,
+          path: 'propiedades/detail'
+        },
+        {
           element: <Users />,
           path: 'usuarios'
         },
         {
-          index: true,
           element: <ListMessages />,
           path: 'mensajes'
         },

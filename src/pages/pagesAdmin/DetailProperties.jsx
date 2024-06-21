@@ -1,11 +1,10 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from 'react';
 import FormPg1 from '../../components/formProps/FormPg1'
 import FormPg2 from '../../components/formProps/FormPg2'
 import FormPg3 from '../../components/formProps/FormPg3'
 import FormPg4 from "../../components/formProps/FormPg4"
-import api from "../../settings/api"
 
-function Post() {
+export const DetailProperties = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     const goToNextPage = () => {
@@ -18,22 +17,9 @@ function Post() {
 
     const isLastPage = currentPage === 4;
 
-    async function handleSubmit(e) {
-        e.preventDefault();
-        const form = new FormData(e.target);
-        const formData = Object.fromEntries(form.entries());
-
-        try {
-            await api.post("/properties", formData);
-            alert("Datos enviados con éxito");
-        } catch (error) {
-            alert("Hubo un error al enviar los datos");
-            console.error(error);
-        }
-    }
-
-
     return (
+    <>
+        <div>DetailProperties</div>
         <div className='p-2 flex-row justify-center items-center font-bebas max-w-3xl mx-auto'>
         <div className="text-center">
             <h2 className="text-base font-semibold leading-7 text-gray-900">Formulario de publicación</h2>
@@ -42,7 +28,7 @@ function Post() {
             <div className="bg-gray-400 text-white text-center w-full">
                 Página {currentPage} de 4
             </div>
-            <form action="" onSubmit={handleSubmit} className="w-full">
+            <form action="" className="w-full">
                 <FormPg1 currentPage={currentPage} />
                 <FormPg2 currentPage={currentPage} />
                 <FormPg3 currentPage={currentPage} />
@@ -83,7 +69,7 @@ function Post() {
             </div>
         </div>
     </div>
-    )
+    </>   
+  )
 }
 
-export default Post
