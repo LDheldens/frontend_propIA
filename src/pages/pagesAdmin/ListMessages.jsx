@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import api from '../../settings/api'
 import useSWR from 'swr';
+import { Switch } from '../../components/compGeneral/Switch';
 
 
 function ListMessages() {
+    const [served, setServed] = useState(false);
     const getMessages = async () => {
         try {
             const response = await api.get('/contact/list/', {
@@ -24,6 +26,13 @@ function ListMessages() {
     //'nombres', 'apellidos', 'email', 'celular', 'tipo_solicitud', 'mensaje', 'ciudad', 'provincia', 'codigo_postal'
     console.log('sms', messages)
 
+    const handleStateServed = (e) => {
+        setServed(e.target.checked)
+        console.log(served)
+    }
+
+
+
     return (
         <div>
             <ul role="list" className="divide-y divide-gray-100 px-4">
@@ -34,10 +43,19 @@ function ListMessages() {
                             <div className="min-w-0 flex-auto">
                                 <p className="text-sm font-semibold leading-6 text-gray-900">{message.nombres}</p>
                                 <p className="mt-1 truncate text-xs leading-5 text-gray-500">{message.email}</p>
+                                <p className="text-sm leading-6 text-gray-900">Tipo de solicitud: {message.tipo_solicitud}</p>
                             </div>
                         </div>
+                        <div >
+                            <textarea
+                                name="mensaje"
+                                className="w-full md:w-1/2 lg:w-1/2 p-2 border border-gray-300 rounded resize-none"
+                                rows="3"
+                                value={message.mensaje}
+
+                            />
+                        </div>
                         <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                            <p className="text-sm leading-6 text-gray-900">{message.tipo_solicitud}</p>
                             {message.lastSeen ? (
                                 <p className="mt-1 text-xs leading-5 text-gray-500">
                                     Last seen <time dateTime={message.lastSeenDateTime}>{message.lastSeen}</time>
@@ -48,6 +66,10 @@ function ListMessages() {
                                         <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                                     </div>
                                     <p className="text-xs leading-5 text-gray-500">Online</p>
+                                    <div>
+                                        {/* Checkbox */}
+                                        <Switch handleStateServed={handleStateServed} />
+                                    </div>
                                 </div>
                             )}
                         </div>

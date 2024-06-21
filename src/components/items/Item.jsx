@@ -188,10 +188,10 @@ function Item() {
                         </div>
                         <div>
                             <div>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 h-full font-urbanist">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 h-full font-urbanist">
                                     {properties.map((props) => (
-                                        <div class=" col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg">
-                                            <div class="group relative flex flex-col overflow-hidden px-4 mb-4">
+                                        <div className=" col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg">
+                                            <div className="group relative flex flex-col overflow-hidden px-4 mb-4">
                                                 <div className='ml-2'>
                                                     <span className=''>{props.price}</span>
                                                 </div>
@@ -210,10 +210,10 @@ function Item() {
                                                     </div>
                                                     <span className='m-1'>Propuestas: {props.propts}</span>
                                                 </div>
-                                                <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
                                             </div>
-                                            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
-                                                <div class="group relative flex flex-col overflow-hidden px-2">
+                                            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
+                                                <div className="group relative flex flex-col overflow-hidden px-2">
                                                     <div className='flex m-2'>
                                                         <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white' >
                                                             <BiArea />
@@ -234,7 +234,7 @@ function Item() {
                                                         <span className='m-1'>Habitaciones: {props.debs}</span>
                                                     </div>
                                                 </div>
-                                                <div class="group relative flex flex-col overflow-hidden px-2">
+                                                <div className="group relative flex flex-col overflow-hidden px-2">
                                                     <div className='flex m-2'>
                                                         <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                                             <LuBath />
@@ -254,7 +254,7 @@ function Item() {
                                                         <span className='m-1'>Cocinas: {props.kitchen}</span>
                                                     </div>
                                                 </div>
-                                                <div class="group relative flex flex-col overflow-hidden px-2">
+                                                <div className="group relative flex flex-col overflow-hidden px-2">
                                                     <div className='flex m-2'>
                                                         <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white' >
                                                             <GiTap />
@@ -275,8 +275,8 @@ function Item() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <h3 class="bg-gray-500 z-10 text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-bebas">{props.type}</h3>
-                                            {/* <FaWhatsapp class="bg-green1 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" /> */}
+                                            <h3 className="bg-gray-500 z-10 text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-bebas">{props.type}</h3>
+                                            {/* <FaWhatsapp className="bg-green1 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" /> */}
                                         </div>
                                     ))}
                                 </div>
