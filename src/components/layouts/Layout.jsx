@@ -15,6 +15,8 @@ import { SiWechat } from "react-icons/si";
 import ChatBot from '../ChatBot';
 import Loading from '../Loading';
 
+import useUser from '../../hooks/useUser';
+
 const links = [
     {
         link: "/",
@@ -44,6 +46,9 @@ const links = [
 ];
 
 const Layout = () => {
+
+    const {isAuth} = useUser()
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isLgScreen, setIsLgScreen] = useState(window.innerWidth >= 1024);
     const [isLoading, setIsLoading] = useState(true);
@@ -133,39 +138,27 @@ const Layout = () => {
                                         <p className="pl-1 text-sm font-urbanist">Publicar</p>
                                     </button>
                                 </a>
-                                <a href="/login">
-                                    <button className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
-                                        onMouseEnter={handleMouseEnter}
-                                        onMouseLeave={handleMouseLeave}
-                                    >
-                                        <MdLogin className="text-2xl" />
-                                        <p className="pl-1 text-sm font-urbanist">Iniciar sesión</p>
-                                    </button>
-                                    {isOpen && (
-                                        <div
-                                            onMouseEnter={handleMouseEnter}
-                                            onMouseLeave={handleMouseLeave}
-                                            className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                {
+                                    isAuth ? (
+                                        <Link 
+                                            to="/login" 
+                                            className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
                                         >
-                                            <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                                <a
-                                                    href="#iniciar-sesion"
-                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                                                    role="menuitem"
-                                                >
-                                                    Iniciar sesión
-                                                </a>
-                                                <a
-                                                    href="#registrarse"
-                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                                                    role="menuitem"
-                                                >
-                                                    Registrarse
-                                                </a>
-                                            </div>
-                                        </div>
-                                    )}
-                                </a>
+                                            <MdLogin className="text-2xl" />
+                                            <p className="pl-1 text-sm font-urbanist">Cerrar Sesión</p>
+
+                                        </Link>
+                                    ) :(
+                                        <Link 
+                                            to="/login" 
+                                            className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
+                                        >
+                                            <MdLogin className="text-2xl" />
+                                            <p className="pl-1 text-sm font-urbanist">Iniciar Sesión</p>
+
+                                        </Link>
+                                    )
+                                }
                             </div>
                         </div>
 

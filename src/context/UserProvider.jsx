@@ -21,7 +21,7 @@ const UserProvider = ({ children }) => {
             const {data:user} = response
             console.log(user)
             const {token,...userAuth} = user
-            localStorage.setItem('AUTH_TOKEN_PROPIA',JSON.stringify(token))
+            localStorage.setItem('AUTH_TOKEN_PROPIA',token)
             setUser(userAuth)
             setIsAuth(true)
             return true
@@ -36,14 +36,18 @@ const UserProvider = ({ children }) => {
     }
 
     const getUser = async () => {
-        const token = localStorage.getItem('AUTH_TOKEN_PROPIA')
-        console.log(token)
+        const token = localStorage.getItem('AUTH_TOKEN_PROPIA');
+        console.log(token);
         try {
-            const response = await api.get('/auth/profile/', {token});
-            console.log(response)
+            const response = await api.get('/auth/profile/', {
+                headers: {
+                    Authorization: `Token ${token}`
+                }
+            });
+            console.log(response);
             if (response.status === 200) {
                 const data = response.data;
-                setUser(data); // Suponiendo que setUser es una función que actualiza el estado del usuario en tu componente
+                setUser(data);
             } else {
                 console.error(`Error al obtener el usuario: ${response.status} - ${response.statusText}`);
             }
@@ -60,6 +64,7 @@ const UserProvider = ({ children }) => {
         <UserContext.Provider
             value={{
                 register,
+                isAuth
             }}
         >
         {children}

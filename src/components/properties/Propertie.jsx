@@ -13,20 +13,20 @@ import { MdOutlineLocalOffer } from "react-icons/md"
 function Propertie({ propertie }) {
     console.log('xdxd', propertie);
     return (
-        <section class="bg-white w-full">
-            <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6 shadow-lg">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 h-full ">
-                    <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col shadow-lg">
-                        <div class="group relative flex flex-col overflow-hidden  px-4 pb-4 pt-40 flex-grow">
+        <section className="bg-white w-full">
+            <div className="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6 shadow-lg">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 h-full ">
+                    <div className="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col shadow-lg">
+                        <div className="group relative flex flex-col overflow-hidden  px-4 pb-4 pt-40 flex-grow">
                             <a href="/item">
-                                <img src={propertie.imageSrc} alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
-                                <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                <img src={propertie.imageSrc} alt="" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                                <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
                             </a>
-                            <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-lg md:text-xl font-urbanist">{propertie.type_property}</h3>
+                            <h3 className="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-lg md:text-xl font-urbanist">{propertie.type_property}</h3>
                         </div>
                     </div>
-                    <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg">
-                        <div class="group relative flex flex-col overflow-hidden  px-1 font-urbanist">
+                    <div className="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg">
+                        <div className="group relative flex flex-col overflow-hidden  px-1 font-urbanist">
                             <div className='flex'>
                                 <span className='font-bebas'>{propertie.type_currency == "USD" ? "$" : "S/."}{propertie.price}</span>
                             </div>
@@ -45,10 +45,10 @@ function Propertie({ propertie }) {
                                 </div>
                                 <span className='m-1'>Propuestas: {propertie.propts}</span>
                             </div>
-                            <div class="absolute inset-0 bg-gradient-to-b from-gray-400/25 to-gray-400/5"></div>
+                            <div className="absolute inset-0 bg-gradient-to-b from-gray-400/25 to-gray-400/5"></div>
                         </div>
-                        <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 ">
-                            <div class="group relative flex flex-col overflow-hidden rounded-lg px-1 font-urbanist">
+                        <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 ">
+                            <div className="group relative flex flex-col overflow-hidden rounded-lg px-1 font-urbanist">
                                 <div className='flex m-2'>
                                     <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white' >
                                         <BiArea />
@@ -68,10 +68,10 @@ function Propertie({ propertie }) {
                                     </div>
                                     <span className='m-1'>Habitaciones: {propertie.debs}</span>
                                 </div>
-                                {/* <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
+                                {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
                             </div>
-                            <div class="group relative flex flex-col overflow-hidden rounded-lg px-1  font-urbanist">
-                                {/* <img src="./src/assets/dep4.webp" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" /> */}
+                            <div className="group relative flex flex-col overflow-hidden rounded-lg px-1  font-urbanist">
+                                {/* <img src="./src/assets/dep4.webp" alt="" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" /> */}
                                 <div className='flex m-2'>
                                     <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                         <LuBath />
@@ -90,10 +90,10 @@ function Propertie({ propertie }) {
                                     </div>
                                     <span className='m-1'>Cocinas: {propertie.kitchens_number}</span>
                                 </div>
-                                {/* <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
+                                {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
                             </div>
                         </div>
-                        <FaWhatsapp class="bg-green-500 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" />
+                        <FaWhatsapp className="bg-green-500 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" />
                     </div>
                 </div>
             </div>
