@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import useUser from "../hooks/useUser";
+import { useNavigate } from "react-router-dom";
 
 function LogIn() {
+
+    const navigate = useNavigate()
 
     const {login} = useUser()
     const {register,handleSubmit, formState: { errors },} = useForm();
@@ -13,7 +16,13 @@ function LogIn() {
     const onSubmit = async(data) => {
         console.log(data);
 
-        await login(data)
+        const response =  await login(data, setErrores)
+
+        setTimeout(()=>{
+            setErrores([])
+        },[5000])
+
+        if(response) navigate('/')
     };
 
     return (
@@ -33,6 +42,13 @@ function LogIn() {
                     Inciar sesión
                     </h2>
                 </div>
+                {
+                    errores.length > 0 ? (
+                        errores.map(error =>(
+                            <p className='bg-red-500 border border-red-900 rounded p-1 text-white text-center font-black my-3'>{error}</p>
+                        ))
+                    ) : null
+                }
                 <form
                     noValidate
                     className="space-y-6"
