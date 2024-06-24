@@ -1,38 +1,30 @@
-import React from 'react'
+import { Selector } from '@rewind-ui/core';
+import { useEffect, useState } from 'react';
 
 function FormPg1({ currentPage }) {
+
+    const [operation,setOperation] = useState('venta')
+
+    const handleOperationChange = (value) => {
+        setOperation(value);
+    };
+
     return (
         <div className={`${currentPage != 1 ? "hidden" : ""} w-full`}>
             <div className="">
-                <div className=" font-urbanist">
+                <div className="font-urbanist">
                     <h2 className="text-base text-center font-bold leading-7 text-gray-900">Cuéntanos, ¿qué deseas publicar?</h2>
-                    <div className=" flex justify-center text-white ">
-                        <div className="font-normal flex flex-col sm:flex-row items-center justify-center p-2 bg-white">
-                            <h2 className="text-base font-semibold leading-7 text-gray-900">Tipo de operación:</h2>
-                            <div className='flex'>
-                                <button
-                                    type="button"
-                                    className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 rounded w-full md:w-auto"
-                                    onClick={() => handleInputChange('tipoOperacion', 'Venta')}
-                                >
-                                    Venta
-                                </button>
-                                <button
-                                    type="button"
-                                    className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 rounded w-full md:w-auto"
-                                    onClick={() => handleInputChange('tipoOperacion', 'Alquiler')}
-                                >
-                                    Alquiler
-                                </button>
-                                <button
-                                    type="button"
-                                    className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 p-2 m-2 rounded w-full md:w-auto"
-                                    onClick={() => handleInputChange('tipoOperacion', 'Temporada')}
-                                >
-                                    Temporada
-                                </button>
-                            </div>
+                    <div className=" flex justify-center items-center gap-3 text-white ">
+
+                        <h2 className="text-base font-semibold leading-7 text-gray-900">Tipo de operación:</h2>
+                        <div className='my-5'>
+                            <Selector className='border border-green-400' value={operation} color='green' onChange={handleOperationChange} >
+                                <Selector.Tab anchor="venta" label="VENTA" />
+                                <Selector.Tab  anchor="alquiler" label="ALQUILER" />
+                                <Selector.Tab anchor="compra" label="COMPRA" />
+                            </Selector>
                         </div>
+                        
                     </div>
                     <div className='flex flex-col sm:flex-row gap-2'>
                         <div className=" w-full">

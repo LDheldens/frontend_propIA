@@ -29,11 +29,15 @@ function SignIn() {
 
         const response = await register(data,setErrores)
 
+        console.log(response)
+
         setTimeout(()=>{
             setErrores([])
         },5000)
 
-        if(response) navigate('/')
+        if(response) {
+            navigate('/')
+        }
     
     };
 

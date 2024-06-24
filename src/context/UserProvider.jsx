@@ -17,12 +17,15 @@ const UserProvider = ({ children }) => {
     // funciones de authenticación
     const register = async (data, setErrores) => {
         try {
-            const response = await api.post('/auth/register/', data); 
+            const response = await api.post('/auth/register/', data);
+            console.log(response) 
             const {data:user} = response
-            localStorage.setItem('AUTH_TOKEN_PROPIA',user.token)
-            setUser(userAuth)
-            setIsAuth(true)
-            return true
+            if (user && user.token) {
+                localStorage.setItem('AUTH_TOKEN_PROPIA', user.token);
+                setUser(user); 
+                setIsAuth(true);
+                return true;
+            }
         } catch (error) {
             if (error.response) {
                 setErrores(Object.values(error.response.data))
