@@ -12,8 +12,8 @@ import { MdLogin } from "react-icons/md"
 import { BiSolidChat } from "react-icons/bi"
 import { FaPlus } from "react-icons/fa6";
 import { SiWechat } from "react-icons/si";
-import ChatBot from '../ChatBot';
-import Loading from '../Loading';
+import ChatBot from '../compGeneral/ChatBot';
+import Loading from '../compGeneral/Loading';
 
 const links = [
     {
@@ -22,19 +22,24 @@ const links = [
         id: 1,
     },
     {
+        link: "dashboard",
+        text: "PANEL",
+        id: 2,
+    },
+    {
         link: "propiedades",
         text: "PROPIEDADES",
-        id: 2,
+        id: 3,
     },
     {
         link: "usuarios",
         text: "USUARIOS",
-        id: 3,
+        id: 4,
     },
     {
         link: "mensajes",
         text: "MENSAJES",
-        id: 4,
+        id: 5,
     },
 ];
 
@@ -177,7 +182,7 @@ const LayoutAdmin = () => {
                             <Outlet />
                         </main>
 
-                        <footer class="">
+                        <footer >
                             {/* <div className='text-center inset-x-0 flex justify-center bg-white p-4'>
                     <ul className='justify-center flex text-green1 text-3xl bg-white p-4 shadow-md shadow-green1  pl-10 pr-10 '>
                         <li>

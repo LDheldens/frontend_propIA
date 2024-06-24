@@ -12,8 +12,8 @@ import { MdLogin } from "react-icons/md"
 import { BiSolidChat } from "react-icons/bi"
 import { FaPlus } from "react-icons/fa6";
 import { SiWechat } from "react-icons/si";
-import ChatBot from '../ChatBot';
-import Loading from '../Loading';
+import ChatBot from '../compGeneral/ChatBot';
+import Loading from '../compGeneral/Loading';
 
 import useUser from '../../hooks/useUser';
 
@@ -47,7 +47,7 @@ const links = [
 
 const Layout = () => {
 
-    const {isAuth,logout} = useUser()
+    const { isAuth, logout } = useUser()
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isLgScreen, setIsLgScreen] = useState(window.innerWidth >= 1024);
@@ -71,7 +71,7 @@ const Layout = () => {
     });
 
 
-    const signOff = async () =>{
+    const signOff = async () => {
         await logout()
     }
 
@@ -139,9 +139,9 @@ const Layout = () => {
                                             <p className="text-sm font-urbanist">Cerrar Sesión</p>
 
                                         </button>
-                                    ) :(
-                                        <Link 
-                                            to="/login" 
+                                    ) : (
+                                        <Link
+                                            to="/login"
                                             className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
                                         >
                                             <MdLogin className="text-2xl" />

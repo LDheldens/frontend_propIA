@@ -5,8 +5,8 @@ import Layout from './components/layouts/Layout'
 import SearchProp from './pages/pagesWeb/SearchProp'
 import Advisors from './pages/pagesWeb/Advisors'
 import Contact from './pages/pagesWeb/Contact'
-import Item from './components/items/Item'
-import LogIn from './components/LogIn'
+import DetailProps from './components/properties/DetailProps'
+import LogIn from './pages/auth/LogIn'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -23,13 +23,14 @@ import Users from './pages/pagesAdmin/Users'
 
 import LayoutAI from './components/layouts/LayoutAI'
 import HomeAI from './pages/pagesAI/HomeAI'
-import SignIn from './components/SignIn'
+import SignIn from './pages/auth/SignIn'
 import IA from './pages/pagesWeb/IA'
 
 // contexts
 import { UserProvider } from './context/UserProvider'
 //loaders
 import { loader as loaderProperty } from './pages/pagesAdmin/DetailProperties'
+import { Dashboard } from './pages/pagesAdmin/Dashboard'
 
 const router = createBrowserRouter(
   [
@@ -59,7 +60,7 @@ const router = createBrowserRouter(
           path: '/contacto'
         },
         {
-          element: <Item />,
+          element: <DetailProps />,
           path: '/item'
         },
         {
@@ -78,13 +79,18 @@ const router = createBrowserRouter(
       children: [
         {
           index: true,
+          element: <Dashboard />,
+          path: 'dashboard'
+        },
+        {
+          index: true,
           element: <Properties />,
           path: 'propiedades'
         },
         {
           element: <DetailProperties />,
           path: 'propiedades/detail/:idProperty',
-          loader: loaderProperty 
+          loader: loaderProperty
         },
         {
           element: <Users />,

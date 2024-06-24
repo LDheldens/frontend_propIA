@@ -11,7 +11,7 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 import { MdLogin } from "react-icons/md"
 import { BiSolidChat } from "react-icons/bi"
 import { FaRegUser } from "react-icons/fa"
-import ChatBot from '../ChatBot'
+import ChatBot from '../compGeneral/ChatBot'
 
 
 const links = [
@@ -128,7 +128,7 @@ const LayoutSell = () => {
                 <Outlet />
             </main>
 
-            <footer class="">
+            <footer >
                 <div className='text-center inset-x-0 flex justify-center bg-white p-4'>
                     <ul className='justify-center flex text-green1 text-3xl bg-white p-4 shadow-md shadow-green1  pl-10 pr-10 rounded-lg'>
                         <li>

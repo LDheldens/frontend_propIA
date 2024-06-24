@@ -4,7 +4,7 @@ import { IoShareSocialOutline } from "react-icons/io5";
 import { MdOutlineNoteAlt } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { HiHome } from "react-icons/hi2";
-import ImageGallery from '../ImageGallery';
+import ImageGallery from './ImageGallery';
 import { MdOutlineLocationOn } from "react-icons/md"
 import { BiArea } from "react-icons/bi"
 import { FaRegBuilding } from "react-icons/fa"
@@ -17,10 +17,10 @@ import { GiTap } from "react-icons/gi"
 import { FaRegLightbulb } from "react-icons/fa"
 import { GiKitchenScale } from "react-icons/gi"
 import { MdOutlineLocalOffer } from "react-icons/md"
-import SendMsg from '../SendMsg';
-import Map from '../Map';
+import SendMsg from './SendMsg';
+import Map from './Map';
 
-function Item() {
+function DetailProps() {
     //const [modalOpen, setModalOpen] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(null);
     const images = ["./src/assets/edf1.jpeg", "./src/assets/dep1.jpeg", "./src/assets/dep3.jpeg", "./src/assets/dep4.jpeg", "./src/assets/dep5.jpeg"]; // Rutas de tus imágenes
@@ -371,4 +371,4 @@ function Item() {
     )
 }
 
-export default Item
+export default DetailProps

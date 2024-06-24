@@ -1,40 +1,40 @@
 import { useEffect, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import Swal from 'sweetalert2';
-import useUser from '../hooks/useUser';
+import useUser from '../../hooks/useUser';
 import { useNavigate } from 'react-router-dom';
 // daniel
 function SignIn() {
-    
-    const navigate= useNavigate()
+
+    const navigate = useNavigate()
 
     const { register } = useUser()
 
     const { control, handleSubmit, formState: { errors }, watch } = useForm();
     const password = watch('password');
-    const [terminos,setTerminos] = useState(false)
-    const [errores,setErrores] = useState([])
+    const [terminos, setTerminos] = useState(false)
+    const [errores, setErrores] = useState([])
 
     const onSubmit = async (user) => {
-        if(!terminos){
+        if (!terminos) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
                 text: "Necesitas aceptar nuestros terminos y condiciones",
-              });
+            });
             return
         }
-        const {confirm_password, ...data} = user
+        const { confirm_password, ...data } = user
         data.username = ''
 
-        const response = await register(data,setErrores)
+        const response = await register(data, setErrores)
 
-        setTimeout(()=>{
+        setTimeout(() => {
             setErrores([])
-        },5000)
+        }, 5000)
 
-        if(response) navigate('/')
-    
+        if (response) navigate('/')
+
     };
 
 
@@ -58,7 +58,7 @@ function SignIn() {
                     </div>
                     {
                         errores.length > 0 ? (
-                            errores.map(error =>(
+                            errores.map(error => (
                                 <p className='bg-red-500 border border-red-900 rounded p-1 text-white text-center font-black my-3'>{error}</p>
                             ))
                         ) : null
@@ -73,12 +73,12 @@ function SignIn() {
                                     name="email"
                                     control={control}
                                     defaultValue=""
-                                    rules={{ 
+                                    rules={{
                                         required: 'El correo electrónico es obligatorio',
                                         pattern: {
                                             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                                             message: 'Ingrese un correo electrónico válido'
-                                        } 
+                                        }
                                     }}
                                     render={({ field }) => (
                                         <input
@@ -187,7 +187,7 @@ function SignIn() {
                                     name="confirm_password"
                                     control={control}
                                     defaultValue=""
-                                    rules={{ required: 'Por favor confirme su contraseña',validate: passwordMatchValidator }}
+                                    rules={{ required: 'Por favor confirme su contraseña', validate: passwordMatchValidator }}
                                     render={({ field }) => (
                                         <input
                                             {...field}
@@ -215,7 +215,7 @@ function SignIn() {
                         </div>
                     </form>
                     <div className='flex mt-4'>
-                        <input onChange={(e)=>setTerminos(e.target.checked)} type="checkbox" name='terminos' className='m-1 p-3 form-checkbox h-8 w-8 text-green1' />
+                        <input onChange={(e) => setTerminos(e.target.checked)} type="checkbox" name='terminos' className='m-1 p-3 form-checkbox h-8 w-8 text-green1' />
                         <span className='text-[12px] text-white'>Acepto los Términos y Condiciones de Uso. y las políticas de privacidad.</span>
                     </div>
                 </div>

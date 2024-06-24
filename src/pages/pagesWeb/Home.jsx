@@ -5,18 +5,18 @@ import { FaArrowRight } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { MdExpandCircleDown } from "react-icons/md";
-import Cards1 from '../../components/cards/Cards1';
-import Cards2 from '../../components/cards/Cards2';
-import Cards3 from '../../components/cards/Cards3';
+import Cards1 from '../../components/home/cards/Cards1';
+import Cards2 from '../../components/home/cards/Cards2';
+import Cards3 from '../../components/home/cards/Cards3';
 import ItemSell from '../../components/items/ItemSell';
 import ItemSellOk from '../../components/items/ItemSellOk';
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bg from '/src/assets/video1.mp4'
-import Flyer from '../../components/flyers/Flyer';
+import Flyer from '../../components/home/flyers/Flyer';
 import PrestenText1 from '../../components/iaIntegrated/PrestenText1';
-import Loading from '../../components/Loading';
+import Loading from '../../components/compGeneral/Loading';
 
 
 function Arrow(props) {
