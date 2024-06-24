@@ -1,11 +1,49 @@
 import React, { useEffect, useState } from 'react';
-import FormPg1 from '../../components/formProps/FormPg1'
-import FormPg2 from '../../components/formProps/FormPg2'
-import FormPg3 from '../../components/formProps/FormPg3'
-import FormPg4 from "../../components/formProps/FormPg4"
+import { useLoaderData } from 'react-router-dom';
+import api from '../../settings/api';
+//icons
+import { MdOutlineLocationOn } from "react-icons/md"
+import { BiArea } from "react-icons/bi"
+import { FaRegBuilding } from "react-icons/fa"
+import { IoBedOutline } from "react-icons/io5"
+import { LuBath } from "react-icons/lu"
+import { GiHomeGarage } from "react-icons/gi"
+import { FaKitchenSet } from "react-icons/fa6"
+import { FaWhatsapp } from "react-icons/fa"
+import { GiTap } from "react-icons/gi"
+import { FaRegLightbulb } from "react-icons/fa"
+import { GiKitchenScale } from "react-icons/gi"
+import { MdOutlineLocalOffer } from "react-icons/md"
+
+
+
+
+export function loader({ params }) {
+    const idProperty = params.idProperty;
+    return idProperty;
+}
 
 export const DetailProperties = () => {
+    const idProperty = useLoaderData();
+    const [propertyDetails, setPropertyDetails] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
+
+    useEffect(() => {
+        const fetchPropertyDetails = async () => {
+            try {
+                const response = await api.get(`/property/${idProperty}/`);
+                setPropertyDetails(response.data);
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPropertyDetails();
+    }, [idProperty]);
 
     const goToNextPage = () => {
         setCurrentPage((prevPage) => prevPage + 1);
@@ -17,59 +55,101 @@ export const DetailProperties = () => {
 
     const isLastPage = currentPage === 4;
 
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
     return (
-    <>
-        <div>DetailProperties</div>
-        <div className='p-2 flex-row justify-center items-center font-bebas max-w-3xl mx-auto'>
-        <div className="text-center">
-            <h2 className="text-base font-semibold leading-7 text-gray-900">Formulario de publicación</h2>
-        </div>
-        <div className="bg-white p-4 w-full ">
-            <div className="bg-gray-400 text-white text-center w-full">
-                Página {currentPage} de 4
-            </div>
-            <form action="" className="w-full">
-                <FormPg1 currentPage={currentPage} />
-                <FormPg2 currentPage={currentPage} />
-                <FormPg3 currentPage={currentPage} />
-                <FormPg4 currentPage={currentPage} />
-
-                {isLastPage && (
-                    <button
-                        type="submit"
-                        className="bg-green1 hover:bg-green1 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
-                    >
-                        Publicar
-                    </button>
-                )}
-
-            </form>
-            <div className="mt-8 flex justify-between font-bebas gap-40">
-                {currentPage !== 1 && (
-                    <div className="flex justify-end">
-                        <button
-                            type="button"
-                            onClick={goToPreviousPage}
-                            className="bg-green1 hover:bg-green1 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
-                        >
-                            Anterior
-                        </button>
+        <div className="p-6 max-w-7xl mx-auto">
+            <section class="bg-white w-full">
+                <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6 font-bebas">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
+                        <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col">
+                            <div class="group relative flex flex-col overflow-hidden  px-4 pb-4 pt-40 flex-grow">
+                                <img src="./src/assets/edf1.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                                <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Edificio</h3>
+                            </div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50">
+                            <div class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 mb-4">
+                                <img src="./src/assets/dep1.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                                <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Sala de juego</h3>
+                            </div>
+                            <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2">
+                                <div class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40">
+                                    <img src="./src/assets/dep3.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                                    <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                    <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Dormitorio</h3>
+                                </div>
+                                <div class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40">
+                                    <img src="./src/assets/dep6.webp" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                                    <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                    <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Sala</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 md:col-span-1 bg-sky-50 h-auto md:h-full flex flex-col">
+                            <button type='button' class="group relative flex flex-col overflow-hidden px-4 pb-4 pt-40 flex-grow">
+                                <img src="./src/assets/dep8.jpeg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                                <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">Salón</h3>
+                            </button>
+                        </div>
                     </div>
-                )}
-                {!isLastPage && (
-                    <button
-                        type="button"
-                        onClick={goToNextPage}
-                        className="bg-green1 hover:bg-green1 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline transition duration-300 text-right"
-                    >
-                        Siguiente
-                    </button>
-                )}
-
-            </div>
+                </div>
+                <p>{propertyDetails.type_property}</p>
+                <p>{propertyDetails.type_operation}</p>
+                <p>Venta desde {propertyDetails.price}</p>
+                <p className="flex items-center space-x-2">
+                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                        <MdOutlineLocationOn />
+                    </div>
+                    <span>{propertyDetails.adress}</span>
+                </p>
+                <hr />
+                <p className="flex items-center space-x-2">
+                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                        <BiArea />
+                    </div>
+                    <span>{propertyDetails.adress}</span>
+                </p>
+                <p className="flex items-center space-x-2">
+                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                        <LuBath />
+                    </div>
+                    <span>{propertyDetails.adress}</span>
+                </p>
+                <p className="flex items-center space-x-2">
+                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                        <FaRegBuilding />
+                    </div>
+                    <span>{propertyDetails.adress}</span>
+                </p>
+                <p className="flex items-center space-x-2">
+                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                        <GiHomeGarage />
+                    </div>
+                    <span>{propertyDetails.adress}</span>
+                </p>
+                <p className="flex items-center space-x-2">
+                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                        <IoBedOutline />
+                    </div>
+                    <span>{propertyDetails.adress}</span>
+                </p>
+                <p className="flex items-center space-x-2">
+                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                        <FaKitchenSet />
+                    </div>
+                    <span>{propertyDetails.adress}</span>
+                </p>
+            </section>
         </div>
-    </div>
-    </>   
-  )
-}
-
+    );
+};

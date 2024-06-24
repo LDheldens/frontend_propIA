@@ -70,26 +70,26 @@ function Properties() {
                             <th className="py-2 px-4 border-b">Tipo de operación</th>
                             <th className="py-2 px-4 border-b">Tipo de propiedad</th>
                             <th className="py-2 px-4 border-b">Subtipo de propiedad</th>
-                            <th className="py-2 px-4 border-b">Email</th>
-                            <th className="py-2 px-4 border-b">Nombre</th>
-                            <th className="py-2 px-4 border-b">Apellido</th>
-                            <th className="py-2 px-4 border-b">DNI</th>
+                            {/* <th className="py-2 px-4 border-b">Email</th> */}
+                            <th className="py-2 px-4 border-b">Vendedor</th>
+                            {/* <th className="py-2 px-4 border-b">Apellido</th> */}
+                            {/* <th className="py-2 px-4 border-b">DNI</th> */}
                             <th className="py-2 px-4 border-b">Número</th>
                             <th className="py-2 px-4 border-b">Dirección</th>
-                            <th className="py-2 px-4 border-b">Departamento</th>
+                            {/* <th className="py-2 px-4 border-b">Departamento</th>
                             <th className="py-2 px-4 border-b">Provincia</th>
                             <th className="py-2 px-4 border-b">Distrito</th>
-                            <th className="py-2 px-4 border-b">Urbanización</th>
+                            <th className="py-2 px-4 border-b">Urbanización</th> */}
                             <th className="py-2 px-4 border-b">Área</th>
-                            <th className="py-2 px-4 border-b">Cuartos</th>
+                            {/* <th className="py-2 px-4 border-b">Cuartos</th>
                             <th className="py-2 px-4 border-b">Garajes</th>
                             <th className="py-2 px-4 border-b">Baños</th>
                             <th className="py-2 px-4 border-b">Cocinas</th>
-                            <th className="py-2 px-4 border-b">Pisos</th>
+                            <th className="py-2 px-4 border-b">Pisos</th> */}
                             <th className="py-2 px-4 border-b">Moneda</th>
                             <th className="py-2 px-4 border-b">Precio</th>
-                            <th className="py-2 px-4 border-b">Descripción</th>
-                            <th className="py-2 px-4 border-b">Términos</th>
+                            {/* <th className="py-2 px-4 border-b">Descripción</th>
+                            <th className="py-2 px-4 border-b">Términos</th> */}
                             <th className="py-2 px-4 border-b">Acciones</th>
                         </tr>
                     </thead>
@@ -99,28 +99,28 @@ function Properties() {
                                 <td className="py-2 px-4 border-b">{property.type_operation}</td>
                                 <td className="py-2 px-4 border-b">{property.type_property}</td>
                                 <td className="py-2 px-4 border-b">{property.subtype_property}</td>
-                                <td className="py-2 px-4 border-b">{property.email}</td>
-                                <td className="py-2 px-4 border-b">{property.first_name}</td>
-                                <td className="py-2 px-4 border-b">{property.last_name}</td>
-                                <td className="py-2 px-4 border-b">{property.dni}</td>
+                                {/* <td className="py-2 px-4 border-b">{property.email}</td> */}
+                                <td className="py-2 px-4 border-b">{property.first_name} {property.last_name}</td>
+                                {/* <td className="py-2 px-4 border-b">{property.last_name}</td> */}
+                                {/* <td className="py-2 px-4 border-b">{property.dni}</td> */}
                                 <td className="py-2 px-4 border-b">{property.phone_number}</td>
                                 <td className="py-2 px-4 border-b">{property.adress}</td>
-                                <td className="py-2 px-4 border-b">{property.departamento}</td>
+                                {/* <td className="py-2 px-4 border-b">{property.departamento}</td>
                                 <td className="py-2 px-4 border-b">{property.provincia}</td>
                                 <td className="py-2 px-4 border-b">{property.distrito}</td>
-                                <td className="py-2 px-4 border-b">{property.urbanization}</td>
+                                <td className="py-2 px-4 border-b">{property.urbanization}</td> */}
                                 <td className="py-2 px-4 border-b">{property.area_property}</td>
-                                <td className="py-2 px-4 border-b">{property.bedrooms_number}</td>
+                                {/* <td className="py-2 px-4 border-b">{property.bedrooms_number}</td>
                                 <td className="py-2 px-4 border-b">{property.garages_number}</td>
                                 <td className="py-2 px-4 border-b">{property.bathrooms_number}</td>
                                 <td className="py-2 px-4 border-b">{property.kitchens_number}</td>
-                                <td className="py-2 px-4 border-b">{property.floors_number}</td>
+                                <td className="py-2 px-4 border-b">{property.floors_number}</td> */}
                                 <td className="py-2 px-4 border-b">{property.type_currency}</td>
                                 <td className="py-2 px-4 border-b">{property.price}</td>
-                                <td className="py-2 px-4 border-b">{property.description}</td>
-                                <td className="py-2 px-4 border-b">{property.terms_conditions ? 'Sí' : 'No'}</td>
+                                {/* <td className="py-2 px-4 border-b">{property.description}</td>
+                                <td className="py-2 px-4 border-b">{property.terms_conditions ? 'Sí' : 'No'}</td> */}
                                 <td className="py-2 px-4 border-b flex space-x-2">
-                                    <Link to='/admin/propiedades/detail' className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
+                                    <Link to={`/admin/propiedades/detail/${property.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
                                         <FaEye />   
                                     </Link>
                                     <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded" onClick={() => handleUpdate(property.id)}>

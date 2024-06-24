@@ -28,6 +28,8 @@ import IA from './pages/pagesWeb/IA'
 
 // contexts
 import { UserProvider } from './context/UserProvider'
+//loaders
+import { loader as loaderProperty } from './pages/pagesAdmin/DetailProperties'
 
 const router = createBrowserRouter(
   [
@@ -81,7 +83,8 @@ const router = createBrowserRouter(
         },
         {
           element: <DetailProperties />,
-          path: 'propiedades/detail'
+          path: 'propiedades/detail/:idProperty',
+          loader: loaderProperty 
         },
         {
           element: <Users />,
