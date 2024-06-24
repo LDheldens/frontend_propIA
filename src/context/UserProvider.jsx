@@ -3,7 +3,6 @@ import { json, useNavigate } from "react-router-dom";
 import api from "../settings/api";
 import useSWR from "swr";
 import Swal from "sweetalert2";
-import { get } from "react-hook-form";
 
 const UserContext = createContext();
 
@@ -18,30 +17,35 @@ const UserProvider = ({ children }) => {
     // funciones de authenticación
     const register = async (data, setErrores) => {
         try {
-            const response = await api.post('/auth/register/', data); 
+            const response = await api.post('/auth/register/', data);
+            console.log(response) 
             const {data:user} = response
-            console.log(user)
-            const {token,...userAuth} = user
-            localStorage.setItem('AUTH_TOKEN_PROPIA',token)
-            setUser(userAuth)
-            setIsAuth(true)
-            return true
+            if (user && user.token) {
+                localStorage.setItem('AUTH_TOKEN_PROPIA', user.token);
+                setUser(user); 
+                setIsAuth(true);
+                return true;
+            }
         } catch (error) {
             if (error.response) {
-                console.log(error.response.data)
                 setErrores(Object.values(error.response.data))
             }
 
             return false
         };
     }
-    const login = async (data) =>{
+    const login = async (data, setErrores) =>{
         try {
             const response = await api.post('/auth/login/',data)
-            console.log(response)
+            const {data:user} = response
+            localStorage.setItem('AUTH_TOKEN_PROPIA',user.token)
+            console.log(user)
+            setUser(user)
+            setIsAuth(true)
+            return true
         } catch (error) {
             if (error.response) {
-                console.log(error.response.data)
+                setErrores(Object.values(error.response.data))
             }
         }
     }
@@ -55,7 +59,11 @@ const UserProvider = ({ children }) => {
                 }
             }); 
             
-            console.log(response)
+            if (response.status == 200) {
+                localStorage.removeItem("AUTH_TOKEN_PROPIA");
+                setIsAuth(false)
+
+            }
         } catch (error) {
             console.error(error)
         };

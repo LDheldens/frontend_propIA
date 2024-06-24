@@ -29,12 +29,25 @@ function SignIn() {
 
         const response = await register(data, setErrores)
 
+<<<<<<< HEAD:src/pages/auth/SignIn.jsx
         setTimeout(() => {
+=======
+        console.log(response)
+
+        setTimeout(()=>{
+>>>>>>> 303a2f783336b690e35ad1ce869a47a6ad5c0d85:src/components/SignIn.jsx
             setErrores([])
         }, 5000)
 
         if (response) navigate('/')
 
+<<<<<<< HEAD:src/pages/auth/SignIn.jsx
+=======
+        if(response) {
+            navigate('/')
+        }
+    
+>>>>>>> 303a2f783336b690e35ad1ce869a47a6ad5c0d85:src/components/SignIn.jsx
     };
 
 
