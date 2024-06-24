@@ -103,52 +103,72 @@ export const DetailProperties = () => {
                         </div>
                     </div>
                 </div>
-                <p>{propertyDetails.type_property}</p>
-                <p>{propertyDetails.type_operation}</p>
-                <p>Venta desde {propertyDetails.price}</p>
-                <p className="flex items-center space-x-2">
-                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                        <MdOutlineLocationOn />
+                <div id="details" class="p-6 font-urbanist">
+                    <div id="general">
+                        <p class="text-lg text-gray-700">{propertyDetails.subtype_property}: {propertyDetails.type_property}</p>
+                        <p class="text-2xl mb-4">Venta desde {propertyDetails.type_currency == "PEN" ? "S/." : "$"}{propertyDetails.price}</p>
+                        <hr />
+                        {/* <p class="text-lg">Urbanización: {propertyDetails.urbanization}</p> */}
+                        <div class="py-4">
+                            <p class="text-lg">{propertyDetails.departamento}, {propertyDetails.provincia}, {propertyDetails.distrito}, {propertyDetails.urbanization}</p>
+                            <p className="flex items-center space-x-2 mt-2">
+                                <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                    <MdOutlineLocationOn />
+                                </div>
+                                <strong><span class="text-lg">{propertyDetails.adress}</span></strong>
+                            </p>
+                        </div>
                     </div>
-                    <span>{propertyDetails.adress}</span>
-                </p>
-                <hr />
-                <p className="flex items-center space-x-2">
-                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                        <BiArea />
+                    <hr />
+                    <div id="iconos" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 py-5">
+                        <div className="flex items-center space-x-2">
+                            <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                <BiArea />
+                            </div>
+                            <span className="text-lg font-bold">{propertyDetails.area_property} m²</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                <LuBath />
+                            </div>
+                            <span className="text-lg font-bold">Baños: {propertyDetails.bathrooms_number}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                <FaRegBuilding />
+                            </div>
+                            <span className="text-lg font-bold">Pisos: {propertyDetails.floors_number}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                <GiHomeGarage />
+                            </div>
+                            <span className="text-lg font-bold">Garajes: {propertyDetails.garages_number}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                <IoBedOutline />
+                            </div>
+                            <span className="text-lg font-bold">Dormitorios: {propertyDetails.bedrooms_number}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                <FaKitchenSet />
+                            </div>
+                            <span className="text-lg font-bold">Cocinas: {propertyDetails.kitchens_number}</span>
+                        </div>
                     </div>
-                    <span>{propertyDetails.adress}</span>
-                </p>
-                <p className="flex items-center space-x-2">
-                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                        <LuBath />
+                    <hr />
+                    <div id="descripcion" class="py-5">
+                        <p class="text-lg font-bold">Descripción</p>
+                        <p>{propertyDetails.description}</p>
                     </div>
-                    <span>{propertyDetails.adress}</span>
-                </p>
-                <p className="flex items-center space-x-2">
-                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                        <FaRegBuilding />
+                    <hr />
+                    <div id="ubicacion" class="py-5">
+                        <p class="text-lg font-bold">Ubicación del proyecto</p>
+                        <p>{propertyDetails.adress}</p>
                     </div>
-                    <span>{propertyDetails.adress}</span>
-                </p>
-                <p className="flex items-center space-x-2">
-                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                        <GiHomeGarage />
-                    </div>
-                    <span>{propertyDetails.adress}</span>
-                </p>
-                <p className="flex items-center space-x-2">
-                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                        <IoBedOutline />
-                    </div>
-                    <span>{propertyDetails.adress}</span>
-                </p>
-                <p className="flex items-center space-x-2">
-                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                        <FaKitchenSet />
-                    </div>
-                    <span>{propertyDetails.adress}</span>
-                </p>
+                </div>
             </section>
         </div>
     );

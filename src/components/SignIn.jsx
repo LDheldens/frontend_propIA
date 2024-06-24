@@ -33,7 +33,9 @@ function SignIn() {
             setErrores([])
         },5000)
 
-        if(response) navigate('/')
+        if(response) {
+            navigate('/')
+        }
     
     };
 
