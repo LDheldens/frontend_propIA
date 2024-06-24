@@ -47,20 +47,13 @@ const links = [
 
 const Layout = () => {
 
-    const {isAuth} = useUser()
+    const {isAuth,logout} = useUser()
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isLgScreen, setIsLgScreen] = useState(window.innerWidth >= 1024);
     const [isLoading, setIsLoading] = useState(true);
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
 
-    const handleMouseEnter = () => {
-        setIsOpen(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsOpen(false);
-    };
 
     const handleResize = () => {
         setIsLgScreen(window.innerWidth >= 1024);
@@ -77,13 +70,10 @@ const Layout = () => {
         innerWidth: window.innerWidth,
     });
 
-    const detectZise = () => {
-        setWindowDimension({
-            innerHeight: window.innerHeight,
-            innerWidth: window.innerWidth,
-        });
-    };
 
+    const signOff = async () =>{
+        await logout()
+    }
 
     const [chatBot, setChatBot] = useState(false);
     const toggleChatbot = () => {
@@ -140,21 +130,22 @@ const Layout = () => {
                                 </a>
                                 {
                                     isAuth ? (
-                                        <Link 
-                                            to="/login" 
+                                        <button
+                                            type='button'
+                                            onClick={signOff}
                                             className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
                                         >
                                             <MdLogin className="text-2xl" />
-                                            <p className="pl-1 text-sm font-urbanist">Cerrar Sesión</p>
+                                            <p className="text-sm font-urbanist">Cerrar Sesión</p>
 
-                                        </Link>
+                                        </button>
                                     ) :(
                                         <Link 
                                             to="/login" 
                                             className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
                                         >
                                             <MdLogin className="text-2xl" />
-                                            <p className="pl-1 text-sm font-urbanist">Iniciar Sesión</p>
+                                            <p className="text-sm font-urbanist">Iniciar Sesión</p>
 
                                         </Link>
                                     )

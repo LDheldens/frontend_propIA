@@ -15,6 +15,7 @@ const UserProvider = ({ children }) => {
         localStorage.getItem('AUTH_TOKEN_PROPIA') ? true : false
     );
 
+    // funciones de authenticación
     const register = async (data, setErrores) => {
         try {
             const response = await api.post('/auth/register/', data); 
@@ -34,7 +35,33 @@ const UserProvider = ({ children }) => {
             return false
         };
     }
+    const login = async (data) =>{
+        try {
+            const response = await api.post('/auth/login/',data)
+            console.log(response)
+        } catch (error) {
+            if (error.response) {
+                console.log(error.response.data)
+            }
+        }
+    }
 
+    const logout = async () =>{
+        const token = localStorage.getItem('AUTH_TOKEN_PROPIA');
+        try {
+            const response = await api.post('/auth/logout/',{},{
+                headers:{
+                    Authorization: `Token ${token}`
+                }
+            }); 
+            
+            console.log(response)
+        } catch (error) {
+            console.error(error)
+        };
+    }
+
+    // funcion para obtener al usurio authenticado
     const getUser = async () => {
         const token = localStorage.getItem('AUTH_TOKEN_PROPIA');
         console.log(token);
@@ -64,10 +91,12 @@ const UserProvider = ({ children }) => {
         <UserContext.Provider
             value={{
                 register,
-                isAuth
+                isAuth,
+                logout,
+                login
             }}
         >
-        {children}
+            {children}
         </UserContext.Provider>
     );
 };
