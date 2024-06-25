@@ -57,7 +57,7 @@ function SignIn() {
                             src="./src/assets/logo3.png"
                             alt="my Company"
                         />
-                        <h2 className="mt-6 mb-5 text-center text-2xl font-bold leading-9 tracking-tight text-black font-bebas">
+                        <h2 className="mt-6 mb-5 text-center text-2xl font-bold leading-9  text-black font-bebas tracking-wide">
                             Nuevo registro
                         </h2>
                     </div>
@@ -220,10 +220,10 @@ function SignIn() {
                         </div>
                     </form>
                     <div className='flex items-center mt-4'>
-                        <input 
-                            onChange={(e) => setTerminos(e.target.checked)} 
-                            type="checkbox" 
-                            name='terminos' 
+                        <input
+                            onChange={(e) => setTerminos(e.target.checked)}
+                            type="checkbox"
+                            name='terminos'
                             className='form-checkbox h-4 w-4 text-green1 rounded-full'
                         />
                         <span className='ml-2 text-[12px] text-black'>
@@ -232,7 +232,7 @@ function SignIn() {
                     </div>
                 </div>
                 <div className="w-160 flex items-center justify-end">
-                    <img src={dep3} alt="" className="rounded-xl w-100 h-120 object-cover"/>
+                    <img src={dep3} alt="" className="rounded-xl w-100 h-120 object-cover" />
                 </div>
             </div>
         </div>

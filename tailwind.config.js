@@ -30,6 +30,9 @@ export default {
                 urbanist: ['Urbanist'],
                 futura: ['Furuta Std', 'sans-serif'],
             },
+            letterSpacing: {
+                'extra-wide': '0.50em',
+            },
             gradientColorStops: theme => ({
                 'black': '#000',
                 'gray-900': '#1a202c',
@@ -40,7 +43,7 @@ export default {
         require('@tailwindcss/typography'),
         require('tailwind-scrollbar')({ nocompatible: true }),
         require('@tailwindcss/forms')({
-        strategy: 'class' // only generate classes
+            strategy: 'class' // only generate classes
         })
     ],
 }

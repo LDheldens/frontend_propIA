@@ -35,11 +35,11 @@ function Post() {
 
     return (
         <FormProvider {...methods}>
-            <div className='p-2 flex-row justify-center items-center font-bebas max-w-3xl mx-auto'>
+            <div className='p-2 flex-row justify-center items-center font-bebas tracking-wide max-w-3xl mx-auto'>
                 <div className="text-center">
                     <h2 className="text-2xl font-semibold text-gray-900">Formulario de publicación</h2>
                 </div>
-                
+
                 <div className="bg-white p-4 w-full ">
                     <div className="bg-gray-400 text-white text-center w-full">
                         Página {currentPage} de 4
@@ -49,8 +49,8 @@ function Post() {
                         <FormPg2 currentPage={currentPage} />
                         <FormPg3 currentPage={currentPage} />
                         <FormPg4 currentPage={currentPage} />
-                        
-                        <div className="mt-8 flex justify-between font-bebas gap-40">
+
+                        <div className="mt-8 flex justify-between font-bebas tracking-wide gap-40">
                             {currentPage !== 1 && (
                                 <div className="flex justify-end">
                                     <button
@@ -71,7 +71,7 @@ function Post() {
                                     Siguiente
                                 </button>
                             ) : null
-                            
+
                             }
                             {
                                 isLastPage ? (
@@ -85,7 +85,7 @@ function Post() {
                             }
                         </div>
                     </form>
-                    
+
                 </div>
             </div>
         </FormProvider>

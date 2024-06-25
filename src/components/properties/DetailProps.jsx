@@ -184,7 +184,7 @@ function DetailProps() {
                 <div className=' mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 w-full'>
                     <div className=' md:m-4 w-full '>
                         <div>
-                            <h5 className='font-bold text-xl font-bebas'>Detalles</h5>
+                            <h5 className='font-bold text-xl font-bebas tracking-wide'>Detalles</h5>
                         </div>
                         <div>
                             <div>
@@ -275,7 +275,7 @@ function DetailProps() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <h3 className="bg-gray-500 z-10 text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-bebas">{props.type}</h3>
+                                            <h3 className="bg-gray-500 z-10 text-lg font-medium text-white absolute top-0 right-0 mr-2 p-1 pl-2 pr-2 xs:text-lg mt-3 md:text-lg font-bebas tracking-wide">{props.type}</h3>
                                             {/* <FaWhatsapp className="bg-green1 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" /> */}
                                         </div>
                                     ))}
@@ -283,7 +283,7 @@ function DetailProps() {
                             </div>
                             <div>
                                 <div className='mt-4'>
-                                    <h4 className='text-xl font-bold font-bebas'>Descripción: </h4>
+                                    <h4 className='text-xl font-bold font-bebas tracking-wide'>Descripción: </h4>
                                     <p className='font-urbanist'>
                                         Vendo Casa en Zona Comercial de Santa Anita
                                         80M2 de terreno
@@ -320,7 +320,7 @@ function DetailProps() {
                 </div>
                 <div>
                     <div className='mt-6 lg:mx-20 border border-gray-300 rounded-lg'>
-                        <h2 className='m-4 font-bold text-2xl font-bebas'>Ubicación:</h2>
+                        <h2 className='m-4 font-bold text-2xl font-bebas tracking-wide'>Ubicación:</h2>
                         <Map />
                     </div>
                 </div>
