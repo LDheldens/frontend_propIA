@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import useUser from "../../hooks/useUser";
+import dep2 from "../../assets/dep2.jpeg";
 
 function LogIn() {
 
@@ -20,8 +21,8 @@ function LogIn() {
         <div
             className="min-h-full flex justify-center items-center mx-auto px-6 py-12 lg:px-8"
             style={{ backgroundImage: "url('./src/assets/dep2.jpeg')" }}
-        >
-            <div className="bg-black bg-opacity-40 ml-4 mr-4 mb-10 p-6 w-160 font-urbanist">
+        > 
+            <div className="bg-white bg-opacity-100 ml-4 mr-4 mb-10 p-6 w-200 font-urbanist rounded-xl flex flex-row justify-center space-x-8">
                 <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-sm">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img
@@ -29,8 +30,8 @@ function LogIn() {
                             src="./src/assets/logo3.png"
                             alt="my Company"
                         />
-                        <h2 className="mt-10 mb-5 text-center text-2xl font-bold leading-9 tracking-tight text-white font-bebas">
-                            Inciar sesión
+                        <h2 className="mt-10 mb-5 text-center text-2xl font-bold leading-9 tracking-tight text-black font-bebas">
+                            Iniciar sesión
                         </h2>
                     </div>
                     <form
@@ -42,7 +43,7 @@ function LogIn() {
                         <div className="col-span-full">
                             <label
                                 htmlFor="email"
-                                className="relative  border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                             >
                                 <input
                                     id="email"
@@ -96,23 +97,28 @@ function LogIn() {
                         <div>
                             <button
                                 type="submit"
-                                className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded-xl"
                             >
                                 Ingresar
                             </button>
                         </div>
                     </form>
-                    <p className="mt-10 text-center text-sm text-white">
+                    <p className="mt-10 text-center text-sm text-black">
                         ¿No es un miembro?{" "}
                         <Link
                             to="/signin"
-                            className="font-semibold leading-6 text-green1 hover:text-white"
+                            className="font-semibold leading-6 text-green1 hover:text-red-500"
                         >
                             Registrarse
                         </Link>
                     </p>
                 </div>
+                <div className="w-160 flex items-center justify-end">
+                    <img src={dep2} alt="" className="rounded-xl w-100 h-100 object-cover"/>
+                </div>
             </div>
+
+            
         </div>
     );
 }
