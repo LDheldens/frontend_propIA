@@ -14,6 +14,7 @@ import { FaPlus } from "react-icons/fa6";
 import { SiWechat } from "react-icons/si";
 import ChatBot from '../compGeneral/ChatBot';
 import Loading from '../compGeneral/Loading';
+import { Dropdown, Button, Avatar } from '@rewind-ui/core'
 
 import useUser from '../../hooks/useUser';
 
@@ -109,7 +110,7 @@ const Layout = () => {
                                             <Link
                                                 to={link.link}
                                                 onClick={() => setIsMenuOpen(false)}
-                                                className="text-white text-3xl lg:text-gray-700 font-bold lg:text-[20px] transition-opacity duration-300 hover:text-green1 hover:opacity-75 font-bebas tracking-wide"
+                                                className="text-white text-3xl lg:text-gray-700 font-bold lg:text-[20px] transition-opacity duration-300 hover:text-green1 hover:opacity-75 font-bebas tracking-wide tracking-wide"
                                                 key={link.id}
                                             >
                                                 {link.text}
@@ -123,26 +124,47 @@ const Layout = () => {
                             </div>
                             <div className='flex flex-col md:flex-row'>
                                 <a href="/publicar/formulario">
-                                    <button className="bg-white hover:bg-green1 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green1 justify-center z-60">
+                                    <button className="bg-white hover:bg-green-500 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center z-60">
                                         <FaPlus />
                                         <p className="pl-1 text-sm font-urbanist">Publicar</p>
                                     </button>
                                 </a>
                                 {
                                     isAuth ? (
-                                        <button
-                                            type='button'
-                                            onClick={signOff}
-                                            className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
-                                        >
-                                            <MdLogin className="text-2xl" />
-                                            <p className="text-sm font-urbanist">Cerrar Sesión</p>
+                                        // <button
+                                        //     type='button'
+                                        //     onClick={signOff}
+                                        //     className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
+                                        // >
+                                        //     <MdLogin className="text-2xl" />
+                                        //     <p className="text-sm font-urbanist">Cerrar Sesión</p>
 
-                                        </button>
+                                        // </button>
+                                        <Dropdown itemColor="green" radius="none">
+                                            <Dropdown.Trigger itemColor="blue">
+                                                <Button color='green' radius="none" className=' m-2 p-2'>
+                                                    Usuario
+                                                </Button>
+
+                                            </Dropdown.Trigger>
+                                            <Dropdown.Content>
+                                                {/* <Dropdown.Label>Application</Dropdown.Label> */}
+                                                <Dropdown.Item>
+                                                    Mi perfil
+                                                </Dropdown.Item>
+                                                <Dropdown.Item>
+                                                    Messages
+                                                </Dropdown.Item>
+                                                <Dropdown.Divider />
+                                                <Dropdown.Item onClick={signOff}>
+                                                    Cerrar sesión
+                                                </Dropdown.Item>
+                                            </Dropdown.Content>
+                                        </Dropdown>
                                     ) : (
                                         <Link
                                             to="/login"
-                                            className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
+                                            className="bg-green-500 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
                                         >
                                             <MdLogin className="text-2xl" />
                                             <p className="text-sm font-urbanist">Iniciar Sesión</p>
@@ -161,12 +183,12 @@ const Layout = () => {
                             <div className='mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-3 xl:gap-x-8 p-14'>
                                 <div className='flex'>
                                     <div className='flex-1 font-josefin '>
-                                        <p className='text-gray-700 font-bebas font-bold mb-2'>CasaPaz Inmobiliaria</p>
+                                        <p className='text-gray-700 font-bebas tracking-wide font-bold mb-2'>CasaPaz Inmobiliaria</p>
                                         <span className='text-gray-400 font-urbanist'>La Inmobiliaria es un nuevo e innovador Portal Inmobiliario donde podrá encontrar el inmueble que necesita.</span>
                                     </div>
                                 </div>
                                 <div className='bg-white text-gray-400 text-sm flex-1 font-urbanist'>
-                                    <p className='text-gray-700 font-bebas font-bold text-base'>Accesos directos</p>
+                                    <p className='text-gray-700 font-bebas tracking-wide font-bold text-base'>Accesos directos</p>
                                     <nav>
                                         <p className='p-2 hover:text-green1'>Inicio</p>
                                         <p className='p-2 hover:text-green1'>Buscar propiedades</p>
@@ -177,7 +199,7 @@ const Layout = () => {
                                     </nav>
                                 </div>
                                 <div className='flex-1 bg-white font-urbanist'>
-                                    <p className='text-gray-700 font-bebas font-bold'>Contáctanos</p>
+                                    <p className='text-gray-700 font-bebas tracking-wide font-bold'>Contáctanos</p>
                                     <ul>
                                         <li className='flex items-center mb-2'>
                                             <div className='m-3'>

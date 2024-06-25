@@ -34,12 +34,12 @@ function PrestenText1() {
     }, [isAnimating]);
     return (
         <div>
-            <div className=" z-10 font-bebas md:text-[55px] sm:text-[40px] py-8 flex flex-col items-center justify-start  h-full text-white">
+            <div className=" z-10 font-bebas tracking-wide md:text-[55px] sm:text-[40px] py-8 flex flex-col items-center justify-start  h-full text-white">
                 <p className='flex flex-col items-start justify-start text-[15px] font-urbanist italic no-underline'>
                     Especialistas en:
                 </p>
                 <div
-                    className={`overflow-hidden transition-all duration-1000 font-bebas ${isAnimating
+                    className={`overflow-hidden transition-all duration-1000 font-bebas tracking-wide ${isAnimating
                         ? 'translate-y-full opacity-0'
                         : currentTextIndex !== null
                             ? 'translate-y-0 opacity-100'

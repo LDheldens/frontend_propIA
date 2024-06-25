@@ -76,7 +76,7 @@ const LayoutSell = () => {
     return (
         <div>
             <div className="flex justify-between items-center px-5 md:px-8">
-                <div className="flex items-center font-bebas pl-8">
+                <div className="flex items-center font-bebas tracking-wide pl-8">
                     <Link to={"/"} className="text-white  flex justify-start items-center font-semibold text-xl h-24">
                         <img src="/src/assets/logo6.png" alt="" width="170" height="100" />
                     </Link>
@@ -149,12 +149,12 @@ const LayoutSell = () => {
                     <div className='bg-white mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-3 xl:gap-x-8 p-14'>
                         <div className='flex bg-white'>
                             <div className='flex-1 font-josefin '>
-                                <p className='text-gray-700 font-bebas font-bold mb-2'>CasaPaz Inmobiliaria</p>
+                                <p className='text-gray-700 font-bebas tracking-wide font-bold mb-2'>CasaPaz Inmobiliaria</p>
                                 <span className='text-gray-400 font-urbanist'>La Inmobiliaria es un nuevo e innovador Portal Inmobiliario donde podrá encontrar el inmueble que necesita.</span>
                             </div>
                         </div>
                         <div className='bg-white text-gray-400 text-sm flex-1 font-urbanist'>
-                            <p className='text-gray-700 font-bebas font-bold text-base'>Accesos directos</p>
+                            <p className='text-gray-700 font-bebas tracking-wide font-bold text-base'>Accesos directos</p>
                             <nav>
                                 <p className='p-2 hover:text-green1'>Inicio</p>
                                 <p className='p-2 hover:text-green1'>Buscar propiedades</p>
@@ -165,7 +165,7 @@ const LayoutSell = () => {
                             </nav>
                         </div>
                         <div className='flex-1 bg-white font-urbanist'>
-                            <p className='text-gray-700 font-bebas font-bold'>Contáctanos</p>
+                            <p className='text-gray-700 font-bebas tracking-wide font-bold'>Contáctanos</p>
                             <ul>
                                 <li className='flex items-center mb-2'>
                                     <div className='m-3'>

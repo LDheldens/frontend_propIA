@@ -155,11 +155,11 @@ const Home = () => {
                 />
 
                 <div className="relative z-10 items-center justify-center p-2 md:p-4 h-160 w-full  bg-black bg-opacity-35">
-                    <h3 className="text-[40px] font-bold  text-white  text-center p-4 pb-3 font-bebas "><PrestenText1 /></h3>
+                    <h3 className="text-[40px] font-bold  text-white  text-center p-4 pb-3 font-bebas tracking-wide "><PrestenText1 /></h3>
                     <div className="m-14">
                         <div className="flex items-center justify-center text-white sm:w-full">
                             <form action="" className="flex">
-                                <div className="font-normal flex items-center justify-center gap-x-2 bg-white font-bebas">
+                                <div className="font-normal flex items-center justify-center gap-x-2 bg-white font-bebas tracking-wide">
                                     <button className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                         Alquilar
                                     </button>
@@ -242,7 +242,7 @@ const Home = () => {
                 <Cards1 />
                 <br className='m-4' />
                 <div className='p-8 slider-container '>
-                    <h2 className="text-[45px] font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Inmuebles similares a los que viste</h2>
+                    <h2 className="text-[45px] font-bold  text-gray-700 text-center p-4 font-bebas tracking-wide">Inmuebles similares a los que viste</h2>
                     <Slider {...settings}>
                         <div>
                             <h1> <ItemSellOk /></h1>
@@ -264,14 +264,14 @@ const Home = () => {
 
                 <div className='m-4'>
                     <div className=" pt-8">
-                        <h4 className="text-[45px] font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Integrado con inteligencia artificial</h4>
+                        <h4 className="text-[45px] font-bold  text-gray-700 text-center p-4 font-bebas tracking-wide">Integrado con inteligencia artificial</h4>
                     </div>
                     <div className="mx-auto max-w-7xl  px-6 lg:px-8 m-3">
                         <ul role="list" className="grid gap-8 md:gap-6  md:grid-cols-3 lg:gap-8 border-gray-300">
                             <li className='max-w-[450px] mx-auto md:w-auto'>
                                 <div className="flex p-5 md:p-4 md:pr-1 lg:p-5 items-center gap-x-1 border border-gray-400 bg-white shadow-md">
                                     <div >
-                                        <p className="text-sm leading-6 text-gray-700 font-bebas">Navega por nuestra página web inteligente, donde la IA anticipa tus necesidades.</p>
+                                        <p className="text-sm leading-6 text-gray-700 font-bebas tracking-wide">Navega por nuestra página web inteligente, donde la IA anticipa tus necesidades.</p>
                                     </div>
                                     <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-green-500'>
                                         <FaArrowRight className='h-10 w-10 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full m-3' />
@@ -281,7 +281,7 @@ const Home = () => {
                             <li className='max-w-[450px] mx-auto md:w-auto'>
                                 <div className="flex p-5 md:p-4 md:pr-1 lg:p-5 items-center gap-x-1 border border-gray-400 bg-white shadow-md">
                                     <div >
-                                        <p className="text-sm font-semibold leading-6 text-gray-700 font-bebas">Experimenta la diferencia con nuestra página web, potenciada por inteligencia artificial.</p>
+                                        <p className="text-sm font-semibold leading-6 text-gray-700 font-bebas tracking-wide">Experimenta la diferencia con nuestra página web, potenciada por inteligencia artificial.</p>
                                     </div>
                                     <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-green-500'>
                                         <FaArrowRight className=' h-10 w-10 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full m-3' />
@@ -291,7 +291,7 @@ const Home = () => {
                             <li className='max-w-[450px] mx-auto md:w-auto'>
                                 <div className="flex p-5 md:p-4 md:pr-1 lg:p-5 items-center gap-x-1 border border-gray-400 bg-white shadow-md">
                                     <div >
-                                        <p className="text-sm font-semibold leading-6 text-gray-700 font-bebas">Explora un nuevo nivel de interactividad con nuestra página web impulsada por IA.</p>
+                                        <p className="text-sm font-semibold leading-6 text-gray-700 font-bebas tracking-wide">Explora un nuevo nivel de interactividad con nuestra página web impulsada por IA.</p>
                                     </div>
                                     <a href="/ia/inicioia" className='rounded-full px-3 py-[13px] bg-green-500'>
                                         <FaArrowRight className='h-10 w-10 md:h-8 md:w-8 lg:h-10 lg:w-10 rounded-full m-3' />
@@ -304,12 +304,12 @@ const Home = () => {
             </div>
             <br className='' />
             <div>
-                <h2 className="text-[45px] font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Más inmuebles similares a los que viste</h2>
+                <h2 className="text-[45px] font-bold  text-gray-700 text-center p-4 font-bebas tracking-wide">Más inmuebles similares a los que viste</h2>
                 <ItemSell />
             </div>
             <div>
                 <div className="my-5">
-                    <h4 className="text-[45px] font-bold tracking-tight text-gray-700 text-center font-bebas">Te acompañamos en cada paso.</h4>
+                    <h4 className="text-[45px] font-bold  text-gray-700 text-center font-bebas tracking-wide">Te acompañamos en cada paso.</h4>
                 </div>
                 <br />
                 <Cards2 className='my-' />
@@ -317,7 +317,7 @@ const Home = () => {
             <div>
                 <div className="">
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                        <h2 className="text-[45px] font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Más propiedades</h2>
+                        <h2 className="text-[45px] font-bold  text-gray-700 text-center p-4 font-bebas tracking-wide">Más propiedades</h2>
                         <div className='justify-end border-gray-500'>
                             <div className=" inset-0 flex items-center justify-end text-white ">
                                 <form action="" className="flex">
@@ -337,7 +337,7 @@ const Home = () => {
                         </div>
                         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                             <div className="max-w-2xl ">
-                                <h4 className="text-sm font-bold tracking-tight text-gray-900 sm:text-2xl text-center font-bebas">¿Conoces nuestras opciones de desarrollos?</h4>
+                                <h4 className="text-sm font-bold  text-gray-900 sm:text-2xl text-center font-bebas tracking-wide">¿Conoces nuestras opciones de desarrollos?</h4>
                                 <p className='font-urbanist'>Puedes verlos según la etapa de construcción que más se ajusta a tu búsqueda.</p>
                             </div>
                             {products.map((product) => (
@@ -378,7 +378,7 @@ const Home = () => {
                 </div>
             </div>
             <div className='flex justify-center items-center p-4'>
-                <h5 className='mr-1 text-xl text-gray-600 font-bebas'>Busca entre más de 17,976 Propiedades</h5>
+                <h5 className='mr-1 text-xl text-gray-600 font-bebas tracking-wide'>Busca entre más de 17,976 Propiedades</h5>
                 <button className='bg-green1 p-3 text-white text-sm'>
                     <a href="/buscar">VER MÁS</a>
                 </button>
