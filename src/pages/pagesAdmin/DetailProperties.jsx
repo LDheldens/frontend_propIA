@@ -106,10 +106,10 @@ export const DetailProperties = () => {
                 <div id="details" class="p-6 font-urbanist">
                     <div id="general">
                         <p class="text-lg text-gray-700">{propertyDetails.subtype_property}: {propertyDetails.type_property}</p>
-                        <p class="text-2xl mb-4">Venta desde {propertyDetails.type_currency == "PEN" ? "S/." : "$"}{propertyDetails.price}</p>
+                        <p class="text-2xl mb-7">Venta desde {propertyDetails.type_currency == "PEN" ? "S/." : "$"}{propertyDetails.price}</p>
                         <hr />
                         {/* <p class="text-lg">Urbanización: {propertyDetails.urbanization}</p> */}
-                        <div class="py-4">
+                        <div class="py-7">
                             <p class="text-lg">{propertyDetails.departamento}, {propertyDetails.provincia}, {propertyDetails.distrito}, {propertyDetails.urbanization}</p>
                             <p className="flex items-center space-x-2 mt-2">
                                 <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
@@ -120,7 +120,7 @@ export const DetailProperties = () => {
                         </div>
                     </div>
                     <hr />
-                    <div id="iconos" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 py-5">
+                    <div id="iconos" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 py-12">
                         <div className="flex items-center space-x-2">
                             <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                 <BiArea />
@@ -159,12 +159,12 @@ export const DetailProperties = () => {
                         </div>
                     </div>
                     <hr />
-                    <div id="descripcion" class="py-5">
+                    <div id="descripcion" class="py-7">
                         <p class="text-lg font-bold">Descripción</p>
                         <p>{propertyDetails.description}</p>
                     </div>
                     <hr />
-                    <div id="ubicacion" class="py-5">
+                    <div id="ubicacion" class="py-7">
                         <p class="text-lg font-bold">Ubicación del proyecto</p>
                         <p>{propertyDetails.adress}</p>
                     </div>

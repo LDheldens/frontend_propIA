@@ -79,7 +79,7 @@ const UserProvider = ({ children }) => {
                     Authorization: `Token ${token}`
                 }
             });
-            console.log(response);
+
             if (response.status === 200) {
                 const data = response.data;
                 setUser(data);
