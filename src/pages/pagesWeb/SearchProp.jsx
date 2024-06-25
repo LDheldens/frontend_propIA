@@ -20,9 +20,9 @@ const SearchProp = () => {
         }
     }
 
-    const {data:properties,isLoading,mutate} = useSWR(
-       `${import.meta.env.VITE_API_URL}/property/list/`,
-       getProperties
+    const { data: properties, isLoading, mutate } = useSWR(
+        `${import.meta.env.VITE_API_URL}/property/list/`,
+        getProperties
     )
     console.log(properties)
     return (
@@ -50,7 +50,7 @@ const SearchProp = () => {
                     </div>
                     <div className="inset-0 flex items-center justify-center text-white sm:w-full">
                         <form action="" className="flex">
-                            <div className="font-normal flex items-center justify-center gap-x-2 rounded-t-lg bg-white font-bebas">
+                            <div className="font-normal flex items-center justify-center gap-x-2 rounded-t-lg bg-white font-bebas tracking-wide">
                                 <button className="hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                     Alquilar
                                 </button>
@@ -83,7 +83,7 @@ const SearchProp = () => {
                 </div>
             </div>
             <div>
-                <h2 className="text-2xl font-bold tracking-tight text-gray-700 text-center p-4 font-bebas">Resultados : {properties?.length} Inmuebles en la Zona.</h2>
+                <h2 className="text-2xl font-bold  text-gray-700 text-center p-4 font-bebas tracking-wide">Resultados : {properties?.length} Inmuebles en la Zona.</h2>
                 <div className='m-4'>
                     {properties?.map((propertie) => (
                         <Propertie propertie={propertie} key={propertie.id} />

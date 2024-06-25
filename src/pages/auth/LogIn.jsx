@@ -21,7 +21,7 @@ function LogIn() {
         <div
             className="min-h-full flex justify-center items-center mx-auto px-6 py-12 lg:px-8"
             style={{ backgroundImage: "url('./src/assets/dep2.jpeg')" }}
-        > 
+        >
             <div className="bg-white bg-opacity-100 ml-4 mr-4 mb-10 p-6 w-200 font-urbanist rounded-xl flex flex-row justify-center space-x-8">
                 <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-sm">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -30,7 +30,7 @@ function LogIn() {
                             src="./src/assets/logo3.png"
                             alt="my Company"
                         />
-                        <h2 className="mt-10 mb-5 text-center text-2xl font-bold leading-9 tracking-tight text-black font-bebas">
+                        <h2 className="mt-10 mb-5 text-center text-2xl font-bold leading-9  text-black font-bebas tracking-wide">
                             Iniciar sesión
                         </h2>
                     </div>
@@ -114,11 +114,11 @@ function LogIn() {
                     </p>
                 </div>
                 <div className="w-160 flex items-center justify-end">
-                    <img src={dep2} alt="" className="rounded-xl w-100 h-100 object-cover"/>
+                    <img src={dep2} alt="" className="rounded-xl w-100 h-100 object-cover" />
                 </div>
             </div>
 
-            
+
         </div>
     );
 }

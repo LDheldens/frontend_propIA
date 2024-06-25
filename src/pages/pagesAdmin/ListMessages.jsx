@@ -42,17 +42,17 @@ function ListMessages() {
             <ul role="list" className='flex justify-between p-3 w-full '>
                 <li className='flex-1 flex justify-start p-2 '>
                     <div className='bg-white px-4 py-2'>
-                        <h3 className='font-bebas'>USUARIOS</h3>
+                        <h3 className='font-bebas tracking-wide'>USUARIOS</h3>
                     </div>
                 </li>
                 <li className='flex-1 flex justify-center p-2 '>
                     <div className='bg-white px-4 py-2'>
-                        <h3 className='font-bebas'>MENSAJE</h3>
+                        <h3 className='font-bebas tracking-wide'>MENSAJE</h3>
                     </div>
                 </li>
                 <li className='flex-1 flex justify-end p-2 '>
                     <div className='bg-white px-4 py-2'>
-                        <h3 className='font-bebas'>ATENDIDO</h3>
+                        <h3 className='font-bebas tracking-wide'>ATENDIDO</h3>
                     </div>
                 </li>
             </ul>

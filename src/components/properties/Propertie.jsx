@@ -28,7 +28,7 @@ function Propertie({ propertie }) {
                     <div className="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg">
                         <div className="group relative flex flex-col overflow-hidden  px-1 font-urbanist">
                             <div className='flex'>
-                                <span className='font-bebas'>{propertie.type_currency == "USD" ? "$" : "S/."}{propertie.price}</span>
+                                <span className='font-bebas tracking-wide'>{propertie.type_currency == "USD" ? "$" : "S/."}{propertie.price}</span>
                             </div>
                             <div className='flex'>
                                 <span className=''>{propertie.published}</span>

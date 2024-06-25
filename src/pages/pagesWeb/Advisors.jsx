@@ -35,8 +35,8 @@ function Advisors() {
         <div className="bg-gray-100 py-24 sm:py-32">
             <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
                 <div className="max-w-2xl">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center font-bebas">NUESTROS ASESORES</h2>
-                    <p className="mt-6 text-lg leading-8 text-gray-600 font-bebas">
+                    <h2 className="text-3xl font-bold  text-gray-900 sm:text-4xl text-center font-bebas tracking-wide">NUESTROS ASESORES</h2>
+                    <p className="mt-6 text-lg leading-8 text-gray-600 font-bebas tracking-wide">
                         Resultados : 3,014 Asesores Inmobiliarios.
                     </p>
                 </div>
@@ -46,7 +46,7 @@ function Advisors() {
                             <div className="flex items-center gap-x-6 border border-gray-100 shadow-md rounded-md">
                                 <img className="h-16 w-16 rounded-full" src={person.imageUrl} alt="" />
                                 <div>
-                                    <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
+                                    <h3 className="text-base font-semibold leading-7  text-gray-900">{person.name}</h3>
                                     <p className="text-sm font-semibold leading-6 text-indigo-600">{person.role}</p>
                                     <div className="">
                                         <button className=" text-green1 py-1 px-2">
