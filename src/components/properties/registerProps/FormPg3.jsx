@@ -4,9 +4,9 @@ import { IoCloudUploadOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { useFormContext } from 'react-hook-form';
 
-function FormPg3({ currentPage }) {
+function FormPg3({ currentPage, files, setFiles }) {
     const { register, setValue, watch } = useFormContext();
-    const [files, setFiles] = useState([]);
+
 
     const onDrop = useCallback(acceptedFiles => {
         const newFiles = acceptedFiles.map(file => ({

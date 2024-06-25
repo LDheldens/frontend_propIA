@@ -2,14 +2,10 @@ import { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { Selector } from '@rewind-ui/core';
 
-function FormPg1({currentPage}) {
+function FormPg1({currentPage, operation, handleOperationChange}) {
 
     const { register, formState: { errors } } = useFormContext();
-    const [operation,setOperation] = useState('venta')
 
-    const handleOperationChange = (value) => {
-        setOperation(value);
-    };
     return (
        
         <div className={`${currentPage != 1 ? "hidden" : ""} w-full`}>
@@ -27,12 +23,12 @@ function FormPg1({currentPage}) {
                 </div>
                 <div className='flex flex-col sm:flex-row gap-2'>
                     <div className="w-1/2">
-                        <label htmlFor="tipoInmueble" className="block text-sm font-black leading-6 text-gray-700 uppercase">
+                        <label htmlFor="type_property" className="block text-sm font-black leading-6 text-gray-700 uppercase">
                             Tipo de inmueble:
                         </label>
                         <select
-                            id="tipoInmueble"
-                            {...register('tipoInmueble', { required: 'Tipo de inmueble es requerido' })}
+                            id="type_property"
+                            {...register('type_property', { required: 'Tipo de inmueble es requerido' })}
                             className="w-full rounded-md p-2 outline-none text-gray-900 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                         >
                             <option value="">Selecciona tipo de inmueble</option>
@@ -47,15 +43,15 @@ function FormPg1({currentPage}) {
                             <option value="Oficina">Oficina</option>
                             <option value="Todos">Todos</option>
                         </select>
-                        {errors.tipoInmueble && <p className="text-red-600">{errors.tipoInmueble.message}</p>}
+                        {errors.type_property && <p className="text-red-600">{errors.type_property.message}</p>}
                     </div>
                     <div className="w-1/2">
-                        <label htmlFor="subTipoInmueble" className="block text-sm font-black leading-6 text-gray-700 uppercase">
+                        <label htmlFor="subtype_property" className="block text-sm font-black leading-6 text-gray-700 uppercase">
                             Sub tipo de inmueble:
                         </label>
                         <select
-                            id="subTipoInmueble"
-                            {...register('subTipoInmueble', { required: 'Sub tipo de inmueble es requerido' })}
+                            id="subtype_property"
+                            {...register('subtype_property', { required: 'Sub tipo de inmueble es requerido' })}
                             className="w-full rounded-md p-2 outline-none text-gray-900 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                         >
                             <option value="">Selecciona subtipo de inmueble</option>
@@ -65,7 +61,7 @@ function FormPg1({currentPage}) {
                             <option value="Casa en condominio">Casa en condominio</option>
                             <option value="Casa en quinta">Casa en quinta</option>
                         </select>
-                        {errors.subTipoInmueble && <span className="text-red-500 text-sm">{errors.subTipoInmueble.message}</span>}
+                        {errors.subtype_property && <span className="text-red-500 text-sm">{errors.subtype_property.message}</span>}
                     </div>
                 </div>
                 <div className="my-6 ">
@@ -92,13 +88,13 @@ function FormPg1({currentPage}) {
                         </div>
                         <div className="w-full">
                             <label
-                                htmlFor="username"
+                                htmlFor="first_name"
                                 className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="text"
-                                    id="username"
-                                    {...register('username', { required: 'Nombres es requerido' })}
+                                    id="first_name"
+                                    {...register('first_name', { required: 'Nombres es requerido' })}
                                     className="peer p-1 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                     placeholder="Nombres"
                                 />
@@ -108,18 +104,18 @@ function FormPg1({currentPage}) {
                                     Nombres
                                 </span>
                             </label>
-                            {errors.username && <p className="text-red-600">{errors.username.message}</p>}
+                            {errors.first_name && <p className="text-red-600">{errors.first_name.message}</p>}
                         </div>
                     </div>
                     <div className="my-3">
                         <label
-                            htmlFor="apellidos"
+                            htmlFor="last_name"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="text"
-                                id="apellidos"
-                                {...register('apellidos', { required: 'Apellidos es requerido' })}
+                                id="last_name"
+                                {...register('last_name', { required: 'Apellidos es requerido' })}
                                 className="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="Apellidos"
                             />
@@ -129,7 +125,7 @@ function FormPg1({currentPage}) {
                                 Apellidos
                             </span>
                         </label>
-                        {errors.apellidos && <p className="text-red-600">{errors.apellidos.message}</p>}
+                        {errors.last_name && <p className="text-red-600">{errors.last_name.message}</p>}
                     </div>
                     <div className='flex flex-col sm:flex-row gap-2 mb-3'>
                         <div className="w-full">
@@ -154,13 +150,13 @@ function FormPg1({currentPage}) {
                         </div>
                         <div className="w-full">
                             <label
-                                htmlFor="celular"
+                                htmlFor="phone_number"
                                 className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="number"
-                                    id="celular"
-                                    {...register('celular', { required: 'Celular es requerido' })}
+                                    id="phone_number"
+                                    {...register('phone_number', { required: 'Celular es requerido' })}
                                     className="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     placeholder="Celular"
                                 />
@@ -170,7 +166,7 @@ function FormPg1({currentPage}) {
                                     Celular
                                 </span>
                             </label>
-                            {errors.celular && <p className="text-red-600">{errors.celular.message}</p>}
+                            {errors.phone_number && <p className="text-red-600">{errors.phone_number.message}</p>}
                         </div>
                     </div>
                 </div>

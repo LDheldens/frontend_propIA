@@ -11,6 +11,14 @@ function Post() {
     const methods = useForm();
     const [currentPage, setCurrentPage] = useState(1);
 
+    const [files,setFiles] = useState([])
+
+    const [operation,setOperation] = useState('venta')
+
+    const handleOperationChange = (value) => {
+        setOperation(value);
+    };
+
     const goToNextPage = () => {
         setCurrentPage((prevPage) => prevPage + 1);
     };
@@ -22,13 +30,31 @@ function Post() {
     const isLastPage = currentPage === 4;
 
     const handleSubmit = async (data) => {
-        console.log(data);
+        const formData = new FormData();
+    
+        // Agregar los datos del formulario al FormData
+        Object.entries(data).forEach(([key, value]) => {
+            formData.append(key, value);
+        });
+
+        // Agregar las imágenes al FormData
+        files.forEach(file => {
+            formData.append('images', file.file);
+        });
+
+        formData.append('type_operation',operation)
+        
         try {
-            await api.post("/properties", data);
+            const response = await api.post('/property/add/', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            console.log(response.data);
             alert("Datos enviados con éxito");
         } catch (error) {
-            alert("Hubo un error al enviar los datos");
             console.error(error);
+            alert("Hubo un error al enviar los datos");
         }
     };
 
@@ -45,9 +71,9 @@ function Post() {
                         Página {currentPage} de 4
                     </div>
                     <form onSubmit={methods.handleSubmit(handleSubmit)} className="w-full">
-                        <FormPg1 currentPage={currentPage} />
+                        <FormPg1 currentPage={currentPage} operation={operation} handleOperationChange={handleOperationChange}/>
                         <FormPg2 currentPage={currentPage} />
-                        <FormPg3 currentPage={currentPage} />
+                        <FormPg3 currentPage={currentPage} files={files} setFiles={setFiles}  />
                         <FormPg4 currentPage={currentPage} />
                         
                         <div className="mt-8 flex justify-between font-bebas gap-40">

@@ -11,13 +11,13 @@ function FormPg4({currentPage}) {
                 <div className='flex flex-col sm:flex-row gap-2 my-3'>
                     <div className="w-full">
                         <label
-                            htmlFor="area"
+                            htmlFor="area_property"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
-                                id="area"
-                                {...register('area', { required: 'Área es requerida' })}
+                                id="area_property"
+                                {...register('area_property', { required: 'Área es requerida' })}
                                 className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="area"
                             />
@@ -27,19 +27,19 @@ function FormPg4({currentPage}) {
                                 Área del propiedad
                             </span>
                         </label>
-                        {errors.area && <p className="text-red-600">{errors.area.message}</p>}
+                        {errors.area_property && <p className="text-red-600">{errors.area_property.message}</p>}
                     </div>
                     <div className="w-full">
                         <label
-                            htmlFor="bedroom"
+                            htmlFor="bedrooms_number"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
-                                id="bedroom"
-                                {...register('bedroom', { required: 'Dormitorios es requerido' })}
+                                id="bedrooms_number"
+                                {...register('bedrooms_number', { required: 'Dormitorios es requerido' })}
                                 className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                placeholder="bedroom"
+                                placeholder="bedrooms_number"
                             />
                             <span
                                 className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -47,21 +47,21 @@ function FormPg4({currentPage}) {
                                 Dormitorios
                             </span>
                         </label>
-                        {errors.bedroom && <p className="text-red-600">{errors.bedroom.message}</p>}
+                        {errors.bedrooms_number && <p className="text-red-600">{errors.bedrooms_number.message}</p>}
                     </div>
                 </div>
                 <div className='flex flex-col sm:flex-row gap-2 my-3'>
                     <div className="w-full">
                         <label
-                            htmlFor="garage"
+                            htmlFor="garages_number"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
-                                id="garage"
-                                {...register('garage', { required: 'Cocheras es requerido' })}
+                                id="garages_number"
+                                {...register('garages_number', { required: 'Cocheras es requerido' })}
                                 className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                placeholder="garage"
+                                placeholder="garages_number"
                             />
                             <span
                                 className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -69,19 +69,19 @@ function FormPg4({currentPage}) {
                                 Cocheras
                             </span>
                         </label>
-                        {errors.garage && <p className="text-red-600">{errors.garage.message}</p>}
+                        {errors.garages_number && <p className="text-red-600">{errors.garages_number.message}</p>}
                     </div>
                     <div className="w-full">
                         <label
-                            htmlFor="bathroom"
+                            htmlFor="bathrooms_number"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
-                                id="bathroom"
-                                {...register('bathroom', { required: 'Baños es requerido' })}
+                                id="bathrooms_number"
+                                {...register('bathrooms_number', { required: 'Baños es requerido' })}
                                 className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                placeholder="bathroom"
+                                placeholder="bathrooms_number"
                             />
                             <span
                                 className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -89,21 +89,21 @@ function FormPg4({currentPage}) {
                                 Baños
                             </span>
                         </label>
-                        {errors.bathroom && <p className="text-red-600">{errors.bathroom.message}</p>}
+                        {errors.bathrooms_number && <p className="text-red-600">{errors.bathrooms_number.message}</p>}
                     </div>
                 </div>
                 <div className='flex flex-col sm:flex-row gap-2 my-3'>
                     <div className="w-full">
                         <label
-                            htmlFor="kitchen"
+                            htmlFor="kitchens_number"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
-                                id="kitchen"
-                                {...register('kitchen', { required: 'Cocinas es requerido' })}
+                                id="kitchens_number"
+                                {...register('kitchens_number', { required: 'Cocinas es requerido' })}
                                 className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                placeholder="kitchen"
+                                placeholder="kitchens_number"
                             />
                             <span
                                 className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -111,19 +111,19 @@ function FormPg4({currentPage}) {
                                 Cocinas
                             </span>
                         </label>
-                        {errors.kitchen && <p className="text-red-600">{errors.kitchen.message}</p>}
+                        {errors.kitchens_number && <p className="text-red-600">{errors.kitchens_number.message}</p>}
                     </div>
                     <div className="w-full">
                         <label
-                            htmlFor="floor"
+                            htmlFor="floors_number"
                             className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
-                                id="floor"
-                                {...register('floor', { required: 'Pisos es requerido' })}
+                                id="floors_number"
+                                {...register('floors_number', { required: 'Pisos es requerido' })}
                                 className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
-                                placeholder="floor"
+                                placeholder="floors_number"
                             />
                             <span
                                 className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
@@ -131,27 +131,27 @@ function FormPg4({currentPage}) {
                                 Pisos
                             </span>
                         </label>
-                        {errors.floor && <p className="text-red-600">{errors.floor.message}</p>}
+                        {errors.floors_number && <p className="text-red-600">{errors.floors_number.message}</p>}
                     </div>
                 </div>
                 <div className='flex flex-col sm:flex-row gap-2 my-3'>
                     <div className="w-full font-urbanist">
                         <div className="w-full">
-                            <label htmlFor="priceIn" className="block text-sm uppercase font-black text-gray-700">
+                            <label htmlFor="type_currency" className="block text-sm uppercase font-black text-gray-700">
                                 Precio en:
                             </label>
                             <div className="mt-1">
                                 <select
-                                    id="priceIn"
-                                    {...register('priceIn', { required: 'Precio en es requerido' })}
-                                    autoComplete="priceIn-name"
+                                    id="type_currency"
+                                    {...register('type_currency', { required: 'Precio en es requerido' })}
+                                    autoComplete="type_currency-name"
                                     className="block w-full outline-none rounded-md p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 >
                                     <option value="">Selecciona opción</option>
                                     <option value="PEN">Soles</option>
                                     <option value="USD">Dólares</option>
                                 </select>
-                                {errors.priceIn && <p className="text-red-600">{errors.priceIn.message}</p>}
+                                {errors.type_currency && <p className="text-red-600">{errors.type_currency.message}</p>}
                             </div>
                         </div>
                     </div>
