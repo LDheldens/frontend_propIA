@@ -1,57 +1,86 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback, useEffect } from 'react';
+import { useDropzone } from 'react-dropzone';
+import { IoCloudUploadOutline } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
+import { useFormContext } from 'react-hook-form';
 
 function FormPg3({ currentPage }) {
-    const [images, setImages] = useState(new Array(6).fill(null));
+    const { register, setValue, watch } = useFormContext();
+    const [files, setFiles] = useState([]);
 
-    const handleSelect = (e, index) => {
-        const file = e.target.files[0];
+    const onDrop = useCallback(acceptedFiles => {
+        const newFiles = acceptedFiles.map(file => ({
+            id: crypto.randomUUID(),
+            preview: URL.createObjectURL(file),
+            file,
+        }));
+        setFiles(prevFiles => [...prevFiles, ...newFiles]);
+    }, []);
 
-        if (!file) return;
+    useEffect(() => {
+        setValue('images', files.map(file => file.file)); // Set files in react-hook-form
+    }, [files, setValue]);
 
-        const reader = new FileReader();
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+        onDrop,
+        accept: {
+            'image/png': [],
+            'image/jpeg': [],
+            'image/jpg': []
+        },
+        multiple: true
+    });
 
-        reader.onload = (event) => {
-            const imageDataUrl = event.target.result;
-            const updatedImages = [...images];
-            updatedImages[index] = imageDataUrl;
-            setImages(updatedImages);
-        };
+    // Clean up the object URLs to avoid memory leaks
+    useEffect(() => {
+        console.log(files)
+        return () => files.forEach(file => URL.revokeObjectURL(file.preview));
+    }, [files]);
 
-        reader.readAsDataURL(file);
+    const removeFile = (id) => () => {
+        setFiles(prevFiles => prevFiles.filter(file => file.id !== id));
     };
 
-    const handleRemove = (index) => {
-        const updatedImages = [...images];
-        updatedImages[index] = null;
-        setImages(updatedImages);
-    };
     return (
-        <div className={`${currentPage != 3 ? "hidden" : ""}`}>
-            <div className=''>
-                <div className="col-span-full">
-                    <label htmlFor="cover-photo" className="block text-xl font-medium leading-6 text-gray-900">
-                        Subir fotos
-                    </label>
-                    <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10 font-urbanist">
-                        <div className="text-center">
-                            {/* <PhotoIcon className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" /> */}
-                            <div className="mt-4 flex text-sm leading-6 text-gray-600">
-                                <label
-                                    htmlFor="file-upload"
-                                    className="relative cursor-pointer rounded-md bg-white font-semibold text-green1 focus-within:outline-none focus-within:ring-2 focus-within:ring-green1 focus-within:ring-offset-2 hover:text-gray-500"
-                                >
-                                    <span>Cargar un archivo</span>
-                                    <input id="file-upload" name="file-upload" type="file" className="sr-only" />
-                                </label>
-                                <p className="pl-1">o arrastrar y soltar</p>
-                            </div>
-                            <p className="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
-                        </div>
-                    </div>
+        <div className={`${currentPage != 3 ? "hidden" : ""} w-full`}>
+            <div className="col-span-full">
+                <label htmlFor="cover-photo" className="block text-xl font-medium leading-6 text-gray-900 my-3">
+                    Subir fotos
+                </label>
+                <div className='border-2 border-dashed border-green-400 text-center px-5 py-20 rounded-md' {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <IoCloudUploadOutline className='mx-auto text-[30px]'/>
+                    {
+                        isDragActive ?
+                        <p>Suelta los archivos aquí...</p> :
+                        <p>Arrastre y suelte algunos archivos aquí o haga clic para seleccionar archivos</p>
+                    }
                 </div>
             </div>
+            <div className="mt-4">
+                {files.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                        {files.map((file) => (
+                            <div key={file.id} className="relative border border-gray-300 p-2 rounded-md">
+                                <button
+                                    className="absolute -top-2 -right-2 p-1 bg-red-600 text-white rounded-full"
+                                    onClick={removeFile(file.id)}
+                                >
+                                    <IoMdClose/>
+                                </button>
+                                <img
+                                    src={file.preview}
+                                    alt="Preview"
+                                    className="w-28 h-32 object-cover"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
-    )
+    );
 }
 
-export default FormPg3
+export default FormPg3;
+
