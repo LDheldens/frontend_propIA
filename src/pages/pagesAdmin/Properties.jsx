@@ -121,13 +121,13 @@ function Properties() {
                                 <td className="py-2 px-4 border-b">{property.terms_conditions ? 'Sí' : 'No'}</td> */}
                                 <td className="py-2 px-4 border-b flex space-x-2">
                                     <Link to={`/admin/propiedades/detail/${property.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
-                                        <FaEye />   
+                                        <FaEye />
                                     </Link>
                                     <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded" onClick={() => handleUpdate(property.id)}>
                                         <FaPen />
                                     </button>
                                     <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded" onClick={() => handleDelete(property.id)}>
-                                        <MdDelete/>
+                                        <MdDelete />
                                     </button>
                                 </td>
                             </tr>

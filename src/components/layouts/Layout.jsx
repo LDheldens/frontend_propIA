@@ -14,6 +14,7 @@ import { FaPlus } from "react-icons/fa6";
 import { SiWechat } from "react-icons/si";
 import ChatBot from '../compGeneral/ChatBot';
 import Loading from '../compGeneral/Loading';
+import { Dropdown, Button, Avatar } from '@rewind-ui/core'
 
 import useUser from '../../hooks/useUser';
 
@@ -123,26 +124,47 @@ const Layout = () => {
                             </div>
                             <div className='flex flex-col md:flex-row'>
                                 <a href="/publicar/formulario">
-                                    <button className="bg-white hover:bg-green1 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green1 justify-center z-60">
+                                    <button className="bg-white hover:bg-green-500 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center z-60">
                                         <FaPlus />
                                         <p className="pl-1 text-sm font-urbanist">Publicar</p>
                                     </button>
                                 </a>
                                 {
                                     isAuth ? (
-                                        <button
-                                            type='button'
-                                            onClick={signOff}
-                                            className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
-                                        >
-                                            <MdLogin className="text-2xl" />
-                                            <p className="text-sm font-urbanist">Cerrar Sesión</p>
+                                        // <button
+                                        //     type='button'
+                                        //     onClick={signOff}
+                                        //     className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
+                                        // >
+                                        //     <MdLogin className="text-2xl" />
+                                        //     <p className="text-sm font-urbanist">Cerrar Sesión</p>
 
-                                        </button>
+                                        // </button>
+                                        <Dropdown itemColor="green" radius="none">
+                                            <Dropdown.Trigger itemColor="blue">
+                                                <Button color='green' radius="none" className=' m-2 p-2'>
+                                                    Usuario
+                                                </Button>
+
+                                            </Dropdown.Trigger>
+                                            <Dropdown.Content>
+                                                {/* <Dropdown.Label>Application</Dropdown.Label> */}
+                                                <Dropdown.Item>
+                                                    Mi perfil
+                                                </Dropdown.Item>
+                                                <Dropdown.Item>
+                                                    Messages
+                                                </Dropdown.Item>
+                                                <Dropdown.Divider />
+                                                <Dropdown.Item onClick={signOff}>
+                                                    Cerrar sesión
+                                                </Dropdown.Item>
+                                            </Dropdown.Content>
+                                        </Dropdown>
                                     ) : (
                                         <Link
                                             to="/login"
-                                            className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
+                                            className="bg-green-500 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
                                         >
                                             <MdLogin className="text-2xl" />
                                             <p className="text-sm font-urbanist">Iniciar Sesión</p>
