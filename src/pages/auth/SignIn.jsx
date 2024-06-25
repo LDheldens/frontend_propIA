@@ -3,6 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import useUser from '../../hooks/useUser';
 import { useNavigate } from 'react-router-dom';
+import dep3 from "../../assets/dep3.jpeg";
 // daniel
 function SignIn() {
 
@@ -48,7 +49,7 @@ function SignIn() {
 
     return (
         <div className="flex justify-center items-center mx-auto px-6 py-12 lg:px-8" style={{ backgroundImage: "url('./src/assets/dep1.jpeg')" }}>
-            <div className='bg-black bg-opacity-40 ml-4 mr-4 mb-8 p-6 w-160 font-urbanist'>
+            <div className='bg-white bg-opacity-100 ml-4 mr-4 mb-8 p-6 w-8/12 font-urbanist rounded-xl flex flex-row justify-center space-x-8'>
                 <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img
@@ -56,7 +57,7 @@ function SignIn() {
                             src="./src/assets/logo3.png"
                             alt="my Company"
                         />
-                        <h2 className="mt-6 mb-5 text-center text-2xl font-bold leading-9 tracking-tight text-white font-bebas">
+                        <h2 className="mt-6 mb-5 text-center text-2xl font-bold leading-9 tracking-tight text-black font-bebas">
                             Nuevo registro
                         </h2>
                     </div>
@@ -212,16 +213,26 @@ function SignIn() {
                         <div>
                             <button
                                 type="submit"
-                                className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded-xl"
                             >
                                 Registrarse
                             </button>
                         </div>
                     </form>
-                    <div className='flex mt-4'>
-                        <input onChange={(e) => setTerminos(e.target.checked)} type="checkbox" name='terminos' className='m-1 p-3 form-checkbox h-8 w-8 text-green1' />
-                        <span className='text-[12px] text-white'>Acepto los Términos y Condiciones de Uso. y las políticas de privacidad.</span>
+                    <div className='flex items-center mt-4'>
+                        <input 
+                            onChange={(e) => setTerminos(e.target.checked)} 
+                            type="checkbox" 
+                            name='terminos' 
+                            className='form-checkbox h-4 w-4 text-green1 rounded-full'
+                        />
+                        <span className='ml-2 text-[12px] text-black'>
+                            Acepto los Términos y Condiciones de Uso y las políticas de privacidad.
+                        </span>
                     </div>
+                </div>
+                <div className="w-160 flex items-center justify-end">
+                    <img src={dep3} alt="" className="rounded-xl w-100 h-120 object-cover"/>
                 </div>
             </div>
         </div>
