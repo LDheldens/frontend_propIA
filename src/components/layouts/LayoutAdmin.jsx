@@ -123,7 +123,7 @@ const LayoutAdmin = () => {
                                             <Link
                                                 to={link.link}
                                                 onClick={() => setIsMenuOpen(false)}
-                                                className="text-white text-3xl lg:text-gray-700 font-bold lg:text-[20px] transition-opacity duration-300 hover:text-green1 hover:opacity-75 font-bebas tracking-wide tracking-wide"
+                                                className="text-white text-3xl lg:text-gray-700 font-bold lg:text-[20px] transition-opacity duration-300 hover:text-green1 hover:opacity-75 font-bebas tracking-wide"
                                                 key={link.id}
                                             >
                                                 {link.text}
