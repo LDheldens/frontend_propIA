@@ -138,7 +138,7 @@ const LayoutMain = () => {
                                             </Dropdown.Trigger>
                                             <Dropdown.Content>
                                                 <Dropdown.Item>
-                                                    <Link to="/usuario/">
+                                                    <Link to="/usuario/cuenta">
                                                         Mi perfil
                                                     </Link>
                                                 </Dropdown.Item>
