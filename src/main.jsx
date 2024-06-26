@@ -30,6 +30,7 @@ import IA from './pages/pagesWeb/IA'
 import { UserProvider } from './context/UserProvider'
 //loaders
 import { loader as loaderProperty } from './pages/pagesAdmin/DetailProperties'
+import { loader as loaderProperty2 } from './components/properties/DetailProps'
 import { Dashboard } from './pages/pagesAdmin/Dashboard'
 
 const router = createBrowserRouter(
@@ -61,7 +62,8 @@ const router = createBrowserRouter(
         },
         {
           element: <DetailProps />,
-          path: '/item/:idProperty'
+          path: '/item/:idProperty',
+          loader:loaderProperty2
         },
         {
           element: <LogIn />,
@@ -100,14 +102,6 @@ const router = createBrowserRouter(
           element: <ListMessages />,
           path: 'mensajes'
         },
-        // {
-        //   element: <Users />,
-        //   path: 'buscar'
-        // },
-        // {
-        //   element: <Contact />,
-        //   path: 'contacto'
-        // },
       ]
     },
     {

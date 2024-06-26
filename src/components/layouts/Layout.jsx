@@ -62,7 +62,7 @@ const Layout = () => {
 
     setTimeout(() => {
         setIsLoading(false)
-    }, 3000);
+    }, 300);
 
     window.addEventListener('resize', handleResize);
 

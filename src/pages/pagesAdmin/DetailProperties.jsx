@@ -24,6 +24,7 @@ export function loader({ params }) {
 }
 
 export const DetailProperties = () => {
+    
     const idProperty = useLoaderData();
     const [propertyDetails, setPropertyDetails] = useState(null);
     const [loading, setLoading] = useState(true);
