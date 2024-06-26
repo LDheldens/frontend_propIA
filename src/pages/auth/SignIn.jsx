@@ -42,7 +42,6 @@ function SignIn() {
 
     };
 
-
     const passwordMatchValidator = (value) => {
         return value === password || 'Las contraseñas no coinciden';
     };
@@ -154,6 +153,46 @@ function SignIn() {
                                     Apellidos
                                 </span>
                                 {errors.last_name && <span className="text-red-500 text-xs">{errors.last_name.message}</span>}
+                            </label>
+                        </div>
+                        <div id="celular" className="col-span-full">
+                            <label
+                                htmlFor="phone"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                            >
+                                <Controller
+                                    name="phone"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{
+                                        required: 'El número es obligatorio',
+                                        maxLength: {
+                                            value: 9,
+                                            message: 'El número debe tener un máximo de 9 dígitos'
+                                        },
+                                        pattern: {
+                                            value: /^\d*$/,
+                                            message: 'Solo se permiten números'
+                                        }
+                                    }}
+                                    render={({ field }) => (
+                                        <input
+                                            {...field}
+                                            type="text"
+                                            id="phone"
+                                            autoComplete="phone"
+                                            inputMode="numeric"
+                                            pattern="\d*"
+                                            maxLength="9"
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.phone ? 'ring-red-500' : ''}`}
+                                            placeholder="Número celular"
+                                        />
+                                    )}
+                                />
+                                <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm">
+                                    Número celular
+                                </span>
+                                {errors.phone && <span className="text-red-500 text-xs">{errors.phone.message}</span>}
                             </label>
                         </div>
                         <div className="col-span-full">
