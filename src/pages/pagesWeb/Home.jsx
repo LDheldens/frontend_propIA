@@ -17,6 +17,7 @@ import bg from '/src/assets/video1.mp4'
 import Flyer from '../../components/home/flyers/Flyer';
 import PrestenText1 from '../../components/iaIntegrated/PrestenText1';
 import Loading from '../../components/compGeneral/Loading';
+import { Selector } from '@rewind-ui/core';
 
 
 function Arrow(props) {
@@ -159,8 +160,8 @@ const Home = () => {
                     <div className="m-14">
                         <div className="flex items-center justify-center text-white sm:w-full">
                             <form action="" className="flex">
-                                <div className="font-normal flex items-center justify-center gap-x-2 bg-white font-bebas tracking-wide">
-                                    <button className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
+                                <div className="font-normal flex items-center justify-center gap-x-2 bg-white font-bebas tracking-wide rounded-sm">
+                                    {/* <button className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                         Alquilar
                                     </button>
                                     <button className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
@@ -168,7 +169,12 @@ const Home = () => {
                                     </button>
                                     <button className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                         Proyectos
-                                    </button>
+                                    </button> */}
+                                    <Selector radius="sm" className='border font-bebas tracking-wide ' color='green' >
+                                        <Selector.Tab anchor="venta" label="VENTA" />
+                                        <Selector.Tab anchor="alquiler" label="ALQUILER" />
+                                        <Selector.Tab anchor="compra" label="COMPRA" />
+                                    </Selector>
                                 </div>
                             </form>
                         </div>

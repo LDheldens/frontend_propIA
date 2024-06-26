@@ -12,13 +12,13 @@ function FormPg2({ currentPage }) {
                 <div>
                     <label
                         htmlFor="adress"
-                        className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                        className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                     >
                         <input
                             type="text"
                             id="adress"
                             {...register('adress', { required: 'Dirección es requerida' })}
-                            className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                            className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                             placeholder="adress"
                         />
                         <span
@@ -40,7 +40,7 @@ function FormPg2({ currentPage }) {
                                 <select
                                     id="departamento"
                                     {...register('departamento', { required: 'Departamento es requerido' })}
-                                    className="block w-full rounded-md p-2 outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1  sm:text-sm sm:leading-6"
+                                    className="block w-full rounded-sm p-2 outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1  sm:text-sm sm:leading-6"
                                 >
                                     <option value="">Selecciona Departamento</option>
                                     <option value="Lima">Lima</option>
@@ -59,7 +59,7 @@ function FormPg2({ currentPage }) {
                                     id="provincia"
                                     {...register('provincia', { required: 'Provincia es requerida' })}
                                     autoComplete="provincia-name"
-                                    className="block w-full rounded-md p-2 outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1  sm:text-sm sm:leading-6"
+                                    className="block w-full rounded-sm p-2 outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1  sm:text-sm sm:leading-6"
                                 >
                                     <option value="">Selecciona Provincia</option>
                                     <option value="Lima">Lima</option>
@@ -80,7 +80,7 @@ function FormPg2({ currentPage }) {
                                     id="distrito"
                                     {...register('distrito', { required: 'Distrito es requerido' })}
                                     autoComplete="distrito-name"
-                                    className="w-full rounded-md p-2 outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1  sm:text-sm sm:leading-6"
+                                    className="w-full rounded-sm p-2 outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1  sm:text-sm sm:leading-6"
                                 >
                                     <option value="">Selecciona Distrito</option>
                                     <option value="Lima">Lima</option>
@@ -99,7 +99,7 @@ function FormPg2({ currentPage }) {
                                     id="urbanization"
                                     {...register('urbanization', { required: 'Urbanización es requerida' })}
                                     autoComplete="urbanization-name"
-                                    className="w-full rounded-md p-2 outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1  sm:text-sm sm:leading-6"
+                                    className="w-full rounded-sm p-2 outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1  sm:text-sm sm:leading-6"
                                 >
                                     <option value="">Selecciona Urbanización</option>
                                     <option value="Lima">Lima</option>

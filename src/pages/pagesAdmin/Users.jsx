@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { MdDelete } from "react-icons/md"
-import { FaEye } from "react-icons/fa"
 import { FaPen } from "react-icons/fa"
 import api from '../../settings/api'
-import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 function Users() {
@@ -69,7 +67,7 @@ function Users() {
                 <table className="min-w-full bg-white border border-gray-200">
                     <thead>
                         <tr>
-                            <th className="py-2 px-4 border-b">Num</th>
+                            <th className="py-2 px-4 border-b">N°</th>
                             <th className="py-2 px-4 border-b">Nombres</th>
                             <th className="py-2 px-4 border-b">Apellidos</th>
                             <th className="py-2 px-4 border-b">E-mail</th>
