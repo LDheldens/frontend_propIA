@@ -46,7 +46,7 @@ const links = [
     },
 ];
 
-const Layout = () => {
+const LayoutMain = () => {
 
     const { isAuth, logout } = useUser()
 
@@ -248,6 +248,6 @@ const Layout = () => {
         </>
     )
 }
-export default Layout
+export default LayoutMain
 
 

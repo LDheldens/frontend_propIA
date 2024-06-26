@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Home from './pages/pagesWeb/Home'
-import Layout from './components/layouts/Layout'
+import LayoutMain from './components/layouts/LayoutMain'
 import SearchProp from './pages/pagesWeb/SearchProp'
 import Advisors from './pages/pagesWeb/Advisors'
 import Contact from './pages/pagesWeb/Contact'
@@ -10,7 +10,7 @@ import LogIn from './pages/auth/LogIn'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import LayoutSell from './components/layouts/LayoutSell'
+import LayoutUser from './components/layouts/LayoutUser'
 import SellProp from './components/sellProps/SellProp'
 import Post from './pages/pagesPost/Post'
 import MyActivity from './pages/pagesPost/MyActivity'
@@ -37,7 +37,7 @@ const router = createBrowserRouter(
   [
     {
       path: '/',
-      element: <Layout />,
+      element: <LayoutMain />,
       children: [
         {
           index: true,
@@ -63,7 +63,7 @@ const router = createBrowserRouter(
         {
           element: <DetailProps />,
           path: '/item/:idProperty',
-          loader:loaderProperty2
+          loader: loaderProperty2
         },
         {
           element: <LogIn />,
@@ -106,7 +106,7 @@ const router = createBrowserRouter(
     },
     {
       path: '/publicar',
-      element: <LayoutSell />,
+      element: <LayoutUser />,
       children: [
         {
           index: true,

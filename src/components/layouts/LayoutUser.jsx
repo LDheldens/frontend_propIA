@@ -46,7 +46,7 @@ const links = [
     // },
 ];
 
-const LayoutSell = () => {
+const LayoutUser = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isLgScreen, setIsLgScreen] = useState(window.innerWidth >= 1024);
 
@@ -208,6 +208,6 @@ const LayoutSell = () => {
         </div>
     )
 }
-export default LayoutSell
+export default LayoutUser
 
 
