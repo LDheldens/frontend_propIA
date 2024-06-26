@@ -4,6 +4,7 @@ import { FaEye } from "react-icons/fa";
 import { FaPen } from "react-icons/fa";
 import api from '../../settings/api';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function Properties() {
     const [properties, setProperties] = useState([]);
@@ -48,13 +49,43 @@ function Properties() {
     };
 
     const handleDelete = async (id) => {
-        try {
-            await api.delete(`/property/${id}/`);
-            console.log('Deleted property with ID:', id);
-            setProperties(properties.filter(property => property.id !== id)); // Actualiza el estado local
-        } catch (error) {
-            console.error('Error deleting property:', error);
-        }
+        // Mostrar la alerta de confirmación
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: 'Esta acción eliminará la propiedad de forma permanente!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    // Realizar la solicitud DELETE a la API
+                    await api.delete(`/property/${id}/`);
+    
+                    // Actualizar el estado local eliminando la propiedad
+                    setProperties(properties.filter(property => property.id !== id));
+    
+                    // Mostrar una alerta de éxito
+                    Swal.fire({
+                        title: 'Eliminado',
+                        text: 'Propiedad eliminada exitosamente.',
+                        icon: 'success'
+                    });
+                } catch (error) {
+                    console.error('Error deleting property:', error);
+    
+                    // Mostrar una alerta de error
+                    Swal.fire({
+                        title: 'Error al eliminar la propiedad',
+                        text: 'Hubo un problema al intentar eliminar la propiedad.',
+                        icon: 'error'
+                    });
+                }
+            }
+        });
     };
 
     if (loading) return <p className="text-center">Loading...</p>;
