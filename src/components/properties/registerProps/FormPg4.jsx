@@ -12,13 +12,13 @@ function FormPg4({ currentPage }) {
                     <div className="w-full">
                         <label
                             htmlFor="area_property"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
                                 id="area_property"
                                 {...register('area_property', { required: 'Área es requerida' })}
-                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="area"
                             />
                             <span
@@ -32,19 +32,19 @@ function FormPg4({ currentPage }) {
                     <div className="w-full">
                         <label
                             htmlFor="bedrooms_number"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
                                 id="bedrooms_number"
-                                {...register('bedrooms_number', { 
+                                {...register('bedrooms_number', {
                                     required: 'Dormitorios es requerido',
                                     maxLength: {
                                         value: 2,
                                         message: 'Máximo 2 dígitos'
                                     }
                                 })}
-                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="bedrooms_number"
                             />
                             <span
@@ -60,19 +60,19 @@ function FormPg4({ currentPage }) {
                     <div className="w-full">
                         <label
                             htmlFor="garages_number"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
                                 id="garages_number"
-                                {...register('garages_number', { 
+                                {...register('garages_number', {
                                     required: 'Cocheras es requerido',
                                     maxLength: {
                                         value: 2,
                                         message: 'Máximo 2 dígitos'
                                     }
                                 })}
-                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="garages_number"
                             />
                             <span
@@ -86,19 +86,19 @@ function FormPg4({ currentPage }) {
                     <div className="w-full">
                         <label
                             htmlFor="bathrooms_number"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
                                 id="bathrooms_number"
-                                {...register('bathrooms_number', { 
+                                {...register('bathrooms_number', {
                                     required: 'Baños es requerido',
                                     maxLength: {
                                         value: 2,
                                         message: 'Máximo 2 dígitos'
                                     }
                                 })}
-                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="bathrooms_number"
                             />
                             <span
@@ -114,19 +114,19 @@ function FormPg4({ currentPage }) {
                     <div className="w-full">
                         <label
                             htmlFor="kitchens_number"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
                                 id="kitchens_number"
-                                {...register('kitchens_number', { 
+                                {...register('kitchens_number', {
                                     required: 'Cocinas es requerido',
                                     maxLength: {
                                         value: 2,
                                         message: 'Máximo 2 dígitos'
                                     }
                                 })}
-                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="kitchens_number"
                             />
                             <span
@@ -140,19 +140,19 @@ function FormPg4({ currentPage }) {
                     <div className="w-full">
                         <label
                             htmlFor="floors_number"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
                                 id="floors_number"
-                                {...register('floors_number', { 
+                                {...register('floors_number', {
                                     required: 'Pisos es requerido',
                                     maxLength: {
                                         value: 2,
                                         message: 'Máximo 2 dígitos'
                                     }
                                 })}
-                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="floors_number"
                             />
                             <span
@@ -175,7 +175,7 @@ function FormPg4({ currentPage }) {
                                     id="type_currency"
                                     {...register('type_currency', { required: 'Precio en es requerido' })}
                                     autoComplete="type_currency-name"
-                                    className="block w-full outline-none rounded-md p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                    className="block w-full outline-none rounded-sm p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 >
                                     <option value="">Selecciona opción</option>
                                     <option value="PEN">Soles</option>
@@ -188,13 +188,13 @@ function FormPg4({ currentPage }) {
                     <div className="w-full mt-[22px]">
                         <label
                             htmlFor="price"
-                            className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="number"
                                 id="price"
                                 {...register('price', { required: 'Precio es requerido' })}
-                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="price"
                             />
                             <span
@@ -209,13 +209,13 @@ function FormPg4({ currentPage }) {
                 <div className="col-span-full my-3">
                     <label
                         htmlFor="title"
-                        className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                        className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                     >
                         <input
                             type="text"
                             id="title"
                             {...register('title', { required: 'Título es requerido' })}
-                            className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                            className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                             placeholder="title"
                         />
                         <span
@@ -229,13 +229,13 @@ function FormPg4({ currentPage }) {
                 <div className="col-span-full">
                     <label
                         htmlFor="description"
-                        className="relative rounded-md border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                        className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                     >
                         <input
                             type="text"
                             id="description"
                             {...register('description', { required: 'Descripción es requerida' })}
-                            className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                            className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                             placeholder="description"
                         />
                         <span

@@ -19,10 +19,10 @@ function LogIn() {
 
     return (
         <div
-            className="min-h-full flex justify-center items-center mx-auto px-6 py-12 lg:px-8"
+            className="min-h-full flex justify-center items-center mx-auto md:px-6 py-5 md:py-12 lg:px-8"
             style={{ backgroundImage: "url('./src/assets/dep2.jpeg')" }}
         >
-            <div className="bg-white bg-opacity-100 ml-4 mr-4 mb-10 p-6 w-200 font-urbanist rounded-xl flex flex-row justify-center space-x-8">
+            <div className="bg-white bg-opacity-100 ml-4 mr-4 mb-10 p-6 w-full rounded max-w-3xl font-urbanist flex flex-row justify-center space-x-8">
                 <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-sm">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img
@@ -97,7 +97,7 @@ function LogIn() {
                         <div>
                             <button
                                 type="submit"
-                                className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded-xl"
+                                className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded"
                             >
                                 Ingresar
                             </button>
@@ -113,8 +113,8 @@ function LogIn() {
                         </Link>
                     </p>
                 </div>
-                <div className="w-160 flex items-center justify-end">
-                    <img src={dep2} alt="" className="rounded-xl w-100 h-100 object-cover" />
+                <div className="hidden lg:block w-160 ">
+                    <img src={dep2} alt="" className="rounded w-100 h-100 object-cover" />
                 </div>
             </div>
 

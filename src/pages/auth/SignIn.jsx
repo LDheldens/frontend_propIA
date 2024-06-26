@@ -47,8 +47,8 @@ function SignIn() {
     };
 
     return (
-        <div className="flex justify-center items-center mx-auto px-6 py-12 lg:px-8" style={{ backgroundImage: "url('./src/assets/dep1.jpeg')" }}>
-            <div className='bg-white bg-opacity-100 ml-4 mr-4 mb-8 p-6 w-8/12 font-urbanist rounded-xl flex flex-row justify-center space-x-8'>
+        <div className="flex justify-center items-center mx-auto md:px-6 py-5 md:py-12 lg:px-8" style={{ backgroundImage: "url('./src/assets/dep1.jpeg')" }}>
+            <div className='bg-white items-center rounded bg-opacity-100 ml-4 mr-4 mb-8 p-6 font-urbanist flex flex-row justify-center space-x-8 w-full max-w-4xl'>
                 <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img
@@ -178,11 +178,11 @@ function SignIn() {
                                     render={({ field }) => (
                                         <input
                                             {...field}
-                                            type="text"
+                                            type="number"
                                             id="phone"
                                             autoComplete="phone"
                                             inputMode="numeric"
-                                            pattern="\d*"
+                                            pattern="[0-9]{9}"
                                             maxLength="9"
                                             className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.phone ? 'ring-red-500' : ''}`}
                                             placeholder="Número celular"
@@ -252,7 +252,7 @@ function SignIn() {
                         <div>
                             <button
                                 type="submit"
-                                className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded-xl"
+                                className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded"
                             >
                                 Registrarse
                             </button>
@@ -270,8 +270,8 @@ function SignIn() {
                         </span>
                     </div>
                 </div>
-                <div className="w-160 flex items-center justify-end">
-                    <img src={dep3} alt="" className="rounded-xl w-100 h-120 object-cover" />
+                <div className="hidden rounded lg:block w-160">
+                    <img src={dep3} alt="" className="rounded w-100 h-120 object-cover" />
                 </div>
             </div>
         </div>
