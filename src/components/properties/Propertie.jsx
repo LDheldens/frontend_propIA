@@ -13,91 +13,87 @@ import { MdOutlineLocalOffer } from "react-icons/md"
 function Propertie({ propertie }) {
 
     return (
-        <section className="bg-white w-full">
-            <div className="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6 shadow-lg">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 h-full ">
-                    <div className="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col shadow-lg">
-                        <div className="group relative flex flex-col overflow-hidden  px-4 pb-4 pt-40 flex-grow">
-                            <Link to={`/item/${propertie.id}`}>
-                                <img src={`${import.meta.env.VITE_URL_IMG}${propertie.images[0].image}`} alt="" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
-                                <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                            </Link>
-                            <h3 className="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-lg md:text-xl font-urbanist">{propertie.type_property}</h3>
-                        </div>
-                    </div>
-                    <div className="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg">
-                        <div className="group relative flex flex-col overflow-hidden  px-1 font-urbanist">
-                            <div className='flex'>
-                                <span className='font-bebas tracking-wide'>{propertie.type_currency == "USD" ? "$" : "S/."}{propertie.price}</span>
-                            </div>
-                            <div className='flex'>
-                                <span className=''>{propertie.published}</span>
-                            </div>
-                            <div className='flex m-2'>
-                                <div className='rounded-full bg-gray-400 p-2 text-xl text-white'>
-                                    <MdOutlineLocationOn />
-                                </div>
-                                <span className='m-1'>{propertie.adress}</span>
-                            </div>
-                            <div className='flex m-2'>
-                                <div className='rounded-full bg-gray-400 p-2 text-xl text-white'>
-                                    <MdOutlineLocalOffer />
-                                </div>
-                                <span className='m-1'>Propuestas: {propertie.propts}</span>
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-b from-gray-400/25 to-gray-400/5"></div>
-                        </div>
-                        <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 ">
-                            <div className="group relative flex flex-col overflow-hidden rounded-lg px-1 font-urbanist">
-                                <div className='flex m-2'>
-                                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white' >
-                                        <BiArea />
-                                    </div>
-                                    <span className='m-1'> {propertie.area_property} m²</span>
-
-                                </div>
-                                <div className='flex m-2'>
-                                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                                        <FaRegBuilding />
-                                    </div>
-                                    <span className='m-1'>Pisos: {propertie.floors_number}</span>
-                                </div>
-                                <div className='flex m-2'>
-                                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                                        <IoBedOutline />
-                                    </div>
-                                    <span className='m-1'>Habitaciones: {propertie.bedrooms_number}</span>
-                                </div>
-                                {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
-                            </div>
-                            <div className="group relative flex flex-col overflow-hidden rounded-lg px-1  font-urbanist">
-                                {/* <img src="./src/assets/dep4.webp" alt="" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" /> */}
-                                <div className='flex m-2'>
-                                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                                        <LuBath />
-                                    </div>
-                                    <span className='m-1'>Baños: {propertie.bathrooms_number}</span>
-                                </div>
-                                <div className='flex m-2'>
-                                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                                        <GiHomeGarage />
-                                    </div>
-                                    <span className='m-1'>Cocheras: {propertie.garages_number}</span>
-                                </div>
-                                <div className='flex m-2'>
-                                    <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
-                                        <FaKitchenSet />
-                                    </div>
-                                    <span className='m-1'>Cocinas: {propertie.kitchens_number}</span>
-                                </div>
-                                {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
-                            </div>
-                        </div>
-                        <FaWhatsapp className="bg-green-500 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" />
+        <div className="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6 shadow-lg">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 h-full ">
+                <div className="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col shadow-lg">
+                    <div className="group relative flex flex-col overflow-hidden  px-4 pb-4 pt-40 flex-grow">
+                        <Link to={`/item/${propertie.id}`}>
+                            <img src={`${import.meta.env.VITE_URL_IMG}${propertie.images[0].image}`} alt="" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                            <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                        </Link>
+                        <h3 className="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-lg md:text-xl font-urbanist">{propertie.type_property}</h3>
                     </div>
                 </div>
+                <div className="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50 relative shadow-lg">
+                    <div className="group relative flex flex-col overflow-hidden  px-1 font-urbanist">
+                        <div className='flex'>
+                            <span className='font-bebas tracking-wide'>{propertie.type_currency == "USD" ? "$" : "S/."}{propertie.price}</span>
+                        </div>
+                        <div className='flex'>
+                            <span className=''>{propertie.published}</span>
+                        </div>
+                        <div className='flex m-2'>
+                            <div className='rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                <MdOutlineLocationOn />
+                            </div>
+                            <span className='m-1'>{propertie.adress}</span>
+                        </div>
+                        <div className='flex m-2'>
+                            <div className='rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                <MdOutlineLocalOffer />
+                            </div>
+                            <span className='m-1'>Propuestas: {propertie.propts}</span>
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-400/25 to-gray-400/5"></div>
+                    </div>
+                    <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 ">
+                        <div className="group relative flex flex-col overflow-hidden rounded-lg px-1 font-urbanist">
+                            <div className='flex m-2'>
+                                <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white' >
+                                    <BiArea />
+                                </div>
+                                <span className='m-1'> {propertie.area_property} m²</span>
+                            </div>
+                            <div className='flex m-2'>
+                                <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                    <FaRegBuilding />
+                                </div>
+                                <span className='m-1'>Pisos: {propertie.floors_number}</span>
+                            </div>
+                            <div className='flex m-2'>
+                                <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                    <IoBedOutline />
+                                </div>
+                                <span className='m-1'>Habitaciones: {propertie.bedrooms_number}</span>
+                            </div>
+                            
+                        </div>
+                        <div className="group relative flex flex-col overflow-hidden rounded-lg px-1  font-urbanist">
+                            
+                            <div className='flex m-2'>
+                                <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                    <LuBath />
+                                </div>
+                                <span className='m-1'>Baños: {propertie.bathrooms_number}</span>
+                            </div>
+                            <div className='flex m-2'>
+                                <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                    <GiHomeGarage />
+                                </div>
+                                <span className='m-1'>Cocheras: {propertie.garages_number}</span>
+                            </div>
+                            <div className='flex m-2'>
+                                <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
+                                    <FaKitchenSet />
+                                </div>
+                                <span className='m-1'>Cocinas: {propertie.kitchens_number}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <FaWhatsapp className="bg-green-500 z-10 rounded-full text-4xl font-medium text-white absolute bottom-0  right-0 mr-2 p-1 mb-6 shadow-lg" />
+                </div>
             </div>
-        </section>
+        </div>
     )
 }
 
