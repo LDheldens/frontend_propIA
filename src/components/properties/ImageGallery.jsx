@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { IoMdClose } from "react-icons/io";
+import { GrNext } from "react-icons/gr";
+import { GrPrevious } from "react-icons/gr";
 
 const ImageGallery = ({ imageUrls }) => {
 
@@ -24,32 +27,33 @@ const ImageGallery = ({ imageUrls }) => {
     };
 
     return (
-        <div>
+        <>
             {isOpen && (
-                <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-50 flex justify-center items-center">
-                    <div className="relative">
+                <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-75 z-50 flex justify-center items-center">
                         <button
-                            className="absolute top-0 right-0 m-4 text-white text-2xl"
+                            className="absolute top-5 right-5 m-4 text-white text-2xl"
                             onClick={closeModal}
                         >
-                            &times;
+                            <IoMdClose className='text-xl sm:text-2xl md:text-3xl'/>
                         </button>
+                    <div className="relative">
                         <img
                             src={`${import.meta.env.VITE_URL_IMG}${imageUrls[currentIndex]?.image}`}
                             alt={`Imagen ${currentIndex + 1}`}
-                            className="h-160 w-160"
+                            className="w-full h-auto max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
                         />
+
                         <button
-                            className="absolute top-1/2 transform -translate-y-1/2 left-4 text-white text-2xl"
+                            className="absolute top-1/2 transform left-4 md:-left-24 text-white text-2xl"
                             onClick={goToPrevious}
                         >
-                            &#8249;
+                            <GrPrevious className='text-2xl'/>
                         </button>
                         <button
-                            className="absolute top-1/2 transform -translate-y-1/2 right-4 text-white text-2xl"
+                            className="absolute top-1/2 transform right-4 md:-right-24 text-white text-2xl"
                             onClick={goToNext}
                         >
-                            &#8250;
+                            <GrNext className='text-2xl'/>
                         </button>
                     </div>
                 </div>
@@ -98,7 +102,7 @@ const ImageGallery = ({ imageUrls }) => {
                     </section>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
