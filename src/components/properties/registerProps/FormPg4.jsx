@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
-function FormPg4({currentPage}) {
+function FormPg4({ currentPage }) {
     const { register, formState: { errors } } = useFormContext();
 
     return (
@@ -37,7 +37,13 @@ function FormPg4({currentPage}) {
                             <input
                                 type="number"
                                 id="bedrooms_number"
-                                {...register('bedrooms_number', { required: 'Dormitorios es requerido' })}
+                                {...register('bedrooms_number', { 
+                                    required: 'Dormitorios es requerido',
+                                    maxLength: {
+                                        value: 2,
+                                        message: 'Máximo 2 dígitos'
+                                    }
+                                })}
                                 className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="bedrooms_number"
                             />
@@ -59,7 +65,13 @@ function FormPg4({currentPage}) {
                             <input
                                 type="number"
                                 id="garages_number"
-                                {...register('garages_number', { required: 'Cocheras es requerido' })}
+                                {...register('garages_number', { 
+                                    required: 'Cocheras es requerido',
+                                    maxLength: {
+                                        value: 2,
+                                        message: 'Máximo 2 dígitos'
+                                    }
+                                })}
                                 className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="garages_number"
                             />
@@ -79,7 +91,13 @@ function FormPg4({currentPage}) {
                             <input
                                 type="number"
                                 id="bathrooms_number"
-                                {...register('bathrooms_number', { required: 'Baños es requerido' })}
+                                {...register('bathrooms_number', { 
+                                    required: 'Baños es requerido',
+                                    maxLength: {
+                                        value: 2,
+                                        message: 'Máximo 2 dígitos'
+                                    }
+                                })}
                                 className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="bathrooms_number"
                             />
@@ -101,7 +119,13 @@ function FormPg4({currentPage}) {
                             <input
                                 type="number"
                                 id="kitchens_number"
-                                {...register('kitchens_number', { required: 'Cocinas es requerido' })}
+                                {...register('kitchens_number', { 
+                                    required: 'Cocinas es requerido',
+                                    maxLength: {
+                                        value: 2,
+                                        message: 'Máximo 2 dígitos'
+                                    }
+                                })}
                                 className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="kitchens_number"
                             />
@@ -121,7 +145,13 @@ function FormPg4({currentPage}) {
                             <input
                                 type="number"
                                 id="floors_number"
-                                {...register('floors_number', { required: 'Pisos es requerido' })}
+                                {...register('floors_number', { 
+                                    required: 'Pisos es requerido',
+                                    maxLength: {
+                                        value: 2,
+                                        message: 'Máximo 2 dígitos'
+                                    }
+                                })}
                                 className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="floors_number"
                             />

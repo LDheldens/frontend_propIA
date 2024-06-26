@@ -110,7 +110,7 @@ const Layout = () => {
                                             <Link
                                                 to={link.link}
                                                 onClick={() => setIsMenuOpen(false)}
-                                                className="text-white text-3xl lg:text-gray-700 font-bold lg:text-[20px] transition-opacity duration-300 hover:text-green1 hover:opacity-75 font-bebas tracking-wide tracking-wide"
+                                                className="text-white text-3xl lg:text-gray-700 font-bold lg:text-[20px] transition-opacity duration-300 hover:text-green1 hover:opacity-75 font-bebas tracking-wide"
                                                 key={link.id}
                                             >
                                                 {link.text}
@@ -123,32 +123,20 @@ const Layout = () => {
                                 </button>
                             </div>
                             <div className='flex flex-col md:flex-row'>
-                                <a href="/publicar/formulario">
-                                    <button className="bg-white hover:bg-green-500 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center z-60">
-                                        <FaPlus />
-                                        <p className="pl-1 text-sm font-urbanist">Publicar</p>
-                                    </button>
-                                </a>
+                                <Link className="bg-white hover:bg-green-500 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center" to="/publicar/formulario">
+                                    <FaPlus />
+                                    Publicar
+                                </Link>
                                 {
                                     isAuth ? (
-                                        // <button
-                                        //     type='button'
-                                        //     onClick={signOff}
-                                        //     className="bg-green1 hover:bg-gray-400 m-2 p-2 items-center flex text-white justify-center z-60"
-                                        // >
-                                        //     <MdLogin className="text-2xl" />
-                                        //     <p className="text-sm font-urbanist">Cerrar Sesión</p>
-
-                                        // </button>
                                         <Dropdown itemColor="green" radius="none">
                                             <Dropdown.Trigger itemColor="blue">
-                                                <Button color='green' radius="none" className=' m-2 p-2'>
+                                                <Button color='green' radius="none" className='m-2 p-2 h-[42px] w-[90.27px]'>
                                                     Usuario
                                                 </Button>
 
                                             </Dropdown.Trigger>
                                             <Dropdown.Content>
-                                                {/* <Dropdown.Label>Application</Dropdown.Label> */}
                                                 <Dropdown.Item>
                                                     Mi perfil
                                                 </Dropdown.Item>

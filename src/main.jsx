@@ -61,7 +61,7 @@ const router = createBrowserRouter(
         },
         {
           element: <DetailProps />,
-          path: '/item'
+          path: '/item/:idProperty'
         },
         {
           element: <LogIn />,

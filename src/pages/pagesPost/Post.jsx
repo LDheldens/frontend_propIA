@@ -5,6 +5,7 @@ import FormPg3 from '../../components/properties/registerProps/FormPg3'
 import FormPg4 from "../../components/properties/registerProps/FormPg4"
 import api from "../../settings/api"
 import { useForm, FormProvider } from "react-hook-form";
+import Swal from "sweetalert2"
 
 function Post() {
 
@@ -31,13 +32,19 @@ function Post() {
 
     const handleSubmit = async (data) => {
         const formData = new FormData();
-    
-        // Agregar los datos del formulario al FormData
+        
+        if (files.length<5) {
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Necesitas subir por lo menos 5 imágenes",
+              });
+        }
+
         Object.entries(data).forEach(([key, value]) => {
             formData.append(key, value);
         });
 
-        // Agregar las imágenes al FormData
         files.forEach(file => {
             formData.append('images', file.file);
         });
@@ -50,8 +57,16 @@ function Post() {
                     'Content-Type': 'multipart/form-data'
                 }
             });
-            console.log(response.data);
-            alert("Datos enviados con éxito");
+            console.log(response);
+            if (response.status==201) {
+                Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: response.data.message,
+                showConfirmButton: false,
+                timer: 1500
+                });
+            }
         } catch (error) {
             console.error(error);
             alert("Hubo un error al enviar los datos");

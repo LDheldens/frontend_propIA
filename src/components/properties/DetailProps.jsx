@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { FaRegHeart } from "react-icons/fa";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { MdOutlineNoteAlt } from "react-icons/md";
-import { FaLocationDot } from "react-icons/fa6";
-import { HiHome } from "react-icons/hi2";
 import ImageGallery from './ImageGallery';
 import { MdOutlineLocationOn } from "react-icons/md"
 import { BiArea } from "react-icons/bi"
@@ -44,15 +42,7 @@ function DetailProps() {
     const prevImage = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
     };
-    // const openModal = (index) => {
-    //     setSelectedImageIndex(index);
-    //     setModalOpen(true);
-    // };
 
-    // const closeModal = () => {
-    //     setModalOpen(false);
-    //     setSelectedImageIndex(null);
-    // };
 
     const properties = [
         {
@@ -148,24 +138,7 @@ function DetailProps() {
                         </form>
                     </div>
                 </div>
-                {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 pb-4">
-                    {images.map((image, index) => (
-                        <img
-                            key={index}
-                            src={image}
-                            alt={`Imagen ${index + 1}`}
-                            className={index === 0 ? "w-160 h-160 object-cover cursor-pointer" : "w-90 h-60 object-cover cursor-pointer"}
-                            onClick={() => openModal(index)}
-                        />
-                    ))}
-                    {modalOpen && (
-                        <ImageModal
-                            images={images}
-                            onClose={closeModal}
-                            selectedImageIndex={selectedImageIndex}
-                        />
-                    )}
-                </div> */}
+
                 <div>
                     {/* Integrar el ImageViewerModal */}
                     <ImageGallery imageUrls={images} />

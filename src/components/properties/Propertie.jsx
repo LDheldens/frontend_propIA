@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaRegHeart } from "react-icons/fa"
+import { Link } from 'react-router-dom'
 import { MdOutlineLocationOn } from "react-icons/md"
 import { BiArea } from "react-icons/bi"
 import { FaRegBuilding } from "react-icons/fa"
@@ -11,17 +11,17 @@ import { FaWhatsapp } from "react-icons/fa"
 import { MdOutlineLocalOffer } from "react-icons/md"
 
 function Propertie({ propertie }) {
-    console.log('xdxd', propertie);
+
     return (
         <section className="bg-white w-full">
             <div className="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6 shadow-lg">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 h-full ">
                     <div className="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col shadow-lg">
                         <div className="group relative flex flex-col overflow-hidden  px-4 pb-4 pt-40 flex-grow">
-                            <a href="/item">
-                                <img src={propertie.imageSrc} alt="" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
+                            <Link to={`/item/${propertie.id}`}>
+                                <img src={`${import.meta.env.VITE_URL_IMG}${propertie.images[0].image}`} alt="" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out" />
                                 <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
-                            </a>
+                            </Link>
                             <h3 className="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-lg md:text-xl font-urbanist">{propertie.type_property}</h3>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ function Propertie({ propertie }) {
                                     <div className='h-9 w-9 rounded-full bg-gray-400 p-2 text-xl text-white'>
                                         <IoBedOutline />
                                     </div>
-                                    <span className='m-1'>Habitaciones: {propertie.debs}</span>
+                                    <span className='m-1'>Habitaciones: {propertie.bedrooms_number}</span>
                                 </div>
                                 {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
                             </div>
