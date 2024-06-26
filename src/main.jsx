@@ -11,9 +11,9 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import LayoutUser from './components/layouts/LayoutUser'
-import SellProp from './components/sellProps/SellProp'
-import Post from './pages/pagesPost/Post'
-import MyActivity from './pages/pagesPost/MyActivity'
+import Post from './pages/pagesUser/Post'
+import UserActivity from './pages/pagesUser/UserActivity'
+import { UserAccount } from './pages/pagesUser/UserAccount'
 
 import LayoutAdmin from './components/layouts/LayoutAdmin'
 import Properties from './pages/pagesAdmin/Properties'
@@ -105,21 +105,21 @@ const router = createBrowserRouter(
       ]
     },
     {
-      path: '/publicar',
+      path: '/usuario',
       element: <LayoutUser />,
       children: [
         {
+          element: <UserAccount />,
+          path: 'cuenta'
+        },
+        {
           index: true,
           element: <Post />,
-          path: 'formulario'
+          path: 'publicar'
         },
         {
-          element: <MyActivity />,
+          element: <UserActivity />,
           path: 'actividad'
-        },
-        {
-          element: <SellProp />,
-          path: 'interesados'
         },
       ]
     },

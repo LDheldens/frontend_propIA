@@ -20,20 +20,21 @@ const links = [
         id: 1,
     },
     {
-        link: "publicar",
-        text: "Mis avisos",
+        link: "cuenta",
+        text: "CUENTA",
         id: 2,
     },
     {
-        link: "actividad",
-        text: "Anuncios",
+        link: "publicar",
+        text: "PUBLICAR",
         id: 3,
     },
     {
-        link: "interesados",
-        text: "Interesados",
+        link: "actividad",
+        text: "ANUNCIOS",
         id: 4,
     },
+
     // {
     //     link: "/actividad",
     //     text: "Mi actividad",
@@ -97,7 +98,7 @@ const LayoutUser = () => {
                                 <Link
                                     to={link.link}
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="text-white text-xl lg:text-gray-500 font-bold lg:text-[16px] transition-opacity duration-300 hover:text-green1 hover:opacity-75"
+                                    className="text-white text-3xl lg:text-gray-700 font-bold lg:text-[20px] transition-opacity duration-300 hover:text-green1 hover:opacity-75 font-bebas tracking-wide"
                                     key={link.id}
                                 >
                                     {link.text}
@@ -115,8 +116,8 @@ const LayoutUser = () => {
                             <p className="pl-1 text-sm">Publicar</p>
                         </button>
                     </a> */}
-                    <a href="/config">
-                        <button className="bg-green1 hover:bg-gray-500 m-2 p-2 items-center flex text-white rounded-lg justify-center z-60">
+                    <a href="cuenta">
+                        <button className="bg-green-500 hover:bg-gray-500 m-2 p-2 items-center flex text-white rounded-sm justify-center z-60">
                             <FaRegUser className="text-2xl" />
                             <p className="pl-1 text-sm font-urbanist">Usuario</p>
                         </button>
