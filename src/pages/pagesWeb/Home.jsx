@@ -15,7 +15,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bg from '/src/assets/video1.mp4'
 import Flyer from '../../components/home/flyers/Flyer';
-import PrestenText1 from '../../components/iaIntegrated/PrestenText1';
+import PrestenText1 from '../../components/home/PrestenText';
 import Loading from '../../components/compGeneral/Loading';
 import { Selector } from '@rewind-ui/core';
 
@@ -178,7 +178,7 @@ const Home = () => {
                                 </div>
                             </form>
                         </div>
-                        <div className='flex flex-col md:flex-row bg-white '>
+                        <div className='flex flex-col md:flex-row bg-white rounded-sm'>
                             <div className='p-4 w-full sm:w-full md:w-1/3'>
                                 <select
                                     id="country"
@@ -206,7 +206,7 @@ const Home = () => {
                             <div className="flex justify-center items-center p-4 space-x-4 font-urbanist">
                                 <button
                                     type="button"
-                                    className="px-5 py-3 bg-green-500 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx "
+                                    className="px-5 py-3 bg-green-500 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx rounded-sm"
                                 >
                                     <FaSearch className='flex mr-1  selection: ' /> Buscar
                                 </button>

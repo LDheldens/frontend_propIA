@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function PrestenText1() {
+function PrestenText() {
     const textArray = [
         'Investigación de mercado',
         'Consultoría inmobiliaria',
@@ -53,4 +53,4 @@ function PrestenText1() {
     )
 }
 
-export default PrestenText1
+export default PrestenText
