@@ -5,21 +5,11 @@ import api from '../../settings/api';
 import { FaRegHeart } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { FaKitchenSet } from "react-icons/fa6";
-import { MdOutlineNoteAlt } from "react-icons/md";
 import { IoShareSocialOutline } from "react-icons/io5";
 import ImageGallery from './ImageGallery';
 import { FaBath } from "react-icons/fa";
-import { MdOutlineLocationOn } from "react-icons/md"
 import { BiArea } from "react-icons/bi"
-import { FaRegBuilding } from "react-icons/fa"
-import { IoBedOutline } from "react-icons/io5"
-import { LuBath } from "react-icons/lu"
 import { GiHomeGarage } from "react-icons/gi"
-import { FaWhatsapp } from "react-icons/fa"
-import { GiTap } from "react-icons/gi"
-import { FaRegLightbulb } from "react-icons/fa"
-import { GiKitchenScale } from "react-icons/gi"
-import { MdOutlineLocalOffer } from "react-icons/md"
 import { MdMeetingRoom } from "react-icons/md";
 import SendMsg from './SendMsg';
 import Map from './Map';
