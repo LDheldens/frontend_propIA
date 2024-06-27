@@ -1,29 +1,28 @@
-import React, { useEffect, useState } from 'react'
-import { MdDelete } from "react-icons/md"
-import { FaPen } from "react-icons/fa"
-import api from '../../settings/api'
-import Swal from 'sweetalert2'
+import React, { useState, useEffect } from 'react';
+import useSWR from 'swr';
+import { MdDelete } from "react-icons/md";
+import { FaPen } from "react-icons/fa";
+import DataTable from 'react-data-table-component';
+import api from '../../settings/api';
+import Swal from 'sweetalert2';
+
+const fetcher = (url) => api.get(url).then((res) => res.data);
 
 function Users() {
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const { data: users, error, mutate } = useSWR('/auth/list/', fetcher);
+    const [search, setSearch] = useState('');
+    const [filteredUsers, setFilteredUsers] = useState([]);
 
     useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const response = await api.get('/auth/list/');
-                setUsers(response.data);
-                setLoading(false);
-                console.log('holaaa', response)
-            } catch (err) {
-                setError(err);
-                setLoading(false);
-            }
-        };
-
-        fetchUsers();
-    }, []);
+        if (users) {
+            setFilteredUsers(users.filter(user => 
+                (user.first_name && user.first_name.toLowerCase().includes(search.toLowerCase())) ||
+                (user.last_name && user.last_name.toLowerCase().includes(search.toLowerCase())) ||
+                (user.email && user.email.toLowerCase().includes(search.toLowerCase())) ||
+                (user.phone && user.phone.toLowerCase().includes(search.toLowerCase()))
+            ));
+        }
+    }, [users, search]);
 
     const handleDelete = async (id) => {
         Swal.fire({
@@ -33,14 +32,13 @@ function Users() {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Si, eliminar",
+            confirmButtonText: "Sí, eliminar",
             cancelButtonText: "Cancelar"
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
                     await api.delete(`/auth/${id}/`);
-                    setUsers(users.filter(user => user.id !== id));
-
+                    mutate(users.filter(user => user.id !== id), false);
 
                     Swal.fire({
                         title: "Eliminado",
@@ -58,47 +56,112 @@ function Users() {
         });
     };
 
-    if (loading) return <p className="text-center">Loading...</p>;
+    if (!users) return <p className="text-center">Loading...</p>;
     if (error) return <p className="text-center text-red-500">Error loading data</p>;
+
+    const columns = [
+        {
+            name: 'N°',
+            selector: (row, index) => index + 1,
+            width: '65px'
+        },
+        {
+            name: 'Nombres',
+            selector: row => row.first_name,
+        },
+        {
+            name: 'Apellidos',
+            selector: row => row.last_name,
+        },
+        {
+            name: 'E-mail',
+            selector: row => row.email,
+        },
+        {
+            name: 'Celular',
+            selector: row => row.phone,
+            width: '110px'
+        },
+        {
+            name: 'Acciones',
+            cell: row => (
+                <div className="flex space-x-2">
+                    <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded" onClick={() => handleUpdate(row.id)}>
+                        <FaPen />
+                    </button>
+                    <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded" onClick={() => handleDelete(row.id)}>
+                        <MdDelete />
+                    </button>
+                </div>
+            ),
+        },
+    ];
+
+    const paginationComponentOptions = {
+        rowsPerPageText: 'Filas por página:',
+        rangeSeparatorText: 'de',
+        selectAllRowsItem: true,
+        selectAllRowsItemText: 'Todos',
+    };
+
     return (
         <div className="p-6 max-w-7xl mx-auto font-urbanist">
             <h1 className="text-2xl font-bold mb-4">Usuarios registrados</h1>
-            <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-200">
-                    <thead>
-                        <tr>
-                            <th className="py-2 px-4 border-b">N°</th>
-                            <th className="py-2 px-4 border-b">Nombres</th>
-                            <th className="py-2 px-4 border-b">Apellidos</th>
-                            <th className="py-2 px-4 border-b">E-mail</th>
-                            <th className="py-2 px-4 border-b">Celular</th>
-                            <th className="py-2 px-4 border-b">Eliminar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {users.map((users, index) => (
-                            <tr key={users.id} className="hover:bg-gray-100">
-                                <td className='py-2 px-4 border-b'>{index + 1}</td>
-                                <td className="py-2 px-4 border-b">{users.first_name}</td>
-                                <td className="py-2 px-4 border-b">{users.last_name}</td>
-                                <td className="py-2 px-4 border-b">{users.email}</td>
-                                {/* <td className="py-2 px-4 border-b">{users.first_name} {users.last_name}</td> */}
-                                <td className="py-2 px-4 border-b">{users.phone}</td>
-                                <td className="py-2 px-4 border-b flex space-x-2">
-                                    <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded" onClick={() => handleUpdate(users.id)}>
-                                        <FaPen />
-                                    </button>
-                                    <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded" onClick={() => handleDelete(users.id)}>
-                                        <MdDelete />
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            <div className="mb-4">
+                <input 
+                    type="text" 
+                    placeholder="Buscar..." 
+                    value={search} 
+                    onChange={e => setSearch(e.target.value)} 
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                />
             </div>
+            <DataTable
+                columns={columns}
+                data={filteredUsers}
+                pagination
+                paginationComponentOptions={paginationComponentOptions}
+                noDataComponent={<div>No se encontraron registros para mostrar</div>}
+                customStyles={{
+                    headCells: {
+                        style: {
+                            paddingLeft: '1rem',
+                            paddingRight: '1rem',
+                            backgroundColor: '#f8f9fa',
+                            fontWeight: 'bold',
+                            fontSize: '.9rem',
+                            margin: '0 auto',
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            justifyContent: 'center',
+                            textAlign: 'center'
+                        },
+                    },
+                    cells: {
+                        style: {
+                            paddingLeft: '1rem',
+                            paddingRight: '1rem',
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            justifyContent: 'center',
+                            textAlign: 'center'
+                        },
+                    },
+                    rows: {
+                        style: {
+                            '&:hover': {
+                                backgroundColor: '#f1f3f5',
+                            },
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            justifyContent: 'center',
+                            textAlign: 'center'
+                        },
+                    },
+                }}
+            />
         </div>
-    )
+    );
 }
 
-export default Users
+export default Users;
