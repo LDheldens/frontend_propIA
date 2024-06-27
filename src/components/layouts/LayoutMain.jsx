@@ -123,7 +123,7 @@ const LayoutMain = () => {
                                 </button>
                             </div>
                             <div className='flex flex-col md:flex-row'>
-                                <Link className="bg-white hover:bg-green-500 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center" to="/usuario/formulario">
+                                <Link className="bg-white hover:bg-green-500 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center" to="/usuario/publicar">
                                     <FaPlus />
                                     Publicar
                                 </Link>
