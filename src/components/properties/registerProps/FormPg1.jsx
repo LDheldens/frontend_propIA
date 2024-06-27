@@ -15,9 +15,9 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
                     <h3 className="text-base font-semibold leading-7 text-gray-900">Tipo de operación:</h3>
                     <div className='my-5'>
                         <Selector radius="sm" className='border font-urbanist border-green-400' value={operation} color='green' onChange={handleOperationChange} >
-                            <Selector.Tab anchor="venta" label="VENTA" />
-                            <Selector.Tab anchor="alquiler" label="ALQUILER" />
-                            <Selector.Tab anchor="compra" label="COMPRA" />
+                            <Selector.Tab anchor="Venta" label="VENTA" />
+                            <Selector.Tab anchor="Alquiler" label="ALQUILER" />
+                            <Selector.Tab anchor="Pre-venta" label="Pre-venta" />
                         </Selector>
                     </div>
                 </div>

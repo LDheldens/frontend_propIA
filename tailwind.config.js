@@ -9,6 +9,9 @@ export default {
     ],
     theme: {
         extend: {
+            screens: {
+                'xs': '450px', // Añade tu media query personalizada aquí
+            },
             colors: {
                 green1: '#1B7895',
                 blue2: '#174966',
