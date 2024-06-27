@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { FaWhatsapp } from "react-icons/fa";
+import { CiMail } from "react-icons/ci";
 
 function SendMsg() {
     const [isChecked, setIsChecked] = useState(false);
@@ -129,7 +130,7 @@ function SendMsg() {
                         </label>
                     </div>
                     <div className="col-span-full flex items-center mt-3">
-                        <input type="checkbox" className="m-1 p-3 rounded form-checkbox h-6 w-6 text-green1" required />
+                        <input type="checkbox" className="m-1 p-3 rounded form-checkbox h-5 w-5 text-green1" required />
                         <span className="text-[12px]">Acepto los Términos y Condiciones de Uso y las políticas de privacidad.</span>
                     </div>
                     <div className="col-span-full flex items-center mt-3">
@@ -138,13 +139,13 @@ function SendMsg() {
                             id="additionalInfo"
                             checked={isChecked}
                             onChange={() => setIsChecked(!isChecked)}
-                            className="m-1 p-3 rounded form-checkbox h-6 w-6 text-green1"
+                            className="m-1 p-3 rounded form-checkbox h-5 w-5 text-green1"
                         />
                         <span className="text-[12px]">Autorizo el uso de mi información para fines adicionales.</span>
                     </div>
 
-                    <button type="submit" className="bg-green1 rounded w-full p-3  text-white hover:bg-gray-300 hover:text-black">
-                        Contactar
+                    <button type="submit" className="bg-green1 flex items-center justify-center gap-2 rounded w-full p-2  text-white hover:bg-gray-300 hover:text-black">
+                        Contactar <CiMail className="text-xl"/>
                     </button>
 
                     <a href="#" className="bg-green-500 text-center text-white p-2 rounded w-full my-3 transition-colors duration-300 flex items-center gap-2 justify-center hover:bg-green-700">
