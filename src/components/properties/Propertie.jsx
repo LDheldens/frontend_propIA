@@ -18,8 +18,8 @@ function Propertie({ propertie }) {
                 <CiHeart className='text-2xl'/>
             </button>
             <Link className='grid grid-cols-1 md:grid-cols-3 md:gap-4' to={`/item/${propertie.id}`}>
-                <div className='col-span-1 h-64 md:h-auto'>  {/* Ajusta la altura aquí */}
-                    <img src={`${import.meta.env.VITE_URL_IMG}${propertie.images[0].image}`} alt="Property" className="block w-full h-full rounded object-cover" />  {/* Ajusta la clase aquí */}
+                <div className='col-span-1 h-64 md:h-auto'>
+                    <img src={`${import.meta.env.VITE_URL_IMG}${propertie.images[0].image}`} alt="Property" className="block w-full h-full rounded object-cover" />  
                 </div>
                 <div className='col-span-2 p-3'>
                     <h3 className='text-sm text-gray-900'>

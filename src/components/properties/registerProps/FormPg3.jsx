@@ -45,9 +45,9 @@ function FormPg3({ currentPage, files, setFiles }) {
         <div className={`${currentPage != 3 ? "hidden" : ""} w-full`}>
             <div className="col-span-full">
                 <label htmlFor="cover-photo" className="block text-xl font-medium leading-6 text-gray-900 my-3">
-                    Subir fotos
+                    Subir fotos (Por lo menos 5 fotos)
                 </label>
-                <div className='border-2 border-dashed border-green-400 text-center px-5 py-20 rounded-md' {...getRootProps()}>
+                <div className={`border-2 border-dashed border-green-400 text-center px-5 py-20 rounded-md ${isDragActive ? 'bg-green-200 opacity-65' : ''}`} {...getRootProps()}>
                     <input {...getInputProps()} />
                     <IoCloudUploadOutline className='mx-auto text-[30px]'/>
                     {
