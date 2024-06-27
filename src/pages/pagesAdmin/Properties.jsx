@@ -8,14 +8,17 @@ import DataTable from "react-data-table-component";
 
 function Properties() {
     const [properties, setProperties] = useState([]);
+    const [filteredProperties, setFilteredProperties] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
         const fetchProperties = async () => {
             try {
                 const response = await api.get('/property/list/');
                 setProperties(response.data);
+                setFilteredProperties(response.data);
                 setLoading(false);
             } catch (err) {
                 setError(err);
@@ -25,6 +28,23 @@ function Properties() {
 
         fetchProperties();
     }, []);
+
+    useEffect(() => {
+        const filteredData = properties.filter(property =>
+            property.type_operation.toLowerCase().includes(search.toLowerCase()) ||
+            property.type_property.toLowerCase().includes(search.toLowerCase()) ||
+            property.subtype_property.toLowerCase().includes(search.toLowerCase()) ||
+            property.first_name.toLowerCase().includes(search.toLowerCase()) ||
+            property.last_name.toLowerCase().includes(search.toLowerCase()) ||
+            property.phone_number.includes(search) ||
+            property.adress.toLowerCase().includes(search.toLowerCase()) ||
+            property.area_property.toLowerCase().includes(search.toLowerCase()) ||
+            property.type_currency.toLowerCase().includes(search.toLowerCase()) ||
+            property.price.toString().includes(search)
+        );
+
+        setFilteredProperties(filteredData);
+    }, [search, properties]);
 
     const handleUpdate = async (id) => {
         try {
@@ -57,6 +77,7 @@ function Properties() {
     
                     // Actualizar el estado local eliminando la propiedad
                     setProperties(properties.filter(property => property.id !== id));
+                    setFilteredProperties(filteredProperties.filter(property => property.id !== id));
     
                     // Mostrar una alerta de éxito
                     Swal.fire({
@@ -85,48 +106,53 @@ function Properties() {
         {
             name: 'Tipo de operación',
             selector: row => row.type_operation,
-            sortable: true,
+            // sortable: true,
         },
         {
-            name: 'Tipo de propiedad',
+            name: 'Tipo',
             selector: row => row.type_property,
-            sortable: true,
+            width: '100px'
+            // sortable: true,
         },
         {
-            name: 'Subtipo de propiedad',
+            name: 'Subtipo',
             selector: row => row.subtype_property,
-            sortable: true,
+            width: '100px'
+            // sortable: true,
         },
         {
             name: 'Vendedor',
             selector: row => `${row.first_name} ${row.last_name}`,
-            sortable: true,
+            // sortable: true,
         },
         {
             name: 'Número',
             selector: row => row.phone_number,
-            sortable: true,
+            // sortable: true,
+            width: '100px'
         },
         {
             name: 'Dirección',
             selector: row => row.adress,
-            sortable: true,
+            // sortable: true,
         },
         {
             name: 'Área',
             selector: row => row.area_property,
-            sortable: true,
+            // sortable: true,
+            width: '80px'
         },
         {
             name: 'Moneda',
             selector: row => row.type_currency,
-            sortable: true,
-            width: '80px'
+            // sortable: true,
+            width: '88px'
         },
         {
             name: 'Precio',
             selector: row => row.price,
-            sortable: true,
+            width: '100px'
+            // sortable: true,
         },
         {
             name: 'Acciones',
@@ -140,17 +166,35 @@ function Properties() {
                     </button>
                 </div>
             ),
+            width: '100px'
         },
     ];
+    const paginationComponentOptions = {
+        rowsPerPageText: 'Filas por página:',
+        rangeSeparatorText: 'de',
+        selectAllRowsItem: true,
+        selectAllRowsItemText: 'Todos',
+    };
 
     return (
         <div className="p-6 max-w-7xl mx-auto">
             <h1 className="text-2xl font-bold mb-4">Propiedades</h1>
+            <div className="mb-4">
+                <input
+                    type="text"
+                    placeholder="Buscar..."
+                    className="border p-2 rounded w-full"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+            </div>
             <div className="overflow-x-auto">
                 <DataTable 
                     columns={columns}
-                    data={properties}
+                    data={filteredProperties}
                     pagination
+                    paginationComponentOptions={paginationComponentOptions}
+                    noDataComponent={<div>No se encontraron registros para mostrar</div>}
                     customStyles={{
                         headCells: {
                             style: {
@@ -158,13 +202,22 @@ function Properties() {
                                 paddingRight: '1rem',
                                 backgroundColor: '#f8f9fa',
                                 fontWeight: 'bold',
-                                fontSize: '.9rem'
+                                fontSize: '.9rem',
+                                margin: '0 auto',
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                justifyContent: 'center',
+                                textAlign: 'center'
                             },
                         },
                         cells: {
                             style: {
                                 paddingLeft: '1rem',
                                 paddingRight: '1rem',
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                justifyContent: 'center',
+                                textAlign: 'center'
                             },
                         },
                         rows: {
@@ -172,6 +225,10 @@ function Properties() {
                                 '&:hover': {
                                     backgroundColor: '#f1f3f5',
                                 },
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                justifyContent: 'center',
+                                textAlign: 'center'
                             },
                         },
                     }}

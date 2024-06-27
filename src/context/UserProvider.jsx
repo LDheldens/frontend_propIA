@@ -18,11 +18,11 @@ const UserProvider = ({ children }) => {
     const register = async (data, setErrores) => {
         try {
             const response = await api.post('/auth/register/', data);
-            console.log(response) 
-            const {data:user} = response
+            console.log(response)
+            const { data: user } = response
             if (user && user.token) {
                 localStorage.setItem('AUTH_TOKEN_PROPIA', user.token);
-                setUser(user); 
+                setUser(user);
                 setIsAuth(true);
                 return true;
             }
@@ -34,11 +34,11 @@ const UserProvider = ({ children }) => {
             return false
         };
     }
-    const login = async (data, setErrores) =>{
+    const login = async (data, setErrores) => {
         try {
-            const response = await api.post('/auth/login/',data)
-            const {data:user} = response
-            localStorage.setItem('AUTH_TOKEN_PROPIA',user.token)
+            const response = await api.post('/auth/login/', data)
+            const { data: user } = response
+            localStorage.setItem('AUTH_TOKEN_PROPIA', user.token)
             console.log(user)
             setUser(user)
             setIsAuth(true)
@@ -50,15 +50,15 @@ const UserProvider = ({ children }) => {
         }
     }
 
-    const logout = async () =>{
+    const logout = async () => {
         const token = localStorage.getItem('AUTH_TOKEN_PROPIA');
         try {
-            const response = await api.post('/auth/logout/',{},{
-                headers:{
+            const response = await api.post('/auth/logout/', {}, {
+                headers: {
                     Authorization: `Token ${token}`
                 }
-            }); 
-            
+            });
+
             if (response.status == 200) {
                 localStorage.removeItem("AUTH_TOKEN_PROPIA");
                 setIsAuth(false)
@@ -91,9 +91,9 @@ const UserProvider = ({ children }) => {
         }
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         getUser()
-    },[])
+    }, [])
 
     return (
         <UserContext.Provider
@@ -101,7 +101,8 @@ const UserProvider = ({ children }) => {
                 register,
                 isAuth,
                 logout,
-                login
+                login,
+                user
             }}
         >
             {children}
