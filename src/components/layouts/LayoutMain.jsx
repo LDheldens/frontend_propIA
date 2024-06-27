@@ -46,7 +46,7 @@ const links = [
     },
 ];
 
-const Layout = () => {
+const LayoutMain = () => {
 
     const { isAuth, logout } = useUser()
 
@@ -123,7 +123,7 @@ const Layout = () => {
                                 </button>
                             </div>
                             <div className='flex flex-col md:flex-row'>
-                                <Link className="bg-white hover:bg-green-500 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center" to="/publicar/formulario">
+                                <Link className="bg-white hover:bg-green-500 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center" to="/usuario/formulario">
                                     <FaPlus />
                                     Publicar
                                 </Link>
@@ -138,7 +138,9 @@ const Layout = () => {
                                             </Dropdown.Trigger>
                                             <Dropdown.Content>
                                                 <Dropdown.Item>
-                                                    Mi perfil
+                                                    <Link to="/usuario/cuenta">
+                                                        Mi perfil
+                                                    </Link>
                                                 </Dropdown.Item>
                                                 <Dropdown.Item>
                                                     Messages
@@ -248,6 +250,6 @@ const Layout = () => {
         </>
     )
 }
-export default Layout
+export default LayoutMain
 
 
