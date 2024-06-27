@@ -119,9 +119,8 @@ function DetailProps() {
                         <h3 className='font-bold text-xl font-bebas my-2'>
                             Descripcción
                         </h3>
-                        <p className=''>
+                        <p className="overflow-hidden break-words">
                             {property?.description}
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias libero corporis minima, fugiat eveniet dicta, accusantium neque nam vero ab nihil, numquam dolorem cumque? Consequuntur perferendis impedit sint! Adipisci cumque delectus beatae nemo tenetur ea, consequuntur asperiores enim quisquam harum blanditiis eveniet ratione nesciunt, veniam doloremque voluptates explicabo aliquam error minus maxime corrupti eius molestias? Reiciendis natus voluptas magnam minima cumque consectetur fugiat sint excepturi totam saepe repellat, accusamus molestiae soluta maiores neque ea architecto mollitia atque quo temporibus porro similique. Sapiente at dignissimos saepe labore laboriosam quo doloribus eum ipsa, ab dolorum eveniet esse aliquam consequuntur quam aliquid necessitatibus.
                         </p>
                     </article>
                 </div>
