@@ -1,7 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form'
+import Swal from 'sweetalert2';
+import useUser from '../../hooks/useUser';
+import { useNavigate } from 'react-router-dom';
+import dep3 from "../../assets/dep3.jpeg";
+
 
 const UpdateUser = () => {
+
+    const navigate = useNavigate()
+
+    const { register } = useUser()
+
+    const { control, handleSubmit, formState: { errors }, watch } = useForm();
+    const password = watch('password');
+    const [terminos, setTerminos] = useState(false)
+    const [errores, setErrores] = useState([])
+
+    const onSubmit = async (user) => {
+        if (!terminos) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Necesitas aceptar nuestros terminos y condiciones",
+            });
+            return
+        }
+        const { confirm_password, ...data } = user
+        data.username = ''
+
+        const response = await register(data, setErrores)
+
+        console.log(response)
+
+        setTimeout(() => {
+            setErrores([])
+        }, 5000)
+
+        if (response) {
+            navigate('/')
+        }
+
+    };
+
+    const passwordMatchValidator = (value) => {
+        return value === password || 'Las contraseñas no coinciden';
+    };
+
     return (
         <div>
             <form className="space-y-6" noValidate onSubmit={handleSubmit(onSubmit)}>
