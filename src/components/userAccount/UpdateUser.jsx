@@ -3,8 +3,9 @@ import { useForm, Controller } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import useUser from '../../hooks/useUser';
 import api from '../../settings/api';
+import Swal from 'sweetalert2';
 
-const UpdateUser = ({ user }) => {
+const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
     const navigate = useNavigate();
     const { register } = useUser();
     const [errores, setErrores] = useState([])
@@ -22,6 +23,9 @@ const UpdateUser = ({ user }) => {
         try {
             const response = await api.patch(`/auth/${user.id}/`, data);
             console.log(response)
+            Swal.fire('Éxito', 'Datos cambiados con éxito', 'success');
+            setShowUpdateUser(false)
+            mutate();
         } catch (error) {
             console.error(error);
             setErrores(Object.values(error.response.data));
