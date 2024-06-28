@@ -4,8 +4,7 @@ import { Outlet, Link } from 'react-router-dom'
 import { SlSettings } from "react-icons/sl"
 import { Dropdown, Button } from '@rewind-ui/core'
 import UpdateUser from '../../components/userAccount/UpdateUser'
-// import ReactDOM from 'react-dom';
-// import Modal from 'react-modal';
+import ChangePassword from '../../components/userAccount/ChangePassword'
 
 export const UserAccount = () => {
 
@@ -13,6 +12,7 @@ export const UserAccount = () => {
     console.log(user);
 
     const [showUpdateUser, setShowUpdateUser] = useState(false);
+    const [showChangePassword, setShowChangePassword] = useState(false);
 
     const links = [
         {
@@ -74,11 +74,8 @@ export const UserAccount = () => {
                                     <Dropdown.Item onClick={() => setShowUpdateUser(true)}>
                                         Editar Datos
                                     </Dropdown.Item>
-                                    <Dropdown.Item>
+                                    <Dropdown.Item onClick={() => setShowChangePassword(true)}>
                                         Cambiar contraseña
-                                    </Dropdown.Item>
-                                    <Dropdown.Item>
-                                        Cambiar correo
                                     </Dropdown.Item>
                                     <Dropdown.Divider />
                                     <Dropdown.Item>
@@ -90,30 +87,10 @@ export const UserAccount = () => {
                     </div>
                 </div>
                 <div>
-                    {showUpdateUser && <UpdateUser />}
+                    {showUpdateUser && <UpdateUser user={user} />}
                 </div>
                 <div>
-                    <div>
-                        {/* <button onClick={openModal}>Open Modal</button>
-                        <Modal
-                            isOpen={modalIsOpen}
-                            onAfterOpen={afterOpenModal}
-                            onRequestClose={closeModal}
-                            style={customStyles}
-                            contentLabel="Example Modal"
-                        >
-                            <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-                            <button onClick={closeModal}>close</button>
-                            <div>I am a modal</div>
-                            <form>
-                                <input />
-                                <button>tab navigation</button>
-                                <button>stays</button>
-                                <button>inside</button>
-                                <button>the modal</button>
-                            </form>
-                        </Modal> */}
-                    </div>
+                    {showChangePassword && <ChangePassword />}
                 </div>
             </div>
         </div>

@@ -1,54 +1,46 @@
 import React, { useState } from 'react';
-import { useForm, Controller } from 'react-hook-form'
-import Swal from 'sweetalert2';
-import useUser from '../../hooks/useUser';
+import { useForm, Controller } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import dep3 from "../../assets/dep3.jpeg";
+import useUser from '../../hooks/useUser';
+import api from '../../settings/api';
 
-
-const UpdateUser = () => {
-
-    const navigate = useNavigate()
-
-    const { register } = useUser()
-
-    const { control, handleSubmit, formState: { errors }, watch } = useForm();
-    const password = watch('password');
-    const [terminos, setTerminos] = useState(false)
+const UpdateUser = ({ user }) => {
+    const navigate = useNavigate();
+    const { register } = useUser();
     const [errores, setErrores] = useState([])
 
-    const onSubmit = async (user) => {
-        if (!terminos) {
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Necesitas aceptar nuestros terminos y condiciones",
-            });
-            return
+    const { control, handleSubmit, formState: { errors }, setError } = useForm({
+        defaultValues: {
+            email: user.email,
+            first_name: user.first_name,
+            last_name: user.last_name,
+            phone: user.phone
         }
-        const { confirm_password, ...data } = user
-        data.username = ''
+    });
 
-        const response = await register(data, setErrores)
-
-        console.log(response)
-
-        setTimeout(() => {
-            setErrores([])
-        }, 5000)
-
-        if (response) {
-            navigate('/')
+    const onSubmit = async (data) => {
+        try {
+            const response = await api.patch(`/auth/${user.id}/`, data);
+            console.log(response)
+        } catch (error) {
+            console.error(error);
+            setErrores(Object.values(error.response.data));
+            setTimeout(() => {
+                setErrores([])
+            }, 2000)
         }
-
-    };
-
-    const passwordMatchValidator = (value) => {
-        return value === password || 'Las contraseñas no coinciden';
     };
 
     return (
-        <div>
+        <div className='py-4'>
+            <h3 className='text-center lg:text-[25px] md:text-[20px]'>Editar datos personales</h3>
+            {
+                errores.length > 0 ? (
+                    errores.map(error => (
+                        <p className='text-red-500 mb-2 text-center'>{error}</p>
+                    ))
+                ) : null
+            }
             <form className="space-y-6" noValidate onSubmit={handleSubmit(onSubmit)}>
                 <div className="col-span-full">
                     <label
@@ -91,7 +83,6 @@ const UpdateUser = () => {
                         <Controller
                             name="first_name"
                             control={control}
-                            defaultValue=""
                             rules={{ required: 'El nombre es obligatorio' }}
                             render={({ field }) => (
                                 <input
@@ -118,7 +109,6 @@ const UpdateUser = () => {
                         <Controller
                             name="last_name"
                             control={control}
-                            defaultValue=""
                             rules={{ required: 'Los apellidos son obligatorios' }}
                             render={({ field }) => (
                                 <input
@@ -145,7 +135,6 @@ const UpdateUser = () => {
                         <Controller
                             name="phone"
                             control={control}
-                            defaultValue=""
                             rules={{
                                 required: 'El número es obligatorio',
                                 maxLength: {
@@ -160,11 +149,9 @@ const UpdateUser = () => {
                             render={({ field }) => (
                                 <input
                                     {...field}
-                                    type="number"
+                                    type="text"
                                     id="phone"
                                     autoComplete="phone"
-                                    inputMode="numeric"
-                                    pattern="[0-9]{9}"
                                     maxLength="9"
                                     className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.phone ? 'ring-red-500' : ''}`}
                                     placeholder="Número celular"
@@ -177,71 +164,17 @@ const UpdateUser = () => {
                         {errors.phone && <span className="text-red-500 text-xs">{errors.phone.message}</span>}
                     </label>
                 </div>
-                <div className="col-span-full">
-                    <label
-                        htmlFor="password"
-                        className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
-                    >
-                        <Controller
-                            name="password"
-                            control={control}
-                            defaultValue=""
-                            rules={{ required: 'La contraseña es obligatoria' }}
-                            render={({ field }) => (
-                                <input
-                                    {...field}
-                                    type="password"
-                                    id="password"
-                                    autoComplete="current-password"
-                                    className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.password ? 'ring-red-500' : ''}`}
-                                    placeholder="Contraseña"
-                                />
-                            )}
-                        />
-                        <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm">
-                            Contraseña
-                        </span>
-                        {errors.password && <span className="text-red-500 text-xs">{errors.password.message}</span>}
-                    </label>
-                </div>
-                <div className="col-span-full">
-                    <label
-                        htmlFor="confirm_password"
-                        className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
-                    >
-                        <Controller
-                            name="confirm_password"
-                            control={control}
-                            defaultValue=""
-                            rules={{ required: 'Por favor confirme su contraseña', validate: passwordMatchValidator }}
-                            render={({ field }) => (
-                                <input
-                                    {...field}
-                                    type="password"
-                                    id="confirm_password"
-                                    autoComplete="current-password"
-                                    className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.confirm_password ? 'ring-red-500' : ''}`}
-                                    placeholder="Confirmar contraseña"
-                                />
-                            )}
-                        />
-                        <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-gray-200 p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs rounded-sm">
-                            Confirmar Contraseña
-                        </span>
-                        {errors.confirm_password && <span className="text-red-500 text-xs">{errors.confirm_password.message}</span>}
-                    </label>
-                </div>
                 <div>
                     <button
                         type="submit"
                         className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded"
                     >
-                        Registrarse
+                        Guardar Cambios
                     </button>
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
-export default UpdateUser
+export default UpdateUser;
