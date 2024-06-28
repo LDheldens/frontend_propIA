@@ -1,103 +1,193 @@
-import React, { useState } from 'react';
-import api from '../../settings/api';
+import React, { useState, useEffect } from 'react';
 import useSWR from 'swr';
-import { FaInfoCircle } from "react-icons/fa"
+import { FaPen } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import DataTable from 'react-data-table-component';
+import api from '../../settings/api';
+import Swal from 'sweetalert2';
+
+const fetcher = (url) => api.get(url).then((res) => res.data);
 
 function ListMessages() {
-    const getMessages = async () => {
-        try {
-            const response = await api.get('/contact/list/', {
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            return response.data;
-        } catch (error) {
-            console.error(error);
-        }
-    };
+    const { data: messages, error, mutate } = useSWR('/contact/list/', fetcher);
+    const [search, setSearch] = useState('');
+    const [filteredMessages, setFilteredMessages] = useState([]);
 
-    const { data: messages, isLoading, mutate } = useSWR(
-        `${import.meta.env.VITE_API_URL}/contact/list/`,
-        getMessages
-    );
+    useEffect(() => {
+        if (messages) {
+            setFilteredMessages(messages.filter(message =>
+                (message.nombres && message.nombres.toLowerCase().includes(search.toLowerCase())) ||
+                (message.email && message.email.toLowerCase().includes(search.toLowerCase())) ||
+                (message.tipo_solicitud && message.tipo_solicitud.toLowerCase().includes(search.toLowerCase())) ||
+                (message.celular && message.celular.toLowerCase().includes(search.toLowerCase())) ||
+                (message.mensaje && message.mensaje.toLowerCase().includes(search.toLowerCase()))
+            ));
+        }
+    }, [messages, search]);
 
     const handleStateServed = async (message, newServed) => {
         const updatedMessage = { ...message, atendido: newServed };
         try {
             const response = await api.put(`/contact/${message.id}/`, updatedMessage);
             console.log('Updated property:', response.data);
-            // Actualiza la lista de mensajes con el mensaje actualizado
             mutate();
         } catch (error) {
             console.error('Error updating property:', error);
         }
     };
 
-    //fields = ['id', 'nombres', 'apellidos', 'email', 'celular', 'tipo_solicitud', 'mensaje', 'ciudad', 'provincia', 'codigo_postal', 'atendido']
+    const handleDelete = async (id) => {
+        Swal.fire({
+            title: "¿Estás seguro?",
+            text: "Esta acción eliminará el mensaje de forma permanente!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sí, eliminar",
+            cancelButtonText: "Cancelar"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await api.delete(`/contact/${id}/`);
+                    mutate(messages.filter(message => message.id !== id), false);
 
+                    Swal.fire({
+                        title: "Eliminado",
+                        text: "Mensaje eliminado de manera exitosa.",
+                        icon: "success"
+                    });
+                } catch (error) {
+                    Swal.fire({
+                        title: "Error",
+                        text: 'Hubo un problema al intentar eliminar el mensaje.',
+                        icon: 'error',
+                    });
+                }
+            }
+        });
+    };
+
+    if (!messages) return <p className="text-center">Loading...</p>;
+    if (error) return <p className="text-center text-red-500">Error loading data</p>;
+
+    const columns = [
+        {
+            name: 'N°',
+            selector: (row, index) => index + 1,
+            width: '50px'
+        },
+        {
+            name: 'Información del Contacto',
+            selector: row => `${row.nombres}, ${row.email}, ${row.celular}`,
+            format: row => (
+                <div>
+                    <div><strong>Nombres:</strong> {row.nombres}</div>
+                    <div><strong>Email:</strong> {row.email}</div>
+                    <div><strong>Celular:</strong> {row.celular}</div>
+                </div>
+            ),
+            width: '300px'
+        },
+        {
+            name: 'Tipo de solicitud',
+            selector: row => row.tipo_solicitud,
+            width: '150px',
+        },
+        {
+            name: 'Mensaje',
+            selector: row => `${row.mensaje}`,
+            format: row => (
+                <p className="whitespace-pre-wrap break-words">{row.mensaje}</p>
+            ),
+        },
+        {
+            name: 'Atendido',
+            cell: row => (
+                <label className="relative inline-flex items-center cursor-pointer">
+                    <input
+                        className="sr-only peer"
+                        type="checkbox"
+                        checked={row.atendido}
+                        onChange={(e) => handleStateServed(row, e.target.checked)}
+                    />
+                    <div className="peer rounded-full outline-none duration-100 after:duration-500 w-16 h-8 bg-green1 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-500  after:content-['No'] after:absolute after:outline-none after:rounded-full after:h-6 after:w-6 after:bg-white after:top-1 after:left-1 after:flex after:justify-center after:items-center  after:text-sky-800 after:font-bold peer-checked:after:translate-x-8 peer-checked:after:content-['Si'] peer-checked:after:border-white"></div>
+                </label>
+            ),
+            width: '100px'
+        },
+        {
+            name: 'Acciones',
+            cell: row => (
+                <div className="flex space-x-2">
+                    <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded" onClick={() => handleDelete(row.id)}>
+                        <MdDelete />
+                    </button>
+                </div>
+            ),
+            width: '100px'
+        },
+    ];
+
+    const paginationComponentOptions = {
+        rowsPerPageText: 'Filas por página:',
+        rangeSeparatorText: 'de',
+        selectAllRowsItem: true,
+        selectAllRowsItemText: 'Todos',
+    };
 
     return (
-        <div className='p-14 max-w-7xl mx-auto'>
-            <ul role="list" className='flex justify-between p-3 w-full '>
-                <li className='flex-1 flex justify-start p-2 '>
-                    <div className='bg-white px-4 py-2'>
-                        <h3 className='font-bebas tracking-wide'>USUARIOS</h3>
-                    </div>
-                </li>
-                <li className='flex-1 flex justify-center p-2 '>
-                    <div className='bg-white px-4 py-2'>
-                        <h3 className='font-bebas tracking-wide'>MENSAJE</h3>
-                    </div>
-                </li>
-                <li className='flex-1 flex justify-end p-2 '>
-                    <div className='bg-white px-4 py-2'>
-                        <h3 className='font-bebas tracking-wide'>ATENDIDO</h3>
-                    </div>
-                </li>
-            </ul>
+        <div className="p-6 max-w-7xl mx-auto font-urbanist">
+            <h1 className="text-2xl font-bold mb-4">Mensajes</h1>
+            <div className="mb-4">
+            <input 
+                type="text" 
+                placeholder="Buscar..." 
+                value={search} 
+                onChange={e => setSearch(e.target.value)} 
+                className="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-md"
+            />
+        </div>
 
-            <ul role="list" className="divide-y divide-gray-100 px-4 font-urbanist">
-                {messages?.map((message) => (
-                    <li key={message.id} className="flex justify-between gap-x-6 py-5">
-                        <div className="flex min-w-0 gap-x-4">
-                            {/* <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={message.imageUrl} alt="" /> */}
-                            <div className="min-w-0 flex-auto">
-                                <p className="text-sm font-semibold leading-6 text-gray-900">Nombre: {message.nombres}</p>
-                                <p className="mt-1 truncate text-xs leading-5 text-gray-500">Emai: {message.email}</p>
-                                <p className="text-sm leading-6 text-gray-900">Tipo de solicitud: {message.tipo_solicitud}</p>
-                                <p className="mt-1 truncate text-xs leading-5 text-gray-500">Cel: {message.celular}</p>
-                            </div>
-                        </div>
-                        <div className='flex min-w-0 gap-x-2 font-urbanist'>
-                            <p> {message.mensaje}</p>
-                        </div>
-                        <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                            <div className="mt-1 flex items-center gap-x-1.5">
-                                {/* <div className="flex-none rounded-full bg-emerald-500/20 p-1">
-                                    <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                                </div>
-                                <p className="text-xs leading-5 text-gray-500">Online</p> */}
-                                <div>
-                                    <label className="relative inline-flex items-center cursor-pointer">
-                                        <input
-                                            className="sr-only peer"
-                                            type="checkbox"
-                                            checked={message.atendido}
-                                            onChange={(e) => handleStateServed(message, e.target.checked)}
-                                        />
-                                        <div className="peer rounded-full outline-none duration-100 after:duration-500 w-16 h-8 bg-green1 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-500  after:content-['No'] after:absolute after:outline-none after:rounded-full after:h-6 after:w-6 after:bg-white after:top-1 after:left-1 after:flex after:justify-center after:items-center  after:text-sky-800 after:font-bold peer-checked:after:translate-x-8 peer-checked:after:content-['Si'] peer-checked:after:border-white">
-                                        </div>
-                                    </label>
-                                    {/* <div className='flex items-center justify-center'>
-                                        <FaInfoCircle className='text-[25px]' />
-                                    </div> */}
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                ))}
-            </ul>
+            <DataTable
+                columns={columns}
+                data={filteredMessages}
+                pagination
+                paginationComponentOptions={paginationComponentOptions}
+                noDataComponent={<div>No se encontraron registros para mostrar</div>}
+                customStyles={{
+                    headCells: {
+                        style: {
+                            backgroundColor: '#f8f9fa',
+                            fontWeight: 'bold',
+                            fontSize: '.9rem',
+                            margin: '0 auto',
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            justifyContent: 'center',
+                            textAlign: 'center'
+                        },
+                    },
+                    cells: {
+                        style: {
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            justifyContent: 'center',
+                            textAlign: 'center',
+                            overflow: 'hidden',
+                            wordBreak: 'break-word'
+                        },
+                    },
+                    rows: {
+                        style: {
+                            '&:hover': {
+                                backgroundColor: '#f1f3f5',
+                            },
+                            textAlign: 'center',
+                        },
+                    },
+                }}
+            />
         </div>
     );
 }
