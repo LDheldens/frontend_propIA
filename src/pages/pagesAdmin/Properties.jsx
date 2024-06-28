@@ -4,7 +4,7 @@ import { FaEye } from "react-icons/fa";
 import api from '../../settings/api';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import DataTable from "react-data-table-component";
+import DataTable from 'react-data-table-component';
 
 function Properties() {
     const [properties, setProperties] = useState([]);
@@ -16,9 +16,9 @@ function Properties() {
     useEffect(() => {
         const fetchProperties = async () => {
             try {
-                const response = await api.get('/property/list/');
-                setProperties(response.data);
-                setFilteredProperties(response.data);
+                const response = await api.get('/property/list/admin/');
+                setProperties(response?.data);
+                setFilteredProperties(response?.data);
                 setLoading(false);
             } catch (err) {
                 setError(err);
@@ -46,17 +46,6 @@ function Properties() {
         setFilteredProperties(filteredData);
     }, [search, properties]);
 
-    const handleUpdate = async (id) => {
-        try {
-            const response = await api.put(`/property/${id}/`, {
-                // Incluye aquí los datos actualizados de la propiedad
-            });
-            console.log('Updated property:', response.data);
-            // Aquí puedes actualizar el estado local o manejar la respuesta como necesites
-        } catch (error) {
-            console.error('Error updating property:', error);
-        }
-    };
 
     const handleDelete = async (id) => {
         // Mostrar la alerta de confirmación
@@ -74,11 +63,11 @@ function Properties() {
                 try {
                     // Realizar la solicitud DELETE a la API
                     await api.delete(`/property/${id}/`);
-    
+
                     // Actualizar el estado local eliminando la propiedad
                     setProperties(properties.filter(property => property.id !== id));
                     setFilteredProperties(filteredProperties.filter(property => property.id !== id));
-    
+
                     // Mostrar una alerta de éxito
                     Swal.fire({
                         title: 'Eliminado',
@@ -87,7 +76,7 @@ function Properties() {
                     });
                 } catch (error) {
                     console.error('Error deleting property:', error);
-    
+
                     // Mostrar una alerta de error
                     Swal.fire({
                         title: 'Error al eliminar la propiedad',
@@ -182,15 +171,15 @@ function Properties() {
             <h1 className="text-2xl font-bold mb-4">Propiedades</h1>
             <div className="mb-4">
                 <input
-                    type="text" 
-                    placeholder="Buscar..." 
-                    value={search} 
-                    onChange={e => setSearch(e.target.value)} 
+                    type="text"
+                    placeholder="Buscar..."
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
                     className="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-md"
                 />
             </div>
             <div className="overflow-x-auto">
-                <DataTable 
+                <DataTable
                     columns={columns}
                     data={filteredProperties}
                     pagination
