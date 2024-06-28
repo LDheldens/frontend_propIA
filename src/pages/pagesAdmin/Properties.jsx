@@ -106,18 +106,19 @@ function Properties() {
         {
             name: 'Tipo de operación',
             selector: row => row.type_operation,
+            width: '155px'
             // sortable: true,
         },
         {
             name: 'Tipo',
             selector: row => row.type_property,
-            width: '100px'
+            width: '120px'
             // sortable: true,
         },
         {
             name: 'Subtipo',
             selector: row => row.subtype_property,
-            width: '100px'
+            width: '120px'
             // sortable: true,
         },
         {
@@ -140,7 +141,7 @@ function Properties() {
             name: 'Área',
             selector: row => row.area_property,
             // sortable: true,
-            width: '80px'
+            width: '100px'
         },
         {
             name: 'Moneda',
@@ -151,7 +152,7 @@ function Properties() {
         {
             name: 'Precio',
             selector: row => row.price,
-            width: '100px'
+            width: '110px'
             // sortable: true,
         },
         {
@@ -181,11 +182,11 @@ function Properties() {
             <h1 className="text-2xl font-bold mb-4">Propiedades</h1>
             <div className="mb-4">
                 <input
-                    type="text"
-                    placeholder="Buscar..."
-                    className="border p-2 rounded w-full"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
+                    type="text" 
+                    placeholder="Buscar..." 
+                    value={search} 
+                    onChange={e => setSearch(e.target.value)} 
+                    className="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-md"
                 />
             </div>
             <div className="overflow-x-auto">

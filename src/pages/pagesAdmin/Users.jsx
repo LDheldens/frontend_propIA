@@ -86,14 +86,12 @@ function Users() {
             name: 'Acciones',
             cell: row => (
                 <div className="flex space-x-2">
-                    <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded" onClick={() => handleUpdate(row.id)}>
-                        <FaPen />
-                    </button>
                     <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded" onClick={() => handleDelete(row.id)}>
                         <MdDelete />
                     </button>
                 </div>
             ),
+            width: '100px'
         },
     ];
 
@@ -113,7 +111,7 @@ function Users() {
                     placeholder="Buscar..." 
                     value={search} 
                     onChange={e => setSearch(e.target.value)} 
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                    className="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-md"
                 />
             </div>
             <DataTable
