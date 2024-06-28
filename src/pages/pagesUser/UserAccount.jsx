@@ -4,44 +4,72 @@ import { Outlet, Link } from 'react-router-dom'
 import { SlSettings } from "react-icons/sl"
 import { Dropdown, Button } from '@rewind-ui/core'
 import UpdateUser from '../../components/userAccount/UpdateUser'
-// import ReactDOM from 'react-dom';
-// import Modal from 'react-modal';
+import ChangePassword from '../../components/userAccount/ChangePassword'
+import useSWR from 'swr'
+import api from '../../settings/api'
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
 
 export const UserAccount = () => {
-
-    const { user } = useUser();
-    console.log(user);
-
+    const navigate = useNavigate()
+    const { logout } = useUser()
     const [showUpdateUser, setShowUpdateUser] = useState(false);
+    const [showChangePassword, setShowChangePassword] = useState(false);
 
-    const links = [
-        {
-            link: "/",
-            text: "Datos",
-            id: 1,
-        },
-        {
-            link: "/",
-            text: "Etidar datos",
-            id: 2,
-        },
-        {
-            link: "/buscar",
-            text: "Cambiar correo",
-            id: 3,
-        },
-        {
-            link: "/ia/inicioia",
-            text: "Cambiar contraseña",
-            id: 4,
-        },
-        {
-            link: "/asesores",
-            text: "Ajustes de notificaciones",
-            id: 5,
-        },
 
-    ];
+    const getUser = async () => {
+        const token = localStorage.getItem('AUTH_TOKEN_PROPIA');
+        console.log(token);
+
+        try {
+            const response = await api.get('/auth/profile/', {
+                headers: {
+                    Authorization: `Token ${token}`
+                }
+            });
+            console.log(response)
+            return response.data
+        } catch (error) {
+            console.error('Error fetching user:', error.message);
+        }
+    };
+
+    const { data: user, IsLoading, mutate } = useSWR(
+        `${import.meta.env.VITE_API_URL}/auth/profile/`,
+        getUser
+    )
+    console.log(user)
+
+    const handleDelete = async (id) => {
+        Swal.fire({
+            title: "¿Estás seguro?",
+            text: "Esta acción eliminará el usuario de forma permanente!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sí, eliminar",
+            cancelButtonText: "Cancelar"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await logout()
+                    const response = await api.delete(`/auth/${id}/`);
+                    console.log(response)
+                    if (response.status == 204) {
+                        navigate('/')
+                    }
+
+                } catch (error) {
+                    Swal.fire({
+                        title: "Error",
+                        text: 'Hubo un problema al intentar eliminar el usuario.',
+                        icon: 'error',
+                    });
+                }
+            }
+        });
+    };
 
     return (
         <div className='bg-white flex items-center justify-center'>
@@ -58,9 +86,9 @@ export const UserAccount = () => {
                             />
                         </div>
                         <div className='font-urbanist'>
-                            <div className="py-2 px-4 border-t lg:text-[35px] sm:text-[25px] font-urbanist">Nombre: {user.first_name} {user.last_name}</div>
-                            <div className="py-2 px-4">Correo: {user.email}</div>
-                            <div className="py-2 px-4">Celular: {user.phone}</div>
+                            <div className="py-2 px-4 border-t lg:text-[35px] sm:text-[25px] font-urbanist">Nombre: {user?.first_name} {user?.last_name}</div>
+                            <div className="py-2 px-4">Correo: {user?.email}</div>
+                            <div className="py-2 px-4">Celular: {user?.phone}</div>
                             <div className="py-2 px-4 border-b flex space-x-2"></div>
                         </div>
                         <div>
@@ -74,14 +102,11 @@ export const UserAccount = () => {
                                     <Dropdown.Item onClick={() => setShowUpdateUser(true)}>
                                         Editar Datos
                                     </Dropdown.Item>
-                                    <Dropdown.Item>
+                                    <Dropdown.Item onClick={() => setShowChangePassword(true)}>
                                         Cambiar contraseña
                                     </Dropdown.Item>
-                                    <Dropdown.Item>
-                                        Cambiar correo
-                                    </Dropdown.Item>
                                     <Dropdown.Divider />
-                                    <Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleDelete(user.id)}>
                                         Eliminar Cuenta
                                     </Dropdown.Item>
                                 </Dropdown.Content>
@@ -90,30 +115,10 @@ export const UserAccount = () => {
                     </div>
                 </div>
                 <div>
-                    {showUpdateUser && <UpdateUser />}
+                    {showUpdateUser && <UpdateUser user={user} setShowUpdateUser={setShowUpdateUser} mutate={mutate} />}
                 </div>
                 <div>
-                    <div>
-                        {/* <button onClick={openModal}>Open Modal</button>
-                        <Modal
-                            isOpen={modalIsOpen}
-                            onAfterOpen={afterOpenModal}
-                            onRequestClose={closeModal}
-                            style={customStyles}
-                            contentLabel="Example Modal"
-                        >
-                            <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-                            <button onClick={closeModal}>close</button>
-                            <div>I am a modal</div>
-                            <form>
-                                <input />
-                                <button>tab navigation</button>
-                                <button>stays</button>
-                                <button>inside</button>
-                                <button>the modal</button>
-                            </form>
-                        </Modal> */}
-                    </div>
+                    {showChangePassword && <ChangePassword setShowChangePassword={setShowChangePassword} />}
                 </div>
             </div>
         </div>

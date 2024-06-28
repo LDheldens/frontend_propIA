@@ -34,18 +34,22 @@ const UserProvider = ({ children }) => {
             return false
         };
     }
-    const login = async (data, setErrores) => {
+    const login = async (data, setError) => {
         try {
             const response = await api.post('/auth/login/', data)
             const { data: user } = response
-            localStorage.setItem('AUTH_TOKEN_PROPIA', user.token)
-            console.log(user)
-            setUser(user)
-            setIsAuth(true)
-            return true
+
+            if (user && user.token) {
+                localStorage.setItem('AUTH_TOKEN_PROPIA', user.token);
+                setUser(user);
+                setIsAuth(true);
+                return true;
+            }
         } catch (error) {
+            console.log(error)
             if (error.response) {
-                setErrores(Object.values(error.response.data))
+                setError(error.response.data.error)
+
             }
         }
     }

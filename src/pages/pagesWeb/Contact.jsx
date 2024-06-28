@@ -114,7 +114,7 @@ function Contact() {
                                             id="tipo_solicitud"
                                             name="tipo_solicitud"
                                             autoComplete="tipo_solicitud"
-                                            className={`block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 ${errors.tipo_solicitud ? 'ring-red-500' : ''}`}
+                                            className={`block w-full rounded-md border-0 py-0 h-9 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 ${errors.tipo_solicitud ? 'ring-red-500' : ''}`}
                                             {...register("tipo_solicitud", { required: "Seleccione un tipo de solicitud" })}
                                         >
                                             <option value="">Seleccione una opción</option>
@@ -126,24 +126,8 @@ function Contact() {
                                     </div>
                                 </div>
 
-                                <div className="col-span-full">
-                                    <label htmlFor="mensaje" className="block text-sm font-bold leading-6 text-green1">
-                                        Mensaje
-                                    </label>
-                                    <div className="mt-1"> {/* Reduced margin-top */}
-                                        <textarea
-                                            cols="30" rows="3"
-                                            name="mensaje"
-                                            id="mensaje"
-                                            autoComplete="mensaje"
-                                            className={`block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2 ${errors.mensaje ? 'ring-red-500' : ''}`}
-                                            {...register("mensaje", { required: "El mensaje es obligatorio" })}
-                                        ></textarea>
-                                        {errors.mensaje && <p className="text-red-500 text-sm">{errors.mensaje.message}</p>}
-                                    </div>
-                                </div>
 
-                                <div className="sm:col-span-2 sm:col-start-1">
+                                <div className="sm:col-span-3">
                                     <label htmlFor="ciudad" className="block text-sm font-bold leading-6 text-green1">
                                         Ciudad
                                     </label>
@@ -158,9 +142,9 @@ function Contact() {
                                         />
                                         {errors.ciudad && <p className="text-red-500 text-sm">{errors.ciudad.message}</p>}
                                     </div>
-                                </div>
+                                </div> 
 
-                                <div className="sm:col-span-2">
+                                <div className="sm:col-span-3">
                                     <label htmlFor="provincia" className="block text-sm font-bold leading-6 text-green1">
                                         Provincia
                                     </label>
@@ -177,9 +161,9 @@ function Contact() {
                                     </div>
                                 </div>
 
-                                <div className="sm:col-span-2">
+                                <div className="sm:col-span-3">
                                     <label htmlFor="codigo_postal" className="block text-sm font-bold leading-6 text-green1">
-                                        Codigo Postal
+                                        Código Postal
                                     </label>
                                     <div className="mt-1"> {/* Reduced margin-top */}
                                         <input
@@ -191,6 +175,22 @@ function Contact() {
                                             {...register("codigo_postal", { required: "El código postal es obligatorio" })}
                                         />
                                         {errors.codigo_postal && <p className="text-red-500 text-sm">{errors.codigo_postal.message}</p>}
+                                    </div>
+                                </div>
+                                <div className="col-span-full">
+                                    <label htmlFor="mensaje" className="block text-sm font-bold leading-6 text-green1">
+                                        Mensaje
+                                    </label>
+                                    <div className="mt-1"> {/* Reduced margin-top */}
+                                        <textarea
+                                            cols="30" rows="3"
+                                            name="mensaje"
+                                            id="mensaje"
+                                            autoComplete="mensaje"
+                                            className={`block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2 ${errors.mensaje ? 'ring-red-500' : ''}`}
+                                            {...register("mensaje", { required: "El mensaje es obligatorio" })}
+                                        ></textarea>
+                                        {errors.mensaje && <p className="text-red-500 text-sm">{errors.mensaje.message}</p>}
                                     </div>
                                 </div>
                             </div>

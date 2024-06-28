@@ -3,18 +3,25 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import useUser from "../../hooks/useUser";
 import dep2 from "../../assets/dep2.jpeg";
+import { useNavigate } from "react-router-dom";
 
 function LogIn() {
-
+    const navigate = useNavigate();
     const { login } = useUser()
     const { register, handleSubmit, formState: { errors }, } = useForm();
 
-    const [errores, setErrores] = useState([])
+    const [error, setError] = useState('')
 
     const onSubmit = async (data) => {
         console.log(data);
 
-        await login(data)
+        const response = await login(data, setError)
+        setTimeout(() => {
+            setError('')
+        }, 3000)
+        if (response) {
+            navigate('/')
+        }
     };
 
     return (
@@ -34,6 +41,9 @@ function LogIn() {
                             Iniciar sesión
                         </h2>
                     </div>
+                    {error.length > 0 ? (
+                        <p className="text-red-500 mb-3">{error}</p>
+                    ) : null}
                     <form
                         noValidate
                         className="space-y-6"
