@@ -13,9 +13,7 @@ import { useNavigate } from 'react-router-dom'
 export const UserAccount = () => {
     const navigate = useNavigate()
     const { logout } = useUser()
-    const [showUpdateUser, setShowUpdateUser] = useState(false);
-    const [showChangePassword, setShowChangePassword] = useState(false);
-
+    const [currentView, setCurrentView] = useState('none');
 
     const getUser = async () => {
         const token = localStorage.getItem('AUTH_TOKEN_PROPIA');
@@ -99,10 +97,10 @@ export const UserAccount = () => {
                                     </Button>
                                 </Dropdown.Trigger>
                                 <Dropdown.Content>
-                                    <Dropdown.Item onClick={() => setShowUpdateUser(true)}>
+                                    <Dropdown.Item onClick={() => setCurrentView('update')}>
                                         Editar Datos
                                     </Dropdown.Item>
-                                    <Dropdown.Item onClick={() => setShowChangePassword(true)}>
+                                    <Dropdown.Item onClick={() => setCurrentView('change')}>
                                         Cambiar contraseña
                                     </Dropdown.Item>
                                     <Dropdown.Divider />
@@ -115,10 +113,14 @@ export const UserAccount = () => {
                     </div>
                 </div>
                 <div>
-                    {showUpdateUser && <UpdateUser user={user} setShowUpdateUser={setShowUpdateUser} mutate={mutate} />}
+                    {currentView === 'update' && (
+                        <UpdateUser user={user} setShowUpdateUser={() => setCurrentView('none')} mutate={mutate} />
+                    )}
                 </div>
                 <div>
-                    {showChangePassword && <ChangePassword setShowChangePassword={setShowChangePassword} />}
+                    {currentView === 'change' && (
+                        <ChangePassword setShowChangePassword={() => setCurrentView('none')} />
+                    )}
                 </div>
             </div>
         </div>

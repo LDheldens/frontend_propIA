@@ -7,7 +7,7 @@ import api from '../../settings/api';
 
 const ChangePassword = ({ setShowChangePassword }) => {
     const navigate = useNavigate();
-    const { user } = useUser(); // Asegúrate de que 'user' esté disponible aquí.
+    const { user } = useUser();
     const { control, handleSubmit, formState: { errors }, watch } = useForm();
     const newPassword = watch('new_password');
     const [errores, setErrores] = useState([]);
@@ -18,13 +18,13 @@ const ChangePassword = ({ setShowChangePassword }) => {
                 password: data.new_password
             });
             Swal.fire('Éxito', 'Contraseña cambiada con éxito', 'success');
-            setShowChangePassword(false)
+            setShowChangePassword('none'); // Actualizar estado para cerrar el formulario
         } catch (error) {
             console.error(error);
             setErrores(Object.values(error.response.data));
             setTimeout(() => {
                 setErrores([]);
-            }, 5000); // Muestra los errores durante 5 segundos.
+            }, 5000);
         }
     };
 

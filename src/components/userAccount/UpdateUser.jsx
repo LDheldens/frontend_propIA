@@ -8,9 +8,9 @@ import Swal from 'sweetalert2';
 const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
     const navigate = useNavigate();
     const { register } = useUser();
-    const [errores, setErrores] = useState([])
+    const [errores, setErrores] = useState([]);
 
-    const { control, handleSubmit, formState: { errors }, setError } = useForm({
+    const { control, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
             email: user.email,
             first_name: user.first_name,
@@ -24,27 +24,23 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
             const response = await api.patch(`/auth/${user.id}/`, data);
             console.log(response)
             Swal.fire('Éxito', 'Datos cambiados con éxito', 'success');
-            setShowUpdateUser(false)
+            setShowUpdateUser('none'); // Cambiar estado para cerrar formulario
             mutate();
         } catch (error) {
             console.error(error);
             setErrores(Object.values(error.response.data));
             setTimeout(() => {
-                setErrores([])
-            }, 2000)
+                setErrores([]);
+            }, 2000);
         }
     };
 
     return (
         <div className='py-4'>
             <h3 className='text-center lg:text-[25px] md:text-[20px]'>Editar datos personales</h3>
-            {
-                errores.length > 0 ? (
-                    errores.map(error => (
-                        <p className='text-red-500 mb-2 text-center'>{error}</p>
-                    ))
-                ) : null
-            }
+            {errores.length > 0 && errores.map((error, index) => (
+                <p key={index} className='text-red-500 mb-2 text-center'>{error}</p>
+            ))}
             <form className="space-y-6" noValidate onSubmit={handleSubmit(onSubmit)}>
                 <div className="col-span-full">
                     <label
@@ -179,6 +175,6 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
             </form>
         </div>
     );
-}
+};
 
 export default UpdateUser;
