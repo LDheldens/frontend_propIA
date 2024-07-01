@@ -78,7 +78,7 @@ const LayoutAI = () => {
             <div className="flex justify-between items-center px-5 md:px-8 font-bebas tracking-wide">
                 <div className="flex items-center">
                     <Link to={"/"} className="text-white justify-start font-semibold text-xl">
-                        <img src="/src/assets/logo3.png" alt="" width="170" height="100" />
+                        <img src="/src/assets/logo.png" alt="" width="170" height="100" />
                     </Link>
                     <div
                         className={`absolute ${isMenuOpen ? 'flex' : 'hidden'} h-screen z-30 bg-black bg-opacity-75 top-0 bottom-0 left-0 flex lg:flex right-0 justify-center items-center gap-5  font-bold p-3 lg:p-0 lg:static lg:bg-transparent lg:h-auto`}

@@ -53,7 +53,7 @@ function SignIn() {
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img
                             className="mx-auto h-10 w-auto"
-                            src="./src/assets/logo3.png"
+                            src="./src/assets/logo.png"
                             alt="my Company"
                         />
                         <h2 className="mt-6 mb-5 text-center text-2xl font-bold leading-9  text-black font-bebas tracking-wide">
@@ -249,6 +249,17 @@ function SignIn() {
                                 {errors.confirm_password && <span className="text-red-500 text-xs">{errors.confirm_password.message}</span>}
                             </label>
                         </div>
+                        <div className='flex items-center mt-4'>
+                            <input
+                                onChange={(e) => setTerminos(e.target.checked)}
+                                type="checkbox"
+                                name='terminos'
+                                className='form-checkbox h-4 w-4 text-green1 rounded-full'
+                            />
+                            <span className='ml-2 text-[12px] text-black'>
+                                Acepto los Términos y Condiciones de Uso y las políticas de privacidad.
+                            </span>
+                        </div>
                         <div>
                             <button
                                 type="submit"
@@ -258,17 +269,7 @@ function SignIn() {
                             </button>
                         </div>
                     </form>
-                    <div className='flex items-center mt-4'>
-                        <input
-                            onChange={(e) => setTerminos(e.target.checked)}
-                            type="checkbox"
-                            name='terminos'
-                            className='form-checkbox h-4 w-4 text-green1 rounded-full'
-                        />
-                        <span className='ml-2 text-[12px] text-black'>
-                            Acepto los Términos y Condiciones de Uso y las políticas de privacidad.
-                        </span>
-                    </div>
+
                 </div>
                 <div className="hidden rounded lg:block w-160">
                     <img src={dep3} alt="" className="rounded w-100 h-120 object-cover" />

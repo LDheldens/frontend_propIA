@@ -34,7 +34,7 @@ function LogIn() {
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img
                             className="mx-auto h-10 w-auto"
-                            src="./src/assets/logo3.png"
+                            src="./src/assets/logo.png"
                             alt="my Company"
                         />
                         <h2 className="mt-10 mb-5 text-center text-2xl font-bold leading-9  text-black font-bebas tracking-wide">
@@ -117,7 +117,7 @@ function LogIn() {
                         ¿No es un miembro?{" "}
                         <Link
                             to="/signin"
-                            className="font-semibold leading-6 text-green1 hover:text-red-500"
+                            className="font-semibold leading-6 text-green1 hover:text-sky-800"
                         >
                             Registrarse
                         </Link>
