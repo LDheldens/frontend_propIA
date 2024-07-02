@@ -8,7 +8,7 @@ import Contact from './pages/pagesWeb/Contact'
 import DetailProps from './components/properties/DetailProps'
 import LogIn from './pages/auth/LogIn'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 
 import LayoutUser from './components/layouts/LayoutUser'
 import Post from './pages/pagesUser/Post'
@@ -32,6 +32,10 @@ import { UserProvider } from './context/UserProvider'
 import { loader as loaderProperty } from './pages/pagesAdmin/DetailProperties'
 import { loader as loaderProperty2 } from './components/properties/DetailProps'
 import { Dashboard } from './pages/pagesAdmin/Dashboard'
+
+// layout de rutas protejidas
+import ProtectedRoutes from './components/protected/ProtectedRoutes'
+
 
 const router = createBrowserRouter(
   [
@@ -77,7 +81,7 @@ const router = createBrowserRouter(
     },
     {
       path: '/admin',
-      element: <LayoutAdmin />,
+      element: <ProtectedRoutes role={1}><LayoutAdmin /></ProtectedRoutes>,
       children: [
         {
           index: true,
@@ -85,7 +89,6 @@ const router = createBrowserRouter(
           path: 'dashboard'
         },
         {
-          index: true,
           element: <Properties />,
           path: 'propiedades'
         },
@@ -102,18 +105,22 @@ const router = createBrowserRouter(
           element: <ListMessages />,
           path: 'mensajes'
         },
+        {
+          path: "*",
+          element: <Navigate to="dashboard" replace />
+        }
       ]
     },
     {
       path: '/usuario',
-      element: <LayoutUser />,
+      element: <ProtectedRoutes role={2}><LayoutUser/></ProtectedRoutes>,
       children: [
         {
           element: <UserAccount />,
-          path: 'cuenta'
-        },
-        {
+          path: 'cuenta',
           index: true,
+        },
+        { 
           element: <Post />,
           path: 'publicar'
         },
@@ -121,6 +128,10 @@ const router = createBrowserRouter(
           element: <UserActivity />,
           path: 'actividad'
         },
+        {
+          path: "*",
+          element: <Navigate to="/usuario/cuenta" replace />
+        }
       ]
     },
     {
