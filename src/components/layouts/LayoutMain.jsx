@@ -123,7 +123,7 @@ const LayoutMain = () => {
                                 </button>
                             </div>
                             <div className='flex flex-col md:flex-row'>
-                                <Link className="bg-white hover:bg-green-500 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center" to="/usuario/publicar">
+                                <Link className="bg-white hover:bg-green-500 hover:text-white m-2 p-2 items-center flex text-gray-700 border border-green-500 justify-center font-urbanist" to="/usuario/publicar">
                                     <FaPlus />
                                     Publicar
                                 </Link>
@@ -131,12 +131,12 @@ const LayoutMain = () => {
                                     isAuth ? (
                                         <Dropdown itemColor="green" radius="none">
                                             <Dropdown.Trigger itemColor="blue">
-                                                <Button color='green' radius="none" className='m-2 p-2 h-[42px] w-[90.27px]'>
+                                                <Button color='green' radius="none" className='m-2 p-2 h-[42px] w-[90.27px] font-urbanist text-[17px]'>
                                                     Usuario
                                                 </Button>
 
                                             </Dropdown.Trigger>
-                                            <Dropdown.Content>
+                                            <Dropdown.Content className='font-urbanist'>
                                                 <Dropdown.Item>
                                                     <Link to="/usuario/cuenta">
                                                         Mi perfil
