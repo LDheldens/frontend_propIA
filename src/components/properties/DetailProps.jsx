@@ -23,25 +23,6 @@ export function loader({ params }) {
 function DetailProps() {
 
     const idProperty = useLoaderData();
-    const [modalOpen, setModalOpen] = useState(false);
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-    const openModal = (index) => {
-        setCurrentImageIndex(index);
-        setModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setModalOpen(false);
-    };
-
-    const nextImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-    };
-
-    const prevImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
-    };
 
     const fetchPropertyDetails = async () => {
         try {
@@ -50,12 +31,13 @@ function DetailProps() {
 
         } catch (err) {
             console.error(err)
-        } 
+        }
     };
 
-    const { data:property, error } = useSWR(`/property/${idProperty}/`, fetchPropertyDetails);
+    const { data: property, error } = useSWR(`/property/${idProperty}/`, fetchPropertyDetails);
 
 
+    const whatsappLink = `https://wa.me/${property?.phone_number}?text=Hola, estoy interesado en la propiedad que tienes publicada`;
 
     return (
         <div className='bg-gray-100 mb-3 '>
@@ -72,7 +54,7 @@ function DetailProps() {
                         </button>
                         <button className="flex items-center gap-1 border border-gray-400 hover:bg-green1 hover:text-white text-gray-600 py-2 px-4 ml-2">
                             Notas personales
-                            <CiLocationOn/>
+                            <CiLocationOn />
                         </button>
                     </div>
                 </form>
@@ -90,7 +72,7 @@ function DetailProps() {
                             Venta desde {property?.type_currency == 'PEN' ? 'S./' : '$'}{property?.price}
                         </h3>
                         <address className='flex font-semibold'>
-                            <CiLocationOn className='text-2xl'/><span>{property?.adress}, {property?.provincia}, {property?.distrito}</span>
+                            <CiLocationOn className='text-2xl' /><span>{property?.adress}, {property?.provincia}, {property?.distrito}</span>
                         </address>
                         <div className="border-t border-b p-5 my-2">
                             <div className="flex flex-wrap gap-7">
@@ -125,12 +107,12 @@ function DetailProps() {
                     </article>
                 </div>
                 <div className="lg:w-2/5 xl:w-2/6">
-                    <SendMsg />
+                    <SendMsg whatsappLink={whatsappLink} />
                 </div>
-                
+
             </div>
             <div>
-                <Map/>
+                <Map />
             </div>
         </div>
     )

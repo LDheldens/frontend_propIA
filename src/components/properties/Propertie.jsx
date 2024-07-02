@@ -12,15 +12,19 @@ import { FaWhatsapp } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 
 function Propertie({ propertie }) {
+    // URL de WhatsApp con el número de teléfono y el mensaje
+    const whatsappLink = `https://wa.me/${propertie.phone_number}?text=Hola, estoy interesado en la propiedad que tienes publicada`;
+
     return (
         <article className='w-full transition-shadow duration-300 hover:shadow-md hover:shadow-green-300 relative max-w-7xl mx-auto bg-white rounded'>
             <button className='p-1 border border-gray-600 rounded absolute top-2 right-2' type='button'>
-                <CiHeart className='text-2xl'/>
+                <CiHeart className='text-2xl' />
             </button>
             <Link className='grid grid-cols-1 md:grid-cols-3 md:gap-4' to={`/item/${propertie.id}`}>
                 <div className='col-span-1 h-64 md:h-auto'>
-                    <img src={`${import.meta.env.VITE_URL_IMG}${propertie.images[0].image}`} alt="Property" className="block w-full h-full rounded object-cover" />  
+                    <img src={`${import.meta.env.VITE_URL_IMG}${propertie.images[0].image}`} alt="Property" className="block w-full h-full rounded object-cover" />
                 </div>
+
                 <div className='col-span-2 p-3'>
                     <h3 className='text-sm text-gray-900'>
                         Departamento desde
@@ -29,7 +33,7 @@ function Propertie({ propertie }) {
                         {propertie?.type_currency === 'PEN' ? 'S./' : '$'}{propertie?.price}
                     </p>
                     <address className='flex text-sm font-semibold'>
-                        <CiLocationOn className='text-xl md:text-2xl'/><span>{propertie?.adress}, {propertie?.provincia}, {propertie?.distrito}</span>
+                        <CiLocationOn className='text-xl md:text-2xl' /><span>{propertie?.adress}, {propertie?.provincia}, {propertie?.distrito}</span>
                     </address>
                     <div className="flex flex-wrap gap-x-2 max-w-xl md:gap-x-5 my-3">
                         <div className="flex items-center gap-2 w-full sm:w-auto">
@@ -64,17 +68,20 @@ function Propertie({ propertie }) {
                             <button
                                 type='button' className='py-1 px-2 border border-blue2 rounded text-blue2 transition-colors duration-300 hover:bg-blue2 hover:text-white'
                             >
-                                <MdOutlinePhone className='text-xl'/>
+                                <MdOutlinePhone className='text-xl' />
                             </button>
-                            <button
-                                type='button' className='py-1 border border-green1 px-2 rounded flex justify-center items-center gap-1 text-green1 transition-colors duration-300 hover:bg-green1 hover:text-white'
+                            <Link
+                                to={whatsappLink}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='py-1 border border-green1 px-2 rounded flex justify-center items-center gap-1 text-green1 transition-colors duration-300 hover:bg-green1 hover:text-white'
                             >
-                                <span className='hidden md:block'>WhatsApp</span> <FaWhatsapp className='text-xl'/>
-                            </button>
+                                <span className='hidden md:block'>WhatsApp</span> <FaWhatsapp className='text-xl' />
+                            </Link>
                             <button
                                 type='button' className='py-1 border border-blue2 px-2 rounded flex justify-center transition-colors duration-300 items-center gap-1 text-blue2 hover:bg-blue2 hover:text-white'
                             >
-                                <span className='hidden md:block'>Contactar</span> <CiMail className='text-xl'/>
+                                <span className='hidden md:block'>Contactar</span> <CiMail className='text-xl' />
                             </button>
                         </div>
                     </div>
