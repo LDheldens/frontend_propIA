@@ -14,7 +14,7 @@ function Post() {
 
     const [files,setFiles] = useState([])
 
-    const [operation,setOperation] = useState('venta')
+    const [operation,setOperation] = useState('Venta')
 
     const handleOperationChange = (value) => {
         setOperation(value);

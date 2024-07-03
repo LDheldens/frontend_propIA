@@ -20,7 +20,10 @@ function Propertie({ propertie }) {
             <button className='p-1 border border-gray-600 rounded absolute top-2 right-2' type='button'>
                 <CiHeart className='text-2xl' />
             </button>
-            <Link className='grid grid-cols-1 md:grid-cols-3 md:gap-4' to={`/item/${propertie.id}`}>
+            <Link 
+                className='grid grid-cols-1 md:grid-cols-3 md:gap-4' 
+                to={`/item/${propertie.id}`}
+            >
                 <div className='col-span-1 h-64 md:h-auto'>
                     <img src={`${import.meta.env.VITE_URL_IMG}${propertie.images[0].image}`} alt="Property" className="block w-full h-full rounded object-cover" />
                 </div>
@@ -65,16 +68,19 @@ function Propertie({ propertie }) {
                             ANUNCIANTE
                         </div>
                         <div className='flex gap-2'>
-                            <button
-                                type='button' className='py-1 px-2 border border-blue2 rounded text-blue2 transition-colors duration-300 hover:bg-blue2 hover:text-white'
+                            <Link
+                                to={`tel:${propertie?.phone_number}`}
+                                className='py-1 px-2 border border-blue2 rounded text-blue2 transition-colors duration-300 hover:bg-blue2 hover:text-white'
+                                onClick={(e) => e.stopPropagation()}
                             >
                                 <MdOutlinePhone className='text-xl' />
-                            </button>
+                            </Link>
                             <Link
                                 to={whatsappLink}
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 className='py-1 border border-green1 px-2 rounded flex justify-center items-center gap-1 text-green1 transition-colors duration-300 hover:bg-green1 hover:text-white'
+                                onClick={(e) => e.stopPropagation()}
                             >
                                 <span className='hidden md:block'>WhatsApp</span> <FaWhatsapp className='text-xl' />
                             </Link>

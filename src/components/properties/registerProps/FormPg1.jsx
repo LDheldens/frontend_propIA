@@ -11,18 +11,23 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
         <div className={`${currentPage != 1 ? "hidden" : ""} w-full`}>
             <div className="font-urbanist">
                 <h2 className="text-base text-center font-bold leading-7 text-gray-900">Cuéntanos, ¿qué deseas publicar?</h2>
-                <div className="flex justify-center items-center gap-3 text-white">
+                <div className="flex flex-col items-center md:flex-row justify-center gap-3 text-white my-5">
                     <h3 className="text-base font-semibold leading-7 text-gray-900">Tipo de operación:</h3>
-                    <div className='my-5'>
-                        <Selector radius="sm" className='border font-urbanist border-green-400' value={operation} color='green' onChange={handleOperationChange} >
+                    <div>
+                        <Selector value={operation} onChange={handleOperationChange} className='xs:hidden' color='green' size='sm'>
+                            <Selector.Tab  anchor="Venta" label="VENTA" />
+                            <Selector.Tab anchor="Alquiler" label="ALQUILER" />
+                            <Selector.Tab className='w-[140px]'  anchor="Pre-venta" label="PRE-VENTA" />
+                        </Selector>
+                        <Selector value={operation} onChange={handleOperationChange} className='hidden xs:flex' color='green' size='lg' >
                             <Selector.Tab anchor="Venta" label="VENTA" />
                             <Selector.Tab anchor="Alquiler" label="ALQUILER" />
-                            <Selector.Tab anchor="Pre-venta" label="Pre-venta" />
+                            <Selector.Tab className='w-[200px]' anchor="Pre-venta" label="PRE-VENTA" />
                         </Selector>
                     </div>
                 </div>
                 <div className='flex flex-col sm:flex-row gap-2'>
-                    <div className="w-1/2">
+                    <div className="sm:w-1/2">
                         <label htmlFor="type_property" className="block text-sm font-black leading-6 text-gray-700 uppercase">
                             Tipo de inmueble:
                         </label>
@@ -45,7 +50,7 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
                         </select>
                         {errors.type_property && <p className="text-red-600">{errors.type_property.message}</p>}
                     </div>
-                    <div className="w-1/2">
+                    <div className="sm:w-1/2">
                         <label htmlFor="subtype_property" className="block text-sm font-black leading-6 text-gray-700 uppercase">
                             Sub tipo de inmueble:
                         </label>
