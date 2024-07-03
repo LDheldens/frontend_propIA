@@ -11,7 +11,7 @@ import { MdOutlinePhone } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 
-function Propertie({ propertie }) {
+function Propertie({ propertie, userPost }) {
     // URL de WhatsApp con el número de teléfono y el mensaje
     const whatsappLink = `https://wa.me/${propertie.phone_number}?text=Hola, estoy interesado en la propiedad que tienes publicada`;
 
@@ -60,31 +60,35 @@ function Propertie({ propertie }) {
                     <p className="overflow-hidden text-ellipsis whitespace-nowrap max-w-full">
                         {propertie?.description}
                     </p>
-                    <div className='flex justify-between border-t mt-2 p-2'>
-                        <div className='font-bold'>
-                            ANUNCIANTE
+                    {/* Para mostrar de forma condicional en el perfil de usuario o buscar propiedades */}
+                    {!userPost &&
+                        <div className='flex justify-between border-t mt-2 p-2'>
+                            <div className='font-bold'>
+                                ANUNCIANTE
+                            </div>
+                            <div className='flex gap-2'>
+                                <button
+                                    type='button' className='py-1 px-2 border border-blue2 rounded text-blue2 transition-colors duration-300 hover:bg-blue2 hover:text-white'
+                                >
+                                    <MdOutlinePhone className='text-xl' />
+                                </button>
+                                <Link
+                                    to={whatsappLink}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='py-1 border border-green1 px-2 rounded flex justify-center items-center gap-1 text-green1 transition-colors duration-300 hover:bg-green1 hover:text-white'
+                                >
+                                    <span className='hidden md:block'>WhatsApp</span> <FaWhatsapp className='text-xl' />
+                                </Link>
+                                <button
+                                    type='button' className='py-1 border border-blue2 px-2 rounded flex justify-center transition-colors duration-300 items-center gap-1 text-blue2 hover:bg-blue2 hover:text-white'
+                                >
+                                    <span className='hidden md:block'>Contactar</span> <CiMail className='text-xl' />
+                                </button>
+                                {/* {user && <h1 className='bg-green-500 text-red-700'>xddd</h1>} */}
+                            </div>
                         </div>
-                        <div className='flex gap-2'>
-                            <button
-                                type='button' className='py-1 px-2 border border-blue2 rounded text-blue2 transition-colors duration-300 hover:bg-blue2 hover:text-white'
-                            >
-                                <MdOutlinePhone className='text-xl' />
-                            </button>
-                            <Link
-                                to={whatsappLink}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='py-1 border border-green1 px-2 rounded flex justify-center items-center gap-1 text-green1 transition-colors duration-300 hover:bg-green1 hover:text-white'
-                            >
-                                <span className='hidden md:block'>WhatsApp</span> <FaWhatsapp className='text-xl' />
-                            </Link>
-                            <button
-                                type='button' className='py-1 border border-blue2 px-2 rounded flex justify-center transition-colors duration-300 items-center gap-1 text-blue2 hover:bg-blue2 hover:text-white'
-                            >
-                                <span className='hidden md:block'>Contactar</span> <CiMail className='text-xl' />
-                            </button>
-                        </div>
-                    </div>
+                    }
                 </div>
             </Link>
         </article>
