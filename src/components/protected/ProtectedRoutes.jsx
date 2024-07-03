@@ -4,7 +4,6 @@ import Swal from 'sweetalert2';
 
 const ProtectedRoutes = ({ children, role }) => {
     const { user, isAuth } = useUser();
-    console.log(user)
     const location = useLocation();
 
     if (!isAuth) {

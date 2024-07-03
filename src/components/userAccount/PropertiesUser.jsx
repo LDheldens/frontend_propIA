@@ -25,7 +25,6 @@ const PropertiesUser = ({ userId }) => {
                     'Accept': 'application/json'
                 }
             });
-            console.log(response);
             return response.data;
 
         } catch (error) {
@@ -43,7 +42,6 @@ const PropertiesUser = ({ userId }) => {
     // const arrayPages = []
     // for (let index = 1; index <= totalPages; index++) {
     //     arrayPages.push(index)
-    //     console.log(arrayPages)
     // }
 
     // const properties = data?.results || [];
@@ -84,14 +82,12 @@ const PropertiesUser = ({ userId }) => {
     //     if (page > 0) {
     //         setPage((prev) => prev - 1);
     //     }
-    //     console.log(page)
     //     return
     // }
     // const handleNextPage = () => {
     //     if (page < totalPages) {
     //         setPage((prev) => prev + 1);
     //     }
-    //     console.log(page)
     //     return
     // }
 

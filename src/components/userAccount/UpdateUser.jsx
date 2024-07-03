@@ -22,7 +22,6 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
     const onSubmit = async (data) => {
         try {
             const response = await api.patch(`/auth/${user.id}/`, data);
-            console.log(response)
             Swal.fire('Éxito', 'Datos cambiados con éxito', 'success');
             setShowUpdateUser('none'); // Cambiar estado para cerrar formulario
             mutate();

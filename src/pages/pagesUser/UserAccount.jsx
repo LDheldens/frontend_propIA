@@ -18,7 +18,6 @@ export const UserAccount = () => {
 
     const getUser = async () => {
         const token = localStorage.getItem('AUTH_TOKEN_PROPIA');
-        console.log(token);
 
         try {
             const response = await api.get('/auth/profile/', {
@@ -26,7 +25,6 @@ export const UserAccount = () => {
                     Authorization: `Token ${token}`
                 }
             });
-            console.log(response)
             return response.data
         } catch (error) {
             console.error('Error fetching user:', error.message);
@@ -37,7 +35,6 @@ export const UserAccount = () => {
         `${import.meta.env.VITE_API_URL}/auth/profile/`,
         getUser
     )
-    console.log(user)
 
     const handleDelete = async (id) => {
         Swal.fire({
@@ -54,7 +51,6 @@ export const UserAccount = () => {
                 try {
                     await logout()
                     const response = await api.delete(`/auth/${id}/`);
-                    console.log(response)
                     if (response.status == 204) {
                         navigate('/')
                     }

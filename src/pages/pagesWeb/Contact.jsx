@@ -8,14 +8,13 @@ function Contact() {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const [errores,setErrores] = useState({}); 
+    const [errores, setErrores] = useState({});
 
     const handleSubmitContact = async (formData) => {
         try {
             const response = await api.post('/contact/create/', formData);
-            console.log(response)
-            if (response.status == 201){
-                    Swal.fire({
+            if (response.status == 201) {
+                Swal.fire({
                     position: "top-end",
                     icon: "success",
                     title: response.data.message,
@@ -24,19 +23,17 @@ function Contact() {
                 });
             }
             // const data = response.data;
-            // console.log('dataaa', data);
             reset()
         } catch (error) {
             console.error('Error submitting form', error);
             setErrores(error.response.data);
-            console.log(errores);
         }
     }
     return (
         <div className='bg-white border-t-2'>
             <div className="max-w-6xl w-11/12 mx-auto flex flex-col lg:flex-row lg:items-center">
                 <div className="hidden lg:block pb-8 font-urbanist lg:w-full">
-                    <img src={building} alt="" className="w-200 lg:w-140 lg:h-200 object-cover mx-auto"/>
+                    <img src={building} alt="" className="w-200 lg:w-140 lg:h-200 object-cover mx-auto" />
                 </div>
                 <form className='lg:w-full p-3 lg:p-10' noValidate onSubmit={handleSubmit(handleSubmitContact)}>
                     <div className="space-y-1 font-urbanist">
@@ -117,7 +114,7 @@ function Contact() {
                                             type="text"
                                             autoComplete="celular"
                                             className={`block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2 ${errors.celular ? 'ring-red-500' : ''}`}
-                                            {...register("celular", { 
+                                            {...register("celular", {
                                                 required: "El teléfono es obligatorio",
                                                 minLength: {
                                                     value: 9,
@@ -178,7 +175,7 @@ function Contact() {
                                         {errors.ciudad && <p className="text-red-500 text-sm">{errors.ciudad.message}</p>}
                                         {errores?.ciudad && <p className="text-red-500 text-sm">{errores?.ciudad[0]}</p>}
                                     </div>
-                                </div> 
+                                </div>
 
                                 <div className="sm:col-span-3">
                                     <label htmlFor="provincia" className="block text-sm font-bold leading-6 text-green1">
@@ -240,12 +237,12 @@ function Contact() {
                             <div className='flex'>
                                 <div className='flex items-center mt-1'> {/* Reduced margin-top */}
                                     <input
-                                        type="checkbox" 
-                                        name='terminos' 
+                                        type="checkbox"
+                                        name='terminos'
                                         className='form-checkbox h-4 w-4 text-green1 rounded-full mr-2'
                                     />
                                     <span className='text-sm leading-6 text-gray-600'>
-                                    Siempre te informaremos sobre cambios importantes, pero tú eliges qué más quieres escuchar.
+                                        Siempre te informaremos sobre cambios importantes, pero tú eliges qué más quieres escuchar.
                                     </span>
                                 </div>
                             </div>
@@ -264,7 +261,7 @@ function Contact() {
 
             </div>
         </div>
-        
+
     );
 }
 

@@ -18,7 +18,6 @@ const UserProvider = ({ children }) => {
     const register = async (data, setErrores) => {
         try {
             const response = await api.post('/auth/register/', data);
-            console.log(response)
             const { data: user } = response
             if (user && user.token) {
                 localStorage.setItem('AUTH_TOKEN_PROPIA', user.token);
@@ -46,7 +45,6 @@ const UserProvider = ({ children }) => {
                 return true;
             }
         } catch (error) {
-            console.log(error)
             if (error.response) {
                 setError(error.response.data.error)
 
@@ -76,7 +74,6 @@ const UserProvider = ({ children }) => {
     // funcion para obtener al usurio authenticado
     const getUser = async () => {
         const token = localStorage.getItem('AUTH_TOKEN_PROPIA');
-        console.log(token);
         try {
             const response = await api.get('/auth/profile/', {
                 headers: {

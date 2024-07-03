@@ -29,7 +29,6 @@ function ListMessages() {
         const updatedMessage = { ...message, atendido: newServed };
         try {
             const response = await api.put(`/contact/${message.id}/`, updatedMessage);
-            console.log('Updated property:', response.data);
             mutate();
         } catch (error) {
             console.error('Error updating property:', error);
@@ -140,14 +139,14 @@ function ListMessages() {
         <div className="p-6 max-w-7xl mx-auto font-urbanist">
             <h1 className="text-2xl font-bold mb-4">Mensajes</h1>
             <div className="mb-4">
-            <input 
-                type="text" 
-                placeholder="Buscar..." 
-                value={search} 
-                onChange={e => setSearch(e.target.value)} 
-                className="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-md"
-            />
-        </div>
+                <input
+                    type="text"
+                    placeholder="Buscar..."
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
+                    className="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-md"
+                />
+            </div>
 
             <DataTable
                 columns={columns}

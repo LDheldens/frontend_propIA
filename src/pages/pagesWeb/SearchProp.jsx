@@ -44,13 +44,12 @@ const SearchProp = () => {
         () => getProperties(queryParams.type, queryParams.text, queryParams.transaction, page, pageSize)
     );
 
-    const totalPages = Math.ceil(data?.count/pageSize)
+    const totalPages = Math.ceil(data?.count / pageSize)
     const arrayPages = []
     for (let index = 1; index <= totalPages; index++) {
         arrayPages.push(index)
-        console.log(arrayPages)
     }
-    
+
     const properties = data?.results || [];
 
     const handleSearch = () => {
@@ -60,7 +59,7 @@ const SearchProp = () => {
             transaction: transactionType
         });
         setPage(1); // Reiniciar a la primera página en una nueva búsqueda
-        mutate(); 
+        mutate();
     }
 
     const handleClear = () => {
@@ -85,18 +84,16 @@ const SearchProp = () => {
         mutate();
     }
 
-    const handlePrevPage = () =>{
-        if (page>0) {
-            setPage((prev)=>prev-1);
+    const handlePrevPage = () => {
+        if (page > 0) {
+            setPage((prev) => prev - 1);
         }
-        console.log(page)
         return
     }
-    const handleNextPage = () =>{
-        if (page<totalPages) {
-            setPage((prev)=>prev+1);
+    const handleNextPage = () => {
+        if (page < totalPages) {
+            setPage((prev) => prev + 1);
         }
-        console.log(page)
         return
     }
 
@@ -124,16 +121,16 @@ const SearchProp = () => {
         <div className='p-3'>
             {
                 verifyParamsLength ? (
-                    <button 
-                        type='button' 
-                        className='bg-blue2 p-1 rounded flex items-center gap-1 justify-center text-white mb-3' 
-                        onClick={handleClear} 
+                    <button
+                        type='button'
+                        className='bg-blue2 p-1 rounded flex items-center gap-1 justify-center text-white mb-3'
+                        onClick={handleClear}
                     >
                         <FaFilter /> Limpiar Busqueda
                     </button>
                 ) : null
             }
-            
+
             <div className='bg-white rounded container space-y-4 lg:space-y-0 p-2 mx-auto lg:grid lg:grid-cols-5 lg:gap-x-5'>
                 <div className='lg:col-span-3 flex flex-col gap-y-5 sm:gap-x-5 sm:flex-row items-center justify-between'>
                     <div className='w-full xs:w-1/2 mx-auto'>
@@ -196,37 +193,37 @@ const SearchProp = () => {
             {/* codigo para la paginacion xd */}
             <div className='my-10 w-full flex justify-center'>
                 <div className=' flex gap-2 flex-wrap'>
-                    <Button 
-                        shadow='base' 
-                        disabled={page==1} 
-                        color='red' 
+                    <Button
+                        shadow='base'
+                        disabled={page == 1}
+                        color='red'
                         onClick={handlePrevPage}
                     >
-                        <GrPrevious className='font-bold'/>
+                        <GrPrevious className='font-bold' />
                     </Button>
                     {
-                        arrayPages.map(pageBtn =>(
+                        arrayPages.map(pageBtn => (
                             <button
                                 className={`py-1 px-4 rounded-full border border-green-500 ${page == pageBtn ? 'bg-green-500 text-white' : ''}`}
                                 type='button'
-                                onClick={()=>handlePageChange(pageBtn)}
+                                onClick={() => handlePageChange(pageBtn)}
                             >
                                 {pageBtn}
                             </button>
                         ))
                     }
-                    <Button 
-                        shadow='base' 
-                        color='blue' 
+                    <Button
+                        shadow='base'
+                        color='blue'
                         onClick={handleNextPage}
                         disabled={page == totalPages}
                     >
-                        <GrNext className='font-bold'/>
+                        <GrNext className='font-bold' />
                     </Button>
                 </div>
 
-                
-            </div>  
+
+            </div>
         </div>
     );
 }

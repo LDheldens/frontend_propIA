@@ -33,7 +33,6 @@ function FormPg3({ currentPage, files, setFiles }) {
 
     // Clean up the object URLs to avoid memory leaks
     useEffect(() => {
-        console.log(files)
         return () => files.forEach(file => URL.revokeObjectURL(file.preview));
     }, [files]);
 
@@ -49,11 +48,11 @@ function FormPg3({ currentPage, files, setFiles }) {
                 </label>
                 <div className={`border-2 border-dashed border-green-400 text-center px-5 py-20 rounded-md ${isDragActive ? 'bg-green-200 opacity-65' : ''}`} {...getRootProps()}>
                     <input {...getInputProps()} />
-                    <IoCloudUploadOutline className='mx-auto text-[30px]'/>
+                    <IoCloudUploadOutline className='mx-auto text-[30px]' />
                     {
                         isDragActive ?
-                        <p>Suelta los archivos aquí...</p> :
-                        <p>Arrastre y suelte algunos archivos aquí o haga clic para seleccionar archivos</p>
+                            <p>Suelta los archivos aquí...</p> :
+                            <p>Arrastre y suelte algunos archivos aquí o haga clic para seleccionar archivos</p>
                     }
                 </div>
             </div>
@@ -66,7 +65,7 @@ function FormPg3({ currentPage, files, setFiles }) {
                                     className="absolute -top-2 -right-2 p-1 bg-red-600 text-white rounded-full"
                                     onClick={removeFile(file.id)}
                                 >
-                                    <IoMdClose/>
+                                    <IoMdClose />
                                 </button>
                                 <img
                                     src={file.preview}

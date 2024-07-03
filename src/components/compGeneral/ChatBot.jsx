@@ -104,9 +104,7 @@ const ChatBot = () => {
                     },
                     body: JSON.stringify({ message: inputValue })
                 });
-                console.log(response)
                 const data = await response.json();
-                console.log(data)
                 if (data.error) {
                     setMessages([...newMessages, { text: 'Hubo un error procesando tu solicitud. Por favor intenta de nuevo.', sender: 'bot' }]);
                 } else if (data.results.length > 0) {

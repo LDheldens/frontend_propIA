@@ -12,9 +12,9 @@ function Post() {
     const methods = useForm();
     const [currentPage, setCurrentPage] = useState(1);
 
-    const [files,setFiles] = useState([])
+    const [files, setFiles] = useState([])
 
-    const [operation,setOperation] = useState('Venta')
+    const [operation, setOperation] = useState('Venta')
 
     const handleOperationChange = (value) => {
         setOperation(value);
@@ -32,13 +32,13 @@ function Post() {
 
     const handleSubmit = async (data) => {
         const formData = new FormData();
-        
-        if (files.length<5) {
+
+        if (files.length < 5) {
             return Swal.fire({
                 icon: "error",
                 title: "Oops...",
                 text: "Necesitas subir por lo menos 5 imágenes",
-              });
+            });
         }
 
         Object.entries(data).forEach(([key, value]) => {
@@ -49,22 +49,21 @@ function Post() {
             formData.append('images', file.file);
         });
 
-        formData.append('type_operation',operation)
-        
+        formData.append('type_operation', operation)
+
         try {
             const response = await api.post('/property/add/', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             });
-            console.log(response);
-            if (response.status==201) {
+            if (response.status == 201) {
                 Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: response.data.message,
-                showConfirmButton: false,
-                timer: 1500
+                    position: "top-end",
+                    icon: "success",
+                    title: response.data.message,
+                    showConfirmButton: false,
+                    timer: 1500
                 });
             }
         } catch (error) {
@@ -86,9 +85,9 @@ function Post() {
                         Página {currentPage} de 4
                     </div>
                     <form onSubmit={methods.handleSubmit(handleSubmit)} className="w-full">
-                        <FormPg1 currentPage={currentPage} operation={operation} handleOperationChange={handleOperationChange}/>
+                        <FormPg1 currentPage={currentPage} operation={operation} handleOperationChange={handleOperationChange} />
                         <FormPg2 currentPage={currentPage} />
-                        <FormPg3 currentPage={currentPage} files={files} setFiles={setFiles}  />
+                        <FormPg3 currentPage={currentPage} files={files} setFiles={setFiles} />
                         <FormPg4 currentPage={currentPage} />
 
                         <div className="mt-8 flex justify-between font-bebas tracking-wide gap-40">

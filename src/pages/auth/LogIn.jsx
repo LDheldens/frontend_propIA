@@ -13,7 +13,6 @@ function LogIn() {
     const [error, setError] = useState('')
 
     const onSubmit = async (data) => {
-        console.log(data);
 
         const response = await login(data, setError)
         setTimeout(() => {
