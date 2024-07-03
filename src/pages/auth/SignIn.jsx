@@ -170,6 +170,10 @@ function SignIn() {
                                             value: 9,
                                             message: 'El número debe tener un máximo de 9 dígitos'
                                         },
+                                        minLength: {
+                                            value: 9,
+                                            message: 'El número debe tener al menos 9 dígitos'
+                                        },
                                         pattern: {
                                             value: /^\d*$/,
                                             message: 'Solo se permiten números'
@@ -184,6 +188,7 @@ function SignIn() {
                                             inputMode="numeric"
                                             pattern="[0-9]{9}"
                                             maxLength="9"
+                                            minLength="9"
                                             className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.phone ? 'ring-red-500' : ''}`}
                                             placeholder="Número celular"
                                         />

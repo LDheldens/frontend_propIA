@@ -1,20 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import api from '../../settings/api'
+import Swal from 'sweetalert2';
 import building from "../../assets/building.jpg";
 
 function Contact() {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
+    const [errores,setErrores] = useState({}); 
+
     const handleSubmitContact = async (formData) => {
         try {
             const response = await api.post('/contact/create/', formData);
-            const data = response.data;
-            console.log('dataaa', data);
+            console.log(response)
+            if (response.status == 201){
+                    Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: response.data.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+            // const data = response.data;
+            // console.log('dataaa', data);
             reset()
         } catch (error) {
             console.error('Error submitting form', error);
+            setErrores(error.response.data);
+            console.log(errores);
         }
     }
     return (
@@ -45,6 +60,7 @@ function Contact() {
                                             {...register("nombres", { required: "El nombre es obligatorio", minLength: { value: 2, message: "El nombre debe tener al menos 2 caractéres" } })}
                                         />
                                         {errors.nombres && <p className="text-red-500 text-sm">{errors.nombres.message}</p>}
+                                        {errores?.nombres && <p className="text-red-500 text-sm">{errores?.nombres[0]}</p>}
                                     </div>
                                 </div>
 
@@ -62,6 +78,7 @@ function Contact() {
                                             {...register("apellidos", { required: "Los apellidos son obligatorios" })}
                                         />
                                         {errors.apellidos && <p className="text-red-500 text-sm">{errors.apellidos.message}</p>}
+                                        {errores?.apellidos && <p className="text-red-500 text-sm">{errores?.apellidos[0]}</p>}
                                     </div>
                                 </div>
 
@@ -85,6 +102,7 @@ function Contact() {
                                             })}
                                         />
                                         {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+                                        {errores?.email && <p className="text-red-500 text-sm">{errores?.email[0]}</p>}
                                     </div>
                                 </div>
 
@@ -96,17 +114,33 @@ function Contact() {
                                         <input
                                             id="celular"
                                             name="celular"
-                                            type="number"
+                                            type="text"
                                             autoComplete="celular"
                                             className={`block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2 ${errors.celular ? 'ring-red-500' : ''}`}
-                                            {...register("celular", { required: "El teléfono es obligatorio" })}
+                                            {...register("celular", { 
+                                                required: "El teléfono es obligatorio",
+                                                minLength: {
+                                                    value: 9,
+                                                    message: "El teléfono debe tener exactamente 9 cifras"
+                                                },
+                                                maxLength: {
+                                                    value: 9,
+                                                    message: "El teléfono debe tener exactamente 9 cifras"
+                                                },
+                                                pattern: {
+                                                    value: /^\d{9}$/,
+                                                    message: "El teléfono debe contener solo números y tener 9 cifras"
+                                                }
+                                            })}
                                         />
                                         {errors.celular && <p className="text-red-500 text-sm">{errors.celular.message}</p>}
+                                        {errores?.celular && <p className="text-red-500 text-sm">{errores?.celular[0]}</p>}
                                     </div>
                                 </div>
 
+
                                 <div className="sm:col-span-3">
-                                    <label htmlFor="tipo_solicitud" className="block text-sm font-bold leading-6 text-green1">
+                                    <label htmlFor="tipo_solicitud" className="block w-full text-sm font-bold leading-6 text-green1">
                                         Tipo de solicitud
                                     </label>
                                     <div className="mt-1"> {/* Reduced margin-top */}
@@ -114,7 +148,7 @@ function Contact() {
                                             id="tipo_solicitud"
                                             name="tipo_solicitud"
                                             autoComplete="tipo_solicitud"
-                                            className={`block w-full rounded-md border-0 py-0 h-9 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 ${errors.tipo_solicitud ? 'ring-red-500' : ''}`}
+                                            className={`block w-full rounded-md border-0 py-1.5 h-9 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${errors.tipo_solicitud ? 'ring-red-500' : ''}`}
                                             {...register("tipo_solicitud", { required: "Seleccione un tipo de solicitud" })}
                                         >
                                             <option value="">Seleccione una opción</option>
@@ -123,6 +157,7 @@ function Contact() {
                                             <option value="Otro motivo">Otro motivo</option>
                                         </select>
                                         {errors.tipo_solicitud && <p className="text-red-500 text-sm">{errors.tipo_solicitud.message}</p>}
+                                        {errores?.tipo_solicitud && <p className="text-red-500 text-sm">{errores?.tipo_solicitud[0]}</p>}
                                     </div>
                                 </div>
 
@@ -141,6 +176,7 @@ function Contact() {
                                             {...register("ciudad", { required: "La ciudad es obligatoria" })}
                                         />
                                         {errors.ciudad && <p className="text-red-500 text-sm">{errors.ciudad.message}</p>}
+                                        {errores?.ciudad && <p className="text-red-500 text-sm">{errores?.ciudad[0]}</p>}
                                     </div>
                                 </div> 
 
@@ -158,6 +194,7 @@ function Contact() {
                                             {...register("provincia", { required: "La provincia es obligatoria" })}
                                         />
                                         {errors.provincia && <p className="text-red-500 text-sm">{errors.provincia.message}</p>}
+                                        {errores?.provincia && <p className="text-red-500 text-sm">{errores?.provincia[0]}</p>}
                                     </div>
                                 </div>
 
@@ -175,6 +212,7 @@ function Contact() {
                                             {...register("codigo_postal", { required: "El código postal es obligatorio" })}
                                         />
                                         {errors.codigo_postal && <p className="text-red-500 text-sm">{errors.codigo_postal.message}</p>}
+                                        {errores?.codigo_postal && <p className="text-red-500 text-sm">{errores?.codigo_postal[0]}</p>}
                                     </div>
                                 </div>
                                 <div className="col-span-full">
@@ -191,6 +229,7 @@ function Contact() {
                                             {...register("mensaje", { required: "El mensaje es obligatorio" })}
                                         ></textarea>
                                         {errors.mensaje && <p className="text-red-500 text-sm">{errors.mensaje.message}</p>}
+                                        {errores?.mensaje && <p className="text-red-500 text-sm">{errores?.mensaje[0]}</p>}
                                     </div>
                                 </div>
                             </div>
