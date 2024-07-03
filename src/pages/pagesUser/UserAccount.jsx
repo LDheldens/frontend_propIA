@@ -9,6 +9,7 @@ import useSWR from 'swr'
 import api from '../../settings/api'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
+import PropertiesUser from '../../components/userAccount/PropertiesUser'
 
 export const UserAccount = () => {
     const navigate = useNavigate()
@@ -121,6 +122,9 @@ export const UserAccount = () => {
                     {currentView === 'change' && (
                         <ChangePassword setShowChangePassword={() => setCurrentView('none')} />
                     )}
+                </div>
+                <div>
+                    <PropertiesUser userId={user?.id} />
                 </div>
             </div>
         </div>
