@@ -13,7 +13,7 @@ import ItemSellOk from '../../components/items/ItemSellOk';
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import bg from '/src/assets/video1.mp4'
+import bg from '/video/video1.mp4'
 import Flyer from '../../components/home/flyers/Flyer';
 import PrestenText1 from '../../components/home/PrestenText';
 import Loading from '../../components/compGeneral/Loading';
@@ -70,7 +70,7 @@ const Home = () => {
             id: 1,
             locate: 'Lima, Lima, Miraflores',
             href: '/item',
-            imageSrc: './src/assets/dep3.jpeg',
+            imageSrc: '/img/dep3.jpeg',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
@@ -82,7 +82,7 @@ const Home = () => {
             id: 2,
             locate: 'Lima, Lima, Miraflores',
             href: '/item',
-            imageSrc: './src/assets/dep6.webp',
+            imageSrc: '/img/dep6.webp',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
@@ -94,7 +94,7 @@ const Home = () => {
             id: 3,
             locate: 'Lima, Lima, Miraflores',
             href: '/item',
-            imageSrc: './src/assets/dep1.jpeg',
+            imageSrc: '/img/dep1.jpeg',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
@@ -161,13 +161,13 @@ const Home = () => {
                         <div className="flex items-center justify-center text-white sm:w-full">
                             <form action="" className="flex">
                                 <div className="font-normal flex items-center justify-center gap-x-2 bg-white font-bebas tracking-wide rounded-sm">
-                                    {/* <button className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
+                                    {/* <button className=" hover:bg-green-500 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                         Alquilar
                                     </button>
-                                    <button className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
+                                    <button className=" hover:bg-green-500 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                         Comprar
                                     </button>
-                                    <button className=" hover:bg-green1 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
+                                    <button className=" hover:bg-green-500 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
                                         Proyectos
                                     </button> */}
                                     <Selector radius="sm" className='border font-bebas tracking-wide ' color='green' >
@@ -328,13 +328,13 @@ const Home = () => {
                             <div className=" inset-0 flex items-center justify-end text-white ">
                                 <form action="" className="flex">
                                     <div className="font-urbanist flex items-center justify-center rounded-t bg-white m-2">
-                                        <button className=" border border-gray-600 hover:bg-green1 hover:text-white text-gray-600  py-2 px-4 ">
+                                        <button className=" border border-gray-600 hover:bg-green-500 hover:text-white text-gray-600  py-2 px-4 ">
                                             En construcción
                                         </button>
-                                        <button className="border border-gray-600 hover:bg-green1 hover:text-white text-gray-600  py-2 px-4  ml-2">
+                                        <button className="border border-gray-600 hover:bg-green-500 hover:text-white text-gray-600  py-2 px-4  ml-2">
                                             En planos
                                         </button>
-                                        <button className="border border-gray-600 hover:bg-green1 hover:text-white text-gray-600 py-2 px-4 ml-2">
+                                        <button className="border border-gray-600 hover:bg-green-500 hover:text-white text-gray-600 py-2 px-4 ml-2">
                                             Entrega inmediata
                                         </button>
                                     </div>
@@ -385,7 +385,7 @@ const Home = () => {
             </div>
             <div className='flex justify-center items-center p-4'>
                 <h5 className='mr-1 text-xl text-gray-600 font-bebas tracking-wide'>Busca entre más de 17,976 Propiedades</h5>
-                <button className='bg-green1 p-3 text-white text-sm'>
+                <button className='bg-green-500 p-3 text-white text-sm'>
                     <a href="/buscar">VER MÁS</a>
                 </button>
             </div>

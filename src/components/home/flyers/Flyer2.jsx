@@ -7,7 +7,7 @@ function Flyer2() {
             title: 'Búsqueda de una propiedad',
             descript: '¿Quieres comprar/alquilar una propiedad?',
             button: 'Solicita Búsqueda',
-            imageSrc: '/src/assets/dep3.jpeg',
+            imageSrc: '/public/img/dep3.jpeg',
             imageAlt: '',
         },
         {
@@ -15,7 +15,7 @@ function Flyer2() {
             title: 'Inteligencia Artificial',
             descript: '¿Cómo usar la IA en este rubro?',
             button: 'Con Chat-GPT',
-            imageSrc: '/src/assets/dep4.jpeg',
+            imageSrc: '/public/img/dep4.jpeg',
             imageAlt: '',
         },
     ]
@@ -26,7 +26,7 @@ function Flyer2() {
                     <div className='bg-black bg-opacity-35 w-full h-80 sm:h-80 flex-1 text-center'>
                         <h2 className='text-white text-[35px] font-bebas tracking-wide pt-10'>{post.title}</h2>
                         <p className='text-white font-urbanist mb-8'>{post.descript}</p>
-                        <button className='bg-green-500 hover:bg-white p-3 text-white hover:text-green1 font-urbanist transition-colors duration-300'>
+                        <button className='bg-green-500 hover:bg-white p-3 text-white hover:text-green-500 font-urbanist transition-colors duration-300'>
                             {post.button}
                         </button>
                     </div>

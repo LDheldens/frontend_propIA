@@ -3,7 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import useUser from '../../hooks/useUser';
 import { useNavigate } from 'react-router-dom';
-import dep3 from "../../assets/dep3.jpeg";
+import dep3 from "/img/dep3.jpeg";
 // daniel
 function SignIn() {
 
@@ -45,13 +45,13 @@ function SignIn() {
     };
 
     return (
-        <div className="flex justify-center items-center mx-auto md:px-6 py-5 md:py-12 lg:px-8" style={{ backgroundImage: "url('./src/assets/dep1.jpeg')" }}>
+        <div className="flex justify-center items-center mx-auto md:px-6 py-5 md:py-12 lg:px-8" style={{ backgroundImage: "url('/img/dep1.jpeg')" }}>
             <div className='bg-white items-center rounded bg-opacity-100 ml-4 mr-4 mb-8 p-6 font-urbanist flex flex-row justify-center space-x-8 w-full max-w-4xl'>
                 <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img
                             className="mx-auto h-10 w-auto"
-                            src="./src/assets/logo.png"
+                            src="/public/img/logo.png"
                             alt="my Company"
                         />
                         <h2 className="mt-6 mb-5 text-center text-2xl font-bold leading-9  text-black font-bebas tracking-wide">
@@ -69,7 +69,7 @@ function SignIn() {
                         <div className="col-span-full">
                             <label
                                 htmlFor="email"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                             >
                                 <Controller
                                     name="email"
@@ -88,7 +88,7 @@ function SignIn() {
                                             type="email"
                                             id="email"
                                             autoComplete="email"
-                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.email ? 'ring-red-500' : ''}`}
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 ${errors.email ? 'ring-red-500' : ''}`}
                                             placeholder="Correo electrónico"
                                         />
                                     )}
@@ -102,7 +102,7 @@ function SignIn() {
                         <div className="col-span-full">
                             <label
                                 htmlFor="first_name"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                             >
                                 <Controller
                                     name="first_name"
@@ -115,7 +115,7 @@ function SignIn() {
                                             type="text"
                                             id="first_name"
                                             autoComplete="given-name"
-                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.first_name ? 'ring-red-500' : ''}`}
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 ${errors.first_name ? 'ring-red-500' : ''}`}
                                             placeholder="Nombres"
                                         />
                                     )}
@@ -129,7 +129,7 @@ function SignIn() {
                         <div className="col-span-full">
                             <label
                                 htmlFor="last_name"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                             >
                                 <Controller
                                     name="last_name"
@@ -142,7 +142,7 @@ function SignIn() {
                                             type="text"
                                             id="last_name"
                                             autoComplete="family-name"
-                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.last_name ? 'ring-red-500' : ''}`}
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 ${errors.last_name ? 'ring-red-500' : ''}`}
                                             placeholder="Apellidos"
                                         />
                                     )}
@@ -156,7 +156,7 @@ function SignIn() {
                         <div id="celular" className="col-span-full">
                             <label
                                 htmlFor="phone"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                             >
                                 <Controller
                                     name="phone"
@@ -187,7 +187,7 @@ function SignIn() {
                                             pattern="[0-9]{9}"
                                             maxLength="9"
                                             minLength="9"
-                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.phone ? 'ring-red-500' : ''}`}
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 ${errors.phone ? 'ring-red-500' : ''}`}
                                             placeholder="Número celular"
                                         />
                                     )}
@@ -201,7 +201,7 @@ function SignIn() {
                         <div className="col-span-full">
                             <label
                                 htmlFor="password"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                             >
                                 <Controller
                                     name="password"
@@ -214,7 +214,7 @@ function SignIn() {
                                             type="password"
                                             id="password"
                                             autoComplete="current-password"
-                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.password ? 'ring-red-500' : ''}`}
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 ${errors.password ? 'ring-red-500' : ''}`}
                                             placeholder="Contraseña"
                                         />
                                     )}
@@ -228,7 +228,7 @@ function SignIn() {
                         <div className="col-span-full">
                             <label
                                 htmlFor="confirm_password"
-                                className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                                className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                             >
                                 <Controller
                                     name="confirm_password"
@@ -241,7 +241,7 @@ function SignIn() {
                                             type="password"
                                             id="confirm_password"
                                             autoComplete="current-password"
-                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.confirm_password ? 'ring-red-500' : ''}`}
+                                            className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 ${errors.confirm_password ? 'ring-red-500' : ''}`}
                                             placeholder="Confirmar contraseña"
                                         />
                                     )}
@@ -257,7 +257,7 @@ function SignIn() {
                                 onChange={(e) => setTerminos(e.target.checked)}
                                 type="checkbox"
                                 name='terminos'
-                                className='form-checkbox h-4 w-4 text-green1 rounded-full'
+                                className='form-checkbox h-4 w-4 text-green-500 rounded-full'
                             />
                             <span className='ml-2 text-[12px] text-black'>
                                 Acepto los Términos y Condiciones de Uso y las políticas de privacidad.
@@ -266,7 +266,7 @@ function SignIn() {
                         <div>
                             <button
                                 type="submit"
-                                className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded"
+                                className="w-full justify-center bg-green-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded"
                             >
                                 Registrarse
                             </button>

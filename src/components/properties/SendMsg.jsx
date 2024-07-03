@@ -38,12 +38,12 @@ function SendMsg({ whatsappLink }) {
                     <div className="col-span-full">
                         <label
                             htmlFor="email"
-                            className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="email"
                                 id="email"
-                                className="p-1 rounded peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className="p-1 rounded peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                 placeholder="G-mail"
                                 required
                             />
@@ -57,12 +57,12 @@ function SendMsg({ whatsappLink }) {
                     <div className="col-span-full">
                         <label
                             htmlFor="firstName"
-                            className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="text"
                                 id="firstName"
-                                className="peer p-1  rounded border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className="peer p-1  rounded border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                 placeholder="Nombres"
                                 required
                             />
@@ -76,12 +76,12 @@ function SendMsg({ whatsappLink }) {
                     <div className="col-span-full">
                         <label
                             htmlFor="lastName"
-                            className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="text"
                                 id="lastName"
-                                className="p-1 peer rounded border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className="p-1 peer rounded border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                 placeholder="Apellidos"
                                 required
                             />
@@ -95,12 +95,12 @@ function SendMsg({ whatsappLink }) {
                     <div className="sm:col-span-4">
                         <label
                             htmlFor="phone"
-                            className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="tel"
                                 id="phone"
-                                className="p-1 peer rounded border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className="p-1 peer rounded border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                 placeholder="Celular"
                                 required
                             />
@@ -114,11 +114,11 @@ function SendMsg({ whatsappLink }) {
                     <div className="col-span-full">
                         <label
                             htmlFor="message"
-                            className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <textarea
                                 id="message"
-                                className="p-1 peer rounded border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
+                                className="p-1 peer rounded border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                 placeholder="Mensaje"
                                 rows="4"
                                 required
@@ -131,7 +131,7 @@ function SendMsg({ whatsappLink }) {
                         </label>
                     </div>
                     <div className="col-span-full flex items-center mt-3">
-                        <input type="checkbox" className="m-1 p-3 rounded form-checkbox h-5 w-5 text-green1" required />
+                        <input type="checkbox" className="m-1 p-3 rounded form-checkbox h-5 w-5 text-green-500" required />
                         <span className="text-[12px]">Acepto los Términos y Condiciones de Uso y las políticas de privacidad.</span>
                     </div>
                     <div className="col-span-full flex items-center mt-3">
@@ -140,12 +140,12 @@ function SendMsg({ whatsappLink }) {
                             id="additionalInfo"
                             checked={isChecked}
                             onChange={() => setIsChecked(!isChecked)}
-                            className="m-1 p-3 rounded form-checkbox h-5 w-5 text-green1"
+                            className="m-1 p-3 rounded form-checkbox h-5 w-5 text-green-500"
                         />
                         <span className="text-[12px]">Autorizo el uso de mi información para fines adicionales.</span>
                     </div>
 
-                    <button type="submit" className="bg-green1 flex items-center justify-center gap-2 rounded w-full p-2  text-white hover:bg-gray-300 hover:text-black">
+                    <button type="submit" className="bg-green-500 flex items-center justify-center gap-2 rounded w-full p-2  text-white hover:bg-gray-300 hover:text-black">
                         Contactar <CiMail className="text-xl" />
                     </button>
 

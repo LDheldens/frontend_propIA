@@ -110,7 +110,7 @@ function ListMessages() {
                         checked={row.atendido}
                         onChange={(e) => handleStateServed(row, e.target.checked)}
                     />
-                    <div className="peer rounded-full outline-none duration-100 after:duration-500 w-16 h-8 bg-green1 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-500  after:content-['No'] after:absolute after:outline-none after:rounded-full after:h-6 after:w-6 after:bg-white after:top-1 after:left-1 after:flex after:justify-center after:items-center  after:text-sky-800 after:font-bold peer-checked:after:translate-x-8 peer-checked:after:content-['Si'] peer-checked:after:border-white"></div>
+                    <div className="peer rounded-full outline-none duration-100 after:duration-500 w-16 h-8 bg-green-500 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-500  after:content-['No'] after:absolute after:outline-none after:rounded-full after:h-6 after:w-6 after:bg-white after:top-1 after:left-1 after:flex after:justify-center after:items-center  after:text-sky-800 after:font-bold peer-checked:after:translate-x-8 peer-checked:after:content-['Si'] peer-checked:after:border-white"></div>
                 </label>
             ),
             width: '100px'

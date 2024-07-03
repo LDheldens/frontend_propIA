@@ -44,7 +44,7 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
                 <div className="col-span-full">
                     <label
                         htmlFor="email"
-                        className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                        className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                     >
                         <Controller
                             name="email"
@@ -63,7 +63,7 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
                                     type="email"
                                     id="email"
                                     autoComplete="email"
-                                    className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.email ? 'ring-red-500' : ''}`}
+                                    className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 ${errors.email ? 'ring-red-500' : ''}`}
                                     placeholder="Correo electrónico"
                                 />
                             )}
@@ -77,7 +77,7 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
                 <div className="col-span-full">
                     <label
                         htmlFor="first_name"
-                        className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                        className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                     >
                         <Controller
                             name="first_name"
@@ -89,7 +89,7 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
                                     type="text"
                                     id="first_name"
                                     autoComplete="given-name"
-                                    className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.first_name ? 'ring-red-500' : ''}`}
+                                    className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 ${errors.first_name ? 'ring-red-500' : ''}`}
                                     placeholder="Nombres"
                                 />
                             )}
@@ -103,7 +103,7 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
                 <div className="col-span-full">
                     <label
                         htmlFor="last_name"
-                        className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                        className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                     >
                         <Controller
                             name="last_name"
@@ -115,7 +115,7 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
                                     type="text"
                                     id="last_name"
                                     autoComplete="family-name"
-                                    className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.last_name ? 'ring-red-500' : ''}`}
+                                    className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 ${errors.last_name ? 'ring-red-500' : ''}`}
                                     placeholder="Apellidos"
                                 />
                             )}
@@ -129,7 +129,7 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
                 <div id="celular" className="col-span-full">
                     <label
                         htmlFor="phone"
-                        className="relative border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
+                        className="relative border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900 bg-gray-200"
                     >
                         <Controller
                             name="phone"
@@ -152,7 +152,7 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
                                     id="phone"
                                     autoComplete="phone"
                                     maxLength="9"
-                                    className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6 ${errors.phone ? 'ring-red-500' : ''}`}
+                                    className={`p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6 ${errors.phone ? 'ring-red-500' : ''}`}
                                     placeholder="Número celular"
                                 />
                             )}
@@ -166,7 +166,7 @@ const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
                 <div>
                     <button
                         type="submit"
-                        className="w-full justify-center bg-green1 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded"
+                        className="w-full justify-center bg-green-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded"
                     >
                         Guardar Cambios
                     </button>

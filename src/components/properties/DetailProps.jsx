@@ -44,15 +44,15 @@ function DetailProps() {
             <div className="flex items-center justify-end text-white border-gray-500">
                 <form action="" className="flex w-full">
                     <div className="font-normal flex gap-2 w-full flex-col items-center justify-center sm:flex-row sm:justify-center sm:gap-3 rounded-t m-2 font-urbanist">
-                        <button className="flex items-center gap-1 border border-gray-400 hover:bg-green1 hover:text-white text-gray-600  py-2 px-4 ">
+                        <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-500 hover:text-white text-gray-600  py-2 px-4 ">
                             Favorito
                             <FaRegHeart />
                         </button>
-                        <button className="flex items-center gap-1 border border-gray-400 hover:bg-green1 hover:text-white text-gray-600  py-2 px-4 ml-2">
+                        <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-500 hover:text-white text-gray-600  py-2 px-4 ml-2">
                             Compartir
                             <IoShareSocialOutline />
                         </button>
-                        <button className="flex items-center gap-1 border border-gray-400 hover:bg-green1 hover:text-white text-gray-600 py-2 px-4 ml-2">
+                        <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-500 hover:text-white text-gray-600 py-2 px-4 ml-2">
                             Notas personales
                             <CiLocationOn />
                         </button>

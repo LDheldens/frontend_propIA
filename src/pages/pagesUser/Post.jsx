@@ -96,7 +96,7 @@ function Post() {
                                     <button
                                         type="button"
                                         onClick={goToPreviousPage}
-                                        className="bg-green1 hover:bg-green1 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
+                                        className="bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
                                     >
                                         Anterior
                                     </button>
@@ -106,7 +106,7 @@ function Post() {
                                 <button
                                     type="button"
                                     onClick={goToNextPage}
-                                    className="bg-green1 hover:bg-green1 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline transition duration-300 text-right"
+                                    className="bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline transition duration-300 text-right"
                                 >
                                     Siguiente
                                 </button>
@@ -117,7 +117,7 @@ function Post() {
                                 isLastPage ? (
                                     <button
                                         type="submit"
-                                        className="bg-green1 hover:bg-green1 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
+                                        className="bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline transition duration-300"
                                     >
                                         Publicar
                                     </button>

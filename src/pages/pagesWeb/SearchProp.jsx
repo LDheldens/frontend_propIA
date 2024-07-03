@@ -175,7 +175,7 @@ const SearchProp = () => {
                     />
                     <button
                         type="button"
-                        className="px-5 py-3 bg-green1 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx font-bold"
+                        className="px-5 py-3 bg-green-500 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx font-bold"
                         onClick={handleSearch}
                     >
                         <FaSearch className='flex mr-1 selection:' /> Buscar

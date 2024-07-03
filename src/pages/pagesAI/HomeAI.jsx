@@ -3,20 +3,20 @@ import ItemSell from '../../components/items/ItemSell';
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import PrestenText from '../../components/iaIntegrated/PrestenText';
-import bg from '/src/assets/intro.mp4'
+import bg from '/public/video/intro.mp4'
 import Flyer2 from '../../components/home/flyers/Flyer2';
 
 const images = [
     {
-        original: "/src/assets/img1.avif",
-        thumbnail: "/src/assets/dep1.jpeg",
+        original: "/public/video/img1.avif",
+        thumbnail: "/public/video/dep1.jpeg",
     },
     {
-        original: "/src/assets/img4.avif",
+        original: "/public/video/img4.avif",
         thumbnail: "https://picsum.photos/id/1015/250/150/",
     },
     {
-        original: "/src/assets/img5.avif",
+        original: "/public/video/img5.avif",
         thumbnail: "https://picsum.photos/id/1019/250/150/",
     },
 ];
