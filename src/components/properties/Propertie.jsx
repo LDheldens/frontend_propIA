@@ -69,16 +69,19 @@ function Propertie({ propertie, userPost }) {
                                 ANUNCIANTE
                             </div>
                             <div className='flex gap-2'>
-                                <button
-                                    type='button' className='py-1 px-2 border border-blue2 rounded text-blue2 transition-colors duration-300 hover:bg-blue2 hover:text-white'
+                                <Link
+                                    to={`tel:${propertie?.phone_number}`}
+                                    className='py-1 px-2 border border-blue2 rounded text-blue2 transition-colors duration-300 hover:bg-blue2 hover:text-white'
+                                    onClick={(e) => e.stopPropagation()}
                                 >
                                     <MdOutlinePhone className='text-xl' />
-                                </button>
+                                </Link>
                                 <Link
                                     to={whatsappLink}
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     className='py-1 border border-green1 px-2 rounded flex justify-center items-center gap-1 text-green1 transition-colors duration-300 hover:bg-green1 hover:text-white'
+                                    onClick={(e) => e.stopPropagation()}
                                 >
                                     <span className='hidden md:block'>WhatsApp</span> <FaWhatsapp className='text-xl' />
                                 </Link>
