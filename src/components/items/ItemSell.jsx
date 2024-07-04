@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FaRegHeart } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineLocalOffer } from "react-icons/md";
-import { FaRegArrowAltCircleRight } from "react-icons/fa";
-import api from '../../settings/api';
+
 
 function ItemSell() {
 
@@ -14,7 +13,7 @@ function ItemSell() {
             id: 1,
             locate: 'Lima, Lima, Miraflores',
             href: '/item',
-            imageSrc: '/public/img/dep3.jpeg',
+            imageSrc: '/img/dep3.jpeg',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
@@ -27,7 +26,7 @@ function ItemSell() {
             id: 2,
             locate: 'Lima, Lima, Miraflores',
             href: '/item',
-            imageSrc: '/public/img/dep4.jpeg',
+            imageSrc: '/img/dep4.jpeg',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',
@@ -40,7 +39,7 @@ function ItemSell() {
             id: 3,
             locate: 'Lima, Lima, Miraflores',
             href: '/item',
-            imageSrc: '/public/img/dep1.jpeg',
+            imageSrc: '/img/dep1.jpeg',
             imageAlt: "Front of men's Basic Tee in black.",
             price: 'S/. 360,000.00 ',
             ruc: 'En construcción',

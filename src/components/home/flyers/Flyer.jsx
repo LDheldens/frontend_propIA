@@ -7,7 +7,7 @@ function Flyer() {
             title: 'Búsqueda de una propiedad',
             descript: '¿Quieres comprar/alquilar una propiedad?',
             button: 'Solicita Búsqueda',
-            imageSrc: '/public/img/dep3.jpeg',
+            imageSrc: '/img/dep3.jpeg',
             imageAlt: '',
         },
         {
@@ -15,7 +15,7 @@ function Flyer() {
             title: 'Sugerencia de la IA',
             descript: '¿Deseas alguna sugerencia?',
             button: 'Solicita sugerencia',
-            imageSrc: '/public/img/dep4.jpeg',
+            imageSrc: '/img/dep4.jpeg',
             imageAlt: '',
         },
         {
@@ -23,7 +23,7 @@ function Flyer() {
             title: 'Análisis de tu propiedad',
             descript: '¿Quieres vender tu propiedad?',
             button: 'Solicita ACM',
-            imageSrc: '/public/img/dep6.jpeg',
+            imageSrc: '/img/dep6.jpeg',
             imageAlt: '',
         },
     ]
