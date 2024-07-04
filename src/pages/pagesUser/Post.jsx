@@ -50,11 +50,14 @@ function Post() {
         });
 
         formData.append('type_operation', operation)
+        
+        const token = localStorage.getItem('AUTH_TOKEN_PROPIA');
 
         try {
             const response = await api.post('/property/add/', formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization': `Token ${token}`
                 }
             });
             if (response.status == 201) {

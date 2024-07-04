@@ -26,7 +26,7 @@ const PropertiesUser = ({ userId }) => {
             const response = await api.get(`/property/list/user/${userId}/`, {
                 headers: {
                     'Accept': 'application/json',
-                    Authorization: `Token ${token}`
+                    'Authorization': `Token ${token}`
                 }
             });
             return response.data;
