@@ -15,6 +15,7 @@ import SendMsg from './SendMsg';
 import Map from './Map';
 import { useLocation } from 'react-router-dom';
 import clipboardCopy from 'clipboard-copy';
+import { ToastContainer, useToast } from '@rewind-ui/core';
 
 
 export function loader({ params }) {
@@ -27,6 +28,8 @@ function DetailProps() {
     const idProperty = useLoaderData();
 
     const urlCopied = useLocation();
+
+    const toast = useToast();
 
     const fetchPropertyDetails = async () => {
         try {
@@ -43,8 +46,25 @@ function DetailProps() {
 
     const whatsappLink = 'https://wa.me/${property?.phone_number}?text=Hola, estoy interesado en la propiedad que tienes publicada'
 
+
     function handleCopyLink(){
-        clipboardCopy('http://localhost:5173'+urlCopied.pathname);
+        const urlConcatenada = 'http://localhost:5173'+urlCopied.pathname
+        clipboardCopy(urlConcatenada);
+        toast.add({
+            id: 'unique-id',
+            closeOnClick: false,
+            color: 'green',
+            description: urlConcatenada,
+            duration: 3000,
+            iconType: 'success',
+            pauseOnHover: false,
+            radius: 'lg',
+            shadow: 'none',
+            shadowColor: 'none',
+            showProgress: true,
+            title: 'Url copiada',
+            tone: 'solid',
+        });
     }
     return (
         <div className='bg-gray-100 mb-3 '>
@@ -121,6 +141,7 @@ function DetailProps() {
             <div>
                 <Map />
             </div>
+            <ToastContainer />
         </div>
     )
 }
