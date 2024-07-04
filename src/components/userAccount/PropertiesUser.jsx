@@ -17,12 +17,16 @@ const PropertiesUser = ({ userId }) => {
     // const [page, setPage] = useState(1);
     // const [pageSize, setPageSize] = useState(2);
 
+    console.log(userId)
+
     const getProperties = async () => {
         await new Promise(resolve => setTimeout(resolve, 1000));
+        const token = localStorage.getItem('AUTH_TOKEN_PROPIA');
         try {
             const response = await api.get(`/property/list/user/${userId}/`, {
                 headers: {
-                    'Accept': 'application/json'
+                    'Accept': 'application/json',
+                    Authorization: `Token ${token}`
                 }
             });
             return response.data;
@@ -119,5 +123,5 @@ const PropertiesUser = ({ userId }) => {
         </div>
     );
 }
-
+// xd
 export default PropertiesUser

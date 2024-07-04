@@ -13,6 +13,8 @@ import { GiHomeGarage } from "react-icons/gi"
 import { MdMeetingRoom } from "react-icons/md";
 import SendMsg from './SendMsg';
 import Map from './Map';
+import { useLocation } from 'react-router-dom';
+import clipboardCopy from 'clipboard-copy';
 
 
 export function loader({ params }) {
@@ -23,6 +25,8 @@ export function loader({ params }) {
 function DetailProps() {
 
     const idProperty = useLoaderData();
+
+    const urlCopied = useLocation();
 
     const fetchPropertyDetails = async () => {
         try {
@@ -37,22 +41,25 @@ function DetailProps() {
     const { data: property, error } = useSWR(`/property/${idProperty}/`, fetchPropertyDetails);
 
 
-    const whatsappLink = `https://wa.me/${property?.phone_number}?text=Hola, estoy interesado en la propiedad que tienes publicada`;
+    const whatsappLink = 'https://wa.me/${property?.phone_number}?text=Hola, estoy interesado en la propiedad que tienes publicada'
 
+    function handleCopyLink(){
+        clipboardCopy('http://localhost:5173'+urlCopied.pathname);
+    }
     return (
         <div className='bg-gray-100 mb-3 '>
             <div className="flex items-center justify-end text-white border-gray-500">
                 <form action="" className="flex w-full">
                     <div className="font-normal flex gap-2 w-full flex-col items-center justify-center sm:flex-row sm:justify-center sm:gap-3 rounded-t m-2 font-urbanist">
-                        <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-500 hover:text-white text-gray-600  py-2 px-4 ">
+                        <button type="button" className="flex items-center gap-1 border border-gray-400 hover:bg-green1 hover:text-white text-gray-600  py-2 px-4 ">
                             Favorito
                             <FaRegHeart />
                         </button>
-                        <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-500 hover:text-white text-gray-600  py-2 px-4 ml-2">
+                        <button onClick={handleCopyLink} type="button" className="flex items-center gap-1 border border-gray-400 hover:bg-green1 hover:text-white text-gray-600  py-2 px-4 ml-2">
                             Compartir
                             <IoShareSocialOutline />
                         </button>
-                        <button className="flex items-center gap-1 border border-gray-400 hover:bg-green-500 hover:text-white text-gray-600 py-2 px-4 ml-2">
+                        <button type="button" className="flex items-center gap-1 border border-gray-400 hover:bg-green1 hover:text-white text-gray-600 py-2 px-4 ml-2">
                             Notas personales
                             <CiLocationOn />
                         </button>
@@ -86,20 +93,20 @@ function DetailProps() {
                                 </div>
                                 <div className="flex items-center gap-2 w-full sm:w-auto">
                                     <FaBath className="text-2xl" />
-                                    <span className="text-lg">{property?.bathrooms_number} Baños</span>
+                                    <span className="text-lg">{property?.bathrooms_number} Baño(s)</span>
                                 </div>
                                 <div className="flex items-center gap-2 w-full sm:w-auto">
                                     <FaKitchenSet className="text-2xl" />
-                                    <span className="text-lg">{property?.kitchens_number} Cocinas</span>
+                                    <span className="text-lg">{property?.kitchens_number} Cocina(s)</span>
                                 </div>
                                 <div className="flex items-center gap-2 w-full sm:w-auto">
                                     <GiHomeGarage className="text-2xl" />
-                                    <span className="text-lg">{property?.garages_number} Garages</span>
+                                    <span className="text-lg">{property?.garages_number} Garaje(s)</span>
                                 </div>
                             </div>
                         </div>
                         <h3 className='font-bold text-xl font-bebas my-2'>
-                            Descripcción
+                            Descripción
                         </h3>
                         <p className="overflow-hidden break-words">
                             {property?.description}
