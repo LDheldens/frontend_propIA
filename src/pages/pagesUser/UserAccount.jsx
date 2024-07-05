@@ -69,14 +69,14 @@ export const UserAccount = () => {
     return (
         <>
             
-            <div className='bg-red-500 mx-auto max-w-5xl my-5 p-5'>
-                {/* <h3 className='text-gray-900 text-3xl font-bebas'>Mi cuenta</h3> */}
-                <div className='text-center border-gray-500  font-urbanist'>
-                    <h3 className='text-center lg:text-[25px] md:text-[20px]'>Datos personales</h3>
-                    {/* <div className='flex'>
-                        <div className="flex ">
+            <div className='mx-auto max-w-5xl p-5'>
+                <h1 className='text-center font-black text-3xl my-5'>Perfil de Usuario</h1>
+                <div className='border-gray-500 p-4 rounded bg-white font-urbanist'>
+                    <h2 className='text-center lg:text-[25px] md:text-[20px]'>Datos personales</h2>
+                    <div className='md:flex md:justify-center md:gap-x-5'>
+                        <div>
                             <img
-                                className="inline-block h-24 w-24 rounded-full ring-2 ring-white"
+                                className="block mx-auto h-32 w-32 rounded-full ring-2 ring-white"
                                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
                                 alt=""
                             />
@@ -108,7 +108,7 @@ export const UserAccount = () => {
                                 </Dropdown.Content>
                             </Dropdown>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
 
                 {currentView === 1 && (
@@ -118,8 +118,8 @@ export const UserAccount = () => {
                     <ChangePassword />
                 )}
 
+                <PropertiesUser userId={user?.id} />
             </div>
-            <PropertiesUser userId={user?.id} />
         </>
     )
 }
