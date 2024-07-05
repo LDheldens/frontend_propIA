@@ -116,7 +116,7 @@ const PropertiesUser = ({ userId }) => {
     }
 
     return (
-        <div className='my-4 space-y-5'>
+        <div className='my-10 space-y-5'>
             {properties.map((propertie) => (
                 <Propertie propertie={propertie} key={propertie.id} userPost={1} />
             ))}

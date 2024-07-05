@@ -79,16 +79,6 @@ const LayoutAdmin = () => {
         });
     };
 
-
-
-
-    // useEffect(() => {
-    //     window.addEventListener("resize", detectZise);
-    //     return () => {
-    //         window.addEventListener("resize", detectZise);
-    //     };
-    // }, [windowDimension.innerWidth]);
-
     const [chatBot, setChatBot] = useState(false);
     const toggleChatbot = () => {
         setChatBot(!chatBot);
@@ -183,22 +173,6 @@ const LayoutAdmin = () => {
                         </main>
 
                         <footer >
-                            {/* <div className='text-center inset-x-0 flex justify-center bg-white p-4'>
-                    <ul className='justify-center flex text-green-500 text-3xl bg-white p-4 shadow-md shadow-green-500  pl-10 pr-10 '>
-                        <li>
-                            <FaFacebookF className="ml-1 " />
-                        </li>
-                        <li>
-                            <FaYoutube className="ml-8" />
-                        </li>
-                        <li>
-                            <FaTiktok className="ml-8" />
-                        </li>
-                        <li>
-                            <FaInstagram className="ml-8" />
-                        </li>
-                    </ul>
-                </div> */}
                             <div className=' bg-white'>
                                 <div className='bg-white mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-3 xl:gap-x-8 p-14'>
                                     <div className='flex bg-white'>

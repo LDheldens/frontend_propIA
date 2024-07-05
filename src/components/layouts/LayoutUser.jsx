@@ -75,8 +75,8 @@ const LayoutUser = () => {
     };
 
     return (
-        <div>
-            <div className="flex justify-between items-center px-5 md:px-8">
+        <>
+            <div className="flex bg-white justify-between items-center px-5 md:px-8">
                 <div className="flex items-center font-bebas tracking-wide pl-8">
                     <Link to={"/"} className="text-white  flex justify-start items-center font-semibold text-xl h-24">
                         <img src="/public/img/logo.png" alt="" width="170" height="100" />
@@ -111,17 +111,12 @@ const LayoutUser = () => {
                     </button>
                 </div>
                 <div className='flex flex-col md:flex-row'>
-                    {/* <a href="/publicar/publicar">
-                        <button className="bg-white hover:bg-green-500 hover:text-white m-2 p-2 items-center flex text-gray-700 rounded-lg border border-green-500 justify-center z-60">
-                            <p className="pl-1 text-sm">Publicar</p>
-                        </button>
-                    </a> */}
-                    <a href="cuenta">
+                    <Link to="cuenta">
                         <button className="bg-green-500 hover:bg-gray-500 m-2 p-2 items-center flex text-white rounded-sm justify-center z-60">
                             <FaRegUser className="text-2xl" />
                             <p className="pl-1 text-sm font-urbanist">Usuario</p>
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -206,7 +201,7 @@ const LayoutUser = () => {
                     <ChatBot />
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 export default LayoutUser
