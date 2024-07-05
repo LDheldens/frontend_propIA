@@ -116,7 +116,8 @@ const PropertiesUser = ({ userId }) => {
     }
 
     return (
-        <div className='my-4 space-y-5'>
+        <div className=' space-y-5 mt-5'>
+            <h2 className='text-center font-black text-2xl'>Mis Publicaciones</h2>
             {properties.map((propertie) => (
                 <Propertie propertie={propertie} key={propertie.id} userPost={1} />
             ))}

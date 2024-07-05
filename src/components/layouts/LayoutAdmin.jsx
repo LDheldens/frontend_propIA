@@ -80,16 +80,6 @@ const LayoutAdmin = () => {
         });
     };
 
-
-
-
-    // useEffect(() => {
-    //     window.addEventListener("resize", detectZise);
-    //     return () => {
-    //         window.addEventListener("resize", detectZise);
-    //     };
-    // }, [windowDimension.innerWidth]);
-
     const [chatBot, setChatBot] = useState(false);
     const toggleChatbot = () => {
         setChatBot(!chatBot);

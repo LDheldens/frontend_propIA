@@ -6,6 +6,8 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
 
     const { register, formState: { errors } } = useFormContext();
 
+    console.log(errors);
+
     return (
 
         <div className={`${currentPage != 1 ? "hidden" : ""} w-full`}>
@@ -15,9 +17,9 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
                     <h3 className="text-base font-semibold leading-7 text-gray-900">Tipo de operación:</h3>
                     <div>
                         <Selector value={operation} onChange={handleOperationChange} className='xs:hidden' color='green' size='sm'>
-                            <Selector.Tab anchor="Venta" label="VENTA" />
+                            <Selector.Tab  anchor="Venta" label="VENTA" />
                             <Selector.Tab anchor="Alquiler" label="ALQUILER" />
-                            <Selector.Tab className='w-[140px]' anchor="Pre-venta" label="PRE-VENTA" />
+                            <Selector.Tab className='w-[140px]'  anchor="Pre-venta" label="PRE-VENTA" />
                         </Selector>
                         <Selector value={operation} onChange={handleOperationChange} className='hidden xs:flex' color='green' size='lg' >
                             <Selector.Tab anchor="Venta" label="VENTA" />
@@ -34,7 +36,7 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
                         <select
                             id="type_property"
                             {...register('type_property', { required: 'Tipo de inmueble es requerido' })}
-                            className="w-full rounded-sm p-2 outline-none text-gray-900 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                            className="w-full rounded-sm p-2 outline-none text-gray-900 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                         >
                             <option value="">Selecciona tipo de inmueble</option>
                             <option value="Departamento">Departamento</option>
@@ -57,7 +59,7 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
                         <select
                             id="subtype_property"
                             {...register('subtype_property', { required: 'Sub tipo de inmueble es requerido' })}
-                            className="w-full rounded-sm p-2 outline-none text-gray-900 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                            className="w-full rounded-sm p-2 outline-none text-gray-900 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                         >
                             <option value="">Selecciona subtipo de inmueble</option>
                             <option value="Casa de ciudad">Casa de ciudad</option>
@@ -74,13 +76,13 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
                         <div className=" w-full">
                             <label
                                 htmlFor="email"
-                                className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900"
+                                className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="email"
                                     id="email"
                                     {...register('email', { required: 'Email es requerido' })}
-                                    className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                    className=" p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                     placeholder="email"
                                 />
                                 <span
@@ -94,13 +96,13 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
                         <div className="w-full">
                             <label
                                 htmlFor="first_name"
-                                className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900"
+                                className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="text"
                                     id="first_name"
                                     {...register('first_name', { required: 'Nombres es requerido' })}
-                                    className="peer p-1 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                    className="peer p-1 border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                     placeholder="Nombres"
                                 />
                                 <span
@@ -115,13 +117,13 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
                     <div className="my-3">
                         <label
                             htmlFor="last_name"
-                            className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900"
+                            className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                         >
                             <input
                                 type="text"
                                 id="last_name"
                                 {...register('last_name', { required: 'Apellidos es requerido' })}
-                                className="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                className="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-green1 sm:text-sm sm:leading-6"
                                 placeholder="Apellidos"
                             />
                             <span
@@ -136,7 +138,7 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
                         <div className="w-full">
                             <label
                                 htmlFor="dni"
-                                className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900"
+                                className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
                             >
                                 <input
                                     type="text"
@@ -154,29 +156,44 @@ function FormPg1({ currentPage, operation, handleOperationChange }) {
                             {errors.dni && <p className="text-red-600">{errors.dni.message}</p>}
                         </div>
                         <div className="w-full">
-                            <label
-                                htmlFor="phone_number"
-                                className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green-500 focus-within:ring-1 focus-within:ring-green-500 block text-sm font-medium leading-6 text-gray-900"
-                            >
-                                <input
-                                    type="number"
-                                    id="phone_number"
-                                    {...register('phone_number', { required: 'Celular es requerido' })}
-                                    className="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                    placeholder="Celular"
-                                />
-                                <span
-                                    className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
-                                >
-                                    Celular
-                                </span>
-                            </label>
-                            {errors.phone_number && <p className="text-red-600">{errors.phone_number.message}</p>}
-                        </div>
+    <label
+        htmlFor="phone_number"
+        className="relative rounded-sm border border-gray-200 shadow-sm focus-within:border-green1 focus-within:ring-1 focus-within:ring-green1 block text-sm font-medium leading-6 text-gray-900"
+    >
+        <input
+            type="number"
+            id="phone_number"
+            {...register('phone_number', {
+                required: 'Celular es requerido',
+                minLength: {
+                    value: 9,
+                    message: 'El número de celular debe tener 9 dígitos'
+                },
+                maxLength: {
+                    value: 9,
+                    message: 'El número de celular debe tener 9 dígitos'
+                },
+                pattern: {
+                    value: /^9[0-9]{8}$/,
+                    message: 'El número de celular debe comenzar con 9 y contener solo números'
+                }
+            })}
+            className="p-1 peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 block w-full rounded-sm border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="Celular"
+        />
+        <span
+            className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs"
+        >
+            Celular
+        </span>
+    </label>
+    {errors.phone_number && <p className="text-red-600">{errors.phone_number.message}</p>}
+</div>
+
                     </div>
                 </div>
                 <div className='flex mt-4'>
-                    <input type="checkbox" className='m-1 p-2 rounded-sm form-checkbox h-6 w-6 text-green-500' {...register('terminos', { required: 'Debe aceptar los términos y condiciones' })} />
+                    <input type="checkbox" className='m-1 p-2 rounded-sm form-checkbox h-6 w-6 text-green1' {...register('terminos', { required: 'Debe aceptar los términos y condiciones' })} />
                     <span className='text-[13px] p-2'>Acepto los Términos y Condiciones de uso y las politicas de privacidad.</span>
                 </div>
                 {errors.terminos && <p className="text-red-600">{errors.terminos.message}</p>}

@@ -14,7 +14,7 @@ import PropertiesUser from '../../components/userAccount/PropertiesUser'
 export const UserAccount = () => {
     const navigate = useNavigate()
     const { logout } = useUser()
-    const [currentView, setCurrentView] = useState('none');
+    const [currentView, setCurrentView] = useState(0);
 
     const getUser = async () => {
         const token = localStorage.getItem('AUTH_TOKEN_PROPIA');
@@ -67,15 +67,16 @@ export const UserAccount = () => {
     };
 
     return (
-        <div className='bg-white flex items-center justify-center'>
-            <div className='lg:px-10 md:px-3 items-center'>
-                <h3 className='text-gray-900 text-3xl font-bebas'>Mi cuenta</h3>
-                <div className='text-center border-gray-500 font-urbanist'>
-                    <h3 className='text-center lg:text-[25px] md:text-[20px]'>Datos personales</h3>
-                    <div className='flex'>
-                        <div className="flex -space-x-2 overflow-hidden">
+        <>
+            
+            <div className='mx-auto max-w-5xl p-5'>
+                <h1 className='text-center font-black text-3xl my-5'>Perfil de Usuario</h1>
+                <div className='border-gray-500 p-4 rounded bg-white font-urbanist'>
+                    <h2 className='text-center lg:text-[25px] md:text-[20px]'>Datos personales</h2>
+                    <div className='md:flex md:justify-center md:gap-x-5'>
+                        <div>
                             <img
-                                className="inline-block h-24 w-24 rounded-full ring-2 ring-white"
+                                className="block mx-auto h-32 w-32 rounded-full ring-2 ring-white"
                                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
                                 alt=""
                             />
@@ -94,10 +95,10 @@ export const UserAccount = () => {
                                     </Button>
                                 </Dropdown.Trigger>
                                 <Dropdown.Content>
-                                    <Dropdown.Item onClick={() => setCurrentView('update')}>
+                                    <Dropdown.Item onClick={() => setCurrentView(1)}>
                                         Editar Datos
                                     </Dropdown.Item>
-                                    <Dropdown.Item onClick={() => setCurrentView('change')}>
+                                    <Dropdown.Item onClick={() => setCurrentView(2)}>
                                         Cambiar contraseña
                                     </Dropdown.Item>
                                     <Dropdown.Divider />
@@ -109,20 +110,16 @@ export const UserAccount = () => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    {currentView === 'update' && (
-                        <UpdateUser user={user} setShowUpdateUser={() => setCurrentView('none')} mutate={mutate} />
-                    )}
-                </div>
-                <div>
-                    {currentView === 'change' && (
-                        <ChangePassword setShowChangePassword={() => setCurrentView('none')} />
-                    )}
-                </div>
-                <div>
-                    <PropertiesUser userId={user?.id} />
-                </div>
+
+                {currentView === 1 && (
+                    <UpdateUser user={user} mutate={mutate} />
+                )}
+                {currentView === 2 && (
+                    <ChangePassword />
+                )}
+
+                <PropertiesUser userId={user?.id} />
             </div>
-        </div>
+        </>
     )
 }

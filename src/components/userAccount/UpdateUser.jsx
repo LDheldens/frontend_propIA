@@ -5,7 +5,7 @@ import useUser from '../../hooks/useUser';
 import api from '../../settings/api';
 import Swal from 'sweetalert2';
 
-const UpdateUser = ({ user, setShowUpdateUser, mutate }) => {
+const UpdateUser = ({ user, mutate }) => {
     const navigate = useNavigate();
     const { register } = useUser();
     const [errores, setErrores] = useState([]);
