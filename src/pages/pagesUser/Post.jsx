@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import FormPg1 from '../../components/properties/registerProps/FormPg1'
 import FormPg2 from '../../components/properties/registerProps/FormPg2'
 import FormPg3 from '../../components/properties/registerProps/FormPg3'
@@ -10,9 +10,11 @@ import Swal from "sweetalert2"
 function Post() {
 
     const methods = useForm();
+    const refSubmitbtn = useRef(null);
     const [currentPage, setCurrentPage] = useState(1);
 
     const [files, setFiles] = useState([])
+
 
     const [operation, setOperation] = useState('Venta')
 
@@ -20,10 +22,53 @@ function Post() {
         setOperation(value);
     };
 
-    const goToNextPage = () => {
-        setCurrentPage((prevPage) => prevPage + 1);
-    };
+    // const goToNextPage = () => {
+    //     setCurrentPage((prevPage) => prevPage + 1);
+    //     console.log(refSubmitbtn);
+    //     //refSubmitbtn.current.submit();
+    //     methods.handleSubmit();
+    // };
 
+    const fieldsToValidate = {
+        1: [
+            "type_property",
+            "subtype_property",
+            "email",
+            "first_name",
+            "last_name",
+            "dni",
+            "phone_number",
+            "terminos",
+            ],
+        2: [
+            "adress",
+            "departamento",
+            "provincia",
+            "distrito",
+            "urbanization",
+        ],
+        3: [
+          /* Campos específicos de la página 3 */
+        ],
+        4: [
+            "area_property",
+            "bedrooms_number",
+            "garages_number",
+            "bathrooms_number",
+            "kitchens_number",
+            "floors_number",
+            "type_currency",
+            "price",
+            "title",
+            "description",
+        ],
+    };
+    const goToNextPage = async () => {
+        const isValid = await methods.trigger(fieldsToValidate[currentPage]);
+        if (isValid) {
+            setCurrentPage((prevPage) => prevPage + 1);
+        }
+    };
     const goToPreviousPage = () => {
         setCurrentPage((prevPage) => prevPage - 1);
     };
@@ -87,7 +132,7 @@ function Post() {
                     <div className="bg-gray-400 text-white text-center w-full">
                         Página {currentPage} de 4
                     </div>
-                    <form onSubmit={methods.handleSubmit(handleSubmit)} className="w-full">
+                    <form onSubmit={methods.handleSubmit(handleSubmit)} className="w-full" ref={refSubmitbtn}>
                         <FormPg1 currentPage={currentPage} operation={operation} handleOperationChange={handleOperationChange} />
                         <FormPg2 currentPage={currentPage} />
                         <FormPg3 currentPage={currentPage} files={files} setFiles={setFiles} />
