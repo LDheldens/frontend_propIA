@@ -240,6 +240,7 @@ const LayoutAdmin = () => {
                                 </nav>
                             </div>
                         </footer>
+
                         <div className='fixed bottom-3 right-3 z-50' >
                             <button className='bg-green-500 p-5 rounded-full text-white text-4xl animate-pulse' onClick={toggleChatbot}>
                                 <SiWechat />
