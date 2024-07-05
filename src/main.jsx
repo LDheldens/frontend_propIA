@@ -32,10 +32,10 @@ import { UserProvider } from './context/UserProvider'
 import { loader as loaderProperty } from './pages/pagesAdmin/DetailProperties'
 import { loader as loaderProperty2 } from './components/properties/DetailProps'
 import { Dashboard } from './pages/pagesAdmin/Dashboard'
+import { searchPropLoader } from './pages/pagesWeb/SearchProp'
 
 // layout de rutas protejidas
 import ProtectedRoutes from './components/protected/ProtectedRoutes'
-
 
 const router = createBrowserRouter(
   [
@@ -50,7 +50,8 @@ const router = createBrowserRouter(
         },
         {
           element: <SearchProp />,
-          path: '/buscar'
+          path: '/buscar',
+          loader: searchPropLoader
         },
         {
           element: <Advisors />,

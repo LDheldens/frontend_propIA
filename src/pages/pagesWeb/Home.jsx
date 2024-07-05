@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { FaLocationDot } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
@@ -18,7 +18,7 @@ import Flyer from '../../components/home/flyers/Flyer';
 import PrestenText1 from '../../components/home/PrestenText';
 import Loading from '../../components/compGeneral/Loading';
 import { Selector } from '@rewind-ui/core';
-
+import { Navigate,useNavigate } from 'react-router-dom';
 
 function Arrow(props) {
     const { className, style, onClick } = props;
@@ -48,21 +48,14 @@ const options = [
 
 const Home = () => {
 
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState(options[0]);
+    const navigate = useNavigate();
 
-    const toggleDropdown = () => setIsOpen(!isOpen);
+    const [actionType, setActionType] = useState('');
+    const [propertyType, setPropertyType] = useState('');
+    const [searchInput, setSearchInput] = useState('');
 
-    const selectOption = (option) => {
-        setSelectedOption(option);
-        setIsOpen(false);
-    };
-    const [inputValue, setInputValue] = useState('');
-    const [inputValue1] = useState('');
-    const [inputValue2] = useState('');
-
-    const handleInputChange = (e) => {
-        setInputValue(e.target.value);
+    const HandleRedirect = ()=>{
+        navigate(`/buscar?actionType=${actionType}&propertyType=${propertyType}&searchInput=${searchInput}`);
     };
 
     const products = [
@@ -161,19 +154,10 @@ const Home = () => {
                         <div className="flex items-center justify-center text-white sm:w-full">
                             <form action="" className="flex">
                                 <div className="font-normal flex items-center justify-center gap-x-2 bg-white font-bebas tracking-wide rounded-sm">
-                                    {/* <button className=" hover:bg-green-500 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
-                                        Alquilar
-                                    </button>
-                                    <button className=" hover:bg-green-500 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
-                                        Comprar
-                                    </button>
-                                    <button className=" hover:bg-green-500 hover:text-white text-gray-600 border border-gray-200 py-3 px-5 md:w-auto">
-                                        Proyectos
-                                    </button> */}
-                                    <Selector radius="sm" className='border font-bebas tracking-wide ' color='green' >
-                                        <Selector.Tab anchor="venta" label="VENTA" />
-                                        <Selector.Tab anchor="alquiler" label="ALQUILER" />
-                                        <Selector.Tab anchor="compra" label="COMPRA" />
+                                    <Selector value={actionType} onChange={(value)=>setActionType(value)} radius="sm" className='border font-bebas tracking-wide ' color='green' >
+                                        <Selector.Tab anchor="Venta" label="VENTA" />
+                                        <Selector.Tab anchor="Alquiler" label="ALQUILER" />
+                                        <Selector.Tab anchor="Pre-venta" label="PRE-VENTA" />
                                     </Selector>
                                 </div>
                             </form>
@@ -181,30 +165,35 @@ const Home = () => {
                         <div className='flex flex-col md:flex-row bg-white rounded-sm'>
                             <div className='p-4 w-full sm:w-full md:w-1/3'>
                                 <select
+                                    onChange={(e)=>setPropertyType(e.target.value)}
+                                    value={propertyType}
                                     id="country"
                                     name="country"
                                     autoComplete="country-name"
                                     className="h-11 inline-flex w-full justify-center border border-gray-300 shadow-sm px-4 py-2 bg-white text-[16px] font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100 font-urbanist"
                                 >
-                                    <option>Departamento</option>
-                                    <option>Casa</option>
-                                    <option>Terreno/Lote</option>
-                                    <option>Habitación</option>
-                                    <option>Hotel</option>
-                                    <option>Cochera</option>
-                                    <option>Local industrial</option>
-                                    <option>Local comercial</option>
-                                    <option>Oficina</option>
-                                    <option>Todos</option>
+                                    <option value=''>Todos</option>
+                                    <option value='casa'>Casa</option>
+                                    <option value='terreno'>Terreno/Lote</option>
+                                    <option value='habitacion'>Habitación</option>
+                                    <option value='hotel'>Hotel</option>
+                                    <option value='cochera'>Cochera</option>
+                                    <option value='industrial'>Local industrial</option>
+                                    <option value='comercial'>Local comercial</option>
+                                    <option value='oficina'>Oficina</option>
                                 </select>
                             </div>
                             <div className='container mx-auto p-4 font-urbanist'>
-                                <input aria-haspopup="true"
+                                <input 
+                                    onChange={(e)=>setSearchInput(e.target.value)}
+                                    value={searchInput}
+                                    aria-haspopup="true"
                                     aria-expanded="true"
                                     type="text" placeholder="Ingresa ubicaciones o características" className="h-11 inline-flex justify-center w-full border border-gray-200 shadow-sm px-2 py-3 bg-white text-[16px] font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100" />
                             </div>
                             <div className="flex justify-center items-center p-4 space-x-4 font-urbanist">
                                 <button
+                                    onClick={HandleRedirect}
                                     type="button"
                                     className="h-11 px-5 py-3 bg-green-500 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx rounded-sm"
                                 >

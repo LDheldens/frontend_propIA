@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useLocation, useLoaderData } from 'react-router-dom';
 import useSWR from 'swr';
 import api from '../../settings/api';
 import { FaSearch, FaFilter } from "react-icons/fa";
@@ -6,18 +7,33 @@ import Propertie from '../../components/properties/Propertie';
 import { Selector } from '@rewind-ui/core';
 import Skeleton from '../../components/compGeneral/Skeleton';
 import { Button } from '@rewind-ui/core';
-import { GrPrevious } from "react-icons/gr";
-import { GrNext } from "react-icons/gr";
+import { GrPrevious, GrNext } from "react-icons/gr";
+
+export function searchPropLoader({ request }) {
+    const url = new URL(request.url);
+    const actionType = url.searchParams.get('actionType');
+    const propertyType = url.searchParams.get('propertyType');
+    const searchInput = url.searchParams.get('searchInput');
+    
+    return {actionType,propertyType,searchInput}
+}
 
 const SearchProp = () => {
-    const [propertyType, setPropertyType] = useState('');
-    const [searchText, setSearchText] = useState('');
-    const [transactionType, setTransactionType] = useState('');
+    const params = useLoaderData();
+    const [propertyType, setPropertyType] = useState(
+        params.propertyType || ''
+    );
+    const [searchText, setSearchText] = useState(
+        params.searchInput || ''
+    );
+    const [transactionType, setTransactionType] = useState(
+        params.actionType || ''
+    );
     const [queryParams, setQueryParams] = useState({});
     const [page, setPage] = useState(1);
     const [pageSize, setPageSize] = useState(2);
 
-    const getProperties = async (type = '', text = '', transaction = '', page = 1, pageSize = 10) => {
+    const fetchProperties = async (type = '', text = '', transaction = '', page = 1, pageSize = 10) => {
         await new Promise(resolve => setTimeout(resolve, 1000));
         try {
             const response = await api.get('/property/list/', {
@@ -35,20 +51,17 @@ const SearchProp = () => {
             return response.data;
         } catch (error) {
             console.error(error);
-            return []; // Devuelve un array vacío en caso de error
+            return { results: [], count: 0 }; // Devuelve un objeto vacío en caso de error
         }
     }
 
     const { data, isLoading, mutate } = useSWR(
         queryParams.type !== undefined ? `${import.meta.env.VITE_API_URL}/property/list/?type=${queryParams.type}&text=${queryParams.text}&transaction=${queryParams.transaction}&page=${page}&page_size=${pageSize}` : null,
-        () => getProperties(queryParams.type, queryParams.text, queryParams.transaction, page, pageSize)
+        () => fetchProperties(queryParams.type, queryParams.text, queryParams.transaction, page, pageSize)
     );
 
-    const totalPages = Math.ceil(data?.count / pageSize)
-    const arrayPages = []
-    for (let index = 1; index <= totalPages; index++) {
-        arrayPages.push(index)
-    }
+    const totalPages = Math.ceil(data?.count / pageSize);
+    const arrayPages = Array.from({ length: totalPages }, (_, index) => index + 1);
 
     const properties = data?.results || [];
 
@@ -80,30 +93,19 @@ const SearchProp = () => {
     }, [queryParams]);
 
     const handlePageChange = (newPage) => {
-        setPage(newPage);
-        mutate();
-    }
-
-    const handlePrevPage = () => {
-        if (page > 0) {
-            setPage((prev) => prev - 1);
+        if (newPage > 0 && newPage <= totalPages) {
+            setPage(newPage);
+            mutate();
         }
-        return
-    }
-    const handleNextPage = () => {
-        if (page < totalPages) {
-            setPage((prev) => prev + 1);
-        }
-        return
     }
 
     useEffect(() => {
         setQueryParams({
-            type: '',
-            text: '',
-            transaction: ''
+            type: propertyType,
+            text: searchText,
+            transaction: transactionType
         });
-    }, []);
+    }, [propertyType, searchText, transactionType]);
 
     if (isLoading) {
         return (
@@ -151,7 +153,6 @@ const SearchProp = () => {
                             <option value='industrial'>Local industrial</option>
                             <option value='comercial'>Local comercial</option>
                             <option value='oficina'>Oficina</option>
-                            <option value='todos'>Todos</option>
                         </select>
                     </div>
                     <Selector value={transactionType} onChange={(value) => setTransactionType(value)} className='xs:hidden' color='green' size='md'>
@@ -178,55 +179,51 @@ const SearchProp = () => {
                         className="px-5 py-3 bg-green-500 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx font-bold"
                         onClick={handleSearch}
                     >
-                        <FaSearch className='flex mr-1 selection:' /> Buscar
+                        <FaSearch className='flex mr-1' /> Buscar
                     </button>
                 </div>
             </div>
 
-            <h2 className="text-2xl font-bold text-gray-700 text-center p-4 font-bebas tracking-wide ">Resultados : {properties.length} Inmuebles en la Zona.</h2>
+            <h2 className="text-2xl font-bold text-gray-700 text-center p-4 font-bebas tracking-wide">Resultados : {properties.length} Inmuebles en la Zona.</h2>
             <div className='my-4 space-y-5'>
                 {properties.map((propertie) => (
                     <Propertie propertie={propertie} key={propertie.id} />
                 ))}
             </div>
 
-            {/* codigo para la paginacion xd */}
+            {/* código para la paginación */}
             <div className='my-10 w-full flex justify-center'>
-                <div className=' flex gap-2 flex-wrap'>
+                <div className='flex gap-2 flex-wrap'>
                     <Button
                         shadow='base'
-                        disabled={page == 1}
+                        disabled={page === 1}
                         color='red'
-                        onClick={handlePrevPage}
+                        onClick={() => handlePageChange(page - 1)}
                     >
                         <GrPrevious className='font-bold' />
                     </Button>
-                    {
-                        arrayPages.map(pageBtn => (
-                            <button
-                                className={`py-1 px-4 rounded-full border border-green-500 ${page == pageBtn ? 'bg-green-500 text-white' : ''}`}
-                                type='button'
-                                onClick={() => handlePageChange(pageBtn)}
-                            >
-                                {pageBtn}
-                            </button>
-                        ))
-                    }
+                    {arrayPages.map(pageBtn => (
+                        <button
+                            key={pageBtn}
+                            className={`py-1 px-4 rounded-full border border-green-500 ${page === pageBtn ? 'bg-green-500 text-white' : ''}`}
+                            type='button'
+                            onClick={() => handlePageChange(pageBtn)}
+                        >
+                            {pageBtn}
+                        </button>
+                    ))}
                     <Button
                         shadow='base'
                         color='blue'
-                        onClick={handleNextPage}
-                        disabled={page == totalPages}
+                        onClick={() => handlePageChange(page + 1)}
+                        disabled={page === totalPages}
                     >
                         <GrNext className='font-bold' />
                     </Button>
                 </div>
-
-
             </div>
         </div>
     );
 }
 
 export default SearchProp;
-
