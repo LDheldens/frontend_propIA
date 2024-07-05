@@ -184,7 +184,7 @@ const Home = () => {
                                     id="country"
                                     name="country"
                                     autoComplete="country-name"
-                                    className="inline-flex w-full justify-center border border-gray-300 shadow-sm px-4 py-2 bg-white text-[16px] font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100 font-urbanist"
+                                    className="h-11 inline-flex w-full justify-center border border-gray-300 shadow-sm px-4 py-2 bg-white text-[16px] font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100 font-urbanist"
                                 >
                                     <option>Departamento</option>
                                     <option>Casa</option>
@@ -201,12 +201,12 @@ const Home = () => {
                             <div className='container mx-auto p-4 font-urbanist'>
                                 <input aria-haspopup="true"
                                     aria-expanded="true"
-                                    type="text" placeholder="Ingresa ubicaciones o características" className="inline-flex justify-center w-full border border-gray-200 shadow-sm px-2 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100" />
+                                    type="text" placeholder="Ingresa ubicaciones o características" className="h-11 inline-flex justify-center w-full border border-gray-200 shadow-sm px-2 py-3 bg-white text-[16px] font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100" />
                             </div>
                             <div className="flex justify-center items-center p-4 space-x-4 font-urbanist">
                                 <button
                                     type="button"
-                                    className="px-5 py-3 bg-green-500 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx rounded-sm"
+                                    className="h-11 px-5 py-3 bg-green-500 text-white hover:bg-gray-500 focus:outline-none items-center flex text-mx rounded-sm"
                                 >
                                     <FaSearch className='flex mr-1  selection: ' /> Buscar
                                 </button>
