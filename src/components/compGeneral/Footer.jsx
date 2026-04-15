@@ -70,7 +70,7 @@ function Footer() {
         </div>
         <div className="text-xs mx-auto flex justify-center text-white bg-green-500 p-5">
             <nav>
-                <span>© Copyright 2024 Polariss Technology - Términos y Condiciones de Uso Términos y Condiciones de Contratación Política de privacidad.</span>
+                <span>© Copyright 2024 - Términos y Condiciones de Uso Términos y Condiciones de Contratación Política de privacidad.</span>
             </nav>
         </div>
     </footer>
