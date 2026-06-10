@@ -40,8 +40,8 @@ function LogIn() {
                             Iniciar sesión
                         </h2>
                     </div>
-                    {error.length > 0 ? (
-                        <p className="text-red-500 mb-3">{error}</p>
+                    {error ? (
+                        <p className="text-red-500 mb-3">{Array.isArray(error) ? error.join(', ') : error}</p>
                     ) : null}
                     <form
                         noValidate
