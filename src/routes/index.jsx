@@ -70,7 +70,7 @@ const router = createBrowserRouter(
     },
     {
       path: '/admin',
-      element: <ProtectedRoutes role={1}><AdminLayout /></ProtectedRoutes>,
+          element: <ProtectedRoutes roles={[1]}><AdminLayout /></ProtectedRoutes>,
       children: [
         {
           index: true,
@@ -102,7 +102,7 @@ const router = createBrowserRouter(
     },
     {
       path: '/usuario',
-      element: <ProtectedRoutes role={2}><UserLayout/></ProtectedRoutes>,
+          element: <ProtectedRoutes roles={[1,2]}><UserLayout/></ProtectedRoutes>,
       children: [
         {
           element: <UserAccount />,

@@ -24,7 +24,7 @@ function Propertie({ propertie, userPost }) {
                 className='grid grid-cols-1 md:grid-cols-3 md:gap-4'
                 to={`/item/${propertie.id}`}
             >
-                <div className='col-span-1 h-64 md:h-auto'>
+                <div className='col-span-1 h-64 max-h-64 overflow-hidden'>
                     <img src={`${import.meta.env.VITE_URL_IMG}${propertie.images[0].image}`} alt="Property" className="block w-full h-full rounded object-cover" />
                 </div>
 
