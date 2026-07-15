@@ -8,6 +8,8 @@ import { Selector } from '@rewind-ui/core';
 import Skeleton from '../../../components/ui/Skeleton';
 import { Button } from '@rewind-ui/core';
 import { GrPrevious, GrNext } from "react-icons/gr";
+import { SiWechat } from "react-icons/si";
+import ChatBot from '../../../components/layout/ChatBot';
 
 export function searchPropLoader({ request }) {
     const url = new URL(request.url);
@@ -32,6 +34,10 @@ const SearchProp = () => {
     const [queryParams, setQueryParams] = useState({});
     const [page, setPage] = useState(1);
     const [pageSize, setPageSize] = useState(2);
+    const [chatBot, setChatBot] = useState(false);
+    const toggleChatbot = () => {
+        setChatBot(!chatBot);
+    };
 
     const fetchProperties = async (type = '', text = '', transaction = '', page = 1, pageSize = 10) => {
         await new Promise(resolve => setTimeout(resolve, 1000));
@@ -220,6 +226,15 @@ const SearchProp = () => {
                     >
                         <GrNext className='font-bold' />
                     </Button>
+                </div>
+            </div>
+
+            <div className='fixed bottom-3 right-3 z-50'>
+                <button className='bg-green-500 p-5 rounded-full text-white text-4xl animate-pulse' onClick={toggleChatbot}>
+                    <SiWechat />
+                </button>
+                <div className={`bg-gray-200 right-3 transition-transform duration-300 absolute top-[-410px] p-0 text-gray-600 shadow-lg ${chatBot ? 'translate-x-0' : 'translate-x-[500px]'}`}>
+                    <ChatBot />
                 </div>
             </div>
         </div>

@@ -11,7 +11,6 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 import { MdLogin } from "react-icons/md"
 import { BiSolidChat } from "react-icons/bi"
 import { FaRegUser } from "react-icons/fa"
-import ChatBot from '../layout/ChatBot'
 import Footer from '../layout/Footer'
 
 
@@ -70,11 +69,6 @@ const LayoutUser = () => {
         });
     };
 
-    const [chatBot, setChatBot] = useState(false);
-    const toggleChatbot = () => {
-        setChatBot(!chatBot);
-    };
-
     return (
         <>
             <div className="flex bg-white justify-between items-center px-5 md:px-8">
@@ -125,15 +119,6 @@ const LayoutUser = () => {
                 <Outlet />
             </main>
             <Footer />
-            <div className='fixed bottom-3 right-3 z-50' >
-                <button className='bg-green-500 p-5 rounded-full text-white text-4xl animate-pulse' onClick={toggleChatbot}>
-                    <BiSolidChat />
-                </button>
-
-                <div className={`bg-gray-200 right-3  transition-transform duration-300 absolute top-[-410px] p-0 text-gray-600 rounded-lg shadow-lg ${chatBot ? 'translate-x-0' : 'translate-x-[500px]'}`}>
-                    <ChatBot />
-                </div>
-            </div>
         </>
     )
 }
